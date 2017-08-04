@@ -25,22 +25,22 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Large + Classic Crust extra thick" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GKk-hc-cMe">
-                    <rect key="frame" x="10" y="10" width="256" height="15"/>
+                    <rect key="frame" x="10" y="10" width="251" height="15"/>
                     <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="11"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SCe-Do-KY5">
-                    <rect key="frame" x="341" y="10" width="15" height="15"/>
+                    <rect key="frame" x="336" y="7.5" width="20" height="20"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="SCe-Do-KY5" secondAttribute="height" multiplier="1:1" id="hNX-ho-5Wq"/>
-                        <constraint firstAttribute="width" constant="15" id="rpJ-kE-y83"/>
+                        <constraint firstAttribute="width" constant="20" id="rpJ-kE-y83"/>
                     </constraints>
                     <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="20"/>
                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$23.324" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wje-Kv-DP3">
-                    <rect key="frame" x="276" y="10" width="60" height="14.5"/>
+                    <rect key="frame" x="271" y="10" width="60" height="14.5"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="60" id="4eY-eM-ud2"/>
                     </constraints>

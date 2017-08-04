@@ -8,14 +8,14 @@
 
 import UIKit
 
-class CheckoutTableViewCell: UITableViewCell {
+class OrderHistoryTableViewCell: UITableViewCell {
 
     @IBOutlet weak var addAsNewButton: StyleableButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        addAsNewButton.addTarget(CheckoutViewController(), action: #selector(CheckoutViewController.checkTouch), for: .touchUpInside)
+        addAsNewButton.addTarget(OrderHistoryViewController(), action: #selector(OrderHistoryViewController.checkTouch), for: .touchUpInside)
         // Initialization code
     }
 

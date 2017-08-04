@@ -9,10 +9,10 @@
 import Foundation
 import UIKit
 
-extension CheckoutViewController: UITableViewDelegate, UITableViewDataSource {
+extension OrderHistoryViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "order", for: indexPath) as! CheckoutTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "order", for: indexPath) as! OrderHistoryTableViewCell
         cell.selectionStyle = .none
         return cell
     }

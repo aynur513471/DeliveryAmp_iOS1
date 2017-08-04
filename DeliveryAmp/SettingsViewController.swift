@@ -97,16 +97,26 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func saveData(_ sender: StyleableButton) {
+        if checkFields() {
+            
+            //load data in my object
+            
+            if emptyCreditCardFields()  {
+                self.navigationController?.popViewController(animated: true)
+            } else if checkCreditCardFields() {
+                
+                //read data in my object
+                
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
     }
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func goBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
-    */
 
 }

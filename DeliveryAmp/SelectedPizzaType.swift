@@ -14,7 +14,6 @@ class SelectedPizzaType: UIView {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var removeButton: UIButton!
     
-    @IBOutlet weak var contentView: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)

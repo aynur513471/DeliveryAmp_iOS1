@@ -1,21 +1,18 @@
 //
-//  CheckoutViewController.swift
+//  LegalViewController.swift
 //  DeliveryAmp
 //
-//  Created by User on 7/28/17.
+//  Created by User on 8/3/17.
 //
 //
 
 import UIKit
 
-class CheckoutViewController: UIViewController {
+class LegalViewController: UIViewController {
 
-    @IBOutlet weak var checkoutTable: UITableView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setDelegates()
-        self.checkoutTable.contentInset = .zero
+
         // Do any additional setup after loading the view.
     }
 
@@ -24,13 +21,6 @@ class CheckoutViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    func setDelegates() {
-        checkoutTable.delegate = self
-        checkoutTable.dataSource = self
-       // self.checkoutTable.tableHeaderView = nil;
-      //  self.checkoutTable.tableFooterView = nil;
-    }
 
     /*
     // MARK: - Navigation
@@ -41,9 +31,8 @@ class CheckoutViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    @IBAction func checkTouch(_ sender: StyleableButton) {
-        sender.isSelected = !sender.isSelected
+    @IBAction func goBack(_ sender: Any) {
+        let _ = self.navigationController?.popViewController(animated: true)
     }
 
 }
