@@ -45,7 +45,7 @@
 		CE87A3531F2B221300645A47 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE87A3521F2B221300645A47 /* Colors.swift */; };
 		CE87A3551F2B52E300645A47 /* OrderHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE87A3541F2B52E300645A47 /* OrderHistoryViewController.swift */; };
 		CE87A3571F2B531900645A47 /* OrderHistoryViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE87A3561F2B531900645A47 /* OrderHistoryViewControllerExtension.swift */; };
-		CE87A3591F2B537C00645A47 /* CheckoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE87A3581F2B537C00645A47 /* CheckoutTableViewCell.swift */; };
+		CE87A3591F2B537C00645A47 /* OrderHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE87A3581F2B537C00645A47 /* OrderHistoryTableViewCell.swift */; };
 		CEF1997C1F332617005E74B4 /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1997B1F332617005E74B4 /* SideMenuTableViewCell.swift */; };
 		CEF1997E1F3327E1005E74B4 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1997D1F3327E1005E74B4 /* SideMenuViewController.swift */; };
 		CEF199811F334739005E74B4 /* LegalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF199801F334739005E74B4 /* LegalViewController.swift */; };
@@ -100,7 +100,7 @@
 		CE87A3521F2B221300645A47 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		CE87A3541F2B52E300645A47 /* OrderHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderHistoryViewController.swift; sourceTree = "<group>"; };
 		CE87A3561F2B531900645A47 /* OrderHistoryViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderHistoryViewControllerExtension.swift; sourceTree = "<group>"; };
-		CE87A3581F2B537C00645A47 /* CheckoutTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutTableViewCell.swift; sourceTree = "<group>"; };
+		CE87A3581F2B537C00645A47 /* OrderHistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		CEF1997B1F332617005E74B4 /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
 		CEF1997D1F3327E1005E74B4 /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		CEF199801F334739005E74B4 /* LegalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegalViewController.swift; sourceTree = "<group>"; };
@@ -253,7 +253,7 @@
 			children = (
 				CEF305171F2A02F7009A740A /* IngredientTableViewCell.swift */,
 				CEF3051C1F2A2413009A740A /* IngredientGroupTableViewCell.swift */,
-				CE87A3581F2B537C00645A47 /* CheckoutTableViewCell.swift */,
+				CE87A3581F2B537C00645A47 /* OrderHistoryTableViewCell.swift */,
 				CE49CDD71F2F6F2600EC114F /* PizzaTypeTableViewCell.swift */,
 				CE6C09BE1F30A0F200D9C9EA /* FoodTypeTableViewCell.swift */,
 				CEF1997B1F332617005E74B4 /* SideMenuTableViewCell.swift */,
@@ -461,7 +461,7 @@
 				CEF199811F334739005E74B4 /* LegalViewController.swift in Sources */,
 				CE87A3571F2B531900645A47 /* OrderHistoryViewControllerExtension.swift in Sources */,
 				CEF199841F336B2C005E74B4 /* Alert.swift in Sources */,
-				CE87A3591F2B537C00645A47 /* CheckoutTableViewCell.swift in Sources */,
+				CE87A3591F2B537C00645A47 /* OrderHistoryTableViewCell.swift in Sources */,
 				CE87A3531F2B221300645A47 /* Colors.swift in Sources */,
 				CE168DB01F308A6500721F5B /* ContainerViewController.swift in Sources */,
 				CE6C09B71F309B3200D9C9EA /* ExtrasViewController.swift in Sources */,

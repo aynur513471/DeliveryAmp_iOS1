@@ -41,7 +41,8 @@
                 <navigationController navigationBarHidden="YES" id="0cd-wU-TRE" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="4eT-F3-Yq1">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="4eT-F3-Yq1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -58,7 +59,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nvl-sb-KeM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2962" y="688"/>
+            <point key="canvasLocation" x="2697" y="752"/>
         </scene>
         <!--Side Menu View Controller-->
         <scene sceneID="v9g-j0-Sce">
@@ -231,6 +232,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IB9-iB-QLQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -840,6 +842,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="backButton" destination="1Gh-AA-mo7" id="hOQ-Fy-2cP"/>
                         <outlet property="orderHistoryTable" destination="zc1-iP-4Ap" id="LYR-RC-re1"/>
