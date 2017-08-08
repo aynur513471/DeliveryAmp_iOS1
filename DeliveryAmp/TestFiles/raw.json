@@ -1,0 +1,447 @@
+{
+  "serving_sizes_food": [
+    {
+      "id": 0,
+      "name": "Small",
+      "quantity": 10 ,
+      "price": 0.25
+    },
+    {
+      "id": 1,
+      "name": "Medium",
+      "quantity": 14,
+      "price" : 0.50
+    },
+    {
+      "id": 2,
+      "name": "Large",
+      "quantity": 22,
+      "price": 1
+    },
+    {
+      "id":3,
+      "name":"ExtraLarge",
+      "quantity":4,
+      "price":2
+    }
+  ],
+  "serving_sizes_beverages": [
+    {
+      "id": 3,
+      "name": "0.25L",
+      "quantity": 0.25,
+      "price": 0.55
+    },
+    {
+      "id": 4,
+      "name": "0.33L",
+      "quantity": 0.33,
+      "price": 0.75
+    },
+    {
+      "id": 5,
+      "name": "0.5L",
+      "quantity": 0.5,
+      "price": 1.00
+    },
+    {
+      "id": 6,
+      "name": "1.0L",
+      "quantity": 1.0,
+      "price": 1.25
+    },
+    {
+      "id": 7,
+      "name": "2.0L",
+      "quantity": 2.0,
+      "price": 1.50
+    }
+  ],
+  "product_types": [
+    {
+      "id": 0,
+      "name": "Classic Crust",
+      "prices": 5.0
+    },
+    {
+      "id": 1,
+      "name": "Thin Crust",
+      "prices": 12.0
+    },
+    {
+      "id": 2,
+      "name": "Thick Crust",
+      "prices": 15.0
+    },
+    {
+      "id": 3,
+      "name": "Philadelphia crust",
+      "prices": 8.0
+    }
+  ],
+  "ingredients": [
+    {
+      "id": 0,
+      "name": "Mozzarella",
+      "price": 2.5
+    },
+    {
+      "id": 1,
+      "name": "Tomato sauce",
+      "price": 2.5
+    },
+    {
+      "id": 2,
+      "name": "Oregano",
+      "price": 2.5
+    },
+    {
+      "id": 3,
+      "name": "Bacon",
+      "price": 5.0
+    },
+    {
+      "id": 4,
+      "name": "Mushrooms",
+      "price": 2.5
+    },
+    {
+      "id": 5,
+      "name": "Olives",
+      "price": 1.0
+    },
+    {
+      "id": 6,
+      "name": "Pepperoni",
+      "price": 1.0
+    },
+    {
+      "id": 7,
+      "name": "Sausage",
+      "price": 5.0
+    },
+    {
+      "id": 8,
+      "name": "Corn",
+      "price": 2.5
+    },
+    {
+      "id": 9,
+      "name": "Beans",
+      "price": 1.0
+    },
+    {
+      "id": 10,
+      "name": "Jalapenos",
+      "price": 5.0
+    },
+    {
+      "id": 11,
+      "name": "Tuna",
+      "price": 5.0
+    },
+    {
+      "id": 12,
+      "name": "Onion",
+      "price": 1.0
+    },
+    {
+      "id": 13,
+      "name": "Bell pepper",
+      "price": 2.5
+    },
+    {
+      "id": 14,
+      "name": "Tomatoes",
+      "price": 1.0
+    },
+    {
+      "id": 15,
+      "name": "Chicken",
+      "price": 5.0
+    },
+    {
+      "id": 16,
+      "name": "Cedar",
+      "price": 2.5
+    },
+    {
+      "id": 17,
+      "name": "Pineapple",
+      "price": 5.0
+    },
+    {
+      "id": 18,
+      "name": "Chilli peppers",
+      "price": 1.0
+    },
+    {
+      "id": 19,
+      "name": "Blue cheese",
+      "price": 7.0
+    },
+    {
+      "id": 20,
+      "name": "Prosciutto",
+      "price": 4.0
+    },
+    {
+      "id": 21,
+      "name": "Dried tomatoes",
+      "price": 4.0
+    },
+    {
+      "id": 22,
+      "name": "Beef",
+      "price": 7.0
+    }
+  ],
+  "products": [
+    {
+      "id": 0,
+      "name": "Margherita Pizza",
+      "description": "This is the basic pizza.",
+      "price": 7.99,
+      "sizesId": [
+        0,
+        1,
+        2
+      ],
+      "crustsId": [
+        0,
+        1
+      ],
+      "imageUrl": "http://www.veryeatalian.com/wp-content/uploads/2015/03/Pizza-Margherita-with-Cherry-Tomatoes-veryEATalian-9-e1426682752574.jpg",
+      "ingredientIds": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Classic Pizza",
+      "description": "Well known pizza, but still a solid choice.",
+      "price": 14.99,
+      "sizesId": [
+        0,
+        1,
+        2
+      ],
+      "crustsId": [
+        0,
+        2
+      ],
+      "imageUrl": "http://urgentpizza.ro/blog/wp-content/uploads/2014/05/prosciutto-e-funghi-urgenpizza.png",
+      "ingredientIds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Provence Pizza",
+      "description": "Coming directly from France!",
+      "price": 18.49,
+      "sizesId": [
+        0,
+        1,
+        2
+      ],
+      "crustsId": [
+        0,
+        2,
+        3
+      ],
+      "imageUrl": "http://ot-foodspotting-production.s3.amazonaws.com/reviews/117579/thumb_600.jpg",
+      "ingredientIds": [
+        0,
+        1,
+        2,
+        15,
+        12,
+        19,
+        21
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Country Pizza",
+      "description": "For the redneck inside you.",
+      "price": 15.0,
+      "sizesId": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "crustsId":
+      [
+        0,
+        2
+      ],
+      "imageUrl": "https://s-media-cache-ak0.pinimg.com/originals/d6/68/96/d66896dd9a8cf12a28e33403fac5dafd.jpg",
+      "ingredientIds": [
+        0,
+        1,
+        2,
+        3,
+        8,
+        12,
+        4
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Hot Cheese Pizza",
+      "description": "Vegetarian pizza that everyone should try.",
+      "price": 13.0,
+      "sizesId": [
+        0,
+        1
+      ],
+      "crustsId": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "imageUrl": "http://2.bp.blogspot.com/-Omg_1GwbGMk/VAgdUaxGQsI/AAAAAAAAfaM/m1UN1tLNGGQ/s1600/pizza-hut-cheese-pizza.jpg",
+      "ingredientIds": [
+        0,
+        1,
+        2,
+        16,
+        14,
+        10
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Aloha Pizza",
+      "description": "Worst pizza ever! Don't buy it!!",
+      "price": 15.0,
+      "sizesId": [
+        0,
+        1,
+        2
+      ],
+      "crustsId": [
+        0,
+        1,
+        2
+      ],
+      "imageUrl": "https://cdn.asconapizza.com/img/pizzas/aloha-pizza.jpg",
+      "ingredientIds": [
+        0,
+        1,
+        2,
+        3,
+        17,
+        8,
+        12
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Carnivor Pizza",
+      "description": "This is what you are looking for Amerikansky!",
+      "price": 16.49,
+      "sizesId": [
+        0,
+        1,
+        2
+      ],
+      "crustsId": [
+        0,
+        2
+      ],
+      "imageUrl": "http://www.feelingnibblish.com/wp-content/uploads/2011/02/P1040508.jpg",
+      "ingredientIds": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        22
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Ocean Pizza",
+      "description": "Unorthodox mixture, though you should give it a try.",
+      "price": 14.99,
+      "sizesId": [
+        0,
+        2
+      ],
+      "crustsId": [
+        0
+      ],
+      "imageUrl": "http://www.homecookingadventure.com/images/recipes/372652694IMG_9388copy2.jpg",
+      "ingredientIds": [
+        0,
+        1,
+        2,
+        11,
+        8,
+        12,
+        5
+      ]
+    }
+  ],
+  "beverages": [
+    {
+      "id": 9,
+      "name": "Orange juice",
+      "description": "Don't drink this, it's a trap!",
+      "price": 2.0,
+      "sizesId": [
+        3,
+        5,
+        6
+      ],
+      "imageUrl": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAU3AAAAJDgzNmYwODc4LWEyNDctNDVkMC04NDFiLWViOTVhZDhiMTkzNA.png"
+    },
+    {
+      "id": 13,
+      "name": "Cola",
+      "description": "The basic Amerikansky drink.",
+      "price": 1.0,
+      "sizesId": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "imageUrl": "http://www.coca-cola.co.uk/content/dam/journey/gb/en/hidden/Products/lead-brand-image/Journey-brands-Product-Coca-Cola-Classic.jpg"
+    }
+  ],
+  "extras": [
+    {
+      "id": 10,
+      "name": "Hot sauce",
+      "description": "For your spicy needs.",
+      "price": 0.49,
+      "imageUrl": "http://www.cheatsheet.com/wp-content/uploads/2015/01/iStock_000044098850_Small1-640x425.jpg"
+    },
+    {
+      "id": 11,
+      "name": "Sour sauce",
+      "description": "Just give it a try!",
+      "price": 0.49,
+      "imageUrl": "http://cdn.cdkitchen.com/recipes/images/2016/05/27595-6192-mx.jpg"
+    },
+    {
+      "id": 12,
+      "name": "Chef's sauce",
+      "description": "You won't be able to live without it after you taste it!",
+      "price": 0.49,
+      "imageUrl": "https://s-media-cache-ak0.pinimg.com/originals/af/3d/cc/af3dcc4c0d8b04b079feeaba8c862756.jpg"
+    }
+  ]
+}

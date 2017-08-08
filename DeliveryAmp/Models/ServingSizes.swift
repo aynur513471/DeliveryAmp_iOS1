@@ -1,0 +1,57 @@
+//
+//  ServingSizesFood.swift
+//  DeliveryAmp
+//
+//  Created by User on 8/4/17.
+//
+//
+
+import Foundation
+import SwiftyJSON
+
+
+struct ServingSizePropertyKey{
+    static let idKey = "id"
+    
+    static let nameKey = "name"
+    static let quantityKey = "quantity"
+    static let priceKey = "price"
+}
+
+class ServingSize: NSObject {
+
+    var id: Int
+    
+    var name: String
+    var quantity: Double
+    var price: Double
+    
+    override init() {
+        self.id = -1
+        self.name = ""
+        self.quantity = -1
+        self.price = -1
+    }
+    
+    init(id: Int, name: String, quantity: Double, price: Double) {
+        self.id = id
+        self.name = name
+        self.quantity = quantity
+        self.price = price
+    }
+}
+
+extension ServingSize {
+    
+    static func decode(_ json: [String: JSON]) -> ServingSize? {
+        guard let id = json[ServingSizePropertyKey.idKey]?.int,
+            let name = json[ServingSizePropertyKey.nameKey]?.string,
+            let quantity = json[ServingSizePropertyKey.quantityKey]?.double,
+            let price = json[ServingSizePropertyKey.priceKey]?.double
+            else {
+                return nil
+        }
+        
+        return ServingSize(id: id, name: name, quantity: quantity, price: price)
+    }
+}

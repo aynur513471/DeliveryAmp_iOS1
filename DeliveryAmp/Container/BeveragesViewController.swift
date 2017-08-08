@@ -9,6 +9,14 @@
 import UIKit
 
 class BeveragesViewController: UIViewController {
+    
+    // MARK: - Variables
+    
+    var allProducts: [Product]!
+    var servingSizesBeverages: [ServingSize]!
+    var servingSizesFood: [ServingSize]!
+    var allProductTypes: [ProductType]!
+    var allIngredients: [Ingredient]!
 
     // MARK: - Outlets
     @IBOutlet weak var drinkTable: UITableView!

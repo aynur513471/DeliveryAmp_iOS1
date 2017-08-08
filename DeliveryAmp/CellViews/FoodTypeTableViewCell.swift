@@ -65,44 +65,7 @@ class FoodTypeTableViewCell: UITableViewCell {
         selectedTypeBottomConstraint.constant = 0
     }
     
-    @IBAction func selectPizzaSize(_ sender: StyleableButton) {
-        deselectButtons(inside: pizzaSizeScrollView)
-        sender.isSelected = !sender.isSelected
-        
-        
-        /* here i will assign the size to my object*/
-        switch sender.tag {
-        case 0:
-            //print("small")
-            break
-        case 1:
-            //print("medium")
-            break
-        case 2:
-            // print("large")
-            break
-        default:
-            break
-        }
-    }
-    
-    
-    @IBAction func selectCrustType(_ sender: UIButton) {
-        deselectButtons(inside: crustTypeScrollView)
-        sender.isSelected = !sender.isSelected
-        
-        /* here i will assign the crust type to my object*/
-        switch sender.tag {
-        case 0:
-            //print("thin")
-            break
-        case 1:
-            // print("thick")
-            break
-        default:
-            break
-        }
-    }
+
     
     func deselectButtons(inside view: UIView) {
         for subview in view.subviews as [UIView] {
@@ -124,7 +87,7 @@ class FoodTypeTableViewCell: UITableViewCell {
     }
     
     func getCrustType() -> Int {
-        for subview in pizzaSizeScrollView.subviews as [UIView] {
+        for subview in crustTypeScrollView.subviews as [UIView] {
             if let btn = subview as? StyleableButton {
                 if btn.isSelected {
                     return btn.tag

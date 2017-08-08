@@ -8,6 +8,11 @@
 
 import UIKit
 
+
+//!!!!CHANGE this to false when adding serverside
+
+
+
 class MenuViewController: UIViewController {
 
     // MARK: - Outlets
@@ -18,12 +23,27 @@ class MenuViewController: UIViewController {
     
     var container: ContainerViewController!
     
+    // MARK: - Variables
+    
+    var allProducts: [Product] = []
+    var servingSizesBeverages: [ServingSize] = []
+    var servingSizesFood: [ServingSize] = []
+    var allProductTypes: [ProductType] = []
+    var allIngredients: [Ingredient] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         selectFood(foodButton)
-
         // Do any additional setup after loading the view.
+    }
+    
+
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.view.addDiagonalGradient(self.view, [MyColors.darkBlue.cgColor, MyColors.lightBlue.cgColor], self.view.frame)
+        self.view.layoutIfNeeded()
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,6 +83,7 @@ class MenuViewController: UIViewController {
         extrasButton.isSelected = false
         container!.segueIdentifierReceivedFromParent("beverages")
     }
+    
     @IBAction func selectExtras(_ sender: UIButton) {
         sender.isSelected = true
         beveragesButton.isSelected = false
@@ -74,6 +95,12 @@ class MenuViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "container"{
             container = segue.destination as! ContainerViewController
+            container!.allProducts = self.allProducts
+            container!.allIngredients = self.allIngredients
+            container!.allProductTypes = self.allProductTypes
+            container!.servingSizesFood = self.servingSizesFood
+            container!.servingSizesBeverages = self.servingSizesBeverages
+
         }
     }
 }

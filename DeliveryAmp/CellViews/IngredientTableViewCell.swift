@@ -32,13 +32,10 @@ class IngredientTableViewCell: UITableViewCell {
     }
     
     //MARK - Stepper function
-    
     @IBAction func modifyAmount(_ sender: UIStepper) {
         if let price = ingredientPriceLabel.text?.components(separatedBy: "$")[1] {
             amountLabel.text = Int(sender.value).description
             ingredientTotalPriceLabel.text = "$" + String(Double(sender.value) * Double(price)!)
-        }      
+        }
     }
-
-
 }
