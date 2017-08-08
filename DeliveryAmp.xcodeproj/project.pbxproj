@@ -8,9 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		7B2D8BB6060FD10586244121 /* Pods_DeliveryAmp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3F92601052C8669D8A0A86 /* Pods_DeliveryAmp.framework */; };
+		CE1022C01F349EA3008A28EA /* Stuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1022BF1F349EA3008A28EA /* Stuff.swift */; };
+		CE1022C21F34B203008A28EA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1022C11F34B203008A28EA /* Constants.swift */; };
+		CE1022C41F34BA16008A28EA /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1022C31F34BA16008A28EA /* LaunchViewController.swift */; };
+		CE1022C61F34BEBE008A28EA /* Beverage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1022C51F34BEBE008A28EA /* Beverage.swift */; };
+		CE1022C81F34BEE5008A28EA /* Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1022C71F34BEE5008A28EA /* Extra.swift */; };
 		CE168DAE1F30763B00721F5B /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168DAD1F30763B00721F5B /* MenuViewController.swift */; };
 		CE168DB01F308A6500721F5B /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168DAF1F308A6500721F5B /* ContainerViewController.swift */; };
 		CE168DB21F308DB500721F5B /* EmptySegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168DB11F308DB500721F5B /* EmptySegue.swift */; };
+		CE2D044F1F345C660074ECBC /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D044E1F345C660074ECBC /* UIViewExtension.swift */; };
+		CE2D04511F346F260074ECBC /* MyColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D04501F346F260074ECBC /* MyColors.swift */; };
+		CE2D04531F346F4F0074ECBC /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D04521F346F4F0074ECBC /* Product.swift */; };
+		CE2D04551F347B8B0074ECBC /* ServingSizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D04541F347B8B0074ECBC /* ServingSizes.swift */; };
+		CE2D04571F347E050074ECBC /* ProductType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D04561F347E050074ECBC /* ProductType.swift */; };
+		CE2D04591F3480F20074ECBC /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D04581F3480F20074ECBC /* Ingredient.swift */; };
+		CE2D045E1F3485750074ECBC /* LocalRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D045D1F3485750074ECBC /* LocalRequest.swift */; };
 		CE390D3E1F28B3B700014BE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE390D3D1F28B3B700014BE7 /* AppDelegate.swift */; };
 		CE390D401F28B3B700014BE7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE390D3F1F28B3B700014BE7 /* ViewController.swift */; };
 		CE390D431F28B3B700014BE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE390D411F28B3B700014BE7 /* Main.storyboard */; };
@@ -33,6 +45,8 @@
 		CE390D701F28E2D500014BE7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE390D6F1F28E2D500014BE7 /* SettingsViewController.swift */; };
 		CE49CDD61F2F154400EC114F /* SettingsViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE49CDD51F2F154400EC114F /* SettingsViewControllerExtension.swift */; };
 		CE49CDD81F2F6F2600EC114F /* PizzaTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE49CDD71F2F6F2600EC114F /* PizzaTypeTableViewCell.swift */; };
+		CE5B7DDE1F39C5020060D69C /* StyleableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B7DDD1F39C5020060D69C /* StyleableImageView.swift */; };
+		CE5B7DE01F39DB4A0060D69C /* raw.json in Resources */ = {isa = PBXBuildFile; fileRef = CE5B7DDF1F39DB4A0060D69C /* raw.json */; };
 		CE6C09B31F309B1A00D9C9EA /* FoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6C09B21F309B1A00D9C9EA /* FoodViewController.swift */; };
 		CE6C09B51F309B2800D9C9EA /* BeveragesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6C09B41F309B2800D9C9EA /* BeveragesViewController.swift */; };
 		CE6C09B71F309B3200D9C9EA /* ExtrasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6C09B61F309B3200D9C9EA /* ExtrasViewController.swift */; };
@@ -42,7 +56,6 @@
 		CE6C09BF1F30A0F200D9C9EA /* FoodTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6C09BE1F30A0F200D9C9EA /* FoodTypeTableViewCell.swift */; };
 		CE6C09C71F30B99B00D9C9EA /* SelectedPizzaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6C09C61F30B99B00D9C9EA /* SelectedPizzaType.swift */; };
 		CE6C09C91F30B9B300D9C9EA /* SelectedPizzaType.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE6C09C81F30B9B300D9C9EA /* SelectedPizzaType.xib */; };
-		CE87A3531F2B221300645A47 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE87A3521F2B221300645A47 /* Colors.swift */; };
 		CE87A3551F2B52E300645A47 /* OrderHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE87A3541F2B52E300645A47 /* OrderHistoryViewController.swift */; };
 		CE87A3571F2B531900645A47 /* OrderHistoryViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE87A3561F2B531900645A47 /* OrderHistoryViewControllerExtension.swift */; };
 		CE87A3591F2B537C00645A47 /* OrderHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE87A3581F2B537C00645A47 /* OrderHistoryTableViewCell.swift */; };
@@ -61,9 +74,21 @@
 		3E3F92601052C8669D8A0A86 /* Pods_DeliveryAmp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeliveryAmp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F6CC2E9BCDF940870106FEC /* Pods-DeliveryAmp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliveryAmp.release.xcconfig"; path = "Pods/Target Support Files/Pods-DeliveryAmp/Pods-DeliveryAmp.release.xcconfig"; sourceTree = "<group>"; };
 		AF3E5A6405998788F99B2F0E /* Pods-DeliveryAmp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliveryAmp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DeliveryAmp/Pods-DeliveryAmp.debug.xcconfig"; sourceTree = "<group>"; };
-		CE168DAD1F30763B00721F5B /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		CE168DAF1F308A6500721F5B /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
-		CE168DB11F308DB500721F5B /* EmptySegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptySegue.swift; sourceTree = "<group>"; };
+		CE1022BF1F349EA3008A28EA /* Stuff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stuff.swift; sourceTree = "<group>"; };
+		CE1022C11F34B203008A28EA /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CE1022C31F34BA16008A28EA /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LaunchViewController.swift; path = Controllers/LaunchViewController.swift; sourceTree = "<group>"; };
+		CE1022C51F34BEBE008A28EA /* Beverage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Beverage.swift; path = Models/Beverage.swift; sourceTree = "<group>"; };
+		CE1022C71F34BEE5008A28EA /* Extra.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extra.swift; path = Models/Extra.swift; sourceTree = "<group>"; };
+		CE168DAD1F30763B00721F5B /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = Controllers/MenuViewController.swift; sourceTree = "<group>"; };
+		CE168DAF1F308A6500721F5B /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContainerViewController.swift; path = Container/ContainerViewController.swift; sourceTree = "<group>"; };
+		CE168DB11F308DB500721F5B /* EmptySegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmptySegue.swift; path = Container/EmptySegue.swift; sourceTree = "<group>"; };
+		CE2D044E1F345C660074ECBC /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewExtension.swift; path = Extensions/UIViewExtension.swift; sourceTree = "<group>"; };
+		CE2D04501F346F260074ECBC /* MyColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyColors.swift; path = Colors/MyColors.swift; sourceTree = "<group>"; };
+		CE2D04521F346F4F0074ECBC /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Product.swift; path = Models/Product.swift; sourceTree = "<group>"; };
+		CE2D04541F347B8B0074ECBC /* ServingSizes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServingSizes.swift; path = Models/ServingSizes.swift; sourceTree = "<group>"; };
+		CE2D04561F347E050074ECBC /* ProductType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductType.swift; path = Models/ProductType.swift; sourceTree = "<group>"; };
+		CE2D04581F3480F20074ECBC /* Ingredient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ingredient.swift; path = Models/Ingredient.swift; sourceTree = "<group>"; };
+		CE2D045D1F3485750074ECBC /* LocalRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocalRequest.swift; path = "Local Request/LocalRequest.swift"; sourceTree = "<group>"; };
 		CE390D3A1F28B3B700014BE7 /* DeliveryAmp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeliveryAmp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE390D3D1F28B3B700014BE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE390D3F1F28B3B700014BE7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -71,8 +96,8 @@
 		CE390D441F28B3B700014BE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE390D471F28B3B700014BE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE390D491F28B3B700014BE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE390D501F28BCBC00014BE7 /* StyleableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleableTextField.swift; sourceTree = "<group>"; };
-		CE390D521F28BE9000014BE7 /* StyleableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleableButton.swift; sourceTree = "<group>"; };
+		CE390D501F28BCBC00014BE7 /* StyleableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StyleableTextField.swift; path = Views/StyleableTextField.swift; sourceTree = "<group>"; };
+		CE390D521F28BE9000014BE7 /* StyleableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StyleableButton.swift; path = Views/StyleableButton.swift; sourceTree = "<group>"; };
 		CE390D571F28C3A200014BE7 /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "fontawesome-webfont.ttf"; path = "Fonts/fontawesome-webfont.ttf"; sourceTree = "<group>"; };
 		CE390D581F28C3A200014BE7 /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-BlackItalic.ttf"; path = "Fonts/Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
 		CE390D591F28C3A200014BE7 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Bold.ttf"; path = "Fonts/Roboto-Bold.ttf"; sourceTree = "<group>"; };
@@ -84,32 +109,33 @@
 		CE390D5F1F28C3A200014BE7 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Regular.ttf"; path = "Fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		CE390D601F28C3A200014BE7 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Thin.ttf"; path = "Fonts/Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		CE390D611F28C3A200014BE7 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-ThinItalic.ttf"; path = "Fonts/Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
-		CE390D6D1F28DEEB00014BE7 /* ViewWithShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewWithShadow.swift; sourceTree = "<group>"; };
+		CE390D6D1F28DEEB00014BE7 /* ViewWithShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewWithShadow.swift; path = Views/ViewWithShadow.swift; sourceTree = "<group>"; };
 		CE390D6F1F28E2D500014BE7 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		CE49CDD51F2F154400EC114F /* SettingsViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewControllerExtension.swift; sourceTree = "<group>"; };
-		CE49CDD71F2F6F2600EC114F /* PizzaTypeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PizzaTypeTableViewCell.swift; sourceTree = "<group>"; };
-		CE6C09B21F309B1A00D9C9EA /* FoodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodViewController.swift; sourceTree = "<group>"; };
-		CE6C09B41F309B2800D9C9EA /* BeveragesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeveragesViewController.swift; sourceTree = "<group>"; };
-		CE6C09B61F309B3200D9C9EA /* ExtrasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtrasViewController.swift; sourceTree = "<group>"; };
-		CE6C09B81F309B4600D9C9EA /* FoodViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodViewControllerExtension.swift; sourceTree = "<group>"; };
-		CE6C09BA1F309B5900D9C9EA /* BeveragesViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeveragesViewControllerExtension.swift; sourceTree = "<group>"; };
-		CE6C09BC1F309B6A00D9C9EA /* ExtrasViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtrasViewControllerExtensions.swift; sourceTree = "<group>"; };
-		CE6C09BE1F30A0F200D9C9EA /* FoodTypeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodTypeTableViewCell.swift; sourceTree = "<group>"; };
-		CE6C09C61F30B99B00D9C9EA /* SelectedPizzaType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedPizzaType.swift; sourceTree = "<group>"; };
-		CE6C09C81F30B9B300D9C9EA /* SelectedPizzaType.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectedPizzaType.xib; sourceTree = "<group>"; };
-		CE87A3521F2B221300645A47 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		CE49CDD51F2F154400EC114F /* SettingsViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewControllerExtension.swift; path = Extensions/SettingsViewControllerExtension.swift; sourceTree = "<group>"; };
+		CE49CDD71F2F6F2600EC114F /* PizzaTypeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PizzaTypeTableViewCell.swift; path = CellViews/PizzaTypeTableViewCell.swift; sourceTree = "<group>"; };
+		CE5B7DDD1F39C5020060D69C /* StyleableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StyleableImageView.swift; path = Views/StyleableImageView.swift; sourceTree = "<group>"; };
+		CE5B7DDF1F39DB4A0060D69C /* raw.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = raw.json; sourceTree = "<group>"; };
+		CE6C09B21F309B1A00D9C9EA /* FoodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FoodViewController.swift; path = Container/FoodViewController.swift; sourceTree = "<group>"; };
+		CE6C09B41F309B2800D9C9EA /* BeveragesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeveragesViewController.swift; path = Container/BeveragesViewController.swift; sourceTree = "<group>"; };
+		CE6C09B61F309B3200D9C9EA /* ExtrasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtrasViewController.swift; path = Container/ExtrasViewController.swift; sourceTree = "<group>"; };
+		CE6C09B81F309B4600D9C9EA /* FoodViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FoodViewControllerExtension.swift; path = Extensions/FoodViewControllerExtension.swift; sourceTree = "<group>"; };
+		CE6C09BA1F309B5900D9C9EA /* BeveragesViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeveragesViewControllerExtension.swift; path = Extensions/BeveragesViewControllerExtension.swift; sourceTree = "<group>"; };
+		CE6C09BC1F309B6A00D9C9EA /* ExtrasViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtrasViewControllerExtensions.swift; path = Extensions/ExtrasViewControllerExtensions.swift; sourceTree = "<group>"; };
+		CE6C09BE1F30A0F200D9C9EA /* FoodTypeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FoodTypeTableViewCell.swift; path = CellViews/FoodTypeTableViewCell.swift; sourceTree = "<group>"; };
+		CE6C09C61F30B99B00D9C9EA /* SelectedPizzaType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectedPizzaType.swift; path = Views/SelectedPizzaType.swift; sourceTree = "<group>"; };
+		CE6C09C81F30B9B300D9C9EA /* SelectedPizzaType.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SelectedPizzaType.xib; path = Views/SelectedPizzaType.xib; sourceTree = "<group>"; };
 		CE87A3541F2B52E300645A47 /* OrderHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderHistoryViewController.swift; sourceTree = "<group>"; };
-		CE87A3561F2B531900645A47 /* OrderHistoryViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderHistoryViewControllerExtension.swift; sourceTree = "<group>"; };
-		CE87A3581F2B537C00645A47 /* OrderHistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderHistoryTableViewCell.swift; sourceTree = "<group>"; };
-		CEF1997B1F332617005E74B4 /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
+		CE87A3561F2B531900645A47 /* OrderHistoryViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderHistoryViewControllerExtension.swift; path = Extensions/OrderHistoryViewControllerExtension.swift; sourceTree = "<group>"; };
+		CE87A3581F2B537C00645A47 /* OrderHistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderHistoryTableViewCell.swift; path = CellViews/OrderHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		CEF1997B1F332617005E74B4 /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideMenuTableViewCell.swift; path = CellViews/SideMenuTableViewCell.swift; sourceTree = "<group>"; };
 		CEF1997D1F3327E1005E74B4 /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		CEF199801F334739005E74B4 /* LegalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegalViewController.swift; sourceTree = "<group>"; };
-		CEF199831F336B2C005E74B4 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
-		CEF199851F3373DA005E74B4 /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
-		CEF305151F29CDDC009A740A /* CreateYourOwnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateYourOwnViewController.swift; sourceTree = "<group>"; };
-		CEF305171F2A02F7009A740A /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientTableViewCell.swift; sourceTree = "<group>"; };
-		CEF3051A1F2A057D009A740A /* CreateYourOwnViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateYourOwnViewControllerExtension.swift; sourceTree = "<group>"; };
-		CEF3051C1F2A2413009A740A /* IngredientGroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientGroupTableViewCell.swift; sourceTree = "<group>"; };
+		CEF199831F336B2C005E74B4 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alert.swift; path = Helpers/Alert.swift; sourceTree = "<group>"; };
+		CEF199851F3373DA005E74B4 /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Regex.swift; path = Helpers/Regex.swift; sourceTree = "<group>"; };
+		CEF305151F29CDDC009A740A /* CreateYourOwnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateYourOwnViewController.swift; path = Controllers/CreateYourOwnViewController.swift; sourceTree = "<group>"; };
+		CEF305171F2A02F7009A740A /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IngredientTableViewCell.swift; path = CellViews/IngredientTableViewCell.swift; sourceTree = "<group>"; };
+		CEF3051A1F2A057D009A740A /* CreateYourOwnViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateYourOwnViewControllerExtension.swift; path = Extensions/CreateYourOwnViewControllerExtension.swift; sourceTree = "<group>"; };
+		CEF3051C1F2A2413009A740A /* IngredientGroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IngredientGroupTableViewCell.swift; path = CellViews/IngredientGroupTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,8 +184,38 @@
 			children = (
 				CEF305151F29CDDC009A740A /* CreateYourOwnViewController.swift */,
 				CE168DAD1F30763B00721F5B /* MenuViewController.swift */,
+				CE1022C31F34BA16008A28EA /* LaunchViewController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		CE2D044B1F345A8E0074ECBC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CE1022C51F34BEBE008A28EA /* Beverage.swift */,
+				CE2D04521F346F4F0074ECBC /* Product.swift */,
+				CE2D04541F347B8B0074ECBC /* ServingSizes.swift */,
+				CE2D04561F347E050074ECBC /* ProductType.swift */,
+				CE2D04581F3480F20074ECBC /* Ingredient.swift */,
+				CE1022C71F34BEE5008A28EA /* Extra.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		CE2D045A1F3485120074ECBC /* API Manager */ = {
+			isa = PBXGroup;
+			children = (
+				CE2D045D1F3485750074ECBC /* LocalRequest.swift */,
+			);
+			name = "API Manager";
+			sourceTree = "<group>";
+		};
+		CE2D04611F348A8E0074ECBC /* TestFiles */ = {
+			isa = PBXGroup;
+			children = (
+				CE5B7DDF1F39DB4A0060D69C /* raw.json */,
+			);
+			path = TestFiles;
 			sourceTree = "<group>";
 		};
 		CE390D311F28B3B700014BE7 = {
@@ -183,20 +239,23 @@
 		CE390D3C1F28B3B700014BE7 /* DeliveryAmp */ = {
 			isa = PBXGroup;
 			children = (
-				CEF199821F336AEC005E74B4 /* Helpers */,
-				CE390D4F1F28B92100014BE7 /* Views */,
-				CE390D541F28C30B00014BE7 /* Fonts */,
-				CE87A3511F2B21F400645A47 /* Colors */,
-				CE87A35A1F2B5D1200645A47 /* CellViews */,
-				CEF305191F2A048C009A740A /* Extensions */,
-				CE7FBB541F29C16B0027CF85 /* Storyboards */,
-				CE168DB31F308EDA00721F5B /* Container */,
-				CE168DB41F308F1E00721F5B /* Controllers */,
-				CEF1997F1F334122005E74B4 /* SideMenu */,
+				CE390D491F28B3B700014BE7 /* Info.plist */,
 				CE390D3D1F28B3B700014BE7 /* AppDelegate.swift */,
 				CE390D3F1F28B3B700014BE7 /* ViewController.swift */,
 				CE390D441F28B3B700014BE7 /* Assets.xcassets */,
-				CE390D491F28B3B700014BE7 /* Info.plist */,
+				CE2D045A1F3485120074ECBC /* API Manager */,
+				CE87A35A1F2B5D1200645A47 /* CellViews */,
+				CE87A3511F2B21F400645A47 /* Colors */,
+				CE168DB31F308EDA00721F5B /* Container */,
+				CE168DB41F308F1E00721F5B /* Controllers */,
+				CEF305191F2A048C009A740A /* Extensions */,
+				CE390D541F28C30B00014BE7 /* Fonts */,
+				CEF199821F336AEC005E74B4 /* Helpers */,
+				CE2D044B1F345A8E0074ECBC /* Models */,
+				CEF1997F1F334122005E74B4 /* SideMenu */,
+				CE7FBB541F29C16B0027CF85 /* Storyboards */,
+				CE2D04611F348A8E0074ECBC /* TestFiles */,
+				CE390D4F1F28B92100014BE7 /* Views */,
 			);
 			path = DeliveryAmp;
 			sourceTree = "<group>";
@@ -209,6 +268,7 @@
 				CE390D6D1F28DEEB00014BE7 /* ViewWithShadow.swift */,
 				CE6C09C61F30B99B00D9C9EA /* SelectedPizzaType.swift */,
 				CE6C09C81F30B9B300D9C9EA /* SelectedPizzaType.xib */,
+				CE5B7DDD1F39C5020060D69C /* StyleableImageView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -243,7 +303,7 @@
 		CE87A3511F2B21F400645A47 /* Colors */ = {
 			isa = PBXGroup;
 			children = (
-				CE87A3521F2B221300645A47 /* Colors.swift */,
+				CE2D04501F346F260074ECBC /* MyColors.swift */,
 			);
 			name = Colors;
 			sourceTree = "<group>";
@@ -269,7 +329,7 @@
 				CE87A3541F2B52E300645A47 /* OrderHistoryViewController.swift */,
 				CEF199801F334739005E74B4 /* LegalViewController.swift */,
 			);
-			name = SideMenu;
+			path = SideMenu;
 			sourceTree = "<group>";
 		};
 		CEF199821F336AEC005E74B4 /* Helpers */ = {
@@ -277,6 +337,8 @@
 			children = (
 				CEF199831F336B2C005E74B4 /* Alert.swift */,
 				CEF199851F3373DA005E74B4 /* Regex.swift */,
+				CE1022BF1F349EA3008A28EA /* Stuff.swift */,
+				CE1022C11F34B203008A28EA /* Constants.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -290,6 +352,7 @@
 				CE6C09B81F309B4600D9C9EA /* FoodViewControllerExtension.swift */,
 				CE6C09BA1F309B5900D9C9EA /* BeveragesViewControllerExtension.swift */,
 				CE6C09BC1F309B6A00D9C9EA /* ExtrasViewControllerExtensions.swift */,
+				CE2D044E1F345C660074ECBC /* UIViewExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -366,6 +429,7 @@
 				CE6C09C91F30B9B300D9C9EA /* SelectedPizzaType.xib in Resources */,
 				CE390D671F28C3A200014BE7 /* Roboto-LightItalic.ttf in Resources */,
 				CE390D661F28C3A200014BE7 /* Roboto-Italic.ttf in Resources */,
+				CE5B7DE01F39DB4A0060D69C /* raw.json in Resources */,
 				CE390D651F28C3A200014BE7 /* Roboto-BoldItalic.ttf in Resources */,
 				CE390D6C1F28C3A200014BE7 /* Roboto-ThinItalic.ttf in Resources */,
 				CE390D691F28C3A200014BE7 /* Roboto-MediumItalic.ttf in Resources */,
@@ -402,11 +466,15 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-DeliveryAmp/Pods-DeliveryAmp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -441,16 +509,25 @@
 				CEF1997C1F332617005E74B4 /* SideMenuTableViewCell.swift in Sources */,
 				CEF3051D1F2A2413009A740A /* IngredientGroupTableViewCell.swift in Sources */,
 				CE390D401F28B3B700014BE7 /* ViewController.swift in Sources */,
+				CE1022C61F34BEBE008A28EA /* Beverage.swift in Sources */,
 				CE390D531F28BE9000014BE7 /* StyleableButton.swift in Sources */,
+				CE2D045E1F3485750074ECBC /* LocalRequest.swift in Sources */,
+				CE2D04571F347E050074ECBC /* ProductType.swift in Sources */,
+				CE5B7DDE1F39C5020060D69C /* StyleableImageView.swift in Sources */,
+				CE2D044F1F345C660074ECBC /* UIViewExtension.swift in Sources */,
 				CEF1997E1F3327E1005E74B4 /* SideMenuViewController.swift in Sources */,
 				CE6C09C71F30B99B00D9C9EA /* SelectedPizzaType.swift in Sources */,
 				CE49CDD61F2F154400EC114F /* SettingsViewControllerExtension.swift in Sources */,
+				CE2D04531F346F4F0074ECBC /* Product.swift in Sources */,
 				CE390D6E1F28DEEB00014BE7 /* ViewWithShadow.swift in Sources */,
+				CE1022C21F34B203008A28EA /* Constants.swift in Sources */,
 				CE6C09BD1F309B6A00D9C9EA /* ExtrasViewControllerExtensions.swift in Sources */,
 				CE87A3551F2B52E300645A47 /* OrderHistoryViewController.swift in Sources */,
 				CE6C09B31F309B1A00D9C9EA /* FoodViewController.swift in Sources */,
 				CE390D511F28BCBC00014BE7 /* StyleableTextField.swift in Sources */,
+				CE2D04511F346F260074ECBC /* MyColors.swift in Sources */,
 				CE6C09BB1F309B5900D9C9EA /* BeveragesViewControllerExtension.swift in Sources */,
+				CE1022C81F34BEE5008A28EA /* Extra.swift in Sources */,
 				CE6C09B51F309B2800D9C9EA /* BeveragesViewController.swift in Sources */,
 				CEF305181F2A02F7009A740A /* IngredientTableViewCell.swift in Sources */,
 				CEF305161F29CDDC009A740A /* CreateYourOwnViewController.swift in Sources */,
@@ -462,11 +539,14 @@
 				CE87A3571F2B531900645A47 /* OrderHistoryViewControllerExtension.swift in Sources */,
 				CEF199841F336B2C005E74B4 /* Alert.swift in Sources */,
 				CE87A3591F2B537C00645A47 /* OrderHistoryTableViewCell.swift in Sources */,
-				CE87A3531F2B221300645A47 /* Colors.swift in Sources */,
+				CE1022C41F34BA16008A28EA /* LaunchViewController.swift in Sources */,
 				CE168DB01F308A6500721F5B /* ContainerViewController.swift in Sources */,
 				CE6C09B71F309B3200D9C9EA /* ExtrasViewController.swift in Sources */,
+				CE1022C01F349EA3008A28EA /* Stuff.swift in Sources */,
 				CE168DB21F308DB500721F5B /* EmptySegue.swift in Sources */,
+				CE2D04551F347B8B0074ECBC /* ServingSizes.swift in Sources */,
 				CEF3051B1F2A057D009A740A /* CreateYourOwnViewControllerExtension.swift in Sources */,
+				CE2D04591F3480F20074ECBC /* Ingredient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

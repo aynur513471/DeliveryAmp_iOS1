@@ -12,12 +12,6 @@ import UIKit
 @IBDesignable
 class StyleableButton : UIButton {
     
-    let isSelectedBackgroundColor = MyColors.isSelectedButtonBackgroundColor
-    let isSelectedBorderColor = MyColors.isSelectedButtonBackgroundColor
-    let notSelectedBackgroundColor = UIColor.white
-    var notSelectedBorderColor = UIColor.clear.cgColor
-    
-    
     @IBInspectable var cornerRadius : CGFloat = CGFloat() {
         didSet {
             layer.cornerRadius = cornerRadius
@@ -27,7 +21,6 @@ class StyleableButton : UIButton {
     @IBInspectable var borderColor : UIColor = UIColor.clear {
         didSet{
             layer.borderColor = borderColor.cgColor
-            self.notSelectedBorderColor = borderColor.cgColor
         }
     }
     
@@ -44,14 +37,27 @@ class StyleableButton : UIButton {
         }
     }
     
+    func configureForScrollView() {
+        self.cornerRadius = 15
+        self.borderColor = MyColors.buttonBorderColor
+        self.borderWidth = 1
+        
+        
+        self.backgroundColor = UIColor.white
+        self.titleLabel?.font = UIFont(name: "Roboto-Medium", size: CGFloat(11))
+        self.setTitleColor(MyColors.buttonTextColor, for: .normal)
+        self.setTitleColor(UIColor.white, for: .selected)
+
+    }
+    
     func switchBackground() {
         if self.isSelected {
-            self.backgroundColor = isSelectedBackgroundColor
-            self.layer.borderColor = isSelectedBorderColor.cgColor
+            self.backgroundColor = MyColors.buttonIsSelectedBackgroundColor
+            self.layer.borderColor = MyColors.buttonIsSelectedBackgroundColor.cgColor
         } else {
-            self.tintColor = UIColor.white
-            self.backgroundColor = notSelectedBackgroundColor
-            self.layer.borderColor = notSelectedBorderColor
+            self.tintColor = MyColors.buttonDefaultBackgroundColor
+            self.backgroundColor = MyColors.buttonDefaultBackgroundColor
+            self.layer.borderColor = MyColors.buttonBorderColor.cgColor
         }
     }
 

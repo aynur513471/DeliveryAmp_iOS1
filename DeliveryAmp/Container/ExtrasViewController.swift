@@ -10,6 +10,14 @@ import UIKit
 
 class ExtrasViewController: UIViewController {
 
+    // MARK: - Variables
+    
+    var allProducts: [Product]!
+    var servingSizesBeverages: [ServingSize]!
+    var servingSizesFood: [ServingSize]!
+    var allProductTypes: [ProductType]!
+    var allIngredients: [Ingredient]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

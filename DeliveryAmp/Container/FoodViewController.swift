@@ -14,25 +14,39 @@ class FoodViewController: UIViewController {
     @IBOutlet weak var foodTable: UITableView!
     
     // MARK: - Variables 
-    
-    var thereIsCellTapped = false
+
     var selectedRowIndex = -1
 
     var selectedPizzaList: [[SelectedPizzaType]] = [[]]
+
+    var allProducts: [Product]!
+    var servingSizesFood: [ServingSize]!
+    var allProductTypes: [ProductType]!
+    var allIngredients: [Ingredient]!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setDelegates()
-        
-        selectedPizzaList.reserveCapacity(10)
-        for index in 0...10 {
-            selectedPizzaList.append([])
-        }
 
         // Do any additional setup after loading the view.
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        selectedPizzaList.reserveCapacity(allProducts.count)
+        for _ in 0...allProducts.count {
+            selectedPizzaList.append([])
+        }
+        
+        
+        //foodTable.backgroundView?.addDiagonalGradient(self.view, [MyColors.darkBlue.cgColor, MyColors.lightBlue.cgColor], self.view.frame)
+
+        //foodTable.backgroundColor = UIColor(red: 207/255, green: 231/255, blue: 241/255, alpha: 1)
+
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -79,13 +93,28 @@ class FoodViewController: UIViewController {
     }
     
     @IBAction func goToCustomize(_ sender: StyleableButton) {
-      //  var allControllers = tabBarController?.viewControllers
-      //  var destination = allControllers?[1] as! CreateYourOwnViewController
+        let destination = tabBarController?.viewControllers?[1] as! UINavigationController
+        let createYourOwn = destination.topViewController as! CreateYourOwnViewController
         
-     //   destination.selectedPizzaName.text = "Dada"
+        let indexPath = IndexPath(row: sender.tag, section: 0)
+        let cell = foodTable.cellForRow(at: indexPath) as! FoodTypeTableViewCell
         
+        _ = createYourOwn.view
+        /*
+        if #available(iOS 9.0, *) {
+            createYourOwn.loadViewIfNeeded()
+        } else {
+            // Fallback on earlier versions
+        }*/
+
+        createYourOwn.usedIngredients = allIngredients.filter{allProducts[selectedRowIndex].ingredientIds.contains($0.id)}.map{($0, 0)}
+        createYourOwn.selectedPizzaName.text = cell.foodNameLabel.text
+        createYourOwn.selectedPizzaPrice.text = cell.foodPriceLabel.text
+        createYourOwn.selectedPizzaPicture.image = cell.pizzaImage.image
+        createYourOwn.selectedPizzaIngredients.text = cell.foodIngredientsLabel.text
+        createYourOwn.ingredientsTable.reloadData()
         tabBarController!.selectedIndex = 1
-        selectedRowIndex = -1 //optional
+      //  selectedRowIndex = -1 //optional
     }
     
 }

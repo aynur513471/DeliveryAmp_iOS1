@@ -1,20 +1,26 @@
 //
-//  SideMenuViewController.swift
+//  BeveragesViewController.swift
 //  DeliveryAmp
 //
-//  Created by User on 8/3/17.
+//  Created by User on 8/1/17.
 //
 //
 
 import UIKit
 
-class SideMenuViewController: UIViewController {
+class BeveragesViewController: UIViewController {
     
+    // MARK: - Variables
+    
+    var allProducts: [Product]!
+    var servingSizesBeverages: [ServingSize]!
+    var servingSizesFood: [ServingSize]!
+    var allProductTypes: [ProductType]!
+    var allIngredients: [Ingredient]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+
         // Do any additional setup after loading the view.
     }
 

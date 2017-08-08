@@ -1,0 +1,53 @@
+//
+//  Ingredient.swift
+//  DeliveryAmp
+//
+//  Created by User on 8/4/17.
+//
+//
+
+import Foundation
+import SwiftyJSON
+
+struct IngredientPropertyKey{
+    static let idKey = "id"
+    
+    static let nameKey = "name"
+    static let quantityKey = "quantity"
+    static let priceKey = "price"
+}
+
+class Ingredient: NSObject {
+    
+    var id: Int
+    
+    var name: String
+    var price: Double
+    
+    override init() {
+        self.id = -1
+        self.name = ""
+        self.price = -1
+    }
+    
+    init(id: Int, name: String, price: Double) {
+        self.id = id
+        self.name = name
+        self.price = price
+    }
+}
+
+extension Ingredient {
+    
+    static func decode(_ json: [String: JSON]) -> Ingredient? {
+        guard let id = json[IngredientPropertyKey.idKey]?.int,
+            let name = json[IngredientPropertyKey.nameKey]?.string,
+            let price = json[IngredientPropertyKey.priceKey]?.double
+            else {
+                return nil
+        }
+        
+        return Ingredient(id: id, name: name, price: price)
+    }
+        
+}
