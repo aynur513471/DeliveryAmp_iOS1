@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="T6N-gU-qBN" customClass="SelectedDrinkType" customModule="DeliveryAmp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="366" height="35"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.5L" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyc-c2-3fq">
+                    <rect key="frame" x="10" y="10" width="251" height="15"/>
+                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="11"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUc-b8-EJQ">
+                    <rect key="frame" x="336" y="7.5" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="4d4-Y1-Dtw"/>
+                        <constraint firstAttribute="width" secondItem="dUc-b8-EJQ" secondAttribute="height" multiplier="1:1" id="Rt3-j4-N5j"/>
+                    </constraints>
+                    <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="20"/>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$4.99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XV1-rb-vNz">
+                    <rect key="frame" x="271" y="10" width="60" height="14.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="hzI-tq-dWZ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="11"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="XV1-rb-vNz" secondAttribute="bottom" constant="10" id="0IM-vD-MvH"/>
+                <constraint firstItem="gyc-c2-3fq" firstAttribute="centerY" secondItem="T6N-gU-qBN" secondAttribute="centerY" id="0LD-WB-Yif"/>
+                <constraint firstItem="XV1-rb-vNz" firstAttribute="centerY" secondItem="T6N-gU-qBN" secondAttribute="centerY" id="3O8-cA-zDw"/>
+                <constraint firstItem="gyc-c2-3fq" firstAttribute="top" secondItem="T6N-gU-qBN" secondAttribute="top" constant="10" id="6Kr-sj-rKF"/>
+                <constraint firstItem="gyc-c2-3fq" firstAttribute="leading" secondItem="T6N-gU-qBN" secondAttribute="leading" constant="10" id="7ng-Cn-THd"/>
+                <constraint firstItem="dUc-b8-EJQ" firstAttribute="centerY" secondItem="T6N-gU-qBN" secondAttribute="centerY" id="BHq-94-0EF"/>
+                <constraint firstItem="dUc-b8-EJQ" firstAttribute="leading" secondItem="XV1-rb-vNz" secondAttribute="trailing" constant="5" id="GGs-p7-OR2"/>
+                <constraint firstItem="XV1-rb-vNz" firstAttribute="top" secondItem="T6N-gU-qBN" secondAttribute="top" constant="10" id="ONi-oE-Xz7"/>
+                <constraint firstAttribute="bottom" secondItem="gyc-c2-3fq" secondAttribute="bottom" constant="10" id="XPy-65-nei"/>
+                <constraint firstItem="XV1-rb-vNz" firstAttribute="leading" secondItem="gyc-c2-3fq" secondAttribute="trailing" constant="10" id="Ylz-wt-Rvt"/>
+                <constraint firstAttribute="trailing" secondItem="dUc-b8-EJQ" secondAttribute="trailing" constant="10" id="iw1-xP-Rx2"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="descriptionLabel" destination="gyc-c2-3fq" id="GFY-lf-cH1"/>
+                <outlet property="priceLabel" destination="XV1-rb-vNz" id="wva-vD-fXO"/>
+                <outlet property="removeButton" destination="dUc-b8-EJQ" id="MUU-Sf-40m"/>
+            </connections>
+            <point key="canvasLocation" x="-591" y="-70"/>
+        </view>
+    </objects>
+</document>

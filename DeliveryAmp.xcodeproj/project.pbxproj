@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		7B2D8BB6060FD10586244121 /* Pods_DeliveryAmp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3F92601052C8669D8A0A86 /* Pods_DeliveryAmp.framework */; };
+		86CBD45B1F34968C00806E67 /* SelectedDrinkType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CBD45A1F34968C00806E67 /* SelectedDrinkType.swift */; };
+		86CBD45D1F349B9500806E67 /* SelectedDrinkType.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86CBD45C1F349B9500806E67 /* SelectedDrinkType.xib */; };
+		86F232581F3483B900AF6451 /* BeveragesTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F232571F3483B900AF6451 /* BeveragesTypeTableViewCell.swift */; };
 		CE168DAE1F30763B00721F5B /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168DAD1F30763B00721F5B /* MenuViewController.swift */; };
 		CE168DB01F308A6500721F5B /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168DAF1F308A6500721F5B /* ContainerViewController.swift */; };
 		CE168DB21F308DB500721F5B /* EmptySegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168DB11F308DB500721F5B /* EmptySegue.swift */; };
@@ -59,6 +62,9 @@
 
 /* Begin PBXFileReference section */
 		3E3F92601052C8669D8A0A86 /* Pods_DeliveryAmp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeliveryAmp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		86CBD45A1F34968C00806E67 /* SelectedDrinkType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedDrinkType.swift; sourceTree = "<group>"; };
+		86CBD45C1F349B9500806E67 /* SelectedDrinkType.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectedDrinkType.xib; sourceTree = "<group>"; };
+		86F232571F3483B900AF6451 /* BeveragesTypeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeveragesTypeTableViewCell.swift; sourceTree = "<group>"; };
 		8F6CC2E9BCDF940870106FEC /* Pods-DeliveryAmp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliveryAmp.release.xcconfig"; path = "Pods/Target Support Files/Pods-DeliveryAmp/Pods-DeliveryAmp.release.xcconfig"; sourceTree = "<group>"; };
 		AF3E5A6405998788F99B2F0E /* Pods-DeliveryAmp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliveryAmp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DeliveryAmp/Pods-DeliveryAmp.debug.xcconfig"; sourceTree = "<group>"; };
 		CE168DAD1F30763B00721F5B /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -209,6 +215,8 @@
 				CE390D6D1F28DEEB00014BE7 /* ViewWithShadow.swift */,
 				CE6C09C61F30B99B00D9C9EA /* SelectedPizzaType.swift */,
 				CE6C09C81F30B9B300D9C9EA /* SelectedPizzaType.xib */,
+				86CBD45A1F34968C00806E67 /* SelectedDrinkType.swift */,
+				86CBD45C1F349B9500806E67 /* SelectedDrinkType.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -257,6 +265,7 @@
 				CE49CDD71F2F6F2600EC114F /* PizzaTypeTableViewCell.swift */,
 				CE6C09BE1F30A0F200D9C9EA /* FoodTypeTableViewCell.swift */,
 				CEF1997B1F332617005E74B4 /* SideMenuTableViewCell.swift */,
+				86F232571F3483B900AF6451 /* BeveragesTypeTableViewCell.swift */,
 			);
 			name = CellViews;
 			sourceTree = "<group>";
@@ -328,8 +337,8 @@
 				TargetAttributes = {
 					CE390D391F28B3B700014BE7 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 37UC87966C;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = S5473HDEK5;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -365,6 +374,7 @@
 				CE390D6A1F28C3A200014BE7 /* Roboto-Regular.ttf in Resources */,
 				CE6C09C91F30B9B300D9C9EA /* SelectedPizzaType.xib in Resources */,
 				CE390D671F28C3A200014BE7 /* Roboto-LightItalic.ttf in Resources */,
+				86CBD45D1F349B9500806E67 /* SelectedDrinkType.xib in Resources */,
 				CE390D661F28C3A200014BE7 /* Roboto-Italic.ttf in Resources */,
 				CE390D651F28C3A200014BE7 /* Roboto-BoldItalic.ttf in Resources */,
 				CE390D6C1F28C3A200014BE7 /* Roboto-ThinItalic.ttf in Resources */,
@@ -392,7 +402,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		8A652070DECAC6F2E48A76A1 /* [CP] Embed Pods Frameworks */ = {
@@ -436,11 +446,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE6C09B91F309B4600D9C9EA /* FoodViewControllerExtension.swift in Sources */,
+				86CBD45B1F34968C00806E67 /* SelectedDrinkType.swift in Sources */,
 				CEF199861F3373DA005E74B4 /* Regex.swift in Sources */,
 				CE6C09BF1F30A0F200D9C9EA /* FoodTypeTableViewCell.swift in Sources */,
 				CEF1997C1F332617005E74B4 /* SideMenuTableViewCell.swift in Sources */,
 				CEF3051D1F2A2413009A740A /* IngredientGroupTableViewCell.swift in Sources */,
 				CE390D401F28B3B700014BE7 /* ViewController.swift in Sources */,
+				86F232581F3483B900AF6451 /* BeveragesTypeTableViewCell.swift in Sources */,
 				CE390D531F28BE9000014BE7 /* StyleableButton.swift in Sources */,
 				CEF1997E1F3327E1005E74B4 /* SideMenuViewController.swift in Sources */,
 				CE6C09C71F30B99B00D9C9EA /* SelectedPizzaType.swift in Sources */,
@@ -591,13 +603,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 37UC87966C;
+				DEVELOPMENT_TEAM = S5473HDEK5;
 				INFOPLIST_FILE = DeliveryAmp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = TeamExtension.DeliveryAmp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "23b3dbb6-9390-4549-be36-a0aedc055f33";
+				PROVISIONING_PROFILE_SPECIFIER = TeamExtension_Dev;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -608,7 +621,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 37UC87966C;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DeliveryAmp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

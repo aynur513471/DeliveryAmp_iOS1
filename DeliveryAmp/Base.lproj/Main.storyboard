@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gSn-ET-y0T">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gSn-ET-y0T">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -42,7 +42,7 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="4eT-F3-Yq1">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="4eT-F3-Yq1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1587,14 +1587,330 @@
                     <view key="view" contentMode="scaleToFill" id="pFK-Ot-4D8">
                         <rect key="frame" x="0.0" y="0.0" width="394" height="573"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.24313725489999999" green="0.80000000000000004" blue="0.79215686269999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="173" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Lsk-es-RmQ" userLabel="Beverages Table">
+                                <rect key="frame" x="0.0" y="0.0" width="394" height="573"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DrinkCell" rowHeight="173" id="ine-6x-YKB" userLabel="BeveragesCell" customClass="BeveragesTypeTableViewCell" customModule="DeliveryAmp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="394" height="173"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ine-6x-YKB" id="p0u-y3-pcd">
+                                            <rect key="frame" x="0.0" y="0.0" width="394" height="172.66666666666666"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ao9-ac-LtL">
+                                                    <rect key="frame" x="0.0" y="0.0" width="394" height="173"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UsR-Cs-Hnm">
+                                                            <rect key="frame" x="0.0" y="0.0" width="394" height="70"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1gH-Em-wBv" userLabel="Drink Image">
+                                                                    <rect key="frame" x="5" y="5" width="60" height="60"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" secondItem="1gH-Em-wBv" secondAttribute="height" multiplier="1:1" id="CVi-8B-stR"/>
+                                                                        <constraint firstAttribute="height" constant="60" id="ihm-tH-qnz"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Orange Juice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAU-cI-GOv" userLabel="Drink Name Label">
+                                                                    <rect key="frame" x="73" y="5" width="256" height="25"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="25" id="yg3-nX-l6H"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Made from organic, fresh oranges, only after we will receive your order" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdP-BS-emR" userLabel="Drink Ingredients Label">
+                                                                    <rect key="frame" x="73" y="35" width="256" height="30"/>
+                                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="10"/>
+                                                                    <color key="textColor" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$4.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9P-cu-ODV" userLabel="Drink Price Label">
+                                                                    <rect key="frame" x="339" y="24" width="45" height="21"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="21" id="hk8-DE-nim"/>
+                                                                        <constraint firstAttribute="width" constant="45" id="sCr-IW-3Yw"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="14"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                            <constraints>
+                                                                <constraint firstItem="DAU-cI-GOv" firstAttribute="top" secondItem="UsR-Cs-Hnm" secondAttribute="top" constant="5" id="31B-A9-VXg"/>
+                                                                <constraint firstItem="vdP-BS-emR" firstAttribute="leading" secondItem="1gH-Em-wBv" secondAttribute="trailing" constant="8" id="3h0-6J-Mwq"/>
+                                                                <constraint firstItem="vdP-BS-emR" firstAttribute="leading" secondItem="DAU-cI-GOv" secondAttribute="leading" id="8y2-q1-0Vj"/>
+                                                                <constraint firstItem="1gH-Em-wBv" firstAttribute="top" secondItem="UsR-Cs-Hnm" secondAttribute="top" constant="5" id="95D-Va-D3a"/>
+                                                                <constraint firstItem="Z9P-cu-ODV" firstAttribute="centerY" secondItem="UsR-Cs-Hnm" secondAttribute="centerY" id="Lva-s1-dSl"/>
+                                                                <constraint firstItem="DAU-cI-GOv" firstAttribute="leading" secondItem="1gH-Em-wBv" secondAttribute="trailing" constant="8" id="PSX-rO-KYB"/>
+                                                                <constraint firstItem="Z9P-cu-ODV" firstAttribute="leading" secondItem="vdP-BS-emR" secondAttribute="trailing" constant="10" id="S4G-PD-OWY"/>
+                                                                <constraint firstItem="1gH-Em-wBv" firstAttribute="leading" secondItem="UsR-Cs-Hnm" secondAttribute="leading" constant="5" id="VjC-5R-arP"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Z9P-cu-ODV" secondAttribute="trailing" constant="10" id="kWY-au-MxB"/>
+                                                                <constraint firstAttribute="height" constant="70" id="p2r-49-TgP"/>
+                                                                <constraint firstItem="vdP-BS-emR" firstAttribute="top" secondItem="DAU-cI-GOv" secondAttribute="bottom" constant="5" id="pCS-XX-9aW"/>
+                                                                <constraint firstItem="vdP-BS-emR" firstAttribute="trailing" secondItem="DAU-cI-GOv" secondAttribute="trailing" id="pXw-ca-ZaG"/>
+                                                                <constraint firstAttribute="bottom" secondItem="vdP-BS-emR" secondAttribute="bottom" constant="5" id="rAR-s3-Dtg"/>
+                                                            </constraints>
+                                                        </view>
+                                                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2bx-Zi-Hh0" userLabel="Drink Size Scroll View">
+                                                            <rect key="frame" x="0.0" y="71" width="394" height="50"/>
+                                                            <subviews>
+                                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="AMC-ac-Lie" customClass="StyleableButton" customModule="DeliveryAmp" customModuleProvider="target">
+                                                                    <rect key="frame" x="12" y="10" width="70" height="30"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="70" id="udv-r6-mN4"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                                                    <state key="normal" title="0.25L">
+                                                                        <color key="titleColor" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    </state>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="15"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                            <color key="value" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                            <real key="value" value="1"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                    <connections>
+                                                                        <action selector="selectDrinkSize:" destination="ine-6x-YKB" eventType="touchUpInside" id="8CV-0c-rAN"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="4dz-8w-b7h" customClass="StyleableButton" customModule="DeliveryAmp" customModuleProvider="target">
+                                                                    <rect key="frame" x="87" y="10" width="70" height="30"/>
+                                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                                                    <state key="normal" title="0.33L">
+                                                                        <color key="titleColor" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    </state>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="15"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                            <color key="value" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                            <real key="value" value="1"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                    <connections>
+                                                                        <action selector="selectDrinkSize:" destination="ine-6x-YKB" eventType="touchUpInside" id="7J0-Uf-hNX"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="xWj-Nm-Bqp" customClass="StyleableButton" customModule="DeliveryAmp" customModuleProvider="target">
+                                                                    <rect key="frame" x="162" y="10" width="70" height="30"/>
+                                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                                                    <state key="normal" title="0.5L">
+                                                                        <color key="titleColor" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    </state>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="15"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                            <color key="value" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                            <real key="value" value="1"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                    <connections>
+                                                                        <action selector="selectDrinkSize:" destination="ine-6x-YKB" eventType="touchUpInside" id="XoA-PP-6l3"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="0FK-IU-Dd7" customClass="StyleableButton" customModule="DeliveryAmp" customModuleProvider="target">
+                                                                    <rect key="frame" x="237" y="10" width="70" height="30"/>
+                                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                                                    <state key="normal" title="1.0L">
+                                                                        <color key="titleColor" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    </state>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="15"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                            <real key="value" value="1"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                            <color key="value" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                    <connections>
+                                                                        <action selector="selectDrinkSize:" destination="ine-6x-YKB" eventType="touchUpInside" id="idK-sV-EBg"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="DhP-zD-uwT" customClass="StyleableButton" customModule="DeliveryAmp" customModuleProvider="target">
+                                                                    <rect key="frame" x="312" y="10" width="70" height="30"/>
+                                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                                                    <state key="normal" title="2.0L">
+                                                                        <color key="titleColor" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    </state>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="15"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                            <color key="value" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                            <real key="value" value="1"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                    <connections>
+                                                                        <action selector="selectDrinkSize:" destination="ine-6x-YKB" eventType="touchUpInside" id="jCb-sR-MMx"/>
+                                                                    </connections>
+                                                                </button>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="4dz-8w-b7h" firstAttribute="leading" secondItem="AMC-ac-Lie" secondAttribute="trailing" constant="5" id="2Cn-Fi-yDu"/>
+                                                                <constraint firstItem="0FK-IU-Dd7" firstAttribute="leading" secondItem="xWj-Nm-Bqp" secondAttribute="trailing" constant="5" id="2en-KR-LRe"/>
+                                                                <constraint firstItem="4dz-8w-b7h" firstAttribute="top" secondItem="AMC-ac-Lie" secondAttribute="top" id="5jQ-FR-iW2"/>
+                                                                <constraint firstAttribute="height" constant="50" id="7nJ-4i-X9Z"/>
+                                                                <constraint firstItem="AMC-ac-Lie" firstAttribute="leading" secondItem="2bx-Zi-Hh0" secondAttribute="leading" constant="12" id="CJf-gF-sOp"/>
+                                                                <constraint firstItem="0FK-IU-Dd7" firstAttribute="width" secondItem="AMC-ac-Lie" secondAttribute="width" id="FlY-Sl-ea7"/>
+                                                                <constraint firstItem="4dz-8w-b7h" firstAttribute="width" secondItem="AMC-ac-Lie" secondAttribute="width" id="I0s-le-9pU"/>
+                                                                <constraint firstAttribute="bottom" secondItem="AMC-ac-Lie" secondAttribute="bottom" constant="10" id="IqV-bF-VWP"/>
+                                                                <constraint firstItem="DhP-zD-uwT" firstAttribute="top" secondItem="AMC-ac-Lie" secondAttribute="top" id="J5p-U3-T54"/>
+                                                                <constraint firstAttribute="trailing" secondItem="DhP-zD-uwT" secondAttribute="trailing" constant="12" id="RY8-rd-jVd"/>
+                                                                <constraint firstItem="DhP-zD-uwT" firstAttribute="leading" secondItem="0FK-IU-Dd7" secondAttribute="trailing" constant="5" id="X2L-2a-SGM"/>
+                                                                <constraint firstItem="xWj-Nm-Bqp" firstAttribute="leading" secondItem="4dz-8w-b7h" secondAttribute="trailing" constant="5" id="Xnb-Ok-flw"/>
+                                                                <constraint firstItem="xWj-Nm-Bqp" firstAttribute="width" secondItem="AMC-ac-Lie" secondAttribute="width" id="hzk-VI-m5a"/>
+                                                                <constraint firstItem="xWj-Nm-Bqp" firstAttribute="top" secondItem="AMC-ac-Lie" secondAttribute="top" id="mOO-uV-9GZ"/>
+                                                                <constraint firstItem="AMC-ac-Lie" firstAttribute="top" secondItem="2bx-Zi-Hh0" secondAttribute="top" constant="10" id="ms6-hW-euD"/>
+                                                                <constraint firstItem="AMC-ac-Lie" firstAttribute="centerY" secondItem="2bx-Zi-Hh0" secondAttribute="centerY" id="p68-WW-NzV"/>
+                                                                <constraint firstItem="0FK-IU-Dd7" firstAttribute="top" secondItem="AMC-ac-Lie" secondAttribute="top" id="pHu-AV-caO"/>
+                                                                <constraint firstItem="DhP-zD-uwT" firstAttribute="width" secondItem="AMC-ac-Lie" secondAttribute="width" id="r0v-nY-sXg"/>
+                                                                <constraint firstAttribute="width" constant="394" id="z65-oS-7Xn"/>
+                                                            </constraints>
+                                                        </scrollView>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WaS-RI-U5H" userLabel="Selected Type">
+                                                            <rect key="frame" x="0.0" y="122" width="394" height="0.0"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </view>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="isg-Et-OoR" userLabel="Buttons View">
+                                                            <rect key="frame" x="0.0" y="123" width="394" height="50"/>
+                                                            <subviews>
+                                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sMW-jP-rDz" customClass="StyleableButton" customModule="DeliveryAmp" customModuleProvider="target">
+                                                                    <rect key="frame" x="12" y="10" width="70" height="30"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="70" id="Yrd-j9-LJR"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                                                    <state key="normal" title="Add">
+                                                                        <color key="titleColor" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    </state>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="15"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                            <real key="value" value="1"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                            <color key="value" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                    <connections>
+                                                                        <action selector="addDrink:" destination="By4-mN-9Et" eventType="touchUpInside" id="YpV-uu-5fl"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="o6z-U9-CgP" customClass="StyleableButton" customModule="DeliveryAmp" customModuleProvider="target">
+                                                                    <rect key="frame" x="312" y="10" width="70" height="30"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="70" id="2s1-HZ-JK8"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                                                    <state key="normal" title="Done">
+                                                                        <color key="titleColor" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    </state>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="15"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                            <real key="value" value="1"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                            <color key="value" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </button>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstItem="sMW-jP-rDz" firstAttribute="centerY" secondItem="isg-Et-OoR" secondAttribute="centerY" id="ADQ-WF-T65"/>
+                                                                <constraint firstItem="sMW-jP-rDz" firstAttribute="leading" secondItem="isg-Et-OoR" secondAttribute="leading" constant="12" id="crr-tc-Qdy"/>
+                                                                <constraint firstAttribute="trailing" secondItem="o6z-U9-CgP" secondAttribute="trailing" constant="12" id="lMe-RY-5Yg"/>
+                                                                <constraint firstItem="o6z-U9-CgP" firstAttribute="centerY" secondItem="isg-Et-OoR" secondAttribute="centerY" id="mko-F7-Mn6"/>
+                                                            </constraints>
+                                                        </view>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="WaS-RI-U5H" firstAttribute="top" secondItem="2bx-Zi-Hh0" secondAttribute="bottom" constant="1" id="1iy-iK-EOS"/>
+                                                        <constraint firstItem="WaS-RI-U5H" firstAttribute="leading" secondItem="Ao9-ac-LtL" secondAttribute="leading" id="Qzu-tR-rBc"/>
+                                                        <constraint firstItem="2bx-Zi-Hh0" firstAttribute="leading" secondItem="Ao9-ac-LtL" secondAttribute="leading" id="RaF-2f-d1T"/>
+                                                        <constraint firstItem="UsR-Cs-Hnm" firstAttribute="leading" secondItem="Ao9-ac-LtL" secondAttribute="leading" id="Rkg-jF-E4m"/>
+                                                        <constraint firstItem="isg-Et-OoR" firstAttribute="top" secondItem="WaS-RI-U5H" secondAttribute="bottom" constant="1" id="Zje-pz-Ikt"/>
+                                                        <constraint firstAttribute="trailing" secondItem="2bx-Zi-Hh0" secondAttribute="trailing" id="bkn-Rt-G9f"/>
+                                                        <constraint firstAttribute="trailing" secondItem="isg-Et-OoR" secondAttribute="trailing" id="fWC-re-fbQ"/>
+                                                        <constraint firstItem="isg-Et-OoR" firstAttribute="height" secondItem="2bx-Zi-Hh0" secondAttribute="height" id="mSc-fp-AMq"/>
+                                                        <constraint firstItem="isg-Et-OoR" firstAttribute="leading" secondItem="Ao9-ac-LtL" secondAttribute="leading" id="oun-lS-yFM"/>
+                                                        <constraint firstItem="2bx-Zi-Hh0" firstAttribute="top" secondItem="UsR-Cs-Hnm" secondAttribute="bottom" constant="1" id="pFa-mT-wg3"/>
+                                                        <constraint firstAttribute="bottom" secondItem="isg-Et-OoR" secondAttribute="bottom" id="qaY-PP-QRm"/>
+                                                        <constraint firstItem="UsR-Cs-Hnm" firstAttribute="top" secondItem="Ao9-ac-LtL" secondAttribute="top" id="sk5-md-pvx"/>
+                                                        <constraint firstAttribute="trailing" secondItem="UsR-Cs-Hnm" secondAttribute="trailing" id="vQr-rD-dY9"/>
+                                                        <constraint firstAttribute="trailing" secondItem="WaS-RI-U5H" secondAttribute="trailing" id="vt8-HR-kSv"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Ao9-ac-LtL" firstAttribute="top" secondItem="p0u-y3-pcd" secondAttribute="top" id="7oc-t6-C1S"/>
+                                                <constraint firstAttribute="bottom" secondItem="Ao9-ac-LtL" secondAttribute="bottom" id="K53-8w-kr4"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ao9-ac-LtL" secondAttribute="trailing" id="Mqm-yW-mBg"/>
+                                                <constraint firstItem="Ao9-ac-LtL" firstAttribute="leading" secondItem="p0u-y3-pcd" secondAttribute="leading" id="Rca-I5-fNN"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="addButton" destination="sMW-jP-rDz" id="GF7-C6-guo"/>
+                                            <outlet property="buttonsView" destination="isg-Et-OoR" id="Y11-jp-PyN"/>
+                                            <outlet property="drinkImage" destination="1gH-Em-wBv" id="0gg-tG-109"/>
+                                            <outlet property="drinkIngredientsLabel" destination="vdP-BS-emR" id="abt-po-OCF"/>
+                                            <outlet property="drinkNameLabel" destination="DAU-cI-GOv" id="BfF-Fr-CZC"/>
+                                            <outlet property="drinkPriceLabel" destination="Z9P-cu-ODV" id="CEi-0i-X2b"/>
+                                            <outlet property="drinkSizeHeightContraint" destination="7nJ-4i-X9Z" id="Fc6-Jm-f23"/>
+                                            <outlet property="drinkSizeScrollView" destination="2bx-Zi-Hh0" id="xsO-ea-B10"/>
+                                            <outlet property="selectedTypeBottomConstraint" destination="Zje-pz-Ikt" id="52Z-Zh-cVc"/>
+                                            <outlet property="selectedTypeTopConstraint" destination="1iy-iK-EOS" id="r67-ws-7O6"/>
+                                            <outlet property="selectedTypeView" destination="WaS-RI-U5H" id="y3G-hz-MSR"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5NR-vV-JtD" firstAttribute="top" secondItem="Lsk-es-RmQ" secondAttribute="bottom" id="13h-2L-9Yl"/>
+                            <constraint firstItem="Lsk-es-RmQ" firstAttribute="top" secondItem="0a5-dU-7UO" secondAttribute="bottom" id="D2V-6J-jao"/>
+                            <constraint firstItem="Lsk-es-RmQ" firstAttribute="leading" secondItem="pFK-Ot-4D8" secondAttribute="leading" id="hoS-gG-I6X"/>
+                            <constraint firstAttribute="trailing" secondItem="Lsk-es-RmQ" secondAttribute="trailing" id="xTo-oa-M5T"/>
+                        </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="394" height="573"/>
+                    <connections>
+                        <outlet property="drinkTable" destination="Lsk-es-RmQ" id="76T-UO-gri"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DzR-Wd-FW5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2948" y="-686"/>
+            <point key="canvasLocation" x="2932" y="-343"/>
         </scene>
         <!--Food View Controller-->
         <scene sceneID="225-1V-oCk">
@@ -1982,7 +2298,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XR3-v4-UAo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2974" y="-100"/>
+            <point key="canvasLocation" x="3661" y="-342"/>
         </scene>
         <!--Extras View Controller-->
         <scene sceneID="TQM-aZ-3Mf">
@@ -2014,6 +2330,6 @@
         <image name="up_arrow" width="12" height="7"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Rzu-3c-dnR"/>
+        <segue reference="3nI-4V-f0e"/>
     </inferredMetricsTieBreakers>
 </document>
