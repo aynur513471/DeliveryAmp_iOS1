@@ -12,12 +12,6 @@ class BeveragesViewController: UIViewController {
     
     // MARK: - Variables
     
-    var allProducts: [Product]!
-    var servingSizesBeverages: [ServingSize]!
-    var servingSizesFood: [ServingSize]!
-    var allProductTypes: [ProductType]!
-    var allIngredients: [Ingredient]!
-
     // MARK: - Outlets
     @IBOutlet weak var drinkTable: UITableView!
     
@@ -33,13 +27,17 @@ class BeveragesViewController: UIViewController {
         
         setDelegates()
         
-        selectedDrinkList.reserveCapacity(10)
-        for _ in 0...10 {
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        selectedDrinkList.reserveCapacity(allBeverages.count)
+        for _ in 0...allBeverages.count {
             selectedDrinkList.append([])
         }
         
-        // Do any additional setup after loading the view.
     }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -86,10 +84,7 @@ class BeveragesViewController: UIViewController {
         drinkTable.reloadData()
     }
     
-    @IBAction func goToCustomize(_ sender: StyleableButton) {
-        tabBarController!.selectedIndex = 1
-        selectedRowIndex = -1 //optional
-    }
+   
 
  
 

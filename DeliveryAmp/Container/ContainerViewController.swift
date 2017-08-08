@@ -18,12 +18,9 @@ class ContainerViewController: UIViewController {
     
     var segueIdentifier : String!
     
-    var allProducts: [Product]!
-    var servingSizesBeverages: [ServingSize]!
-    var servingSizesFood: [ServingSize]!
-    var allProductTypes: [ProductType]!
-    var allIngredients: [Ingredient]!
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -50,11 +47,7 @@ class ContainerViewController: UIViewController {
             foodViewController = segue.destination as! FoodViewController
             self.addChildViewController(foodViewController)
             foodViewController.view.frame = CGRect(x: 0,y: 0, width: self.view.frame.width,height: self.view.frame.height)
-            foodViewController.allProducts = self.allProducts
-            foodViewController.servingSizesFood = self.servingSizesFood
-            foodViewController.allProductTypes = self.allProductTypes
-            foodViewController.allIngredients = self.allIngredients
-            
+        
             self.view.addSubview(foodViewController.view)
             foodViewController.didMove(toParentViewController: self)
             

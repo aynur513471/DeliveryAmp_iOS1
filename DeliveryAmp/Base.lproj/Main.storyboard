@@ -29,7 +29,7 @@
                     <tabBarItem key="tabBarItem" title="Checkout" id="3Cv-um-LuI">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-15"/>
                     </tabBarItem>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9Eq-mt-101">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="9Eq-mt-101">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -46,7 +46,7 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="4eT-F3-Yq1">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="4eT-F3-Yq1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -365,7 +365,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" tag="7" contentMode="scaleToFill" horizontalHuggingPriority="252" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Exp Date" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="iE6-eH-kp7" customClass="StyleableTextField" customModule="DeliveryAmp" customModuleProvider="target">
-                                        <rect key="frame" x="254.33333333333329" y="258.33333333333331" width="66.666666666666714" height="30"/>
+                                        <rect key="frame" x="256.33333333333326" y="258.33333333333331" width="64.666666666666686" height="30"/>
                                         <color key="tintColor" red="0.91372549020000005" green="0.95294117649999999" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="11"/>
@@ -404,7 +404,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Credit Card Number" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Jkf-aw-LPV" customClass="StyleableTextField" customModule="DeliveryAmp" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="258.33333333333331" width="236.33333333333331" height="30"/>
+                                        <rect key="frame" x="10" y="258.33333333333331" width="238.33333333333331" height="30"/>
                                         <color key="tintColor" red="0.91372549020000005" green="0.95294117649999999" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="11"/>
@@ -869,7 +869,7 @@
                     <tabBarItem key="tabBarItem" title="Create Your Own" id="wFS-Lk-PMb">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-15"/>
                     </tabBarItem>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1OE-95-pxj">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="1OE-95-pxj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1257,7 +1257,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Your Own" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bT1-T5-mg3">
-                                        <rect key="frame" x="146.66666666666669" y="40" width="121.66666666666669" height="19"/>
+                                        <rect key="frame" x="147" y="40" width="120" height="19"/>
                                         <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="16"/>
                                         <color key="textColor" red="0.30588235294117649" green="0.33725490196078434" blue="0.35686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1309,7 +1309,7 @@
                     <tabBarItem key="tabBarItem" title="Menu" id="bKF-Hh-DMq">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-15"/>
                     </tabBarItem>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="j7r-XB-pxg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="j7r-XB-pxg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1537,6 +1537,9 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="173" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Lsk-es-RmQ" userLabel="Beverages Table">
                                 <rect key="frame" x="0.0" y="0.0" width="394" height="573"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <color key="sectionIndexBackgroundColor" red="0.76470588235294112" green="0.96078431372549022" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DrinkCell" rowHeight="173" id="ine-6x-YKB" userLabel="BeveragesCell" customClass="BeveragesTypeTableViewCell" customModule="DeliveryAmp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="394" height="173"/>
@@ -1545,31 +1548,32 @@
                                             <rect key="frame" x="0.0" y="0.0" width="394" height="172.66666666666666"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ao9-ac-LtL">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ao9-ac-LtL" customClass="ViewWithShadow" customModule="DeliveryAmp" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="394" height="173"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UsR-Cs-Hnm">
                                                             <rect key="frame" x="0.0" y="0.0" width="394" height="70"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1gH-Em-wBv" userLabel="Drink Image">
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="up_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="1gH-Em-wBv" userLabel="Drink Image" customClass="StyleableImageView" customModule="DeliveryAmp" customModuleProvider="target">
                                                                     <rect key="frame" x="5" y="5" width="60" height="60"/>
+                                                                    <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="1gH-Em-wBv" secondAttribute="height" multiplier="1:1" id="CVi-8B-stR"/>
                                                                         <constraint firstAttribute="height" constant="60" id="ihm-tH-qnz"/>
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Orange Juice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAU-cI-GOv" userLabel="Drink Name Label">
-                                                                    <rect key="frame" x="73" y="5" width="256" height="25"/>
+                                                                    <rect key="frame" x="73" y="5" width="256" height="20"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="25" id="yg3-nX-l6H"/>
+                                                                        <constraint firstAttribute="height" constant="20" id="yg3-nX-l6H"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
-                                                                    <nil key="textColor"/>
+                                                                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
+                                                                    <color key="textColor" red="0.30588235294117649" green="0.33725490196078434" blue="0.35686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Made from organic, fresh oranges, only after we will receive your order" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdP-BS-emR" userLabel="Drink Ingredients Label">
-                                                                    <rect key="frame" x="73" y="35" width="256" height="30"/>
-                                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="10"/>
+                                                                    <rect key="frame" x="73" y="30" width="256" height="35"/>
+                                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="11"/>
                                                                     <color key="textColor" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -1580,11 +1584,11 @@
                                                                         <constraint firstAttribute="width" constant="45" id="sCr-IW-3Yw"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="14"/>
-                                                                    <nil key="textColor"/>
+                                                                    <color key="textColor" red="0.30588235294117649" green="0.33725490196078434" blue="0.35686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
-                                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstItem="DAU-cI-GOv" firstAttribute="top" secondItem="UsR-Cs-Hnm" secondAttribute="top" constant="5" id="31B-A9-VXg"/>
                                                                 <constraint firstItem="vdP-BS-emR" firstAttribute="leading" secondItem="1gH-Em-wBv" secondAttribute="trailing" constant="8" id="3h0-6J-Mwq"/>
@@ -1603,135 +1607,8 @@
                                                         </view>
                                                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2bx-Zi-Hh0" userLabel="Drink Size Scroll View">
                                                             <rect key="frame" x="0.0" y="71" width="394" height="50"/>
-                                                            <subviews>
-                                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="AMC-ac-Lie" customClass="StyleableButton" customModule="DeliveryAmp" customModuleProvider="target">
-                                                                    <rect key="frame" x="12" y="10" width="70" height="30"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" constant="70" id="udv-r6-mN4"/>
-                                                                    </constraints>
-                                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
-                                                                    <state key="normal" title="0.25L">
-                                                                        <color key="titleColor" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    </state>
-                                                                    <userDefinedRuntimeAttributes>
-                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                            <real key="value" value="15"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                            <color key="value" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                            <real key="value" value="1"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                    </userDefinedRuntimeAttributes>
-                                                                    <connections>
-                                                                        <action selector="selectDrinkSize:" destination="ine-6x-YKB" eventType="touchUpInside" id="8CV-0c-rAN"/>
-                                                                    </connections>
-                                                                </button>
-                                                                <button opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="4dz-8w-b7h" customClass="StyleableButton" customModule="DeliveryAmp" customModuleProvider="target">
-                                                                    <rect key="frame" x="87" y="10" width="70" height="30"/>
-                                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
-                                                                    <state key="normal" title="0.33L">
-                                                                        <color key="titleColor" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    </state>
-                                                                    <userDefinedRuntimeAttributes>
-                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                            <real key="value" value="15"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                            <color key="value" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                            <real key="value" value="1"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                    </userDefinedRuntimeAttributes>
-                                                                    <connections>
-                                                                        <action selector="selectDrinkSize:" destination="ine-6x-YKB" eventType="touchUpInside" id="7J0-Uf-hNX"/>
-                                                                    </connections>
-                                                                </button>
-                                                                <button opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="xWj-Nm-Bqp" customClass="StyleableButton" customModule="DeliveryAmp" customModuleProvider="target">
-                                                                    <rect key="frame" x="162" y="10" width="70" height="30"/>
-                                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
-                                                                    <state key="normal" title="0.5L">
-                                                                        <color key="titleColor" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    </state>
-                                                                    <userDefinedRuntimeAttributes>
-                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                            <real key="value" value="15"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                            <color key="value" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                            <real key="value" value="1"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                    </userDefinedRuntimeAttributes>
-                                                                    <connections>
-                                                                        <action selector="selectDrinkSize:" destination="ine-6x-YKB" eventType="touchUpInside" id="XoA-PP-6l3"/>
-                                                                    </connections>
-                                                                </button>
-                                                                <button opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="0FK-IU-Dd7" customClass="StyleableButton" customModule="DeliveryAmp" customModuleProvider="target">
-                                                                    <rect key="frame" x="237" y="10" width="70" height="30"/>
-                                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
-                                                                    <state key="normal" title="1.0L">
-                                                                        <color key="titleColor" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    </state>
-                                                                    <userDefinedRuntimeAttributes>
-                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                            <real key="value" value="15"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                            <real key="value" value="1"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                            <color key="value" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                    </userDefinedRuntimeAttributes>
-                                                                    <connections>
-                                                                        <action selector="selectDrinkSize:" destination="ine-6x-YKB" eventType="touchUpInside" id="idK-sV-EBg"/>
-                                                                    </connections>
-                                                                </button>
-                                                                <button opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="DhP-zD-uwT" customClass="StyleableButton" customModule="DeliveryAmp" customModuleProvider="target">
-                                                                    <rect key="frame" x="312" y="10" width="70" height="30"/>
-                                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
-                                                                    <state key="normal" title="2.0L">
-                                                                        <color key="titleColor" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    </state>
-                                                                    <userDefinedRuntimeAttributes>
-                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                            <real key="value" value="15"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                            <color key="value" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                            <real key="value" value="1"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                    </userDefinedRuntimeAttributes>
-                                                                    <connections>
-                                                                        <action selector="selectDrinkSize:" destination="ine-6x-YKB" eventType="touchUpInside" id="jCb-sR-MMx"/>
-                                                                    </connections>
-                                                                </button>
-                                                            </subviews>
                                                             <constraints>
-                                                                <constraint firstItem="4dz-8w-b7h" firstAttribute="leading" secondItem="AMC-ac-Lie" secondAttribute="trailing" constant="5" id="2Cn-Fi-yDu"/>
-                                                                <constraint firstItem="0FK-IU-Dd7" firstAttribute="leading" secondItem="xWj-Nm-Bqp" secondAttribute="trailing" constant="5" id="2en-KR-LRe"/>
-                                                                <constraint firstItem="4dz-8w-b7h" firstAttribute="top" secondItem="AMC-ac-Lie" secondAttribute="top" id="5jQ-FR-iW2"/>
                                                                 <constraint firstAttribute="height" constant="50" id="7nJ-4i-X9Z"/>
-                                                                <constraint firstItem="AMC-ac-Lie" firstAttribute="leading" secondItem="2bx-Zi-Hh0" secondAttribute="leading" constant="12" id="CJf-gF-sOp"/>
-                                                                <constraint firstItem="0FK-IU-Dd7" firstAttribute="width" secondItem="AMC-ac-Lie" secondAttribute="width" id="FlY-Sl-ea7"/>
-                                                                <constraint firstItem="4dz-8w-b7h" firstAttribute="width" secondItem="AMC-ac-Lie" secondAttribute="width" id="I0s-le-9pU"/>
-                                                                <constraint firstAttribute="bottom" secondItem="AMC-ac-Lie" secondAttribute="bottom" constant="10" id="IqV-bF-VWP"/>
-                                                                <constraint firstItem="DhP-zD-uwT" firstAttribute="top" secondItem="AMC-ac-Lie" secondAttribute="top" id="J5p-U3-T54"/>
-                                                                <constraint firstAttribute="trailing" secondItem="DhP-zD-uwT" secondAttribute="trailing" constant="12" id="RY8-rd-jVd"/>
-                                                                <constraint firstItem="DhP-zD-uwT" firstAttribute="leading" secondItem="0FK-IU-Dd7" secondAttribute="trailing" constant="5" id="X2L-2a-SGM"/>
-                                                                <constraint firstItem="xWj-Nm-Bqp" firstAttribute="leading" secondItem="4dz-8w-b7h" secondAttribute="trailing" constant="5" id="Xnb-Ok-flw"/>
-                                                                <constraint firstItem="xWj-Nm-Bqp" firstAttribute="width" secondItem="AMC-ac-Lie" secondAttribute="width" id="hzk-VI-m5a"/>
-                                                                <constraint firstItem="xWj-Nm-Bqp" firstAttribute="top" secondItem="AMC-ac-Lie" secondAttribute="top" id="mOO-uV-9GZ"/>
-                                                                <constraint firstItem="AMC-ac-Lie" firstAttribute="top" secondItem="2bx-Zi-Hh0" secondAttribute="top" constant="10" id="ms6-hW-euD"/>
-                                                                <constraint firstItem="AMC-ac-Lie" firstAttribute="centerY" secondItem="2bx-Zi-Hh0" secondAttribute="centerY" id="p68-WW-NzV"/>
-                                                                <constraint firstItem="0FK-IU-Dd7" firstAttribute="top" secondItem="AMC-ac-Lie" secondAttribute="top" id="pHu-AV-caO"/>
-                                                                <constraint firstItem="DhP-zD-uwT" firstAttribute="width" secondItem="AMC-ac-Lie" secondAttribute="width" id="r0v-nY-sXg"/>
                                                                 <constraint firstAttribute="width" constant="394" id="z65-oS-7Xn"/>
                                                             </constraints>
                                                         </scrollView>
@@ -1743,11 +1620,12 @@
                                                             <rect key="frame" x="0.0" y="123" width="394" height="50"/>
                                                             <subviews>
                                                                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sMW-jP-rDz" customClass="StyleableButton" customModule="DeliveryAmp" customModuleProvider="target">
-                                                                    <rect key="frame" x="12" y="10" width="70" height="30"/>
+                                                                    <rect key="frame" x="10" y="10.666666666666657" width="60" height="30"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="70" id="Yrd-j9-LJR"/>
+                                                                        <constraint firstAttribute="height" constant="30" id="G3d-Tz-Qlc"/>
+                                                                        <constraint firstAttribute="width" constant="60" id="Yrd-j9-LJR"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="11"/>
                                                                     <state key="normal" title="Add">
                                                                         <color key="titleColor" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     </state>
@@ -1767,11 +1645,12 @@
                                                                     </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="o6z-U9-CgP" customClass="StyleableButton" customModule="DeliveryAmp" customModuleProvider="target">
-                                                                    <rect key="frame" x="312" y="10" width="70" height="30"/>
+                                                                    <rect key="frame" x="324" y="10.666666666666657" width="60" height="30"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="70" id="2s1-HZ-JK8"/>
+                                                                        <constraint firstAttribute="width" constant="60" id="2s1-HZ-JK8"/>
+                                                                        <constraint firstAttribute="height" constant="30" id="aXf-Yf-XXX"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="11"/>
                                                                     <state key="normal" title="Done">
                                                                         <color key="titleColor" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     </state>
@@ -1790,10 +1669,11 @@
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <constraints>
-                                                                <constraint firstItem="sMW-jP-rDz" firstAttribute="centerY" secondItem="isg-Et-OoR" secondAttribute="centerY" id="ADQ-WF-T65"/>
-                                                                <constraint firstItem="sMW-jP-rDz" firstAttribute="leading" secondItem="isg-Et-OoR" secondAttribute="leading" constant="12" id="crr-tc-Qdy"/>
-                                                                <constraint firstAttribute="trailing" secondItem="o6z-U9-CgP" secondAttribute="trailing" constant="12" id="lMe-RY-5Yg"/>
-                                                                <constraint firstItem="o6z-U9-CgP" firstAttribute="centerY" secondItem="isg-Et-OoR" secondAttribute="centerY" id="mko-F7-Mn6"/>
+                                                                <constraint firstItem="sMW-jP-rDz" firstAttribute="centerY" secondItem="isg-Et-OoR" secondAttribute="centerY" id="2cL-Lb-AjP"/>
+                                                                <constraint firstItem="o6z-U9-CgP" firstAttribute="centerY" secondItem="isg-Et-OoR" secondAttribute="centerY" id="Gii-5Y-cZZ"/>
+                                                                <constraint firstItem="o6z-U9-CgP" firstAttribute="centerY" secondItem="sMW-jP-rDz" secondAttribute="centerY" id="NLd-hF-45f"/>
+                                                                <constraint firstItem="sMW-jP-rDz" firstAttribute="leading" secondItem="isg-Et-OoR" secondAttribute="leading" constant="10" id="crr-tc-Qdy"/>
+                                                                <constraint firstAttribute="trailing" secondItem="o6z-U9-CgP" secondAttribute="trailing" constant="10" id="lMe-RY-5Yg"/>
                                                             </constraints>
                                                         </view>
                                                     </subviews>
@@ -1856,7 +1736,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DzR-Wd-FW5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2932" y="-343"/>
+            <point key="canvasLocation" x="3325" y="-274"/>
         </scene>
         <!--Food View Controller-->
         <scene sceneID="225-1V-oCk">
@@ -1875,7 +1755,7 @@
                                 <color key="backgroundColor" red="0.81176470588235294" green="0.90588235294117647" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <color key="sectionIndexBackgroundColor" red="0.7642995534" green="0.96048398980000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.76470588235294112" green="0.96078431372549022" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FoodCell" id="z3Z-R2-mx7" customClass="FoodTypeTableViewCell" customModule="DeliveryAmp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="394" height="173"/>
@@ -2119,7 +1999,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XR3-v4-UAo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2948" y="-7"/>
+            <point key="canvasLocation" x="2655" y="-177"/>
         </scene>
         <!--Extras View Controller-->
         <scene sceneID="TQM-aZ-3Mf">

@@ -19,11 +19,12 @@ class FoodViewController: UIViewController {
 
     var selectedPizzaList: [[SelectedPizzaType]] = [[]]
 
+    /*
     var allProducts: [Product]!
     var servingSizesFood: [ServingSize]!
     var allProductTypes: [ProductType]!
     var allIngredients: [Ingredient]!
-
+*/
     
     override func viewDidLoad() {
         super.viewDidLoad()

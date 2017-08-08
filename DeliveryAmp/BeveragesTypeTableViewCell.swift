@@ -64,30 +64,7 @@ class BeveragesTypeTableViewCell: UITableViewCell {
         selectedTypeBottomConstraint.constant = 0
     }
     
-    @IBAction func selectDrinkSize(_ sender: StyleableButton) {
-        deselectButtons(inside: drinkSizeScrollView)
-        sender.isSelected = !sender.isSelected
-        
-        switch sender.tag {
-            case 0:
-                //print("0.25L")
-                break
-            case 1:
-                //print("0.33L")
-                break
-            case 2:
-                // print("0.5L")
-                break
-            case 3:
-                // print("1.0L")
-                break
-            case 4:
-                //print("2.0L")
-                break
-            default:
-                break
-        }
-    }
+
 
     
     func deselectButtons(inside view: UIView) {

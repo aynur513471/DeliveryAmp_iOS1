@@ -26,11 +26,12 @@ class CreateYourOwnViewController: UIViewController {
 
     
     // MARK: - Variables
-    
+    /*
     var allProducts: [Product]!
     var servingSizesFood: [ServingSize]!
     var allProductTypes: [ProductType]!
     var allIngredients: [Ingredient]!
+    */
     
     var usedIngredients: [(Ingredient, Int)] = []
     

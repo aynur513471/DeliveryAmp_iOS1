@@ -10,17 +10,19 @@ import Foundation
 import UIKit
 import SideMenu
 
+var allProducts: [Product] = []
+var allBeverages: [Beverage] = []
+var allExtras: [Extra] = []
+var servingSizesBeverages: [ServingSize] = []
+var servingSizesFood: [ServingSize] = []
+var allProductTypes: [ProductType] = []
+var allIngredients: [Ingredient] = []
+
 class LaunchViewController: UIViewController {
     
     // MARK: - Variables
     
-    var allProducts: [Product] = []
-    var allBeverages: [Beverage] = []
-    var allExtras: [Extra] = []
-    var servingSizesBeverages: [ServingSize] = []
-    var servingSizesFood: [ServingSize] = []
-    var allProductTypes: [ProductType] = []
-    var allIngredients: [Ingredient] = []
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +42,7 @@ class LaunchViewController: UIViewController {
             if let _ = error{
                 Alert.showDefaultAlert(for: self, title: nil, message: error)
             }else if let products = productsOptional {
-                self.allProducts = products
+                allProducts = products
                 self.getBeverages()
             }
         })
@@ -54,7 +56,7 @@ class LaunchViewController: UIViewController {
             if let _ = error{
                 Alert.showDefaultAlert(for: self, title: nil, message: error)
             }else if let beverages = beveragesOptional {
-                self.allBeverages = beverages
+                allBeverages = beverages
                 self.getExtras()
             }
         })
@@ -67,7 +69,7 @@ class LaunchViewController: UIViewController {
             if let _ = error{
                 Alert.showDefaultAlert(for: self, title: nil, message: error)
             }else if let extras = extrasOptional {
-                self.allExtras = extras
+                allExtras = extras
                 self.getServingSizesBeverages()
             }
         })
@@ -81,7 +83,7 @@ class LaunchViewController: UIViewController {
             if let _ = error{
                 Alert.showDefaultAlert(for: self, title: nil, message: error)
             }else if let servingSizes = servingSizesOptional {
-                self.servingSizesBeverages = servingSizes
+                servingSizesBeverages = servingSizes
                 self.getServingSizesFood()
             }
         })
@@ -95,7 +97,7 @@ class LaunchViewController: UIViewController {
             if let _ = error{
                 Alert.showDefaultAlert(for: self, title: nil, message: error)
             }else if let servingSizes = servingSizesOptional {
-                self.servingSizesFood = servingSizes
+                servingSizesFood = servingSizes
                 self.getProductTypes()
             }
         })
@@ -109,7 +111,7 @@ class LaunchViewController: UIViewController {
             if let _ = error{
                 Alert.showDefaultAlert(for: self, title: nil, message: error)
             }else if let productTypes = productTypesOptional {
-                self.allProductTypes = productTypes
+                allProductTypes = productTypes
                 self.getIngredients()
             }
         })
@@ -124,7 +126,7 @@ class LaunchViewController: UIViewController {
             if let _ = error{
                 Alert.showDefaultAlert(for: self, title: nil, message: error)
             }else if let ingredients = ingredientsOptional {
-                self.allIngredients = ingredients
+                allIngredients = ingredients
                 self.goToMainScreen()
             }
         })
@@ -144,21 +146,22 @@ class LaunchViewController: UIViewController {
         
         var navController = myTabBarController.viewControllers![0] as! UINavigationController
         let menuViewController = navController.topViewController as! MenuViewController
+        /*
         menuViewController.allProducts = self.allProducts
         menuViewController.servingSizesBeverages = self.servingSizesBeverages
         menuViewController.servingSizesFood = self.servingSizesFood
         menuViewController.allProductTypes = self.allProductTypes
         menuViewController.allIngredients = self.allIngredients
-        
+        */
         navController = myTabBarController.viewControllers![1] as! UINavigationController
         let createYourOwnViewController = navController.topViewController as! CreateYourOwnViewController
          _ = createYourOwnViewController.view
-        
+        /*
         createYourOwnViewController.allProducts = self.allProducts
         createYourOwnViewController.servingSizesFood = self.servingSizesFood
         createYourOwnViewController.allProductTypes = self.allProductTypes
         createYourOwnViewController.allIngredients = self.allIngredients
-        
+        */
        
         createYourOwnViewController.usedIngredients = allIngredients.filter{allProducts[0].ingredientIds.contains($0.id)}.map{($0, 0)}
         createYourOwnViewController.selectedPizzaName.text = allProducts[0].name

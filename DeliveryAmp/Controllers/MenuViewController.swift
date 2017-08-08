@@ -25,11 +25,13 @@ class MenuViewController: UIViewController {
     
     // MARK: - Variables
     
+    /*
     var allProducts: [Product] = []
     var servingSizesBeverages: [ServingSize] = []
     var servingSizesFood: [ServingSize] = []
     var allProductTypes: [ProductType] = []
     var allIngredients: [Ingredient] = []
+    */
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,12 +97,14 @@ class MenuViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "container"{
             container = segue.destination as! ContainerViewController
+            
+            /*
             container!.allProducts = self.allProducts
             container!.allIngredients = self.allIngredients
             container!.allProductTypes = self.allProductTypes
             container!.servingSizesFood = self.servingSizesFood
             container!.servingSizesBeverages = self.servingSizesBeverages
-
+*/
         }
     }
 }
