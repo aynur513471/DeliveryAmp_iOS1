@@ -46,7 +46,7 @@
 		CE49CDD61F2F154400EC114F /* SettingsViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE49CDD51F2F154400EC114F /* SettingsViewControllerExtension.swift */; };
 		CE49CDD81F2F6F2600EC114F /* PizzaTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE49CDD71F2F6F2600EC114F /* PizzaTypeTableViewCell.swift */; };
 		CE5B7DDE1F39C5020060D69C /* StyleableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B7DDD1F39C5020060D69C /* StyleableImageView.swift */; };
-		CE5B7DE01F39DB4A0060D69C /* raw.json in Resources */ = {isa = PBXBuildFile; fileRef = CE5B7DDF1F39DB4A0060D69C /* raw.json */; };
+		CE5B7DE21F39DBA90060D69C /* raw.json in Resources */ = {isa = PBXBuildFile; fileRef = CE5B7DE11F39DBA90060D69C /* raw.json */; };
 		CE6C09B31F309B1A00D9C9EA /* FoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6C09B21F309B1A00D9C9EA /* FoodViewController.swift */; };
 		CE6C09B51F309B2800D9C9EA /* BeveragesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6C09B41F309B2800D9C9EA /* BeveragesViewController.swift */; };
 		CE6C09B71F309B3200D9C9EA /* ExtrasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6C09B61F309B3200D9C9EA /* ExtrasViewController.swift */; };
@@ -114,7 +114,7 @@
 		CE49CDD51F2F154400EC114F /* SettingsViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewControllerExtension.swift; path = Extensions/SettingsViewControllerExtension.swift; sourceTree = "<group>"; };
 		CE49CDD71F2F6F2600EC114F /* PizzaTypeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PizzaTypeTableViewCell.swift; path = CellViews/PizzaTypeTableViewCell.swift; sourceTree = "<group>"; };
 		CE5B7DDD1F39C5020060D69C /* StyleableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StyleableImageView.swift; path = Views/StyleableImageView.swift; sourceTree = "<group>"; };
-		CE5B7DDF1F39DB4A0060D69C /* raw.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = raw.json; sourceTree = "<group>"; };
+		CE5B7DE11F39DBA90060D69C /* raw.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = raw.json; sourceTree = "<group>"; };
 		CE6C09B21F309B1A00D9C9EA /* FoodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FoodViewController.swift; path = Container/FoodViewController.swift; sourceTree = "<group>"; };
 		CE6C09B41F309B2800D9C9EA /* BeveragesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeveragesViewController.swift; path = Container/BeveragesViewController.swift; sourceTree = "<group>"; };
 		CE6C09B61F309B3200D9C9EA /* ExtrasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtrasViewController.swift; path = Container/ExtrasViewController.swift; sourceTree = "<group>"; };
@@ -213,7 +213,7 @@
 		CE2D04611F348A8E0074ECBC /* TestFiles */ = {
 			isa = PBXGroup;
 			children = (
-				CE5B7DDF1F39DB4A0060D69C /* raw.json */,
+				CE5B7DE11F39DBA90060D69C /* raw.json */,
 			);
 			path = TestFiles;
 			sourceTree = "<group>";
@@ -429,7 +429,7 @@
 				CE6C09C91F30B9B300D9C9EA /* SelectedPizzaType.xib in Resources */,
 				CE390D671F28C3A200014BE7 /* Roboto-LightItalic.ttf in Resources */,
 				CE390D661F28C3A200014BE7 /* Roboto-Italic.ttf in Resources */,
-				CE5B7DE01F39DB4A0060D69C /* raw.json in Resources */,
+				CE5B7DE21F39DBA90060D69C /* raw.json in Resources */,
 				CE390D651F28C3A200014BE7 /* Roboto-BoldItalic.ttf in Resources */,
 				CE390D6C1F28C3A200014BE7 /* Roboto-ThinItalic.ttf in Resources */,
 				CE390D691F28C3A200014BE7 /* Roboto-MediumItalic.ttf in Resources */,
