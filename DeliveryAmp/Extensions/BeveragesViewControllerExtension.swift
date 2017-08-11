@@ -80,6 +80,7 @@ extension BeveragesViewController: UITableViewDelegate, UITableViewDataSource {
             button.configureForScrollView()
             button.isSelected = isFirst
             button.tag = id
+            
             button.frame = CGRect.init(x: xPosition, y:10.0, width: 80.0, height: 30.0)
             
             button.setTitle(servingSizesBeverages.filter{$0.id == id}[0].name, for: .normal)

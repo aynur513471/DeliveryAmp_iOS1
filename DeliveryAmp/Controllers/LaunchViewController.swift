@@ -11,9 +11,6 @@ import UIKit
 import SideMenu
 
 // Global variables for entire project
-
-
-var user: User = User()
 var allProducts: [Product] = []
 var allBeverages: [Beverage] = []
 var allExtras: [Extra] = []
@@ -48,7 +45,7 @@ class LaunchViewController: UIViewController {
             if let _ = error{
                 Alert.showDefaultAlert(for: self, title: nil, message: error)
             }else if let savedUser = userOptional {
-                user.copy(savedUser)
+                CurrentUser.sharedInstance.copy(savedUser)
                 self.getProducts()
             }
         })

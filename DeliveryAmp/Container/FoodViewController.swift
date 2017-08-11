@@ -68,7 +68,7 @@ class FoodViewController: UIViewController {
             selectedPizzaList[(indexPath.row)].append(myView)
             foodTable.reloadData()
             
-            addToOrder(sender.tag, pizzaSize, crustType)
+            addToOrder(allProducts[sender.tag].id, pizzaSize, crustType)
             
             /*
             let crustTypeButton = cell.crustTypeScrollView.viewWithTag(crustType) as! StyleableButton

@@ -18,7 +18,6 @@ class ExtrasTypeTableViewCell: UITableViewCell {
     
     @IBOutlet weak var buttonsView: UIView!
     @IBOutlet weak var addButton: StyleableButton!
-    @IBOutlet weak var doneButton: StyleableButton!
     
     @IBOutlet weak var selectedTypeView: UIView!
     
