@@ -86,6 +86,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         
         self.datePicker.delegate = self
         self.datePicker.dataSource = self
+        
     }
     
     func populateFields() {

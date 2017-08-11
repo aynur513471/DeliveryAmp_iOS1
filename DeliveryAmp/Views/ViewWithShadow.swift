@@ -28,7 +28,7 @@ import UIKit
 class ViewWithShadow: UIView {
     
     
-    override init (frame : CGRect) {
+    /*override init (frame : CGRect) {
         super.init(frame : frame)
         dropShadow()
     }
@@ -37,9 +37,9 @@ class ViewWithShadow: UIView {
         super.init(coder: aDecoder)
         dropShadow()
     }
-    
+    */
     func dropShadow() {
-    
+        
         
         self.layer.masksToBounds = false
         self.layer.shadowColor = UIColor.black.cgColor
@@ -47,10 +47,14 @@ class ViewWithShadow: UIView {
         self.layer.shadowOffset = CGSize(width: 1, height: 1)
         self.layer.shadowRadius = 4.0
         self.layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
-        self.layer.shouldRasterize = true
+        //self.layer.shouldRasterize = true
         
-        self.layer.rasterizationScale = UIScreen.main.scale
+        //self.layer.rasterizationScale = UIScreen.main.scale
         
+    }
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        dropShadow()
     }
 
 }

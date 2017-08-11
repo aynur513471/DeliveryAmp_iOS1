@@ -1,18 +1,30 @@
 //
-//  StyleableTextField.swift
+//  StyleableButtonWithPAdding.swift
 //  DeliveryAmp
 //
-//  Created by User on 7/26/17.
-//
+//  Created by User on 8/9/17.
 //
 
-import Foundation
 import UIKit
 
-@IBDesignable
-class StyleableTextField : UITextField{
+class StyleableTextFieldWithPadding:UITextField{
+    required init?(coder aDecoder: NSCoder) {
     
-  
+        super.init(coder: aDecoder)
+    }
+    override func editingRect(forBounds bounds: CGRect) -> CGRect {
+        return UIEdgeInsetsInsetRect(bounds,
+                                     UIEdgeInsetsMake(0, 10, 0, 10))
+    }
+    override func textRect(forBounds bounds: CGRect) -> CGRect {
+        return UIEdgeInsetsInsetRect(bounds,
+                                     UIEdgeInsetsMake(0, 10, 0, 10))
+    }
+    override func placeholderRect(forBounds bounds: CGRect) -> CGRect {
+        return UIEdgeInsetsInsetRect(bounds,
+                                     UIEdgeInsetsMake(0, 10, 0, 10))
+    }
+    
     //designs
     var bottomBorderColor = UIColor()
     
@@ -44,5 +56,6 @@ class StyleableTextField : UITextField{
         self.layer.addSublayer(border)
         self.layer.masksToBounds = true
     }
-   
+    
 }
+

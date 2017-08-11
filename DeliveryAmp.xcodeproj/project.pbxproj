@@ -11,6 +11,7 @@
 		86CBD45B1F34968C00806E67 /* SelectedDrinkType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CBD45A1F34968C00806E67 /* SelectedDrinkType.swift */; };
 		86CBD45D1F349B9500806E67 /* SelectedDrinkType.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86CBD45C1F349B9500806E67 /* SelectedDrinkType.xib */; };
 		86F232581F3483B900AF6451 /* BeveragesTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F232571F3483B900AF6451 /* BeveragesTypeTableViewCell.swift */; };
+		CE0359E21F3460E300969B2F /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0359E11F3460E300969B2F /* CheckoutViewController.swift */; };
 		CE0C5E341F3AF41F00687B95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE0C5E311F3AED9B00687B95 /* Assets.xcassets */; };
 		CE0C5E351F3AF6B600687B95 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE390D491F28B3B700014BE7 /* Info.plist */; };
 		CE0C5E381F3B44F000687B95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0C5E361F3B44F000687B95 /* LaunchScreen.storyboard */; };
@@ -25,6 +26,7 @@
 		CE168DAE1F30763B00721F5B /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168DAD1F30763B00721F5B /* MenuViewController.swift */; };
 		CE168DB01F308A6500721F5B /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168DAF1F308A6500721F5B /* ContainerViewController.swift */; };
 		CE168DB21F308DB500721F5B /* EmptySegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168DB11F308DB500721F5B /* EmptySegue.swift */; };
+		CE20316B1F3846000045B00D /* StyleableSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE20316A1F3846000045B00D /* StyleableSegmentedControl.swift */; };
 		CE2D044F1F345C660074ECBC /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D044E1F345C660074ECBC /* UIViewExtension.swift */; };
 		CE2D04511F346F260074ECBC /* MyColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D04501F346F260074ECBC /* MyColors.swift */; };
 		CE2D04531F346F4F0074ECBC /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D04521F346F4F0074ECBC /* Product.swift */; };
@@ -71,6 +73,8 @@
 		CE87A3551F2B52E300645A47 /* OrderHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE87A3541F2B52E300645A47 /* OrderHistoryViewController.swift */; };
 		CE87A3571F2B531900645A47 /* OrderHistoryViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE87A3561F2B531900645A47 /* OrderHistoryViewControllerExtension.swift */; };
 		CE87A3591F2B537C00645A47 /* OrderHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE87A3581F2B537C00645A47 /* OrderHistoryTableViewCell.swift */; };
+		CEDB61F41F3B0611004DAE66 /* PayPalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB61F31F3B0611004DAE66 /* PayPalViewController.swift */; };
+		CEDB61F61F3B2FEC004DAE66 /* StyleableTextFieldWithPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB61F51F3B2FEC004DAE66 /* StyleableTextFieldWithPadding.swift */; };
 		CEE477281F3C8A340000BE64 /* OrderProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE477271F3C8A340000BE64 /* OrderProduct.swift */; };
 		CEF1997C1F332617005E74B4 /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1997B1F332617005E74B4 /* SideMenuTableViewCell.swift */; };
 		CEF1997E1F3327E1005E74B4 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1997D1F3327E1005E74B4 /* SideMenuViewController.swift */; };
@@ -90,6 +94,7 @@
 		86F232571F3483B900AF6451 /* BeveragesTypeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeveragesTypeTableViewCell.swift; sourceTree = "<group>"; };
 		8F6CC2E9BCDF940870106FEC /* Pods-DeliveryAmp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliveryAmp.release.xcconfig"; path = "Pods/Target Support Files/Pods-DeliveryAmp/Pods-DeliveryAmp.release.xcconfig"; sourceTree = "<group>"; };
 		AF3E5A6405998788F99B2F0E /* Pods-DeliveryAmp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliveryAmp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DeliveryAmp/Pods-DeliveryAmp.debug.xcconfig"; sourceTree = "<group>"; };
+		CE0359E11F3460E300969B2F /* CheckoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
 		CE0C5E311F3AED9B00687B95 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE0C5E371F3B44F000687B95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE1022C11F34B203008A28EA /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Helpers/Constants.swift; sourceTree = "<group>"; };
@@ -103,6 +108,8 @@
 		CE168DAD1F30763B00721F5B /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = Controllers/MenuViewController.swift; sourceTree = "<group>"; };
 		CE168DAF1F308A6500721F5B /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContainerViewController.swift; path = Container/ContainerViewController.swift; sourceTree = "<group>"; };
 		CE168DB11F308DB500721F5B /* EmptySegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmptySegue.swift; path = Container/EmptySegue.swift; sourceTree = "<group>"; };
+		CE20316A1F3846000045B00D /* StyleableSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleableSegmentedControl.swift; sourceTree = "<group>"; };
+		CE20316C1F386EEB0045B00D /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		CE2D044E1F345C660074ECBC /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewExtension.swift; path = Extensions/UIViewExtension.swift; sourceTree = "<group>"; };
 		CE2D04501F346F260074ECBC /* MyColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyColors.swift; path = Colors/MyColors.swift; sourceTree = "<group>"; };
 		CE2D04521F346F4F0074ECBC /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Product.swift; path = Models/Product.swift; sourceTree = "<group>"; };
@@ -151,6 +158,8 @@
 		CE87A3541F2B52E300645A47 /* OrderHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderHistoryViewController.swift; sourceTree = "<group>"; };
 		CE87A3561F2B531900645A47 /* OrderHistoryViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderHistoryViewControllerExtension.swift; path = Extensions/OrderHistoryViewControllerExtension.swift; sourceTree = "<group>"; };
 		CE87A3581F2B537C00645A47 /* OrderHistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderHistoryTableViewCell.swift; path = CellViews/OrderHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		CEDB61F31F3B0611004DAE66 /* PayPalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayPalViewController.swift; sourceTree = "<group>"; };
+		CEDB61F51F3B2FEC004DAE66 /* StyleableTextFieldWithPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleableTextFieldWithPadding.swift; sourceTree = "<group>"; };
 		CEE477271F3C8A340000BE64 /* OrderProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderProduct.swift; path = Models/OrderProduct.swift; sourceTree = "<group>"; };
 		CEF1997B1F332617005E74B4 /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideMenuTableViewCell.swift; path = CellViews/SideMenuTableViewCell.swift; sourceTree = "<group>"; };
 		CEF1997D1F3327E1005E74B4 /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
@@ -210,6 +219,8 @@
 				CEF305151F29CDDC009A740A /* CreateYourOwnViewController.swift */,
 				CE168DAD1F30763B00721F5B /* MenuViewController.swift */,
 				CE1022C31F34BA16008A28EA /* LaunchViewController.swift */,
+				CE0359E11F3460E300969B2F /* CheckoutViewController.swift */,
+				CEDB61F31F3B0611004DAE66 /* PayPalViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -275,9 +286,6 @@
 			isa = PBXGroup;
 			children = (
 				CE0C5E311F3AED9B00687B95 /* Assets.xcassets */,
-				CE390D491F28B3B700014BE7 /* Info.plist */,
-				CE390D3D1F28B3B700014BE7 /* AppDelegate.swift */,
-				CE390D3F1F28B3B700014BE7 /* ViewController.swift */,
 				CE2D045A1F3485120074ECBC /* API Manager */,
 				CE87A35A1F2B5D1200645A47 /* CellViews */,
 				CE87A3511F2B21F400645A47 /* Colors */,
@@ -291,6 +299,10 @@
 				CE7FBB541F29C16B0027CF85 /* Storyboards */,
 				CE2D04611F348A8E0074ECBC /* TestFiles */,
 				CE390D4F1F28B92100014BE7 /* Views */,
+				CE390D3D1F28B3B700014BE7 /* AppDelegate.swift */,
+				CE390D3F1F28B3B700014BE7 /* ViewController.swift */,
+				CE390D491F28B3B700014BE7 /* Info.plist */,
+				CE20316C1F386EEB0045B00D /* Bridging-Header.h */,
 			);
 			path = DeliveryAmp;
 			sourceTree = "<group>";
@@ -306,6 +318,8 @@
 				86CBD45A1F34968C00806E67 /* SelectedDrinkType.swift */,
 				86CBD45C1F349B9500806E67 /* SelectedDrinkType.xib */,
 				CE5B7DDD1F39C5020060D69C /* StyleableImageView.swift */,
+				CE20316A1F3846000045B00D /* StyleableSegmentedControl.swift */,
+				CEDB61F51F3B2FEC004DAE66 /* StyleableTextFieldWithPadding.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -544,8 +558,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE20316B1F3846000045B00D /* StyleableSegmentedControl.swift in Sources */,
 				CE6C09B91F309B4600D9C9EA /* FoodViewControllerExtension.swift in Sources */,
 				86CBD45B1F34968C00806E67 /* SelectedDrinkType.swift in Sources */,
+				CEDB61F61F3B2FEC004DAE66 /* StyleableTextFieldWithPadding.swift in Sources */,
 				CEF199861F3373DA005E74B4 /* Regex.swift in Sources */,
 				CE6C09BF1F30A0F200D9C9EA /* FoodTypeTableViewCell.swift in Sources */,
 				CEF1997C1F332617005E74B4 /* SideMenuTableViewCell.swift in Sources */,
@@ -577,11 +593,13 @@
 				CE6C09BB1F309B5900D9C9EA /* BeveragesViewControllerExtension.swift in Sources */,
 				CE11AD241F3C51BA009573E6 /* OrderIngredient.swift in Sources */,
 				CE1022C81F34BEE5008A28EA /* Extra.swift in Sources */,
+				CE0359E21F3460E300969B2F /* CheckoutViewController.swift in Sources */,
 				CE6C09B51F309B2800D9C9EA /* BeveragesViewController.swift in Sources */,
 				CEF305181F2A02F7009A740A /* IngredientTableViewCell.swift in Sources */,
 				CEF305161F29CDDC009A740A /* CreateYourOwnViewController.swift in Sources */,
 				CE390D3E1F28B3B700014BE7 /* AppDelegate.swift in Sources */,
 				CE49CDD81F2F6F2600EC114F /* PizzaTypeTableViewCell.swift in Sources */,
+				CEDB61F41F3B0611004DAE66 /* PayPalViewController.swift in Sources */,
 				CE168DAE1F30763B00721F5B /* MenuViewController.swift in Sources */,
 				CE390D701F28E2D500014BE7 /* SettingsViewController.swift in Sources */,
 				CEF199811F334739005E74B4 /* LegalViewController.swift in Sources */,
@@ -721,14 +739,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = S5473HDEK5;
 				INFOPLIST_FILE = DeliveryAmp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = TeamExtension.DeliveryAmp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "23b3dbb6-9390-4549-be36-a0aedc055f33";
+				PROVISIONING_PROFILE = "a3c47798-c0c5-4d54-bd3c-b5ce46644204";
 				PROVISIONING_PROFILE_SPECIFIER = TeamExtension_Dev;
+				SWIFT_OBJC_BRIDGING_HEADER = "DeliveryAmp/Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -739,6 +759,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DeliveryAmp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -746,6 +767,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = TeamExtension.DeliveryAmp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "DeliveryAmp/Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
