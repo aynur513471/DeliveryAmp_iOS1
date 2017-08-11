@@ -35,6 +35,13 @@ class Ingredient: NSObject {
         self.name = name
         self.price = price
     }
+    
+    func copy(_ ingredient: Ingredient) {
+        self.id = ingredient.id
+        self.name = ingredient.name
+        self.price = ingredient.price
+    }
+    
 }
 
 extension Ingredient {

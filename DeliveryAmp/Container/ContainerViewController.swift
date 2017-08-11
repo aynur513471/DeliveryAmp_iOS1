@@ -10,7 +10,7 @@ import UIKit
 
 class ContainerViewController: UIViewController {
     
-    var viewController : UIViewController!
+    // MARK: - Variables
 
     var foodViewController: FoodViewController!
     var beveragesViewController: BeveragesViewController!
@@ -23,13 +23,10 @@ class ContainerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 
@@ -39,6 +36,9 @@ class ContainerViewController: UIViewController {
     }
     
     
+    
+    // MARK: - Navigation
+    
     override open func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         emptyContainerView()
@@ -47,7 +47,6 @@ class ContainerViewController: UIViewController {
             foodViewController = segue.destination as! FoodViewController
             self.addChildViewController(foodViewController)
             foodViewController.view.frame = CGRect(x: 0,y: 0, width: self.view.frame.width,height: self.view.frame.height)
-        
             self.view.addSubview(foodViewController.view)
             foodViewController.didMove(toParentViewController: self)
             
@@ -64,23 +63,6 @@ class ContainerViewController: UIViewController {
             self.view.addSubview(extrasViewController.view)
             extrasViewController.didMove(toParentViewController: self)
         }
-        
-        /*
-        if segue.identifier == segueIdentifier{
-            
-            //Remove Container View
-            if viewController != nil{
-                viewController.view.removeFromSuperview()
-                viewController = nil
-            }
-
-            viewController = segue.destination
-            self.addChildViewController(viewController)
-            viewController.view.frame = CGRect(x: 0,y: 0, width: self.view.frame.width,height: self.view.frame.height)
-            self.view.addSubview(viewController.view)
-            viewController.didMove(toParentViewController: self)
-        }
-        */
     }
     
     func emptyContainerView() {

@@ -39,6 +39,14 @@ class ServingSize: NSObject {
         self.quantity = quantity
         self.price = price
     }
+    
+    func copy(_ servingSize: ServingSize) {
+        self.id = servingSize.id
+        self.name = servingSize.name
+        self.quantity = servingSize.quantity
+        self.price = servingSize.price
+    }
+    
 }
 
 extension ServingSize {

@@ -30,8 +30,6 @@ class Beverage: NSObject {
     var sizeIds: [Int]
     var imageUrl: String
 
-    
-    
     override init() {
         self.id = -1
         self.name = ""
@@ -48,6 +46,15 @@ class Beverage: NSObject {
         self.price = price
         self.sizeIds = sizeIds
         self.imageUrl = imageUlr
+    }
+    
+    func copy(_ beverage: Beverage) {
+        self.id = beverage.id
+        self.name = beverage.name
+        self.beverageDescription = beverage.beverageDescription
+        self.price = beverage.price
+        self.sizeIds = beverage.sizeIds
+        self.imageUrl = beverage.imageUrl
     }
 }
 

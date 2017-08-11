@@ -63,6 +63,8 @@ extension CreateYourOwnViewController: UITableViewDelegate, UITableViewDataSourc
         }
     }
     
+    // MARK: - TableViewCell functions
+    
     func populatePizzaCell(_ cell: PizzaTypeTableViewCell, _ index: Int) {
         let firstSizeId = allProducts[index].sizeIds[0]
         let firstCrustId = allProducts[index].crustIds[0]
@@ -107,7 +109,7 @@ extension CreateYourOwnViewController: UITableViewDelegate, UITableViewDataSourc
             button.isSelected = isFirst
             button.tag = id
             button.frame = CGRect.init(x: xPosition, y:10.0, width: 80.0, height: 30.0)
-            
+ 
             button.setTitle(servingSizesFood.filter{$0.id == id}[0].name, for: .normal)
             button.addTarget(self, action: #selector(buttonIsSelected), for: .touchUpInside)
             pizzaSizeScrollView.addSubview(button)
@@ -140,6 +142,8 @@ extension CreateYourOwnViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     
+    // MARK: - Button functions
+    
     func buttonIsSelected(_ sender: StyleableButton) {
         deselectButtons(inside: sender.superview!)
         sender.isSelected = !sender.isSelected
@@ -154,21 +158,22 @@ extension CreateYourOwnViewController: UITableViewDelegate, UITableViewDataSourc
         }
     }
     
+    // Mark: - Functions for labels 
+    
     func setPizzaPrice() {
         let sizeId = getPizzaSize()
         let crustId = getCrustType()
+        let sizePrice = servingSizesFood.filter{$0.id == sizeId}[0].price
+        let crustPrice = allProductTypes.filter{$0.id == crustId}[0].price    
         var ingredientsPrice = 0.0
         for ingredient in usedIngredients {
             ingredientsPrice += ingredient.0.price * Double(ingredient.1)
         }
-        selectedPizzaPrice.text = Constants.currency + String(allProducts[selectedPizzaIndex].price + allProductTypes[crustId].price + servingSizesFood[sizeId].price + ingredientsPrice)
+        selectedPizzaPrice.text = Constants.currency + String(allProducts[selectedPizzaIndex].price + sizePrice + crustPrice + ingredientsPrice)
     }
 
     
-    func toggleIndicator(_ timer : Timer) {
-        let selectedIndicator = timer.userInfo as! UIView
-        selectedIndicator.backgroundColor = UIColor.white
-    }
+
     
     func modifyAmount(_ sender: UIStepper) {
         let amountDifference = Int(sender.value) - usedIngredients[sender.tag].1
@@ -177,6 +182,16 @@ extension CreateYourOwnViewController: UITableViewDelegate, UITableViewDataSourc
         usedIngredients[sender.tag].1 = Int(sender.value)
         
         selectedPizzaPrice.text = Constants.currency + String(oldPrice + priceDifference)
+    }
+    
+    
+    // MARK: - Helping functions
+    
+    
+    /* indicator for selected cell */
+    func toggleIndicator(_ timer : Timer) {
+        let selectedIndicator = timer.userInfo as! UIView
+        selectedIndicator.backgroundColor = UIColor.white
     }
     
     func getPizzaSize() -> Int {

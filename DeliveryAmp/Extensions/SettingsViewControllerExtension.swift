@@ -243,10 +243,7 @@ extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource  
         }
     }
     
-    
-    //MARK: TextField Functions
-    
-    
+
     //MARK: TextField Functions
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if let superview = textField.superview{
@@ -300,7 +297,6 @@ extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource  
     
     
     func keyboardWillHide(_ notification: Notification) {
-        scrollView.contentInset = UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0)
         dismissKeyboard()
     }
     

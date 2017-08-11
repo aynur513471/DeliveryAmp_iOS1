@@ -11,6 +11,7 @@ import UIKit
 class FoodTypeTableViewCell: UITableViewCell {
 
     // MARK: - Outlets
+    
     @IBOutlet weak var pizzaImage: UIImageView!
     @IBOutlet weak var foodNameLabel: UILabel!
     @IBOutlet weak var foodIngredientsLabel: UILabel!
@@ -28,16 +29,12 @@ class FoodTypeTableViewCell: UITableViewCell {
     @IBOutlet weak var selectedTypeTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var selectedTypeBottomConstraint: NSLayoutConstraint!
 
-
-    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     func unhideViews() {
@@ -46,12 +43,9 @@ class FoodTypeTableViewCell: UITableViewCell {
         buttonsView.isHidden = false
         selectedType.isHidden = false
         
-    
         pizzaSizeScrollViewHeightConstraint.constant = 50
         selectedTypeTopConstraint.constant = 1
         selectedTypeBottomConstraint.constant = 1
-
-
     }
     
     func hideViews() {
@@ -66,14 +60,14 @@ class FoodTypeTableViewCell: UITableViewCell {
     }
     
 
-    
+    /*
     func deselectButtons(inside view: UIView) {
         for subview in view.subviews as [UIView] {
             if let btn = subview as? StyleableButton {
                 btn.isSelected = false
             }
         }
-    }
+    }*/
 
     func getPizzaSize() -> Int {
         for subview in pizzaSizeScrollView.subviews as [UIView] {

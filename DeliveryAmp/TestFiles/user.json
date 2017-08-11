@@ -1,0 +1,16 @@
+{
+  "user": {
+    "firstName": "andrei",
+    "lastName": "baches",
+    "email": "andrei.baches@teamextension.ro",
+    "phone": "1234123123",
+    "address": "Bucuresti, Zarii",
+    "creditCard": {
+      "cardNumber": "1111222233334444",
+      "csvCode": 123,
+      "expMonth": 10,
+      "expYear": 2018,
+      "cardHolder": "Andrei Baches"
+    }
+  }
+}

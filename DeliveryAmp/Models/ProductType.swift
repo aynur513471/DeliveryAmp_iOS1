@@ -11,10 +11,8 @@ import SwiftyJSON
 
 struct ProductTypePropertyKey{
     static let idKey = "id"
-    
     static let nameKey = "name"
-    static let quantityKey = "quantity"
-    static let priceKey = "prices"
+    static let priceKey = "price"
 }
 
 class ProductType: NSObject {
@@ -34,6 +32,12 @@ class ProductType: NSObject {
         self.id = id
         self.name = name
         self.price = price
+    }
+
+    func copy(_ productType: ProductType) {
+        self.id = productType.id
+        self.name = productType.name
+        self.price = productType.price
     }
 }
 

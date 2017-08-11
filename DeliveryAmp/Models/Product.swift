@@ -46,15 +46,26 @@ class Product: NSObject {
         self.ingredientIds = []
     }
     
-    init(id: Int, name: String, description: String, price: Double, sizeIds: [Int], crustIds: [Int], imageUlr: String, ingredientIds: [Int]) {
+    init(id: Int, name: String, description: String, price: Double, sizeIds: [Int], crustIds: [Int], imageUrl: String, ingredientIds: [Int]) {
         self.id = id
         self.name = name
         self.productDescription = description
         self.price = price
         self.sizeIds = sizeIds
         self.crustIds = crustIds
-        self.imageUrl = imageUlr
+        self.imageUrl = imageUrl
         self.ingredientIds = ingredientIds
+    }
+    
+    func copy(_ product: Product) {
+        self.id = product.id
+        self.name = product.name
+        self.productDescription = product.productDescription
+        self.price = product.price
+        self.sizeIds = product.sizeIds
+        self.crustIds = product.crustIds
+        self.imageUrl = product.imageUrl
+        self.ingredientIds = product.ingredientIds
     }
 }
 
@@ -85,6 +96,6 @@ extension Product {
                 return nil
         }
         
-        return Product(id: id, name: name, description: productDescription, price: price, sizeIds: sizeIds, crustIds: crustIds, imageUlr: imageUrl, ingredientIds: ingredientIds)
+        return Product(id: id, name: name, description: productDescription, price: price, sizeIds: sizeIds, crustIds: crustIds, imageUrl: imageUrl, ingredientIds: ingredientIds)
     }
 }

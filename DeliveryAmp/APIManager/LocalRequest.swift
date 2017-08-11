@@ -13,6 +13,7 @@ import SwiftyJSON
 enum LocalRouter{
     
     //MARK: GET
+    case getUser
     case getProducts
     case getServingSizesFood
     case getServingSizesBeverages
@@ -20,11 +21,16 @@ enum LocalRouter{
     case getIngredients
     case getBeverages
     case getExtras
+    case getOrderHistory
+
     
 
     
     var requestURL: URL?{
         switch self {
+        case .getUser:
+            guard let fileUrl = Bundle.main.url(forResource:"user", withExtension: "json") else { return nil }
+            return fileUrl
         case .getProducts:
             guard let fileUrl = Bundle.main.url(forResource:"raw", withExtension: "json") else { return nil }
             return fileUrl
@@ -45,6 +51,9 @@ enum LocalRouter{
             return fileUrl
         case .getExtras:
             guard let fileUrl = Bundle.main.url(forResource:"raw", withExtension: "json") else { return nil }
+            return fileUrl
+        case .getOrderHistory:
+            guard let fileUrl = Bundle.main.url(forResource:"order_item v2", withExtension: "json") else { return nil }
             return fileUrl
         default:
             return nil
@@ -70,6 +79,23 @@ class LocalRequest{
         }else{
             callback(nil, true)
         }
+    }
+    
+    static func getUser(_ callback: @escaping(_ user: User?, _ error: String?) -> ()){
+        self.generateJSON(for: LocalRouter.getUser.requestURL, callback: {
+            (result: [String: JSON]?, failed: Bool) -> Void in
+            if failed{
+                callback(nil, "Failed to load user.")
+            }else if let json = result{
+                if let userDict = json["user"]?.dictionary{
+                    if let user = User.decode(userDict){
+                        callback(user, nil)
+                    }
+                }else{
+                    callback(nil, "Failed to load user.")
+                }
+            }
+        })
     }
     
     static func getProducts(_ callback: @escaping (_ products: [Product]?, _ error: String?) -> ()){
@@ -173,8 +199,8 @@ class LocalRequest{
                 var ingredientsArray: [Ingredient] = []
                 if let resultArray = json["ingredients"]?.array{
                     for elem in resultArray{
-                        if let ingredientTypeDict = elem.dictionary{
-                            if let ingredient = Ingredient.decode(ingredientTypeDict){
+                        if let ingredientDict = elem.dictionary{
+                            if let ingredient = Ingredient.decode(ingredientDict){
                                 ingredientsArray.append(ingredient)
                             }
                         }
@@ -195,8 +221,8 @@ class LocalRequest{
                 var beveragesArray: [Beverage] = []
                 if let resultArray = json["beverages"]?.array{
                     for elem in resultArray{
-                        if let beverageTypeDict = elem.dictionary{
-                            if let extra = Beverage.decode(beverageTypeDict){
+                        if let beverageDict = elem.dictionary{
+                            if let extra = Beverage.decode(beverageDict){
                                 beveragesArray.append(extra)
                             }
                         }
@@ -218,8 +244,8 @@ class LocalRequest{
                 var extrasArray: [Extra] = []
                 if let resultArray = json["extras"]?.array{
                     for elem in resultArray{
-                        if let extraTypeDict = elem.dictionary{
-                            if let extra = Extra.decode(extraTypeDict){
+                        if let extraDict = elem.dictionary{
+                            if let extra = Extra.decode(extraDict){
                                 extrasArray.append(extra)
                             }
                         }
@@ -231,6 +257,66 @@ class LocalRequest{
             }
         })
     }
+    
+    
+    static func getOrderHistory(_ callback: @escaping (_ orderHistory: [Order]?, _ error: String?) -> ()){
+        self.generateJSON(for: LocalRouter.getOrderHistory.requestURL, callback: {
+            (result: [String: JSON]?, failed: Bool) -> Void in
+            if failed{
+                callback(nil, "Failed to load extras.")
+            }else if let json = result{
+                var ordersArray: [Order] = []
+                if let resultArray = json["orders"]?.array{
+                    for elem in resultArray{
+                        if let orderDict = elem.dictionary{
+                            if let order = Order.decode(orderDict){
+                                ordersArray.append(order)
+                            }
+                        }
+                    }
+                    callback(ordersArray, nil)
+                }else{
+                    callback(nil, "Failed to load extras")
+                }
+            }
+        })
+    }
+    
+    //POST
+    static func postJSON(json: [String:Any], path: String, callback: @escaping (_ result: [String: JSON]?, _ error: Bool) -> ()){
+        guard let documentDirectoryUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
+        let fileUrl = documentDirectoryUrl.appendingPathComponent("\(path).json")
+        
+        // Transform array into data and save it into file
+        do {
+            let data = try JSONSerialization.data(withJSONObject: json, options: [])
+            try data.write(to: fileUrl, options: [])
+            callback(nil, false)
+        } catch {
+            callback(nil, true)
+        }
+    }
+    
+    static func updateUser(user: User, _ callback: @escaping (_ error: String?) -> ()) {
+      //  var userToUpdate = APIRouter.updateUser.generateBodyParametersForUpdateUser(user: user)
+        let jsonFormat = [
+            "user": user
+        ]
+        print(jsonFormat)
+        LocalRequest.postJSON(json: jsonFormat, path: "user") { (result, error) in
+            if error{
+                callback("Failed to post JSON when updating user")
+            }else{
+                
+                callback("postJSON successful when updating user")
+            }
+        }
+        
+        callback("User data updated")
+  
+
+    }
+
     
     
     

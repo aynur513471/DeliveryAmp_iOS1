@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Foundation
 import SwiftyJSON
 
 struct ExtraPropertyKey {
@@ -39,12 +38,20 @@ class Extra: NSObject {
         self.imageUrl = ""
     }
     
-    init(id: Int, name: String, description: String, price: Double, imageUlr: String) {
+    init(id: Int, name: String, description: String, price: Double, imageUrl: String) {
         self.id = id
         self.name = name
         self.extraDescription = description
         self.price = price
-        self.imageUrl = imageUlr
+        self.imageUrl = imageUrl
+    }
+    
+    func copy(_ extra: Extra) {
+        self.id = extra.id
+        self.name = extra.name
+        self.extraDescription = extra.extraDescription
+        self.price = extra.price
+        self.imageUrl = extra.imageUrl
     }
 }
 
@@ -59,6 +66,6 @@ extension Extra {
                 return nil
         }
         
-        return Extra(id: id, name: name, description: extraDescription, price: price, imageUlr: imageUrl)
+        return Extra(id: id, name: name, description: extraDescription, price: price, imageUrl: imageUrl)
     }
 }

@@ -21,17 +21,15 @@ class IngredientTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
     
     //MARK - Stepper function
+    
     @IBAction func modifyAmount(_ sender: UIStepper) {
         if let price = ingredientPriceLabel.text?.components(separatedBy: "$")[1] {
             amountLabel.text = Int(sender.value).description

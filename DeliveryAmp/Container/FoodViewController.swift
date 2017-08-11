@@ -11,27 +11,18 @@ import UIKit
 class FoodViewController: UIViewController {
 
     // MARK: - Outlets
+    
     @IBOutlet weak var foodTable: UITableView!
     
     // MARK: - Variables 
 
     var selectedRowIndex = -1
-
     var selectedPizzaList: [[SelectedPizzaType]] = [[]]
 
-    /*
-    var allProducts: [Product]!
-    var servingSizesFood: [ServingSize]!
-    var allProductTypes: [ProductType]!
-    var allIngredients: [Ingredient]!
-*/
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setDelegates()
-
-        // Do any additional setup after loading the view.
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -40,12 +31,6 @@ class FoodViewController: UIViewController {
         for _ in 0...allProducts.count {
             selectedPizzaList.append([])
         }
-        
-        
-        //foodTable.backgroundView?.addDiagonalGradient(self.view, [MyColors.darkBlue.cgColor, MyColors.lightBlue.cgColor], self.view.frame)
-
-        //foodTable.backgroundColor = UIColor(red: 207/255, green: 231/255, blue: 241/255, alpha: 1)
-
     }
     
     override func didReceiveMemoryWarning() {
@@ -59,7 +44,7 @@ class FoodViewController: UIViewController {
     }
     
 
-    // MARK: - Navigation
+    // MARK: - Buttons functions
 
     @IBAction func addPizza(_ sender: UIButton) {
         
@@ -67,12 +52,14 @@ class FoodViewController: UIViewController {
         let myView: SelectedPizzaType = .fromNib()
         let cell = foodTable.cellForRow(at: indexPath) as! FoodTypeTableViewCell
         
+        cell.crustTypeScrollView.contentOffset = CGPoint.zero
+        
         let pizzaSize = cell.getPizzaSize()
         let crustType = cell.getCrustType()
         
         if pizzaSize > -1 && crustType > -1 {
             myView.tag = sender.tag //the view will have the same tag with the cell
-            myView.removeButton.tag = selectedPizzaList[(indexPath.row)].count  //the tag represents the position of the view in vector
+            myView.removeButton.tag = orderItemId
             myView.removeButton.addTarget(self, action: #selector(removeView), for: .touchUpInside)
             
             myView.descriptionLabel.text = getPizzaDescription(pizzaSize, crustType)
@@ -80,42 +67,101 @@ class FoodViewController: UIViewController {
             
             selectedPizzaList[(indexPath.row)].append(myView)
             foodTable.reloadData()
+            
+            addToOrder(sender.tag, pizzaSize, crustType)
+            
+            /*
+            let crustTypeButton = cell.crustTypeScrollView.viewWithTag(crustType) as! StyleableButton
+            let sizeButton = cell.pizzaSizeScrollView.viewWithTag(pizzaSize) as! StyleableButton
+            buttonIsSelected(crustTypeButton)
+            buttonIsSelected(sizeButton)
+             */
         } else {
             Alert.showDefaultAlert(for: self, title: nil, message: "Please select a serving size and a crust type!")
         }
-
+    }
+    
+    func addToOrder(_ productId: Int, _ pizzaSize: Int, _ crustType: Int) {
+        let newItem = OrderItem()
+        newItem.type = 0
+        newItem.id = orderItemId
+        newItem.product = allProducts.filter{$0.id == productId}.map{product in OrderProduct(id: product.id, name: product.name, price: product.price)}[0]
+        let product = allProducts.filter{$0.id == productId}[0]
+        newItem.ingredients = allIngredients.filter{product.ingredientIds.contains($0.id)}.map{ingredient in OrderIngredient(id: ingredient.id, name: ingredient.name, cost: ingredient.price, quantity: 1)}
+        newItem.productType = allProductTypes.filter{$0.id == crustType}[0]
+        newItem.servingSize = servingSizesFood.filter{$0.id == pizzaSize}[0]
+        newItem.cost = Double(getPizzaPrice(pizzaSize, crustType).components(separatedBy: "$")[1])!
+        
+        orderItemId += 1
+        order.items.append(newItem)
     }
     
     func removeView(sender: UIButton) {
-        let index = sender.tag
-        let cellIndex = sender.superview?.tag
-        selectedPizzaList[(cellIndex)!].remove(at: index)
-        foodTable.reloadData()
+        let viewId = sender.tag
+        if let cellIndex = sender.superview?.tag {
+            selectedPizzaList[cellIndex] = selectedPizzaList[cellIndex].filter{$0.removeButton.tag != viewId}
+            foodTable.reloadData()
+            removeItem(viewId)
+        }
+    }
+    
+    func removeItem(_ orderItemIdToRemove: Int) {
+        order.items = order.items.filter{$0.id != orderItemIdToRemove}
     }
     
     @IBAction func goToCustomize(_ sender: StyleableButton) {
-        let destination = tabBarController?.viewControllers?[1] as! UINavigationController
-        let createYourOwn = destination.topViewController as! CreateYourOwnViewController
-        
-        let indexPath = IndexPath(row: sender.tag, section: 0)
-        let cell = foodTable.cellForRow(at: indexPath) as! FoodTypeTableViewCell
-        
-        _ = createYourOwn.view
-        /*
-        if #available(iOS 9.0, *) {
-            createYourOwn.loadViewIfNeeded()
-        } else {
-            // Fallback on earlier versions
-        }*/
-
-        createYourOwn.usedIngredients = allIngredients.filter{allProducts[selectedRowIndex].ingredientIds.contains($0.id)}.map{($0, 0)}
-        createYourOwn.selectedPizzaName.text = cell.foodNameLabel.text
-        createYourOwn.selectedPizzaPrice.text = cell.foodPriceLabel.text
-        createYourOwn.selectedPizzaPicture.image = cell.pizzaImage.image
-        createYourOwn.selectedPizzaIngredients.text = cell.foodIngredientsLabel.text
-        createYourOwn.ingredientsTable.reloadData()
-        tabBarController!.selectedIndex = 1
-      //  selectedRowIndex = -1 //optional
+        if let destination = tabBarController?.viewControllers?[1] as? UINavigationController,
+            let createYourOwn = destination.topViewController as? CreateYourOwnViewController {
+                _ = createYourOwn.view
+            
+                let indexPath = IndexPath(row: sender.tag, section: 0)
+                let cell = foodTable.cellForRow(at: indexPath) as! FoodTypeTableViewCell
+            
+                createYourOwn.usedIngredients = allIngredients.filter{allProducts[selectedRowIndex].ingredientIds.contains($0.id)}.map{($0, 0)}
+                createYourOwn.selectedPizzaName.text = cell.foodNameLabel.text
+                createYourOwn.selectedPizzaPrice.text = cell.foodPriceLabel.text
+                createYourOwn.selectedPizzaPicture.image = cell.pizzaImage.image
+                createYourOwn.selectedPizzaIngredients.text = cell.foodIngredientsLabel.text
+                createYourOwn.selectedPizzaIndex = sender.tag
+                createYourOwn.addButtonsForCrust()
+                createYourOwn.addButtonsForSize()
+                createYourOwn.setPizzaPrice()
+            
+                /* selects the same buttons (size and crust type) in the other controller*/
+                setSameSize(in: createYourOwn, for: cell)
+                setSameCrustType(in: createYourOwn, for: cell)
+            
+                createYourOwn.ingredientsTable.reloadData()
+                tabBarController!.selectedIndex = 1
+        }
+    }
+    
+    func setSameCrustType(in destination: CreateYourOwnViewController, for cell: FoodTypeTableViewCell) {
+        for subview in destination.crustTypeScrollView.subviews  {
+            if let button = subview as? StyleableButton {
+                if  button.tag == cell.getCrustType(){
+                    if let destinationButton = (destination.crustTypeScrollView.subviews.filter{ $0.tag == cell.getCrustType()}[0]) as? StyleableButton {
+                        destination.buttonIsSelected(destinationButton)
+                        destination.crustTypeScrollView.contentOffset = cell.crustTypeScrollView.contentOffset
+                    }
+                }
+            }
+        }
+        destination.setPizzaPrice()
+    }
+    
+    func setSameSize(in destination: CreateYourOwnViewController, for cell: FoodTypeTableViewCell) {
+        for subview in destination.pizzaSizeScrollView.subviews  {
+            if let button = subview as? StyleableButton {
+                if  button.tag == cell.getPizzaSize(){
+                    if let destinationButton = (destination.pizzaSizeScrollView.subviews.filter{ $0.tag == cell.getPizzaSize()}[0]) as? StyleableButton {
+                        destination.buttonIsSelected(destinationButton)
+                        destination.pizzaSizeScrollView.contentOffset = cell.pizzaSizeScrollView.contentOffset
+                    }
+                }
+            }
+        }
+        destination.setPizzaPrice()
     }
     
 }

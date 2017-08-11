@@ -10,6 +10,10 @@ import Foundation
 import UIKit
 import SideMenu
 
+// Global variables for entire project
+
+
+var user: User = User()
 var allProducts: [Product] = []
 var allBeverages: [Beverage] = []
 var allExtras: [Extra] = []
@@ -17,22 +21,37 @@ var servingSizesBeverages: [ServingSize] = []
 var servingSizesFood: [ServingSize] = []
 var allProductTypes: [ProductType] = []
 var allIngredients: [Ingredient] = []
+var orderHistory: [Order] = []
+var orderItemId = 0
+var order = Order()
+
+
+
 
 class LaunchViewController: UIViewController {
     
-    // MARK: - Variables
-    
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        getProducts()
+        getUser()
         
         
         SideMenuManager.menuPresentMode = .menuSlideIn
         SideMenuManager.menuFadeStatusBar = false
         
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: MyColors.myBlack], for: .selected)
+    }
+    
+    func getUser() {
+        LocalRequest.getUser({
+            (userOptional: User?, error: String?) -> Void in
+            if let _ = error{
+                Alert.showDefaultAlert(for: self, title: nil, message: error)
+            }else if let savedUser = userOptional {
+                user.copy(savedUser)
+                self.getProducts()
+            }
+        })
     }
     
     func getProducts(){
@@ -127,10 +146,22 @@ class LaunchViewController: UIViewController {
                 Alert.showDefaultAlert(for: self, title: nil, message: error)
             }else if let ingredients = ingredientsOptional {
                 allIngredients = ingredients
-                self.goToMainScreen()
+                self.getOrderHistory()
             }
         })
         
+    }
+    
+    func getOrderHistory() {
+        LocalRequest.getOrderHistory({
+            (orderHistoryOptional: [Order]?, error: String?) -> Void in
+            if let _ = error{
+                Alert.showDefaultAlert(for: self, title: nil, message: error)
+            }else if let orderHistoryTemp = orderHistoryOptional {
+                orderHistory = orderHistoryTemp
+                self.goToMainScreen()
+            }
+        })
     }
     
     
@@ -142,46 +173,31 @@ class LaunchViewController: UIViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let myTabBarController = segue.destination as!  UITabBarController
-        
-        var navController = myTabBarController.viewControllers![0] as! UINavigationController
-        let menuViewController = navController.topViewController as! MenuViewController
-        /*
-        menuViewController.allProducts = self.allProducts
-        menuViewController.servingSizesBeverages = self.servingSizesBeverages
-        menuViewController.servingSizesFood = self.servingSizesFood
-        menuViewController.allProductTypes = self.allProductTypes
-        menuViewController.allIngredients = self.allIngredients
-        */
-        navController = myTabBarController.viewControllers![1] as! UINavigationController
-        let createYourOwnViewController = navController.topViewController as! CreateYourOwnViewController
-         _ = createYourOwnViewController.view
-        /*
-        createYourOwnViewController.allProducts = self.allProducts
-        createYourOwnViewController.servingSizesFood = self.servingSizesFood
-        createYourOwnViewController.allProductTypes = self.allProductTypes
-        createYourOwnViewController.allIngredients = self.allIngredients
-        */
-       
-        createYourOwnViewController.usedIngredients = allIngredients.filter{allProducts[0].ingredientIds.contains($0.id)}.map{($0, 0)}
-        createYourOwnViewController.selectedPizzaName.text = allProducts[0].name
-        
-        if let url = URL(string:  allProducts[0].imageUrl){
-            createYourOwnViewController.selectedPizzaPicture.sd_setImage(
-                with: url,
-                placeholderImage: UIImage(named: "menu_icon.png"),
-                options: [.continueInBackground, .progressiveDownload]
-            )
-        }else{
-            //cell.pizzaImage.image =
+
+        if let myTabBarController = segue.destination as?  UITabBarController {
+            if let navController = myTabBarController.viewControllers![1] as? UINavigationController,
+                let createYourOwnViewController = navController.topViewController as? CreateYourOwnViewController {
+                
+                _ = createYourOwnViewController.view
+
+                createYourOwnViewController.usedIngredients = allIngredients.filter{allProducts[0].ingredientIds.contains($0.id)}.map{($0, 0)}
+                createYourOwnViewController.selectedPizzaName.text = allProducts[0].name        
+                if let url = URL(string:  allProducts[0].imageUrl){
+                    createYourOwnViewController.selectedPizzaPicture.sd_setImage(
+                        with: url,
+                        placeholderImage: UIImage(named: "menu_icon.png"),
+                        options: [.continueInBackground, .progressiveDownload]
+                    )
+                }else{
+                    //cell.pizzaImage.image =
+                }
+                createYourOwnViewController.selectedPizzaIngredients.text = allProducts[0].productDescription
+                createYourOwnViewController.ingredientsTable.reloadData()
+                createYourOwnViewController.addButtonsForCrust()
+                createYourOwnViewController.addButtonsForSize()
+                createYourOwnViewController.setPizzaPrice()
+            }
         }
-        createYourOwnViewController.selectedPizzaIngredients.text = allProducts[0].productDescription
-        createYourOwnViewController.ingredientsTable.reloadData()
-        createYourOwnViewController.addButtonsForCrust()
-        createYourOwnViewController.addButtonsForSize()
-        
-        createYourOwnViewController.setPizzaPrice()
-        
     }
 
 }

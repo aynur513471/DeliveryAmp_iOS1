@@ -135,6 +135,7 @@ extension FoodViewController: UITableViewDelegate, UITableViewDataSource {
 
     
     // MARK: - buttons selected
+    
     func buttonIsSelected(_ sender: StyleableButton) {
         deselectButtons(inside: sender.superview!)
         sender.isSelected = !sender.isSelected
@@ -153,18 +154,22 @@ extension FoodViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = foodTable.cellForRow(at: IndexPath(row: selectedRowIndex, section: 0)) as! FoodTypeTableViewCell
         let sizeId = cell.getPizzaSize()
         let crustId = cell.getCrustType()
-        cell.foodPriceLabel.text = Constants.currency + String(allProducts[selectedRowIndex].price + allProductTypes[crustId].price + servingSizesFood[sizeId].price)
+        let sizePrice = servingSizesFood.filter{$0.id == sizeId}[0].price
+        let crustPrice = allProductTypes.filter{$0.id == crustId}[0].price
+        cell.foodPriceLabel.text = Constants.currency + String(allProducts[selectedRowIndex].price + sizePrice + crustPrice)
     }
 
     
     // MARK: - helpers functions
     
     func getPizzaDescription(_ sizeId: Int, _ crustId: Int) -> String {
-        return servingSizesFood[sizeId].name + " + " + allProductTypes[crustId].name
+        return servingSizesFood.filter{$0.id == sizeId}[0].name + " + " + allProductTypes.filter{$0.id == crustId}[0].name
     }
     
     func getPizzaPrice(_ sizeId: Int, _ crustId: Int) -> String {
-        return "$" + String(allProducts[selectedRowIndex].price + allProductTypes[crustId].price + servingSizesFood[sizeId].price)
+        let sizePrice = servingSizesFood.filter{$0.id == sizeId}[0].price
+        let crustPrice = allProductTypes.filter{$0.id == crustId}[0].price
+        return "$" + String(allProducts[selectedRowIndex].price + sizePrice + crustPrice)
     }
     
     

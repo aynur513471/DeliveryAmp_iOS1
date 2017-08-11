@@ -14,15 +14,11 @@ class OrderHistoryTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         addAsNewButton.addTarget(OrderHistoryViewController(), action: #selector(OrderHistoryViewController.checkTouch), for: .touchUpInside)
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }

@@ -26,23 +26,14 @@ class CreateYourOwnViewController: UIViewController {
 
     
     // MARK: - Variables
-    /*
-    var allProducts: [Product]!
-    var servingSizesFood: [ServingSize]!
-    var allProductTypes: [ProductType]!
-    var allIngredients: [Ingredient]!
-    */
     
     var usedIngredients: [(Ingredient, Int)] = []
-    
     var selectedPizzaIndex = 0
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setDelegates()
-        
-        // Do any additional setup after loading the view.
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -50,17 +41,12 @@ class CreateYourOwnViewController: UIViewController {
         self.view.addDiagonalGradient(self.view, [MyColors.darkBlue.cgColor, MyColors.lightBlue.cgColor], self.view.frame)
         self.view.layoutIfNeeded()
         
-        
-      //  addButtonsForSize()
-      //  addButtonsForCrust()
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-    // MARK: - Delegates
-    
+
     func setDelegates() {
         ingredientsTable.delegate = self
         ingredientsTable.dataSource = self
@@ -69,7 +55,8 @@ class CreateYourOwnViewController: UIViewController {
         pizzaTypesTable.dataSource = self
     }
     
- 
+    // Mark: - Buttons functions
+    
     @IBAction func changePizza(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
         if sender.isSelected {
@@ -91,8 +78,5 @@ class CreateYourOwnViewController: UIViewController {
         ingredientsTable.reloadData()
         setPizzaPrice()
     }
-    
-     // MARK: - Navigation
-
 
 }

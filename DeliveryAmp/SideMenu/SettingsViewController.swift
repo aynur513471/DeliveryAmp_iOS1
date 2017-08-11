@@ -39,8 +39,10 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         setDelegates()
+        populateFields()
         hideKeyboardWhenTappedAround()
         
         self.expDateTextField.inputView = self.datePicker
@@ -49,10 +51,15 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
         
         addKeyboardObservers()
         self.yViewPosition = self.view.frame.origin.y
+        
+        self.view.addDiagonalGradient(self.view, [MyColors.darkBlue.cgColor, MyColors.lightBlue.cgColor], self.view.frame)
+        self.view.layoutIfNeeded()
     }
+
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -63,7 +70,6 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func setDelegates() {
@@ -80,6 +86,28 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         
         self.datePicker.delegate = self
         self.datePicker.dataSource = self
+    }
+    
+    func populateFields() {
+        if user.exists {
+            self.firstNameTextField.text = user.firstName
+            self.lastNameTextField.text = user.lastName
+            self.phoneNumberTextField.text = user.phone
+            self.emailTextField.text = user.email
+            self.addressTextField.text = user.address
+        }
+        
+        if user.creditCard.isCompleted() {
+            var cardNumber = user.creditCard.cardNumber
+            cardNumber.insert("-", at: cardNumber.index(cardNumber.startIndex, offsetBy: 4))
+            cardNumber.insert("-", at: cardNumber.index(cardNumber.startIndex, offsetBy: 9))
+            cardNumber.insert("-", at: cardNumber.index(cardNumber.startIndex, offsetBy: 14))
+            
+            self.cardNumberTextField.text = cardNumber
+            self.expDateTextField.text = String(user.creditCard.expMonth) + "/" + String(user.creditCard.expYear)
+            self.csvTextField.text = String(user.creditCard.csvCode)
+            self.holderNameTextField.text = user.creditCard.cardHolder
+        }
     }
     
     @IBAction func clearAllFields(_ sender: StyleableButton) {
@@ -99,15 +127,26 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     @IBAction func saveData(_ sender: StyleableButton) {
         if checkFields() {
             
-            //load data in my object
+            user.firstName = self.firstNameTextField.text!
+            user.lastName = self.lastNameTextField.text!
+            user.phone = self.phoneNumberTextField.text!
+            user.email = self.emailTextField.text!
+            user.address = self.addressTextField.text!
             
             if emptyCreditCardFields()  {
                 self.navigationController?.popViewController(animated: true)
             } else if checkCreditCardFields() {
-                
-                //read data in my object
-                
+                user.creditCard.cardHolder = self.holderNameTextField.text!
+                user.creditCard.cardNumber = self.cardNumberTextField.text!.components(separatedBy: "-").reduce(""){$0 + $1}
+                user.creditCard.csvCode = Int(self.csvTextField.text!)!
+                user.creditCard.expMonth = Int(self.expDateTextField.text!.components(separatedBy: "/")[0])!
+                user.creditCard.expYear = Int(self.expDateTextField.text!.components(separatedBy: "/")[1])!
+               
+             //   LocalRequest.updateUser(user: user, { (error) in
+              //      print(error!)
+             //   })
                 self.navigationController?.popViewController(animated: true)
+                self.tabBarController?.tabBar.isHidden = false
             }
         }
     }
@@ -117,6 +156,8 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func goBack(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+        self.tabBarController?.tabBar.isHidden = false
+
     }
 
 }
