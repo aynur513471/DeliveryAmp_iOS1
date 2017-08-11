@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		7B2D8BB6060FD10586244121 /* Pods_DeliveryAmp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3F92601052C8669D8A0A86 /* Pods_DeliveryAmp.framework */; };
+		869376791F3B1C7C0051E7CE /* ExtrasTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869376781F3B1C7B0051E7CE /* ExtrasTypeTableViewCell.swift */; };
+		8693767B1F3B2B4B0051E7CE /* SelectedExtrasType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8693767A1F3B2B4A0051E7CE /* SelectedExtrasType.swift */; };
+		8693767D1F3B2BA80051E7CE /* SelectedExtrasType.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8693767C1F3B2BA80051E7CE /* SelectedExtrasType.xib */; };
 		86CBD45B1F34968C00806E67 /* SelectedDrinkType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CBD45A1F34968C00806E67 /* SelectedDrinkType.swift */; };
 		86CBD45D1F349B9500806E67 /* SelectedDrinkType.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86CBD45C1F349B9500806E67 /* SelectedDrinkType.xib */; };
 		86F232581F3483B900AF6451 /* BeveragesTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F232571F3483B900AF6451 /* BeveragesTypeTableViewCell.swift */; };
@@ -89,6 +92,9 @@
 
 /* Begin PBXFileReference section */
 		3E3F92601052C8669D8A0A86 /* Pods_DeliveryAmp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeliveryAmp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		869376781F3B1C7B0051E7CE /* ExtrasTypeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtrasTypeTableViewCell.swift; sourceTree = "<group>"; };
+		8693767A1F3B2B4A0051E7CE /* SelectedExtrasType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedExtrasType.swift; sourceTree = "<group>"; };
+		8693767C1F3B2BA80051E7CE /* SelectedExtrasType.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectedExtrasType.xib; sourceTree = "<group>"; };
 		86CBD45A1F34968C00806E67 /* SelectedDrinkType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedDrinkType.swift; sourceTree = "<group>"; };
 		86CBD45C1F349B9500806E67 /* SelectedDrinkType.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectedDrinkType.xib; sourceTree = "<group>"; };
 		86F232571F3483B900AF6451 /* BeveragesTypeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeveragesTypeTableViewCell.swift; sourceTree = "<group>"; };
@@ -320,6 +326,8 @@
 				CE5B7DDD1F39C5020060D69C /* StyleableImageView.swift */,
 				CE20316A1F3846000045B00D /* StyleableSegmentedControl.swift */,
 				CEDB61F51F3B2FEC004DAE66 /* StyleableTextFieldWithPadding.swift */,
+				8693767A1F3B2B4A0051E7CE /* SelectedExtrasType.swift */,
+				8693767C1F3B2BA80051E7CE /* SelectedExtrasType.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -369,6 +377,7 @@
 				CE6C09BE1F30A0F200D9C9EA /* FoodTypeTableViewCell.swift */,
 				CEF1997B1F332617005E74B4 /* SideMenuTableViewCell.swift */,
 				86F232571F3483B900AF6451 /* BeveragesTypeTableViewCell.swift */,
+				869376781F3B1C7B0051E7CE /* ExtrasTypeTableViewCell.swift */,
 			);
 			name = CellViews;
 			sourceTree = "<group>";
@@ -484,6 +493,7 @@
 				CE0C5E381F3B44F000687B95 /* LaunchScreen.storyboard in Resources */,
 				86CBD45D1F349B9500806E67 /* SelectedDrinkType.xib in Resources */,
 				CE390D661F28C3A200014BE7 /* Roboto-Italic.ttf in Resources */,
+				8693767D1F3B2BA80051E7CE /* SelectedExtrasType.xib in Resources */,
 				CE5B7DE21F39DBA90060D69C /* raw.json in Resources */,
 				CE390D651F28C3A200014BE7 /* Roboto-BoldItalic.ttf in Resources */,
 				CE390D6C1F28C3A200014BE7 /* Roboto-ThinItalic.ttf in Resources */,
@@ -585,6 +595,7 @@
 				CE390D6E1F28DEEB00014BE7 /* ViewWithShadow.swift in Sources */,
 				CE1022C21F34B203008A28EA /* Constants.swift in Sources */,
 				CE6C09BD1F309B6A00D9C9EA /* ExtrasViewControllerExtensions.swift in Sources */,
+				8693767B1F3B2B4B0051E7CE /* SelectedExtrasType.swift in Sources */,
 				CE87A3551F2B52E300645A47 /* OrderHistoryViewController.swift in Sources */,
 				CE6C09B31F309B1A00D9C9EA /* FoodViewController.swift in Sources */,
 				CE390D511F28BCBC00014BE7 /* StyleableTextField.swift in Sources */,
@@ -608,6 +619,7 @@
 				CE42C9F71F3D90430037FF31 /* User.swift in Sources */,
 				CE87A3591F2B537C00645A47 /* OrderHistoryTableViewCell.swift in Sources */,
 				CE1022C41F34BA16008A28EA /* LaunchViewController.swift in Sources */,
+				869376791F3B1C7C0051E7CE /* ExtrasTypeTableViewCell.swift in Sources */,
 				CE168DB01F308A6500721F5B /* ContainerViewController.swift in Sources */,
 				CE6C09B71F309B3200D9C9EA /* ExtrasViewController.swift in Sources */,
 				CE168DB21F308DB500721F5B /* EmptySegue.swift in Sources */,
