@@ -11,7 +11,7 @@ import Foundation
 class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
     
     
-
+    
     
     //MARK: Outlets
     @IBOutlet weak var scrollView: UIScrollView!
@@ -21,10 +21,10 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
     @IBOutlet weak var checkbox2: UIButton!
     
     
-    //table
+    //order view
     @IBOutlet weak var totalLabel: UILabel!
-    @IBOutlet weak var orderTableView: UITableView!
     
+    @IBOutlet weak var orderViewHeight: NSLayoutConstraint!
     //delivery
     @IBOutlet weak var firstNameTextField: StyleableTextFieldWithPadding!
     @IBOutlet weak var lastNameTextField: StyleableTextFieldWithPadding!
@@ -57,7 +57,7 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
     //var yViewPosition: CGFloat!
 
     let font = UIFont(name: "Roboto-Italic", size: 11.0)
-   
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,19 +68,11 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
         
         customizeSegmentedControl()
         
-        for segment in self.payControl.subviews{
-            for subview in segment.subviews {
-                if subview.isKind(of: UILabel.self), let label = subview as? UILabel {
-                    label.font = UIFont.boldSystemFont(ofSize: 11)
-                    label.textColor = .black
-                    label.numberOfLines = 2
-                    label.layoutIfNeeded()
-                }
-            }
-            
-        }
+        setDeliverytextFields()
+        setPaymentFields()
+      
         let sortedViews = payControl.subviews.sorted( by: { $0.frame.origin.x < $1.frame.origin.x } )
-        sortedViews[0].tintColor = MyColors.buttonTextColor //seg
+        sortedViews[0].tintColor = MyColors.segmentedControl //seg
        
         
         self.expDateTextField.inputView = self.datePicker
@@ -90,6 +82,8 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
         let tap2:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(CheckoutViewController.checkboxSavePay_touchUpInside(_:)))
         savePayLabel.addGestureRecognizer(tap2)
         self.view.translatesAutoresizingMaskIntoConstraints = true
+        
+        
     }
     
   
@@ -97,7 +91,8 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
         super.viewWillAppear(animated)
        // self.yViewPosition = self.viewWithShadow.frame.origin.y
         self.addKeyboardObservers()
-        self.tabBarController?.tabBar.isHidden = false
+        tabBarController?.tabBar.isHidden = false
+        orderViewHeight.constant = CGFloat(35 * order.items.count)
 
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -111,6 +106,22 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
         removeKeyboardObservers()
 
     }
+    
+    func setDeliverytextFields(){
+        firstNameTextField.text = CurrentUser.sharedInstance.firstName
+        lastNameTextField.text = CurrentUser.sharedInstance.lastName
+        phoneNumberTextField.text = CurrentUser.sharedInstance.phone
+        emailTextField.text = CurrentUser.sharedInstance.email
+        addressTextField.text = CurrentUser.sharedInstance.address
+        
+    }
+    func setPaymentFields(){
+        cardNumberTextField.text = formatCardNumber( cardNumber: CurrentUser.sharedInstance.creditCard.cardNumber)
+        expDateTextField.text = "\(CurrentUser.sharedInstance.creditCard.expMonth)/\(CurrentUser.sharedInstance.creditCard.expYear)"
+        csvTextField.text = "\(CurrentUser.sharedInstance.creditCard.csvCode)"
+        holderNameTextField.text = CurrentUser.sharedInstance.creditCard.cardHolder
+    }
+   
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -119,7 +130,7 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
     
     //MARK: Table View Configuration
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 12
+        return order.items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -135,9 +146,32 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
         payControl.backgroundColor = UIColor.white
         payControl.tintColor = MyColors.buttonTextColor
         payControl.clipsToBounds = true
+        for segment in self.payControl.subviews{
+            for subview in segment.subviews {
+                if subview.isKind(of: UILabel.self), let label = subview as? UILabel {
+                    label.numberOfLines = 2
+                }
+            }
+            
+        }
         
     }
    
+    func formatCardNumber(cardNumber:String) -> String {
+        var cardFormated = ""
+        var k = 0
+        
+        for c in cardNumber.characters {
+            
+            if k == 4 || k == 8 || k == 12 {
+            cardFormated.append("-\(c)")
+            }else {
+            cardFormated.append(String(c))
+            }
+            k = k + 1
+        }
+        return cardFormated
+    }
     
     
     //MARK: Actions
@@ -148,7 +182,7 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
         
         for (index, view) in sortedViews.enumerated() {
             if index == (sender as AnyObject).selectedSegmentIndex {
-                view.tintColor = MyColors.buttonTextColor //seg
+                view.tintColor = MyColors.segmentedControl //seg
                 
                 if(payControl.selectedSegmentIndex == 0)
                 {

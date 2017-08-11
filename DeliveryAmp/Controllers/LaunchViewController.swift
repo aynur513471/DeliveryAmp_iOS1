@@ -11,6 +11,7 @@ import UIKit
 import SideMenu
 
 // Global variables for entire project
+
 var allProducts: [Product] = []
 var allBeverages: [Beverage] = []
 var allExtras: [Extra] = []
