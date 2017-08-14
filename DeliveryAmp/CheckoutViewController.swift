@@ -19,12 +19,17 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
     @IBOutlet weak var paymentView: UIView!
     @IBOutlet weak var checkbox1: UIButton!
     @IBOutlet weak var checkbox2: UIButton!
+    @IBOutlet weak var orderHistoryBtn: StyleableButton!
     
     
     //order view
     @IBOutlet weak var totalLabel: UILabel!
     
+    @IBOutlet weak var orderView: UIView!
     @IBOutlet weak var orderViewHeight: NSLayoutConstraint!
+    
+    var orderList : [[SelectedPizzaType]] = []
+    
     //delivery
     @IBOutlet weak var firstNameTextField: StyleableTextFieldWithPadding!
     @IBOutlet weak var lastNameTextField: StyleableTextFieldWithPadding!
@@ -52,10 +57,9 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
     var activeFieldRect : CGRect!
     var flag1 = 0
     var flag2 = 0
+    var total:Double = 0
     
-    //default y position of the view
-    //var yViewPosition: CGFloat!
-
+    var selectedPizzaList: [[SelectedPizzaType]] = [[]]
     let font = UIFont(name: "Roboto-Italic", size: 11.0)
     
     
@@ -83,28 +87,57 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
         savePayLabel.addGestureRecognizer(tap2)
         self.view.translatesAutoresizingMaskIntoConstraints = true
         
+        setColors()
+    
+
+        
         
     }
-    
+    func setColors(){
+        orderView.backgroundColor = MyColors.buttonDefaultBackgroundColor
+        dismissBtn.backgroundColor = MyColors.buttonDefaultBackgroundColor
+        placeOrderBtn.backgroundColor = MyColors.buttonDefaultBackgroundColor
+        payControl.backgroundColor = MyColors.buttonDefaultBackgroundColor
+        firstNameTextField.backgroundColor = MyColors.buttonDefaultBackgroundColor
+        lastNameTextField.backgroundColor = MyColors.buttonDefaultBackgroundColor
+        phoneNumberTextField.backgroundColor = MyColors.buttonDefaultBackgroundColor
+        emailTextField.backgroundColor = MyColors.buttonDefaultBackgroundColor
+        cardNumberTextField.backgroundColor = MyColors.buttonDefaultBackgroundColor
+        expDateTextField.backgroundColor = MyColors.buttonDefaultBackgroundColor
+        holderNameTextField.backgroundColor = MyColors.buttonDefaultBackgroundColor
+        orderHistoryBtn.backgroundColor = MyColors.buttonDefaultBackgroundColor
+        addressTextField.backgroundColor = MyColors.buttonDefaultBackgroundColor
+        csvTextField.backgroundColor = MyColors.buttonDefaultBackgroundColor
+    }
   
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-       // self.yViewPosition = self.viewWithShadow.frame.origin.y
         self.addKeyboardObservers()
         tabBarController?.tabBar.isHidden = false
-        orderViewHeight.constant = CGFloat(35 * order.items.count)
+        orderViewHeight.constant = 0
+        removeSubviews()
+        configureOrder()
+        selectedPizzaList.reserveCapacity(allProducts.count)
+        for _ in 0...allProducts.count {
+            selectedPizzaList.append([])
+        }
+        
 
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.scrollView.contentInset = .zero
+       
+        
     
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         removeKeyboardObservers()
-
+        
+        orderViewHeight.constant = 0
+        removeSubviews()
     }
     
     func setDeliverytextFields(){
@@ -290,6 +323,137 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
         scrollView.delegate = self
         
     }
+    //MARK: Order View Configuration
+    func configureOrder(){
+        let nrItems = order.items.count
+        for item in order.items{
+            print(item.product.name)
+        }
+        self.orderViewHeight.constant = CGFloat(35 * nrItems)
+        
+        
+        total = 0
+        totalLabel.text = "\(total)"
+        
+        
+        var foodView  : SelectedPizzaType
+        var foodName : String
+        var foodPrice : Double
+        
+        let height:CGFloat = 35
+        var y:CGFloat = 0
+       
+        orderView.translatesAutoresizingMaskIntoConstraints = false
+        
+        for item in order.items{
+            
+            
+           
+            switch item.type{
+            
+            case 0 :
+                //pizza
+                foodView = .fromNib()
+                foodView.removeButton.addTarget(self, action: #selector(removeView), for: .touchUpInside)
+                foodName = "\(item.product.name) \(item.productType.name) + \(item.servingSize.name)"
+                foodPrice = item.cost
+                
+                foodView.descriptionLabel.text = foodName
+                foodView.priceLabel.text = "$\(foodPrice)"
+                total += foodPrice
+
+                
+                
+                orderView.addSubview(foodView)
+                foodView.frame = CGRect(x: 0, y:CGFloat(y), width: orderView.frame.width, height: height)
+
+                
+                //                }else {
+//                    for ingredient in item.ingredients {
+//                        let ingredientView:SelectedPizzaType
+//                        ingredientView = .fromNib()
+//                        ingredientView.descriptionLabel.text = ingredient.name
+//                        orderView.addSubview(ingredientView)
+//                        foodView[i]?.frame = CGRect(x: 10, y:CGFloat(y), width: orderView.frame.width-10, height: height)
+//                    }}
+  
+                y = y + 35
+                
+            case 1:
+                //beverages
+                foodView = .fromNib()
+                foodView.removeButton.addTarget(self, action: #selector(removeView), for: .touchUpInside)
+                foodName = "\(item.product.name) \(item.servingSize.quantity)L"
+                foodPrice = item.cost
+                
+                foodView.descriptionLabel.text = foodName
+                foodView.priceLabel.text = "$\(foodPrice)"
+                total += foodPrice
+                
+                orderView.addSubview(foodView)
+                foodView.frame = CGRect(x: 0, y:CGFloat(y), width: orderView.frame.width, height: height)
+                y = y + 35
+            
+            case 2:
+                //extras
+                foodView = .fromNib()
+                foodView.removeButton.addTarget(self, action: #selector(removeView), for: .touchUpInside)
+                foodName = "\(item.product.name) "
+                foodPrice = item.cost
+                
+                foodView.descriptionLabel.text = foodName
+                foodView.priceLabel.text = "$\(foodPrice)"
+                total += foodPrice
+                
+                orderView.addSubview(foodView)
+                foodView.frame = CGRect(x: 0, y:CGFloat(y), width: orderView.frame.width, height: height)
+                y = y + 35
+                
+            default:
+                break
+            }
+//
+
+//            
+//                case 1 :
+//                    //bauturi
+//                    flag1 += 1
+//                case 2 :
+//                    //extras
+//                    flag1 += 1
+//                default: break
+
+      
+        
+        }
+        totalLabel.text = "\(total)"
+        
+        
+    }
+    func removeSubviews()
+    {
+        for subview1 in orderView.subviews{
+            if subview1.isKind(of: SelectedPizzaType.self){
+            subview1.removeFromSuperview()
+            }
+            
+        }
+    }
+    func removeView(sender: UIButton) {
+        let viewId = sender.tag
+        if let cellIndex = sender.superview?.tag {
+            selectedPizzaList[cellIndex] = selectedPizzaList[cellIndex].filter{$0.removeButton.tag != viewId}
+            print("bays")
+            removeItem(viewId)
+            configureOrder()
+        }
+    }
+    
+    func removeItem(_ orderItemIdToRemove: Int) {
+        order.items = order.items.filter{$0.id != orderItemIdToRemove}
+    }
+  
+    
     
 }
 //MARK: Extension

@@ -42,7 +42,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Checkout" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GOr-l6-aav">
-                                        <rect key="frame" x="126" y="35" width="68" height="19"/>
+                                        <rect key="frame" x="126.5" y="35" width="68" height="19"/>
                                         <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="16"/>
                                         <color key="textColor" red="0.30588235289999999" green="0.33725490200000002" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -472,7 +472,7 @@
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cuR-RN-0wh">
                                                 <rect key="frame" x="10" y="53" width="276" height="90"/>
-                                                <color key="backgroundColor" red="1" green="0.24732483934125304" blue="0.32574124417252215" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="90" id="COT-rT-f6d"/>
                                                 </constraints>
@@ -570,6 +570,8 @@
                         <outlet property="firstNameTextField" destination="ujQ-ls-A6f" id="sdO-y6-LG2"/>
                         <outlet property="holderNameTextField" destination="B4o-ET-fVI" id="SGN-lT-mUC"/>
                         <outlet property="lastNameTextField" destination="st8-ma-2yh" id="Amg-S7-ZWz"/>
+                        <outlet property="orderHistoryBtn" destination="eYh-Li-n2M" id="VCC-aB-Df6"/>
+                        <outlet property="orderView" destination="cuR-RN-0wh" id="ERI-12-b2j"/>
                         <outlet property="orderViewHeight" destination="COT-rT-f6d" id="ncL-aU-HGV"/>
                         <outlet property="payControl" destination="azm-Wj-4dX" id="Bdj-Qa-KuH"/>
                         <outlet property="payViewHeight" destination="4Pd-mx-KMJ" id="Qg5-P1-ERp"/>
@@ -1640,7 +1642,7 @@
                                                 <rect key="frame" x="0.0" y="1" width="300" height="72"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eRQ-2U-6BI" id="1Uh-eC-g8j">
-                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="71.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="72"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7MV-YM-pdE">
@@ -1991,7 +1993,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Your Own" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bT1-T5-mg3">
-                                        <rect key="frame" x="100" y="35" width="120" height="19"/>
+                                        <rect key="frame" x="100.5" y="35" width="120" height="19"/>
                                         <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="16"/>
                                         <color key="textColor" red="0.30588235294117649" green="0.33725490196078434" blue="0.35686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -2276,7 +2278,7 @@
                                         <rect key="frame" x="0.0" y="28" width="394" height="173"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ine-6x-YKB" id="p0u-y3-pcd">
-                                            <rect key="frame" x="0.0" y="0.0" width="394" height="172.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="394" height="173"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ao9-ac-LtL" customClass="ViewWithShadow" customModule="DeliveryAmp" customModuleProvider="target">
@@ -2466,7 +2468,7 @@
                                         <rect key="frame" x="0.0" y="28" width="394" height="174"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z3Z-R2-mx7" id="f6s-Uo-DF8">
-                                            <rect key="frame" x="0.0" y="0.0" width="394" height="173.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="394" height="174"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qBX-a1-3mA">
@@ -2703,7 +2705,7 @@
                                         <rect key="frame" x="0.0" y="28" width="394" height="123"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QBg-XH-axg" id="LLP-bs-47Z">
-                                            <rect key="frame" x="0.0" y="0.0" width="394" height="122.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="394" height="123"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pmN-NA-T25" customClass="ViewWithShadow" customModule="DeliveryAmp" customModuleProvider="target">
@@ -2897,7 +2899,7 @@
         <image name="up_arrow" width="12" height="7"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rnk-YI-U6S"/>
-        <segue reference="VI2-Di-8Nb"/>
+        <segue reference="DkY-af-05v"/>
+        <segue reference="kJ9-kp-e9M"/>
     </inferredMetricsTieBreakers>
 </document>
