@@ -61,17 +61,39 @@ class ExtrasViewController: UIViewController {
             
         selectedExtrasList[(indexPath.row)].append(myView)
         extrasTable.reloadData()
-      
+        
+        //addToOrder(sender.tag)
+        addToOrder(allExtras[sender.tag].id)
         
     }
     
+    func addToOrder(_ productId: Int) {
+        let newItem = OrderItem()
+        newItem.type = 2
+        newItem.id = orderItemId
+        
+        newItem.product = allExtras.filter{$0.id == productId}.map{product in OrderProduct(id: product.id, name: product.name, price: product.price)}[0]
+        let product = allExtras.filter{$0.id == productId}[0]
+        newItem.cost = Double(getExtraPrice().components(separatedBy: "$")[1])!
+        
+        orderItemId += 1
+        order.items.append(newItem)
+        print()
+    }
+
+    
     func removeView(sender: UIButton) {
-        let index = sender.tag
-        let cellIndex = sender.superview?.tag
-        selectedExtrasList[(cellIndex)!].remove(at: index)
-        extrasTable.reloadData()
+        let viewId = sender.tag
+        if let cellIndex = sender.superview?.tag {
+            selectedExtrasList[cellIndex] = selectedExtrasList[cellIndex].filter{$0.removeButton.tag != viewId}
+            extrasTable.reloadData()
+            removeItem(viewId)
+        }
     }
     
+    func removeItem(_ orderItemIdToRemove: Int) {
+        order.items = order.items.filter{$0.id != orderItemIdToRemove}
+    }
     
     
     

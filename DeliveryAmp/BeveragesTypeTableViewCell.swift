@@ -24,7 +24,6 @@ class BeveragesTypeTableViewCell: UITableViewCell {
     
     
     @IBOutlet weak var buttonsView: UIView!
-    @IBOutlet weak var goToCustomizeButton: StyleableButton!
     @IBOutlet weak var addButton: StyleableButton!
     
     

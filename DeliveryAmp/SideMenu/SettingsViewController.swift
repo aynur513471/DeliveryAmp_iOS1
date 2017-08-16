@@ -129,22 +129,20 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         
         let currentUser = CurrentUser.sharedInstance
         if checkFields() {
-            
-            currentUser.firstName = self.firstNameTextField.text!
-            currentUser.lastName = self.lastNameTextField.text!
-            currentUser.phone = self.phoneNumberTextField.text!
-            currentUser.email = self.emailTextField.text!
-            currentUser.address = self.addressTextField.text!
-            
+            CurrentUser.sharedInstance.firstName = self.firstNameTextField.text!
+            CurrentUser.sharedInstance.lastName = self.lastNameTextField.text!
+            CurrentUser.sharedInstance.phone = self.phoneNumberTextField.text!
+            CurrentUser.sharedInstance.email = self.emailTextField.text!
+            CurrentUser.sharedInstance.address = self.addressTextField.text!  
             if emptyCreditCardFields()  {
                 self.navigationController?.popViewController(animated: true)
             } else if checkCreditCardFields() {
-                currentUser.creditCard.cardHolder = self.holderNameTextField.text!
-                currentUser.creditCard.cardNumber = self.cardNumberTextField.text!.components(separatedBy: "-").reduce(""){$0 + $1}
-                currentUser.creditCard.csvCode = Int(self.csvTextField.text!)!
-                currentUser.creditCard.expMonth = Int(self.expDateTextField.text!.components(separatedBy: "/")[0])!
-                currentUser.creditCard.expYear = Int(self.expDateTextField.text!.components(separatedBy: "/")[1])!
-               
+                CurrentUser.sharedInstance.creditCard.cardHolder = self.holderNameTextField.text!
+                CurrentUser.sharedInstance.creditCard.cardNumber = self.cardNumberTextField.text!.components(separatedBy: "-").reduce(""){$0 + $1}
+                CurrentUser.sharedInstance.creditCard.csvCode = Int(self.csvTextField.text!)!
+                CurrentUser.sharedInstance.creditCard.expMonth = Int(self.expDateTextField.text!.components(separatedBy: "/")[0])!
+                CurrentUser.sharedInstance.creditCard.expYear = Int(self.expDateTextField.text!.components(separatedBy: "/")[1])!
+          
                 LocalRequest.updateUser(user: currentUser, { (error) in
                     print(error!)
                 })

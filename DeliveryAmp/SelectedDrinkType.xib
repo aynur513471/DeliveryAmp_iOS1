@@ -71,7 +71,7 @@
                 <outlet property="priceLabel" destination="XV1-rb-vNz" id="wva-vD-fXO"/>
                 <outlet property="removeButton" destination="dUc-b8-EJQ" id="MUU-Sf-40m"/>
             </connections>
-            <point key="canvasLocation" x="-591" y="-70.5"/>
+            <point key="canvasLocation" x="-689" y="-95"/>
         </view>
     </objects>
 </document>
