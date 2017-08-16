@@ -62,6 +62,7 @@
 		CE42C9FD1F3DA52D0037FF31 /* APIParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42C9FC1F3DA52D0037FF31 /* APIParameters.swift */; };
 		CE49CDD61F2F154400EC114F /* SettingsViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE49CDD51F2F154400EC114F /* SettingsViewControllerExtension.swift */; };
 		CE49CDD81F2F6F2600EC114F /* PizzaTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE49CDD71F2F6F2600EC114F /* PizzaTypeTableViewCell.swift */; };
+		CE5522A41F4440BB00A540B5 /* CheckoutViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5522A31F4440BB00A540B5 /* CheckoutViewControllerExtension.swift */; };
 		CE579B291F41AABC00BE1024 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE579B281F41AABC00BE1024 /* APIRequest.swift */; };
 		CE579B2B1F41BAC100BE1024 /* ServerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE579B2A1F41BAC100BE1024 /* ServerError.swift */; };
 		CE579B2D1F41BB6000BE1024 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE579B2C1F41BB6000BE1024 /* Reachability.swift */; };
@@ -153,6 +154,7 @@
 		CE42C9FC1F3DA52D0037FF31 /* APIParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIParameters.swift; path = APIManager/APIParameters.swift; sourceTree = "<group>"; };
 		CE49CDD51F2F154400EC114F /* SettingsViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewControllerExtension.swift; path = Extensions/SettingsViewControllerExtension.swift; sourceTree = "<group>"; };
 		CE49CDD71F2F6F2600EC114F /* PizzaTypeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PizzaTypeTableViewCell.swift; path = CellViews/PizzaTypeTableViewCell.swift; sourceTree = "<group>"; };
+		CE5522A31F4440BB00A540B5 /* CheckoutViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutViewControllerExtension.swift; sourceTree = "<group>"; };
 		CE579B281F41AABC00BE1024 /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIRequest.swift; path = APIManager/APIRequest.swift; sourceTree = "<group>"; };
 		CE579B2A1F41BAC100BE1024 /* ServerError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServerError.swift; path = Models/ServerError.swift; sourceTree = "<group>"; };
 		CE579B2C1F41BB6000BE1024 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = Helpers/Reachability.swift; sourceTree = "<group>"; };
@@ -324,13 +326,13 @@
 		CE390D4F1F28B92100014BE7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CE390D501F28BCBC00014BE7 /* StyleableTextField.swift */,
 				CE390D521F28BE9000014BE7 /* StyleableButton.swift */,
 				CE390D6D1F28DEEB00014BE7 /* ViewWithShadow.swift */,
 				CE6C09C61F30B99B00D9C9EA /* SelectedPizzaType.swift */,
 				CE6C09C81F30B9B300D9C9EA /* SelectedPizzaType.xib */,
 				86CBD45A1F34968C00806E67 /* SelectedDrinkType.swift */,
 				86CBD45C1F349B9500806E67 /* SelectedDrinkType.xib */,
+				CE390D501F28BCBC00014BE7 /* StyleableTextField.swift */,
 				CE5B7DDD1F39C5020060D69C /* StyleableImageView.swift */,
 				CE20316A1F3846000045B00D /* StyleableSegmentedControl.swift */,
 				CEDB61F51F3B2FEC004DAE66 /* StyleableTextFieldWithPadding.swift */,
@@ -422,6 +424,7 @@
 				CE6C09BA1F309B5900D9C9EA /* BeveragesViewControllerExtension.swift */,
 				CE6C09BC1F309B6A00D9C9EA /* ExtrasViewControllerExtensions.swift */,
 				CE2D044E1F345C660074ECBC /* UIViewExtension.swift */,
+				CE5522A31F4440BB00A540B5 /* CheckoutViewControllerExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -530,7 +533,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		8A652070DECAC6F2E48A76A1 /* [CP] Embed Pods Frameworks */ = {
@@ -633,6 +636,7 @@
 				CE87A3591F2B537C00645A47 /* OrderHistoryTableViewCell.swift in Sources */,
 				CE1022C41F34BA16008A28EA /* LaunchViewController.swift in Sources */,
 				869376791F3B1C7C0051E7CE /* ExtrasTypeTableViewCell.swift in Sources */,
+				CE5522A41F4440BB00A540B5 /* CheckoutViewControllerExtension.swift in Sources */,
 				CE168DB01F308A6500721F5B /* ContainerViewController.swift in Sources */,
 				CE6C09B71F309B3200D9C9EA /* ExtrasViewController.swift in Sources */,
 				CE168DB21F308DB500721F5B /* EmptySegue.swift in Sources */,
