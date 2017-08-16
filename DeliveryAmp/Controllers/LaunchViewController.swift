@@ -12,8 +12,6 @@ import SideMenu
 
 // Global variables for entire project
 
-
-var user: User = User()
 var allProducts: [Product] = []
 var allBeverages: [Beverage] = []
 var allExtras: [Extra] = []
@@ -43,12 +41,14 @@ class LaunchViewController: UIViewController {
     }
     
     func getUser() {
+
         LocalRequest.getUser({
             (userOptional: User?, error: String?) -> Void in
             if let _ = error{
+                self.getProducts()
                 Alert.showDefaultAlert(for: self, title: nil, message: error)
             }else if let savedUser = userOptional {
-                user.copy(savedUser)
+                CurrentUser.sharedInstance.copy(savedUser)
                 self.getProducts()
             }
         })

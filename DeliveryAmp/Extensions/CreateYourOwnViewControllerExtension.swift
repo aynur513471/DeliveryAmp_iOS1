@@ -165,10 +165,7 @@ extension CreateYourOwnViewController: UITableViewDelegate, UITableViewDataSourc
         let crustId = getCrustType()
         let sizePrice = servingSizesFood.filter{$0.id == sizeId}[0].price
         let crustPrice = allProductTypes.filter{$0.id == crustId}[0].price    
-        var ingredientsPrice = 0.0
-        for ingredient in usedIngredients {
-            ingredientsPrice += ingredient.0.price * Double(ingredient.1)
-        }
+        var ingredientsPrice = usedIngredients.reduce(0.0){$0 + ($1.0.price * Double($1.1))}
         selectedPizzaPrice.text = Constants.currency + String(allProducts[selectedPizzaIndex].price + sizePrice + crustPrice + ingredientsPrice)
     }
 

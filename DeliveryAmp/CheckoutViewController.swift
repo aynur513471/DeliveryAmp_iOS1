@@ -97,6 +97,7 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
         super.viewWillAppear(animated)
        // self.yViewPosition = self.viewWithShadow.frame.origin.y
         self.addKeyboardObservers()
+        tabBarController?.tabBar.isHidden = false
 
     }
     override func viewDidAppear(_ animated: Bool) {

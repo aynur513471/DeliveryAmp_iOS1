@@ -8,6 +8,9 @@
 
 import Foundation
 
+
+let DEMO_DATA = true
+
 struct Constants {
     static let currency = "$"
 }

@@ -8,5 +8,6 @@ target ‘DeliveryAmp’ do
   pod 'SideMenu'
   pod 'SwiftyJSON'
   pod 'SDWebImage'
+  pod 'Alamofire'
 
 end

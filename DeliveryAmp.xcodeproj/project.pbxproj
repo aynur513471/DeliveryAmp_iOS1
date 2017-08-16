@@ -59,9 +59,12 @@
 		CE42C9F71F3D90430037FF31 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42C9F51F3D90430037FF31 /* User.swift */; };
 		CE42C9F91F3D998E0037FF31 /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = CE42C9F81F3D998E0037FF31 /* user.json */; };
 		CE42C9FB1F3DA3D90037FF31 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42C9FA1F3DA3D90037FF31 /* APIRouter.swift */; };
-		CE42C9FD1F3DA52D0037FF31 /* ApiParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42C9FC1F3DA52D0037FF31 /* ApiParameters.swift */; };
+		CE42C9FD1F3DA52D0037FF31 /* APIParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42C9FC1F3DA52D0037FF31 /* APIParameters.swift */; };
 		CE49CDD61F2F154400EC114F /* SettingsViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE49CDD51F2F154400EC114F /* SettingsViewControllerExtension.swift */; };
 		CE49CDD81F2F6F2600EC114F /* PizzaTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE49CDD71F2F6F2600EC114F /* PizzaTypeTableViewCell.swift */; };
+		CE579B291F41AABC00BE1024 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE579B281F41AABC00BE1024 /* APIRequest.swift */; };
+		CE579B2B1F41BAC100BE1024 /* ServerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE579B2A1F41BAC100BE1024 /* ServerError.swift */; };
+		CE579B2D1F41BB6000BE1024 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE579B2C1F41BB6000BE1024 /* Reachability.swift */; };
 		CE5B7DDE1F39C5020060D69C /* StyleableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B7DDD1F39C5020060D69C /* StyleableImageView.swift */; };
 		CE5B7DE21F39DBA90060D69C /* raw.json in Resources */ = {isa = PBXBuildFile; fileRef = CE5B7DE11F39DBA90060D69C /* raw.json */; };
 		CE6C09B31F309B1A00D9C9EA /* FoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6C09B21F309B1A00D9C9EA /* FoodViewController.swift */; };
@@ -147,9 +150,12 @@
 		CE42C9F51F3D90430037FF31 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
 		CE42C9F81F3D998E0037FF31 /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user.json; sourceTree = "<group>"; };
 		CE42C9FA1F3DA3D90037FF31 /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIRouter.swift; path = APIManager/APIRouter.swift; sourceTree = "<group>"; };
-		CE42C9FC1F3DA52D0037FF31 /* ApiParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiParameters.swift; path = APIManager/ApiParameters.swift; sourceTree = "<group>"; };
+		CE42C9FC1F3DA52D0037FF31 /* APIParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIParameters.swift; path = APIManager/APIParameters.swift; sourceTree = "<group>"; };
 		CE49CDD51F2F154400EC114F /* SettingsViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewControllerExtension.swift; path = Extensions/SettingsViewControllerExtension.swift; sourceTree = "<group>"; };
 		CE49CDD71F2F6F2600EC114F /* PizzaTypeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PizzaTypeTableViewCell.swift; path = CellViews/PizzaTypeTableViewCell.swift; sourceTree = "<group>"; };
+		CE579B281F41AABC00BE1024 /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIRequest.swift; path = APIManager/APIRequest.swift; sourceTree = "<group>"; };
+		CE579B2A1F41BAC100BE1024 /* ServerError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServerError.swift; path = Models/ServerError.swift; sourceTree = "<group>"; };
+		CE579B2C1F41BB6000BE1024 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = Helpers/Reachability.swift; sourceTree = "<group>"; };
 		CE5B7DDD1F39C5020060D69C /* StyleableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StyleableImageView.swift; path = Views/StyleableImageView.swift; sourceTree = "<group>"; };
 		CE5B7DE11F39DBA90060D69C /* raw.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = raw.json; sourceTree = "<group>"; };
 		CE6C09B21F309B1A00D9C9EA /* FoodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FoodViewController.swift; path = Container/FoodViewController.swift; sourceTree = "<group>"; };
@@ -246,6 +252,7 @@
 				CE11AD231F3C51BA009573E6 /* OrderIngredient.swift */,
 				CE11AD251F3C6364009573E6 /* Order.swift */,
 				CEE477271F3C8A340000BE64 /* OrderProduct.swift */,
+				CE579B2A1F41BAC100BE1024 /* ServerError.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -253,9 +260,10 @@
 		CE2D045A1F3485120074ECBC /* API Manager */ = {
 			isa = PBXGroup;
 			children = (
-				CE2D045D1F3485750074ECBC /* LocalRequest.swift */,
+				CE42C9FC1F3DA52D0037FF31 /* APIParameters.swift */,
+				CE579B281F41AABC00BE1024 /* APIRequest.swift */,
 				CE42C9FA1F3DA3D90037FF31 /* APIRouter.swift */,
-				CE42C9FC1F3DA52D0037FF31 /* ApiParameters.swift */,
+				CE2D045D1F3485750074ECBC /* LocalRequest.swift */,
 			);
 			name = "API Manager";
 			sourceTree = "<group>";
@@ -399,6 +407,7 @@
 				CEF199831F336B2C005E74B4 /* Alert.swift */,
 				CEF199851F3373DA005E74B4 /* Regex.swift */,
 				CE1022C11F34B203008A28EA /* Constants.swift */,
+				CE579B2C1F41BB6000BE1024 /* Reachability.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -521,7 +530,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8A652070DECAC6F2E48A76A1 /* [CP] Embed Pods Frameworks */ = {
@@ -531,12 +540,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-DeliveryAmp/Pods-DeliveryAmp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -582,9 +593,11 @@
 				CE1022C61F34BEBE008A28EA /* Beverage.swift in Sources */,
 				CE390D531F28BE9000014BE7 /* StyleableButton.swift in Sources */,
 				CE2D045E1F3485750074ECBC /* LocalRequest.swift in Sources */,
+				CE579B2B1F41BAC100BE1024 /* ServerError.swift in Sources */,
 				CE2D04571F347E050074ECBC /* ProductType.swift in Sources */,
 				CE5B7DDE1F39C5020060D69C /* StyleableImageView.swift in Sources */,
 				CE11AD221F3C5043009573E6 /* OrderItem.swift in Sources */,
+				CE579B2D1F41BB6000BE1024 /* Reachability.swift in Sources */,
 				CE2D044F1F345C660074ECBC /* UIViewExtension.swift in Sources */,
 				CEF1997E1F3327E1005E74B4 /* SideMenuViewController.swift in Sources */,
 				CE6C09C71F30B99B00D9C9EA /* SelectedPizzaType.swift in Sources */,
@@ -599,7 +612,7 @@
 				CE87A3551F2B52E300645A47 /* OrderHistoryViewController.swift in Sources */,
 				CE6C09B31F309B1A00D9C9EA /* FoodViewController.swift in Sources */,
 				CE390D511F28BCBC00014BE7 /* StyleableTextField.swift in Sources */,
-				CE42C9FD1F3DA52D0037FF31 /* ApiParameters.swift in Sources */,
+				CE42C9FD1F3DA52D0037FF31 /* APIParameters.swift in Sources */,
 				CE2D04511F346F260074ECBC /* MyColors.swift in Sources */,
 				CE6C09BB1F309B5900D9C9EA /* BeveragesViewControllerExtension.swift in Sources */,
 				CE11AD241F3C51BA009573E6 /* OrderIngredient.swift in Sources */,
@@ -626,6 +639,7 @@
 				CE2D04551F347B8B0074ECBC /* ServingSize.swift in Sources */,
 				CEE477281F3C8A340000BE64 /* OrderProduct.swift in Sources */,
 				CEF3051B1F2A057D009A740A /* CreateYourOwnViewControllerExtension.swift in Sources */,
+				CE579B291F41AABC00BE1024 /* APIRequest.swift in Sources */,
 				CE2D04591F3480F20074ECBC /* Ingredient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

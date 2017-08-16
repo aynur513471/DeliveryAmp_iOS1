@@ -59,35 +59,6 @@ class OrderItem: NSObject {
 extension OrderItem {
     static func decode(_ json: JSON) -> OrderItem? {
     
-        let product = OrderProduct()
-        if let productJSON = json[OrderItemPropertyKey.productKey].dictionary,
-            let productDecoded = OrderProduct.decode(productJSON) {
-            product.copy(productDecoded)
-            print(product)
-        }
-
-        let productType = ProductType()
-        if let productTypeJSON = json[OrderItemPropertyKey.productTypeKey].dictionary,
-            let productTypeDecoded = ProductType.decode(productTypeJSON) {
-            productType.copy(productTypeDecoded)
-        }
-        
-        let servingSize = ServingSize()
-        if let servingSizeJSON = json[OrderItemPropertyKey.servingSizeKey].dictionary,
-            let servingSizeDecoded = ServingSize.decode(servingSizeJSON) {
-            servingSize.copy(servingSizeDecoded)
-        }
-        
-
-        var ingredients: [OrderIngredient] = []
-        if let ingredientsArray = json[OrderItemPropertyKey.mIngredientsKey].array {
-            for ingredientJSON in ingredientsArray{
-                if let ingredientDecoded = OrderIngredient.decode(ingredientJSON) {
-                    ingredients.append(ingredientDecoded)
-                }
-            }
-        }
-        
         guard let id = json[OrderItemPropertyKey.idKey].int,
             let type = json[OrderItemPropertyKey.typeKey].int,
             let cost = json[OrderItemPropertyKey.costKey].double
@@ -95,6 +66,45 @@ extension OrderItem {
                 return nil
         }
         
-        return OrderItem(id: id, type: type, cost: cost, product: product, productType: productType, servingSize: servingSize, ingredients: ingredients)
+        
+        let product = OrderProduct()
+        if let productJSON = json[OrderItemPropertyKey.productKey].dictionary,
+            let productDecoded = OrderProduct.decode(productJSON) {
+            product.copy(productDecoded)
+            print(product)
+        }
+        
+        if type == 0 {
+            var ingredients: [OrderIngredient] = []
+            if let ingredientsArray = json[OrderItemPropertyKey.mIngredientsKey].array {
+                for ingredientJSON in ingredientsArray{
+                    if let ingredientDecoded = OrderIngredient.decode(ingredientJSON) {
+                        ingredients.append(ingredientDecoded)
+                    }
+                }
+            }
+        
+            let productType = ProductType()
+            if let productTypeJSON = json[OrderItemPropertyKey.productTypeKey].dictionary,
+                let productTypeDecoded = ProductType.decode(productTypeJSON) {
+                productType.copy(productTypeDecoded)
+            }
+            
+            let servingSize = ServingSize()
+            if let servingSizeJSON = json[OrderItemPropertyKey.servingSizeKey].dictionary,
+                let servingSizeDecoded = ServingSize.decode(servingSizeJSON) {
+                servingSize.copy(servingSizeDecoded)
+            }
+            
+            return OrderItem(id: id, type: type, cost: cost, product: product, productType: productType, servingSize: servingSize, ingredients: ingredients)
+        } else if type == 1 {
+            let servingSize = ServingSize()
+            if let servingSizeJSON = json[OrderItemPropertyKey.servingSizeKey].dictionary,
+                let servingSizeDecoded = ServingSize.decode(servingSizeJSON) {
+                servingSize.copy(servingSizeDecoded)
+                return OrderItem(id: id, type: type, cost: cost, product: product, productType: ProductType(), servingSize: servingSize, ingredients: [])
+            }
+        }
+        return OrderItem(id: id, type: type, cost: cost, product: product, productType: ProductType(), servingSize: ServingSize(), ingredients: [])
     }
 }

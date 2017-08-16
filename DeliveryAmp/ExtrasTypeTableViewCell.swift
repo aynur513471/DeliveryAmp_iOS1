@@ -42,11 +42,11 @@ class ExtrasTypeTableViewCell: UITableViewCell {
         selectedTypeView.isHidden = false
         bottonsViewHeightConstraint.constant = 50
         
-        if selectedTypeTopConstraint != nil  && selectedTypeBottomConstraint != nil {
+     //   if selectedTypeTopConstraint != nil  && selectedTypeBottomConstraint != nil {
             selectedTypeTopConstraint.constant = 1
             selectedTypeBottomConstraint.constant = 1
             
-        }
+     //   }
         self.layoutIfNeeded()
     }
     
@@ -54,10 +54,10 @@ class ExtrasTypeTableViewCell: UITableViewCell {
         
         selectedTypeView.isHidden = true
         bottonsViewHeightConstraint.constant = 0
-        if selectedTypeTopConstraint != nil  && selectedTypeBottomConstraint != nil {
-            selectedTypeTopConstraint.constant = 0
+      //  if selectedTypeTopConstraint != nil  && selectedTypeBottomConstraint != nil {
+           // selectedTypeTopConstraint.constant = 0
             selectedTypeBottomConstraint.constant = 0
-        }
+   //     }
         self.layoutIfNeeded()
     }
     

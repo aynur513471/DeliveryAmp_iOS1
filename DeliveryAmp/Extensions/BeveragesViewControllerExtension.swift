@@ -14,7 +14,6 @@ extension BeveragesViewController: UITableViewDelegate, UITableViewDataSource {
     // MARK: - table view functions
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(allBeverages.count)
         return allBeverages.count
     }
     
@@ -33,7 +32,7 @@ extension BeveragesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         if indexPath.row == selectedRowIndex  {
-            return CGFloat(173 + selectedDrinkList[indexPath.row].count * 35) // + 3 from constraints
+            return CGFloat(174 + selectedDrinkList[indexPath.row].count * 35) // +4 from constraints
         }
         
         return 71 // +1 from constraints
@@ -141,7 +140,7 @@ extension BeveragesViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func getDrinkPrice(_ sizeId: Int) -> String {
-        return "$" + String(allBeverages[selectedRowIndex].price + servingSizesBeverages.filter{$0.id == sizeId}[0].price)
+        return Constants.currency + String(allBeverages[selectedRowIndex].price + servingSizesBeverages.filter{$0.id == sizeId}[0].price)
     }
 
 }
