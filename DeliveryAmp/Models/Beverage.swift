@@ -10,8 +10,7 @@ import Foundation
 import SwiftyJSON
 
 struct BeveragePropertyKey {
-    static let idKey = "id"
-    
+    static let idKey = "id"    
     static let nameKey = "name"
     static let beverageDescriptionKey = "description"
     static let priceKey = "price"

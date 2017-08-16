@@ -18,7 +18,6 @@ struct ProductTypePropertyKey{
 class ProductType: NSObject {
     
     var id: Int
-    
     var name: String
     var price: Double
     

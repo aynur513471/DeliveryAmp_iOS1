@@ -10,7 +10,6 @@ import UIKit
 
 class BeveragesViewController: UIViewController {
     
-    // MARK: - Variables
     
     // MARK: - Outlets
     @IBOutlet weak var drinkTable: UITableView!
@@ -70,7 +69,6 @@ class BeveragesViewController: UIViewController {
             
             selectedDrinkList[(indexPath.row)].append(myView)
             drinkTable.reloadData()
-            //addToOrder(sender.tag, drinkSize)
             addToOrder(allBeverages[sender.tag].id, drinkSize)
         } else {
             Alert.showDefaultAlert(for: self, title: nil, message: "Please select a serving size!")

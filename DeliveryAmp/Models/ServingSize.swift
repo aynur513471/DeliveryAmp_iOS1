@@ -12,7 +12,6 @@ import SwiftyJSON
 
 struct ServingSizePropertyKey{
     static let idKey = "id"
-    
     static let nameKey = "name"
     static let quantityKey = "quantity"
     static let priceKey = "price"
@@ -21,7 +20,6 @@ struct ServingSizePropertyKey{
 class ServingSize: NSObject {
 
     var id: Int
-    
     var name: String
     var quantity: Double
     var price: Double

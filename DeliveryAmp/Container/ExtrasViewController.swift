@@ -60,8 +60,7 @@ class ExtrasViewController: UIViewController {
             
         selectedExtrasList[(indexPath.row)].append(myView)
         extrasTable.reloadData()
-        
-        //addToOrder(sender.tag)
+
         addToOrder(allExtras[sender.tag].id)
         
     }

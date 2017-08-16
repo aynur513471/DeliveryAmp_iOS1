@@ -103,6 +103,7 @@ extension User{
 
 //MARK: Current User
 final class CurrentUser{
+    
     static var sharedInstance = User()
     
     init(){
