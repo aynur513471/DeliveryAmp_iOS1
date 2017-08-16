@@ -52,7 +52,6 @@ extension BeveragesViewController: UITableViewDelegate, UITableViewDataSource {
             
             for subView in selectedDrinkList[indexPath.row] {
                 subView.frame = CGRect(x: 0, y: yPosition, width: Int(cell.selectedTypeView.frame.size.width), height: 35)
-                subView.removeButton.tag = yPosition / 35 //the tag represents the position of the view in vector
                 cell.selectedTypeView.addSubview(subView)
                 cell.selectedTypeView.frame.size.height += 35
                 yPosition += 35
