@@ -83,7 +83,6 @@ class BeveragesViewController: UIViewController {
         newItem.type = 1
         newItem.id = orderItemId
         newItem.product = allBeverages.filter{$0.id == productId}.map{product in OrderProduct(id: product.id, name: product.name, price: product.price)}[0]
-        let product = allBeverages.filter{$0.id == productId}[0]
         newItem.servingSize = servingSizesBeverages.filter{$0.id == drinkSize}[0]
         newItem.cost = Double(getDrinkPrice(drinkSize).components(separatedBy: "$")[1])!
         

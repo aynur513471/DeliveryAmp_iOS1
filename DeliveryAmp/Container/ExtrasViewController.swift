@@ -50,8 +50,7 @@ class ExtrasViewController: UIViewController {
         
         let indexPath = IndexPath(row: sender.tag, section: 0)
         let myView: SelectedExtrasType = .fromNib()
-        //let cell = extrasTable.cellForRow(at: indexPath) as! ExtrasTypeTableViewCell
-     
+        
         myView.tag = sender.tag
         myView.removeButton.tag = selectedExtrasList[(indexPath.row)].count
         myView.removeButton.addTarget(self, action: #selector(removeView), for: .touchUpInside)
@@ -73,7 +72,6 @@ class ExtrasViewController: UIViewController {
         newItem.id = orderItemId
         
         newItem.product = allExtras.filter{$0.id == productId}.map{product in OrderProduct(id: product.id, name: product.name, price: product.price)}[0]
-        let product = allExtras.filter{$0.id == productId}[0]
         newItem.cost = Double(getExtraPrice().components(separatedBy: "$")[1])!
         
         orderItemId += 1
