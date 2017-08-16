@@ -14,6 +14,15 @@
 		86CBD45B1F34968C00806E67 /* SelectedDrinkType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CBD45A1F34968C00806E67 /* SelectedDrinkType.swift */; };
 		86CBD45D1F349B9500806E67 /* SelectedDrinkType.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86CBD45C1F349B9500806E67 /* SelectedDrinkType.xib */; };
 		86F232581F3483B900AF6451 /* BeveragesTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F232571F3483B900AF6451 /* BeveragesTypeTableViewCell.swift */; };
+		B24091D61F442B0400F8E373 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B24091CD1F442B0400F8E373 /* Accelerate.framework */; };
+		B24091D71F442B0400F8E373 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B24091CE1F442B0400F8E373 /* AudioToolbox.framework */; };
+		B24091D81F442B0400F8E373 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B24091CF1F442B0400F8E373 /* AVFoundation.framework */; };
+		B24091D91F442B0400F8E373 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B24091D01F442B0400F8E373 /* CoreLocation.framework */; };
+		B24091DA1F442B0400F8E373 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B24091D11F442B0400F8E373 /* CoreMedia.framework */; };
+		B24091DB1F442B0400F8E373 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B24091D21F442B0400F8E373 /* MessageUI.framework */; };
+		B24091DC1F442B0400F8E373 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B24091D31F442B0400F8E373 /* MobileCoreServices.framework */; };
+		B24091DD1F442B0400F8E373 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B24091D41F442B0400F8E373 /* SafariServices.framework */; };
+		B24091DE1F442B0400F8E373 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B24091D51F442B0400F8E373 /* SystemConfiguration.framework */; };
 		CE0359E21F3460E300969B2F /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0359E11F3460E300969B2F /* CheckoutViewController.swift */; };
 		CE0C5E341F3AF41F00687B95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE0C5E311F3AED9B00687B95 /* Assets.xcassets */; };
 		CE0C5E351F3AF6B600687B95 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE390D491F28B3B700014BE7 /* Info.plist */; };
@@ -100,6 +109,15 @@
 		86F232571F3483B900AF6451 /* BeveragesTypeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeveragesTypeTableViewCell.swift; sourceTree = "<group>"; };
 		8F6CC2E9BCDF940870106FEC /* Pods-DeliveryAmp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliveryAmp.release.xcconfig"; path = "Pods/Target Support Files/Pods-DeliveryAmp/Pods-DeliveryAmp.release.xcconfig"; sourceTree = "<group>"; };
 		AF3E5A6405998788F99B2F0E /* Pods-DeliveryAmp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliveryAmp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DeliveryAmp/Pods-DeliveryAmp.debug.xcconfig"; sourceTree = "<group>"; };
+		B24091CD1F442B0400F8E373 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		B24091CE1F442B0400F8E373 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		B24091CF1F442B0400F8E373 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		B24091D01F442B0400F8E373 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		B24091D11F442B0400F8E373 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		B24091D21F442B0400F8E373 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		B24091D31F442B0400F8E373 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		B24091D41F442B0400F8E373 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		B24091D51F442B0400F8E373 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		CE0359E11F3460E300969B2F /* CheckoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
 		CE0C5E311F3AED9B00687B95 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE0C5E371F3B44F000687B95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -183,6 +201,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B24091D61F442B0400F8E373 /* Accelerate.framework in Frameworks */,
+				B24091D71F442B0400F8E373 /* AudioToolbox.framework in Frameworks */,
+				B24091D81F442B0400F8E373 /* AVFoundation.framework in Frameworks */,
+				B24091D91F442B0400F8E373 /* CoreLocation.framework in Frameworks */,
+				B24091DA1F442B0400F8E373 /* CoreMedia.framework in Frameworks */,
+				B24091DB1F442B0400F8E373 /* MessageUI.framework in Frameworks */,
+				B24091DC1F442B0400F8E373 /* MobileCoreServices.framework in Frameworks */,
+				B24091DD1F442B0400F8E373 /* SafariServices.framework in Frameworks */,
+				B24091DE1F442B0400F8E373 /* SystemConfiguration.framework in Frameworks */,
 				7B2D8BB6060FD10586244121 /* Pods_DeliveryAmp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -193,6 +220,15 @@
 		243CFE2108BCCD15752079B1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B24091CD1F442B0400F8E373 /* Accelerate.framework */,
+				B24091CE1F442B0400F8E373 /* AudioToolbox.framework */,
+				B24091CF1F442B0400F8E373 /* AVFoundation.framework */,
+				B24091D01F442B0400F8E373 /* CoreLocation.framework */,
+				B24091D11F442B0400F8E373 /* CoreMedia.framework */,
+				B24091D21F442B0400F8E373 /* MessageUI.framework */,
+				B24091D31F442B0400F8E373 /* MobileCoreServices.framework */,
+				B24091D41F442B0400F8E373 /* SafariServices.framework */,
+				B24091D51F442B0400F8E373 /* SystemConfiguration.framework */,
 				3E3F92601052C8669D8A0A86 /* Pods_DeliveryAmp.framework */,
 			);
 			name = Frameworks;
@@ -521,7 +557,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8A652070DECAC6F2E48A76A1 /* [CP] Embed Pods Frameworks */ = {

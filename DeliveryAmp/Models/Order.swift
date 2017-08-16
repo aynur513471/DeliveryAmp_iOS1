@@ -46,7 +46,7 @@ class Order: NSObject {
         self.firstName = ""
         self.lastName = ""
         self.phone = ""
-        self.totalCost = -1
+        self.totalCost = 0
         self.orderHasItems = false
         self.items = []
         

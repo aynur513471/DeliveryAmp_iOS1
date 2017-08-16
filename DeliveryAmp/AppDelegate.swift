@@ -15,8 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-   
+        PayPalMobile.initializeWithClientIds(forEnvironments: [PayPalEnvironmentProduction: "Ac7vfsFb39We55RbXek4RtEL9ZdoWEahA6m6N_6LE98YzUZu0vX84pn_1kMVddz1bdiNNCn43rm9lcbk", PayPalEnvironmentSandbox: "AblD_l-ZoPEe2g_nmtEqn34oPa71c1PPRpNWoq1RIM9eBCtRWcci4Tek57mSwd2emy1urbyRh1dFZ9UO"])
         return true
     }
 
