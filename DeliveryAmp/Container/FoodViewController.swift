@@ -27,15 +27,36 @@ class FoodViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        selectedPizzaList = [[]]
         selectedPizzaList.reserveCapacity(allProducts.count)
         for _ in 0...allProducts.count {
             selectedPizzaList.append([])
         }
+
+        self.tabBarController?.tabBar.items![2].isEnabled = LocalRequest.checkOrder()
+      
+        for item in order.items {
+            if item.type == 0 {
+                var view: SelectedPizzaType = .fromNib()
+                view.descriptionLabel.text = item.productType.name + " + " + item.servingSize.name
+                view.priceLabel.text = "$" + String(item.cost)
+                view.removeButton.tag = item.id
+                view.removeButton.addTarget(self, action: #selector(removeView), for: .touchUpInside)
+                for (index, product) in allProducts.enumerated() {
+                    if product.id == item.product.id {
+                        selectedPizzaList[index].append(view)
+                    }
+                }
+            }
+            
+        }
+        
+        foodTable.reloadData()
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
  
     func setDelegates() {
@@ -65,18 +86,13 @@ class FoodViewController: UIViewController {
             
             myView.descriptionLabel.text = getPizzaDescription(pizzaSize, crustType)
             myView.priceLabel.text = getPizzaPrice(pizzaSize, crustType)
-            
+
             selectedPizzaList[(indexPath.row)].append(myView)
+          
             foodTable.reloadData()
             
             addToOrder(allProducts[sender.tag].id, pizzaSize, crustType)
             
-            /*
-            let crustTypeButton = cell.crustTypeScrollView.viewWithTag(crustType) as! StyleableButton
-            let sizeButton = cell.pizzaSizeScrollView.viewWithTag(pizzaSize) as! StyleableButton
-            buttonIsSelected(crustTypeButton)
-            buttonIsSelected(sizeButton)
-             */
         } else {
             Alert.showDefaultAlert(for: self, title: nil, message: "Please select a serving size and a crust type!")
         }
@@ -87,8 +103,6 @@ class FoodViewController: UIViewController {
         newItem.type = 0
         newItem.id = orderItemId
         newItem.product = allProducts.filter{$0.id == productId}.map{product in OrderProduct(id: product.id, name: product.name, price: product.price)}[0]
-      //  let product = allProducts.filter{$0.id == productId}[0]
-      //  newItem.ingredients = allIngredients.filter{product.ingredientIds.contains($0.id)}.map{ingredient in OrderIngredient(id: ingredient.id, name: ingredient.name, cost: ingredient.price, quantity: 1)}
         newItem.ingredients = []
         newItem.productType = allProductTypes.filter{$0.id == crustType}[0]
         newItem.servingSize = servingSizesFood.filter{$0.id == pizzaSize}[0]
@@ -97,6 +111,7 @@ class FoodViewController: UIViewController {
         orderItemId = OrderHelper.getNextOrderId()
         order.items.append(newItem)
         
+        self.tabBarController?.tabBar.items![2].isEnabled = LocalRequest.checkOrder()
         //testPostOrder()
     }
     
@@ -131,6 +146,7 @@ class FoodViewController: UIViewController {
     
     func removeItem(_ orderItemIdToRemove: Int) {
         order.items = order.items.filter{$0.id != orderItemIdToRemove}
+        self.tabBarController?.tabBar.items![2].isEnabled = LocalRequest.checkOrder()
     }
     
     @IBAction func goToCustomize(_ sender: StyleableButton) {

@@ -1,15 +1,17 @@
 //
-//  SettingsViewControllerExtension.swift
+//  CheckoutViewControllerExtension.swift
 //  DeliveryAmp
 //
-//  Created by User on 7/31/17.
+//  Created by User on 8/16/17.
 //
 //
 
-import Foundation
 import UIKit
 
-extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource  {
+import Foundation
+
+
+extension CheckoutViewController: UIPickerViewDelegate, UIPickerViewDataSource{
     
     
     // MARK - Check for empty fields
@@ -157,14 +159,14 @@ extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource  
     }
     
     func checkExpDate(_ expDate: String) -> Bool {
-        /*  let dateFormatter = DateFormatter()
-         dateFormatter.dateFormat = "MM/yyyy"
-         if dateFormatter.date(from: expDate)! == Date() {
-         return true
-         }
-         if dateFormatter.date(from: expDate)! < Date() {
-         return false
-         }*/
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/yyyy"
+        if dateFormatter.date(from: expDate)! == Date() {
+            return true
+        }
+        if dateFormatter.date(from: expDate)! < Date() {
+            return false
+        }
         return true
     }
     
@@ -174,8 +176,8 @@ extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource  
         }
         return false
     }
-
-
+    
+    
     
     
     //MARK: PickerView Functions
@@ -217,57 +219,37 @@ extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource  
     }
     
     
-    //MARK: formatCardNumber
-    func formatCardNumber() {
-        
-        let componentsCount =  cardNumberTextField.text?.components(separatedBy: "-").count
-        
-        switch (cardNumberTextField.text?.characters.count)! {
-        case 4:
-            if componentsCount == 1 {
-                cardNumberTextField.text?.append("-")
-            }
-            break
-        case 9:
-            if componentsCount == 2 {
-                cardNumberTextField.text?.append("-")
-            }
-            break
-        case 14:
-            if componentsCount == 3 {
-                cardNumberTextField.text?.append("-")
-            }
-            break
-        default:
-            break
-        }
-    }
     
-
+    
+    
+    
+    
     //MARK: TextField Functions
-    func textFieldDidBeginEditing(_ textField: UITextField) {
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool{
+        
+        
+        activeFieldRect = textField.frame
         if let superview = textField.superview{
             activeFieldRect = CGRect(x: textField.frame.origin.x, y: superview.frame.origin.y + textField.frame.origin.y, width: textField.frame.size.width, height: textField.frame.size.height)
         }
-    
-        if let field = textField as? StyleableTextField{
-            field.bottomBorderColor = UIColor.black
-            field.layoutSubviews()
-        }
+        
+        return true
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         activeFieldRect = nil
         
-        //move to next text field
+        //        //move to next text field
         let nextTag: Int = textField.tag + 1
         if let nextResponder = self.view.viewWithTag(nextTag){
             nextResponder.becomeFirstResponder()
         }else{
+            
             textField.resignFirstResponder()
         }
         
-        return false
+        return true
     }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
         //code to recognize if backspace was pressed
@@ -317,7 +299,7 @@ extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource  
         
         return true
     }
-
+    
     
     //MARK: Keyboard Observers
     func addKeyboardObservers() {
@@ -332,19 +314,24 @@ extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource  
     }
     
     func keyboardWillShow(_ notification: Notification) {
-        if let info = notification.userInfo,
-            let offsetRect = (info[UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue,
+        if let info = notification.userInfo, let keyboardRect = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue,
             activeFieldRect != nil{
-            let offset = offsetRect.size
-            self.view.frame.origin.y = yViewPosition
-            if (activeFieldRect.origin.y + activeFieldRect.size.height + 10.0) > self.view.frame.size.height - offset.height{
-                self.view.frame.origin.y -= activeFieldRect.origin.y - (self.view.frame.size.height - offset.height) + activeFieldRect.size.height + 40.0
+            let keyboardSize = keyboardRect.size
+            let contentInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize.height+20, 0.0)
+            scrollView.contentInset = contentInsets
+            scrollView.scrollIndicatorInsets = contentInsets
+            var aRect : CGRect = self.view.frame
+            aRect.size.height = aRect.size.height - keyboardSize.height
+            if !aRect.contains(activeFieldRect.origin){
+                self.scrollView.scrollRectToVisible(self.activeFieldRect, animated: true)
             }
         }
+        
     }
     
     
     func keyboardWillHide(_ notification: Notification) {
+        
         dismissKeyboard()
     }
     
@@ -357,8 +344,10 @@ extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource  
     }
     
     func dismissKeyboard() {
-        dismissTextFields()
-        self.view.frame.origin.y = self.yViewPosition
+        scrollView.contentInset = UIEdgeInsets.zero
+        scrollView.scrollIndicatorInsets = UIEdgeInsets.zero
+        self.view.endEditing(true)
+        //dismissTextFields()
     }
     
     func dismissTextFields(){
@@ -372,6 +361,6 @@ extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource  
         self.expDateTextField.resignFirstResponder()
         self.holderNameTextField.resignFirstResponder()
     }
-
-
+    
+    
 }

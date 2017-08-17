@@ -28,12 +28,32 @@ class ExtrasViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
         super.viewWillAppear(animated)
+        selectedExtrasList = [[]]
         selectedExtrasList.reserveCapacity(allExtras.count)
         for _ in 0...allExtras.count {
             selectedExtrasList.append([])
         }
+        self.tabBarController?.tabBar.items![2].isEnabled = LocalRequest.checkOrder()
         
+        for item in order.items {
+            if item.type == 2 {
+                var view: SelectedExtrasType = .fromNib()
+                view.descriptionLabel.text = item.product.name
+                view.priceLabel.text = "$" + String(item.cost)
+                view.removeButton.tag = item.id
+                view.removeButton.addTarget(self, action: #selector(removeView), for: .touchUpInside)
+                for (index, product) in allExtras.enumerated() {
+                    if product.id == item.product.id {
+                        selectedExtrasList[index].append(view)
+                    }
+                }
+            }
+            
+        }
+        
+        extrasTable.reloadData()
     }
     
  
@@ -50,8 +70,7 @@ class ExtrasViewController: UIViewController {
         
         let indexPath = IndexPath(row: sender.tag, section: 0)
         let myView: SelectedExtrasType = .fromNib()
-        //let cell = extrasTable.cellForRow(at: indexPath) as! ExtrasTypeTableViewCell
-     
+        
         myView.tag = sender.tag
         myView.removeButton.tag = orderItemId //selectedExtrasList[(indexPath.row)].count
         myView.removeButton.addTarget(self, action: #selector(removeView), for: .touchUpInside)
@@ -61,8 +80,7 @@ class ExtrasViewController: UIViewController {
             
         selectedExtrasList[(indexPath.row)].append(myView)
         extrasTable.reloadData()
-        
-        //addToOrder(sender.tag)
+
         addToOrder(allExtras[sender.tag].id)
         
     }
@@ -73,11 +91,11 @@ class ExtrasViewController: UIViewController {
         newItem.id = orderItemId
         
         newItem.product = allExtras.filter{$0.id == productId}.map{product in OrderProduct(id: product.id, name: product.name, price: product.price)}[0]
-        let product = allExtras.filter{$0.id == productId}[0]
         newItem.cost = Double(getExtraPrice().components(separatedBy: "$")[1])!
         
         orderItemId = OrderHelper.getNextOrderId()
         order.items.append(newItem)
+        self.tabBarController?.tabBar.items![2].isEnabled = LocalRequest.checkOrder()
     }
 
     
@@ -92,6 +110,7 @@ class ExtrasViewController: UIViewController {
     
     func removeItem(_ orderItemIdToRemove: Int) {
         order.items = order.items.filter{$0.id != orderItemIdToRemove}
+        self.tabBarController?.tabBar.items![2].isEnabled = LocalRequest.checkOrder()
     }
     
     

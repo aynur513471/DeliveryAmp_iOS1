@@ -99,12 +99,8 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         }
         
         if CurrentUser.sharedInstance.creditCard.isCompleted() {
-            var cardNumber = CurrentUser.sharedInstance.creditCard.cardNumber
-            cardNumber.insert("-", at: cardNumber.index(cardNumber.startIndex, offsetBy: 4))
-            cardNumber.insert("-", at: cardNumber.index(cardNumber.startIndex, offsetBy: 9))
-            cardNumber.insert("-", at: cardNumber.index(cardNumber.startIndex, offsetBy: 14))
             
-            self.cardNumberTextField.text = cardNumber
+            self.cardNumberTextField.text = CurrentUser.sharedInstance.creditCard.cardNumber
             self.expDateTextField.text = String(CurrentUser.sharedInstance.creditCard.expMonth) + "/" + String(CurrentUser.sharedInstance.creditCard.expYear)
             self.csvTextField.text = String(CurrentUser.sharedInstance.creditCard.csvCode)
             self.holderNameTextField.text = CurrentUser.sharedInstance.creditCard.cardHolder

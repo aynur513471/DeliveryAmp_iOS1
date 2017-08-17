@@ -11,7 +11,6 @@ import SwiftyJSON
 
 struct IngredientPropertyKey{
     static let idKey = "id"
-    
     static let nameKey = "name"
     static let quantityKey = "quantity"
     static let priceKey = "price"
@@ -20,7 +19,6 @@ struct IngredientPropertyKey{
 class Ingredient: NSObject {
     
     var id: Int
-    
     var name: String
     var price: Double
     

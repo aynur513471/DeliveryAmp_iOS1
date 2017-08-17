@@ -10,7 +10,6 @@ import UIKit
 
 class BeveragesViewController: UIViewController {
     
-    // MARK: - Variables
     
     // MARK: - Outlets
     @IBOutlet weak var drinkTable: UITableView!
@@ -30,12 +29,33 @@ class BeveragesViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
         super.viewWillAppear(animated)
+        selectedDrinkList = [[]]
         selectedDrinkList.reserveCapacity(allBeverages.count)
         for _ in 0...allBeverages.count {
             selectedDrinkList.append([])
         }
+        self.tabBarController?.tabBar.items![2].isEnabled = LocalRequest.checkOrder()
+
         
+        for item in order.items {
+            if item.type == 1 {
+                var view: SelectedDrinkType = .fromNib()
+                view.descriptionLabel.text = item.servingSize.name
+                view.priceLabel.text = "$" + String(item.cost)
+                view.removeButton.tag = item.id
+                view.removeButton.addTarget(self, action: #selector(removeView), for: .touchUpInside)
+                for (index, product) in allBeverages.enumerated() {
+                    if product.id == item.product.id {
+                        selectedDrinkList[index].append(view)
+                    }
+                }
+            }
+            
+        }
+        
+        drinkTable.reloadData()
     }
 
     
@@ -70,7 +90,6 @@ class BeveragesViewController: UIViewController {
             
             selectedDrinkList[(indexPath.row)].append(myView)
             drinkTable.reloadData()
-            //addToOrder(sender.tag, drinkSize)
             addToOrder(allBeverages[sender.tag].id, drinkSize)
         } else {
             Alert.showDefaultAlert(for: self, title: nil, message: "Please select a serving size!")
@@ -83,12 +102,12 @@ class BeveragesViewController: UIViewController {
         newItem.type = 1
         newItem.id = orderItemId
         newItem.product = allBeverages.filter{$0.id == productId}.map{product in OrderProduct(id: product.id, name: product.name, price: product.price)}[0]
-        let product = allBeverages.filter{$0.id == productId}[0]
         newItem.servingSize = servingSizesBeverages.filter{$0.id == drinkSize}[0]
         newItem.cost = Double(getDrinkPrice(drinkSize).components(separatedBy: "$")[1])!
         
         orderItemId = OrderHelper.getNextOrderId()
         order.items.append(newItem)
+        self.tabBarController?.tabBar.items![2].isEnabled = LocalRequest.checkOrder()
     }
 
     
@@ -103,6 +122,7 @@ class BeveragesViewController: UIViewController {
     
     func removeItem(_ orderItemIdToRemove: Int) {
         order.items = order.items.filter{$0.id != orderItemIdToRemove}
+        self.tabBarController?.tabBar.items![2].isEnabled = LocalRequest.checkOrder()
     }
 
    

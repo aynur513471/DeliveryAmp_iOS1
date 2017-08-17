@@ -12,7 +12,6 @@ import SwiftyJSON
 struct OrderItemPropertyKey {
     static let idKey = "id"
     static let typeKey = "type"
-    
     static let costKey = "cost"
     static let productKey = "product"
     static let mIngredientsKey = "mIngredients"
@@ -97,7 +96,9 @@ extension OrderItem {
             }
             
             return OrderItem(id: id, type: type, cost: cost, product: product, productType: productType, servingSize: servingSize, ingredients: ingredients)
-        } else if type == 1 {
+            
+        }
+        else if type == 1 {
             let servingSize = ServingSize()
             if let servingSizeJSON = json[OrderItemPropertyKey.servingSizeKey].dictionary,
                 let servingSizeDecoded = ServingSize.decode(servingSizeJSON) {

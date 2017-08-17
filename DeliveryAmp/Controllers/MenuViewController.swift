@@ -19,6 +19,8 @@ class MenuViewController: UIViewController {
     
     var container: ContainerViewController!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         selectFood(foodButton)
@@ -29,6 +31,8 @@ class MenuViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = false
         self.view.addDiagonalGradient(self.view, [MyColors.darkBlue.cgColor, MyColors.lightBlue.cgColor], self.view.frame)
         self.view.layoutIfNeeded()
+        self.tabBarController?.tabBar.items![2].isEnabled = LocalRequest.checkOrder()
+        
     }
 
     override func didReceiveMemoryWarning() {
