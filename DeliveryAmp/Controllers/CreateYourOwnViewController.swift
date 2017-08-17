@@ -42,6 +42,7 @@ class CreateYourOwnViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = false
         self.view.addDiagonalGradient(self.view, [MyColors.darkBlue.cgColor, MyColors.lightBlue.cgColor], self.view.frame)
         self.view.layoutIfNeeded()
+        self.tabBarController?.tabBar.items![2].isEnabled = LocalRequest.checkOrder()
         
     }
     
@@ -105,6 +106,7 @@ class CreateYourOwnViewController: UIViewController {
         
         orderItemId += 1
         order.items.append(newItem)
+        self.tabBarController?.tabBar.items![2].isEnabled = LocalRequest.checkOrder()
         
     }
     

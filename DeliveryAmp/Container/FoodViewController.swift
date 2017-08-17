@@ -31,6 +31,7 @@ class FoodViewController: UIViewController {
         for _ in 0...allProducts.count {
             selectedPizzaList.append([])
         }
+        self.tabBarController?.tabBar.items![2].isEnabled = LocalRequest.checkOrder()
     }
     
     override func didReceiveMemoryWarning() {
@@ -88,6 +89,7 @@ class FoodViewController: UIViewController {
         orderItemId += 1
         order.items.append(newItem)
         
+        self.tabBarController?.tabBar.items![2].isEnabled = LocalRequest.checkOrder()
         //testPostOrder()
     }
     
@@ -122,6 +124,7 @@ class FoodViewController: UIViewController {
     
     func removeItem(_ orderItemIdToRemove: Int) {
         order.items = order.items.filter{$0.id != orderItemIdToRemove}
+        self.tabBarController?.tabBar.items![2].isEnabled = LocalRequest.checkOrder()
     }
     
     @IBAction func goToCustomize(_ sender: StyleableButton) {

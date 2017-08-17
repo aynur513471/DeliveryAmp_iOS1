@@ -34,6 +34,8 @@ class BeveragesViewController: UIViewController {
         for _ in 0...allBeverages.count {
             selectedDrinkList.append([])
         }
+        self.tabBarController?.tabBar.items![2].isEnabled = LocalRequest.checkOrder()
+
         
     }
 
@@ -86,6 +88,7 @@ class BeveragesViewController: UIViewController {
         
         orderItemId += 1
         order.items.append(newItem)
+        self.tabBarController?.tabBar.items![2].isEnabled = LocalRequest.checkOrder()
     }
 
     
@@ -100,6 +103,7 @@ class BeveragesViewController: UIViewController {
     
     func removeItem(_ orderItemIdToRemove: Int) {
         order.items = order.items.filter{$0.id != orderItemIdToRemove}
+        self.tabBarController?.tabBar.items![2].isEnabled = LocalRequest.checkOrder()
     }
 
    

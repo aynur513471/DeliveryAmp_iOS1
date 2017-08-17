@@ -344,5 +344,11 @@ class LocalRequest{
             }
         }
     }
+    static func checkOrder () -> Bool {
+        if order.items == [] {
+            return false
+        }
+        return true
+    }
     
 }
