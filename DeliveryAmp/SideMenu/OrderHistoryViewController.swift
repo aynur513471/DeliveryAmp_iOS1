@@ -17,6 +17,7 @@ class OrderHistoryViewController: UIViewController {
     //MARK: - Variables
     
     var selectedRowIndex: Int = -1
+    var selectedAsNew: [Int] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,12 +46,16 @@ class OrderHistoryViewController: UIViewController {
     }
 
     
+    @IBAction func addItemToOrder(_ sender: StyleableButton) {
+        order = orderHistory[sender.tag]
+        let _ = self.navigationController?.popViewController(animated: true)
+        self.tabBarController?.tabBar.isHidden = false
+        self.tabBarController?.selectedIndex = 2
+    }
+    
+    
     
     // MARK: - Navigation
-
-    @IBAction func checkTouch(_ sender: StyleableButton) {
-        sender.isSelected = !sender.isSelected
-    }
     
     @IBAction func goBack(_ sender: Any) {
         let _ = self.navigationController?.popViewController(animated: true)

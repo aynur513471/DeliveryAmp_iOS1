@@ -62,7 +62,7 @@ class BeveragesViewController: UIViewController {
         
         if drinkSize > -1 {
             myView.tag = sender.tag
-            myView.removeButton.tag = selectedDrinkList[(indexPath.row)].count
+            myView.removeButton.tag = orderItemId //selectedDrinkList[(indexPath.row)].count
             myView.removeButton.addTarget(self, action: #selector(removeView), for: .touchUpInside)
             
             myView.descriptionLabel.text = getDrinkDescription(drinkSize)
@@ -87,7 +87,7 @@ class BeveragesViewController: UIViewController {
         newItem.servingSize = servingSizesBeverages.filter{$0.id == drinkSize}[0]
         newItem.cost = Double(getDrinkPrice(drinkSize).components(separatedBy: "$")[1])!
         
-        orderItemId += 1
+        orderItemId = OrderHelper.getNextOrderId()
         order.items.append(newItem)
     }
 

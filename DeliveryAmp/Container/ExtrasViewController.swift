@@ -53,7 +53,7 @@ class ExtrasViewController: UIViewController {
         //let cell = extrasTable.cellForRow(at: indexPath) as! ExtrasTypeTableViewCell
      
         myView.tag = sender.tag
-        myView.removeButton.tag = selectedExtrasList[(indexPath.row)].count
+        myView.removeButton.tag = orderItemId //selectedExtrasList[(indexPath.row)].count
         myView.removeButton.addTarget(self, action: #selector(removeView), for: .touchUpInside)
             
         myView.descriptionLabel.text = getExtraDescription()
@@ -76,9 +76,8 @@ class ExtrasViewController: UIViewController {
         let product = allExtras.filter{$0.id == productId}[0]
         newItem.cost = Double(getExtraPrice().components(separatedBy: "$")[1])!
         
-        orderItemId += 1
+        orderItemId = OrderHelper.getNextOrderId()
         order.items.append(newItem)
-        print()
     }
 
     

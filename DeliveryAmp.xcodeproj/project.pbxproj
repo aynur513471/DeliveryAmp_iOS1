@@ -15,7 +15,6 @@
 		86CBD45D1F349B9500806E67 /* SelectedDrinkType.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86CBD45C1F349B9500806E67 /* SelectedDrinkType.xib */; };
 		86F232581F3483B900AF6451 /* BeveragesTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F232571F3483B900AF6451 /* BeveragesTypeTableViewCell.swift */; };
 		CE0359E21F3460E300969B2F /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0359E11F3460E300969B2F /* CheckoutViewController.swift */; };
-		CE0C5E341F3AF41F00687B95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE0C5E311F3AED9B00687B95 /* Assets.xcassets */; };
 		CE0C5E351F3AF6B600687B95 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE390D491F28B3B700014BE7 /* Info.plist */; };
 		CE0C5E381F3B44F000687B95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0C5E361F3B44F000687B95 /* LaunchScreen.storyboard */; };
 		CE1022C21F34B203008A28EA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1022C11F34B203008A28EA /* Constants.swift */; };
@@ -60,6 +59,8 @@
 		CE42C9F91F3D998E0037FF31 /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = CE42C9F81F3D998E0037FF31 /* user.json */; };
 		CE42C9FB1F3DA3D90037FF31 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42C9FA1F3DA3D90037FF31 /* APIRouter.swift */; };
 		CE42C9FD1F3DA52D0037FF31 /* APIParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42C9FC1F3DA52D0037FF31 /* APIParameters.swift */; };
+		CE4449E81F4475120033539F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE0C5E311F3AED9B00687B95 /* Assets.xcassets */; };
+		CE4449EA1F4484430033539F /* OrderHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4449E91F4484430033539F /* OrderHelper.swift */; };
 		CE49CDD61F2F154400EC114F /* SettingsViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE49CDD51F2F154400EC114F /* SettingsViewControllerExtension.swift */; };
 		CE49CDD81F2F6F2600EC114F /* PizzaTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE49CDD71F2F6F2600EC114F /* PizzaTypeTableViewCell.swift */; };
 		CE579B291F41AABC00BE1024 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE579B281F41AABC00BE1024 /* APIRequest.swift */; };
@@ -82,7 +83,6 @@
 		CEDB61F41F3B0611004DAE66 /* PayPalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB61F31F3B0611004DAE66 /* PayPalViewController.swift */; };
 		CEDB61F61F3B2FEC004DAE66 /* StyleableTextFieldWithPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB61F51F3B2FEC004DAE66 /* StyleableTextFieldWithPadding.swift */; };
 		CEE477281F3C8A340000BE64 /* OrderProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE477271F3C8A340000BE64 /* OrderProduct.swift */; };
-		CEF1997C1F332617005E74B4 /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1997B1F332617005E74B4 /* SideMenuTableViewCell.swift */; };
 		CEF1997E1F3327E1005E74B4 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1997D1F3327E1005E74B4 /* SideMenuViewController.swift */; };
 		CEF199811F334739005E74B4 /* LegalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF199801F334739005E74B4 /* LegalViewController.swift */; };
 		CEF199841F336B2C005E74B4 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF199831F336B2C005E74B4 /* Alert.swift */; };
@@ -151,6 +151,7 @@
 		CE42C9F81F3D998E0037FF31 /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user.json; sourceTree = "<group>"; };
 		CE42C9FA1F3DA3D90037FF31 /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIRouter.swift; path = APIManager/APIRouter.swift; sourceTree = "<group>"; };
 		CE42C9FC1F3DA52D0037FF31 /* APIParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIParameters.swift; path = APIManager/APIParameters.swift; sourceTree = "<group>"; };
+		CE4449E91F4484430033539F /* OrderHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderHelper.swift; path = Helpers/OrderHelper.swift; sourceTree = "<group>"; };
 		CE49CDD51F2F154400EC114F /* SettingsViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewControllerExtension.swift; path = Extensions/SettingsViewControllerExtension.swift; sourceTree = "<group>"; };
 		CE49CDD71F2F6F2600EC114F /* PizzaTypeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PizzaTypeTableViewCell.swift; path = CellViews/PizzaTypeTableViewCell.swift; sourceTree = "<group>"; };
 		CE579B281F41AABC00BE1024 /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIRequest.swift; path = APIManager/APIRequest.swift; sourceTree = "<group>"; };
@@ -173,7 +174,6 @@
 		CEDB61F31F3B0611004DAE66 /* PayPalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayPalViewController.swift; sourceTree = "<group>"; };
 		CEDB61F51F3B2FEC004DAE66 /* StyleableTextFieldWithPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleableTextFieldWithPadding.swift; sourceTree = "<group>"; };
 		CEE477271F3C8A340000BE64 /* OrderProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderProduct.swift; path = Models/OrderProduct.swift; sourceTree = "<group>"; };
-		CEF1997B1F332617005E74B4 /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideMenuTableViewCell.swift; path = CellViews/SideMenuTableViewCell.swift; sourceTree = "<group>"; };
 		CEF1997D1F3327E1005E74B4 /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		CEF199801F334739005E74B4 /* LegalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegalViewController.swift; sourceTree = "<group>"; };
 		CEF199831F336B2C005E74B4 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alert.swift; path = Helpers/Alert.swift; sourceTree = "<group>"; };
@@ -383,7 +383,6 @@
 				CE87A3581F2B537C00645A47 /* OrderHistoryTableViewCell.swift */,
 				CE49CDD71F2F6F2600EC114F /* PizzaTypeTableViewCell.swift */,
 				CE6C09BE1F30A0F200D9C9EA /* FoodTypeTableViewCell.swift */,
-				CEF1997B1F332617005E74B4 /* SideMenuTableViewCell.swift */,
 				86F232571F3483B900AF6451 /* BeveragesTypeTableViewCell.swift */,
 				869376781F3B1C7B0051E7CE /* ExtrasTypeTableViewCell.swift */,
 			);
@@ -408,6 +407,7 @@
 				CEF199851F3373DA005E74B4 /* Regex.swift */,
 				CE1022C11F34B203008A28EA /* Constants.swift */,
 				CE579B2C1F41BB6000BE1024 /* Reachability.swift */,
+				CE4449E91F4484430033539F /* OrderHelper.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -492,11 +492,11 @@
 				CE0C5E351F3AF6B600687B95 /* Info.plist in Resources */,
 				CE390D621F28C3A200014BE7 /* fontawesome-webfont.ttf in Resources */,
 				CE390D641F28C3A200014BE7 /* Roboto-Bold.ttf in Resources */,
+				CE4449E81F4475120033539F /* Assets.xcassets in Resources */,
 				CE42C9F91F3D998E0037FF31 /* user.json in Resources */,
 				CE390D631F28C3A200014BE7 /* Roboto-BlackItalic.ttf in Resources */,
 				CE390D6A1F28C3A200014BE7 /* Roboto-Regular.ttf in Resources */,
 				CE11AD2A1F3C6B21009573E6 /* order_item v2.json in Resources */,
-				CE0C5E341F3AF41F00687B95 /* Assets.xcassets in Resources */,
 				CE6C09C91F30B9B300D9C9EA /* SelectedPizzaType.xib in Resources */,
 				CE390D671F28C3A200014BE7 /* Roboto-LightItalic.ttf in Resources */,
 				CE0C5E381F3B44F000687B95 /* LaunchScreen.storyboard in Resources */,
@@ -585,7 +585,6 @@
 				CEDB61F61F3B2FEC004DAE66 /* StyleableTextFieldWithPadding.swift in Sources */,
 				CEF199861F3373DA005E74B4 /* Regex.swift in Sources */,
 				CE6C09BF1F30A0F200D9C9EA /* FoodTypeTableViewCell.swift in Sources */,
-				CEF1997C1F332617005E74B4 /* SideMenuTableViewCell.swift in Sources */,
 				CEF3051D1F2A2413009A740A /* IngredientGroupTableViewCell.swift in Sources */,
 				CE42C9F61F3D90430037FF31 /* CreditCard.swift in Sources */,
 				CE390D401F28B3B700014BE7 /* ViewController.swift in Sources */,
@@ -610,6 +609,7 @@
 				CE6C09BD1F309B6A00D9C9EA /* ExtrasViewControllerExtensions.swift in Sources */,
 				8693767B1F3B2B4B0051E7CE /* SelectedExtrasType.swift in Sources */,
 				CE87A3551F2B52E300645A47 /* OrderHistoryViewController.swift in Sources */,
+				CE4449EA1F4484430033539F /* OrderHelper.swift in Sources */,
 				CE6C09B31F309B1A00D9C9EA /* FoodViewController.swift in Sources */,
 				CE390D511F28BCBC00014BE7 /* StyleableTextField.swift in Sources */,
 				CE42C9FD1F3DA52D0037FF31 /* APIParameters.swift in Sources */,

@@ -30,7 +30,7 @@
                     <color key="textColor" red="0.62292844059999997" green="0.70697730780000001" blue="0.74967736009999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbF-0m-SjQ">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbF-0m-SjQ">
                     <rect key="frame" x="336" y="7.5" width="20" height="20"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="20" id="JWu-Dd-VN3"/>
@@ -38,6 +38,7 @@
                     </constraints>
                     <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="20"/>
                     <color key="tintColor" red="0.31672739979999998" green="0.34954071040000001" blue="0.36887252329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" image="x_icon"/>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$4.99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgJ-n7-nUs">
                     <rect key="frame" x="271" y="10" width="60" height="14.5"/>
@@ -74,4 +75,7 @@
             <point key="canvasLocation" x="-591" y="-70.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="x_icon" width="10" height="10"/>
+    </resources>
 </document>
