@@ -28,13 +28,32 @@ class ExtrasViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
         super.viewWillAppear(animated)
+        selectedExtrasList = [[]]
         selectedExtrasList.reserveCapacity(allExtras.count)
         for _ in 0...allExtras.count {
             selectedExtrasList.append([])
         }
         self.tabBarController?.tabBar.items![2].isEnabled = LocalRequest.checkOrder()
         
+        for item in order.items {
+            if item.type == 2 {
+                var view: SelectedExtrasType = .fromNib()
+                view.descriptionLabel.text = item.product.name
+                view.priceLabel.text = "$" + String(item.cost)
+                view.removeButton.tag = item.id
+                view.removeButton.addTarget(self, action: #selector(removeView), for: .touchUpInside)
+                for (index, product) in allExtras.enumerated() {
+                    if product.id == item.product.id {
+                        selectedExtrasList[index].append(view)
+                    }
+                }
+            }
+            
+        }
+        
+        extrasTable.reloadData()
     }
     
  

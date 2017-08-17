@@ -29,7 +29,9 @@ class BeveragesViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
         super.viewWillAppear(animated)
+        selectedDrinkList = [[]]
         selectedDrinkList.reserveCapacity(allBeverages.count)
         for _ in 0...allBeverages.count {
             selectedDrinkList.append([])
@@ -37,6 +39,23 @@ class BeveragesViewController: UIViewController {
         self.tabBarController?.tabBar.items![2].isEnabled = LocalRequest.checkOrder()
 
         
+        for item in order.items {
+            if item.type == 1 {
+                var view: SelectedDrinkType = .fromNib()
+                view.descriptionLabel.text = item.servingSize.name
+                view.priceLabel.text = "$" + String(item.cost)
+                view.removeButton.tag = item.id
+                view.removeButton.addTarget(self, action: #selector(removeView), for: .touchUpInside)
+                for (index, product) in allBeverages.enumerated() {
+                    if product.id == item.product.id {
+                        selectedDrinkList[index].append(view)
+                    }
+                }
+            }
+            
+        }
+        
+        drinkTable.reloadData()
     }
 
     
