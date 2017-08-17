@@ -260,6 +260,7 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
     }
     //Place Order Button
     @IBAction func placeOrder_TouchUpInside(_ sender: Any) {
+        
         if checkFields() {
             
             //load data in my object
@@ -275,24 +276,26 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
                 })
             }
             
-            if emptyCreditCardFields()  {
-                self.navigationController?.popViewController(animated: true)
-            } else if checkCreditCardFields() {
-                if flag2 == 1 {
-                    
-                    //save payment options
-                    var strings = expDateTextField.text?.components(separatedBy: "/")
-                    CurrentUser.sharedInstance.creditCard.cardNumber = cardNumberTextField.text!
-                    CurrentUser.sharedInstance.creditCard.expMonth = Int((strings?[0])!)!
-                    CurrentUser.sharedInstance.creditCard.expYear = Int((strings?[1])!)!
-                    CurrentUser.sharedInstance.creditCard.csvCode = Int(csvTextField.text!)!
-                    CurrentUser.sharedInstance.creditCard.cardHolder = holderNameTextField.text!
-                    LocalRequest.updateUser(user: CurrentUser.sharedInstance, { (error) in
-                        print(error!)
-                    })
+            if payControl.selectedSegmentIndex == 0 {
+                if !emptyCreditCardFields() &&  checkCreditCardFields() {
+                    if flag2 == 1 {
+                        //save payment options
+                        var strings = expDateTextField.text?.components(separatedBy: "/")
+                        CurrentUser.sharedInstance.creditCard.cardNumber = cardNumberTextField.text!
+                        CurrentUser.sharedInstance.creditCard.expMonth = Int((strings?[0])!)!
+                        CurrentUser.sharedInstance.creditCard.expYear = Int((strings?[1])!)!
+                        CurrentUser.sharedInstance.creditCard.csvCode = Int(csvTextField.text!)!
+                        CurrentUser.sharedInstance.creditCard.cardHolder = holderNameTextField.text!
+                        LocalRequest.updateUser(user: CurrentUser.sharedInstance, { (error) in
+                            print(error!)
+                        })
+                    }
+                    completeOrder()
                 }
-                self.navigationController?.popViewController(animated: true)
+            } else if payControl.selectedSegmentIndex == 2 {
+                completeOrder()
             }
+            
             
             order.date = getCurrentDate()
             order.firstName = firstNameTextField.text!
@@ -302,10 +305,24 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
             order.address = addressTextField.text!
             order.totalCost = Double(totalLabel.text!.components(separatedBy: Constants.currency)[1])!
             
+            
+        }
+    }
+    
+    func completeOrder() {
+        
+        let placeOrderAlert = UIAlertController(title: "Place Order?", message: "If you agree, your order will be sent.", preferredStyle: UIAlertControllerStyle.alert)
+        
+        placeOrderAlert.addAction(UIAlertAction(title: "Agree", style: .default, handler: { (action: UIAlertAction!) in
             LocalRequest.postOrderToOrderHistory(order: order, { (error) in
                 print(error!)
             })
-        }
+        }))
+        
+        placeOrderAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        present(placeOrderAlert, animated: true, completion: nil)
+        
     }
     
 

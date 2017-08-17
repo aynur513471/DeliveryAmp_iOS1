@@ -36,7 +36,7 @@ extension FoodViewController: UITableViewDelegate, UITableViewDataSource {
             return CGFloat(174 + selectedPizzaList[indexPath.row].count * 35) // +4 from constraints
         }
         
-        return 74 // +1 from constraints
+        return 74 // +4 from constraints
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
