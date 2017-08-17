@@ -11,7 +11,6 @@ import SwiftyJSON
 
 struct ExtraPropertyKey {
     static let idKey = "id"
-    
     static let nameKey = "name"
     static let extraDescriptionKey = "description"
     static let priceKey = "price"
@@ -22,7 +21,6 @@ struct ExtraPropertyKey {
 class Extra: NSObject {
     
     var id: Int
-    
     var name:String
     var extraDescription: String
     var price: Double

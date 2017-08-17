@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -27,8 +27,8 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.5L" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyc-c2-3fq">
                     <rect key="frame" x="10" y="10" width="251" height="15"/>
                     <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="11"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
+                    <color key="textColor" red="0.62292844059999997" green="0.70697730780000001" blue="0.74967736009999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="highlightedColor" red="0.6229284405708313" green="0.70697730779647827" blue="0.74967736005783081" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUc-b8-EJQ">
                     <rect key="frame" x="336" y="7.5" width="20" height="20"/>
@@ -37,7 +37,7 @@
                         <constraint firstAttribute="width" secondItem="dUc-b8-EJQ" secondAttribute="height" multiplier="1:1" id="Rt3-j4-N5j"/>
                     </constraints>
                     <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="20"/>
-                    <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" red="0.31672739979999998" green="0.34954071040000001" blue="0.36887252329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$4.99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XV1-rb-vNz">
                     <rect key="frame" x="271" y="10" width="60" height="14.5"/>
@@ -45,7 +45,7 @@
                         <constraint firstAttribute="width" constant="60" id="hzI-tq-dWZ"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="11"/>
-                    <nil key="textColor"/>
+                    <color key="textColor" red="0.3167273998260498" green="0.34954071044921875" blue="0.36887252330780029" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>

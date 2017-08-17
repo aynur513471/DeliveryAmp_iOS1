@@ -10,7 +10,6 @@ import UIKit
 
 class BeveragesViewController: UIViewController {
     
-    // MARK: - Variables
     
     // MARK: - Outlets
     @IBOutlet weak var drinkTable: UITableView!
@@ -70,7 +69,6 @@ class BeveragesViewController: UIViewController {
             
             selectedDrinkList[(indexPath.row)].append(myView)
             drinkTable.reloadData()
-            //addToOrder(sender.tag, drinkSize)
             addToOrder(allBeverages[sender.tag].id, drinkSize)
         } else {
             Alert.showDefaultAlert(for: self, title: nil, message: "Please select a serving size!")
@@ -83,7 +81,6 @@ class BeveragesViewController: UIViewController {
         newItem.type = 1
         newItem.id = orderItemId
         newItem.product = allBeverages.filter{$0.id == productId}.map{product in OrderProduct(id: product.id, name: product.name, price: product.price)}[0]
-        let product = allBeverages.filter{$0.id == productId}[0]
         newItem.servingSize = servingSizesBeverages.filter{$0.id == drinkSize}[0]
         newItem.cost = Double(getDrinkPrice(drinkSize).components(separatedBy: "$")[1])!
         

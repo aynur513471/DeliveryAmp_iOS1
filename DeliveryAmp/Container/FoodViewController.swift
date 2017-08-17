@@ -35,7 +35,6 @@ class FoodViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
  
     func setDelegates() {
@@ -53,6 +52,7 @@ class FoodViewController: UIViewController {
         let cell = foodTable.cellForRow(at: indexPath) as! FoodTypeTableViewCell
         
         cell.crustTypeScrollView.contentOffset = CGPoint.zero
+        cell.pizzaSizeScrollView.contentOffset = CGPoint.zero
         
         let pizzaSize = cell.getPizzaSize()
         let crustType = cell.getCrustType()
@@ -70,12 +70,6 @@ class FoodViewController: UIViewController {
             
             addToOrder(allProducts[sender.tag].id, pizzaSize, crustType)
             
-            /*
-            let crustTypeButton = cell.crustTypeScrollView.viewWithTag(crustType) as! StyleableButton
-            let sizeButton = cell.pizzaSizeScrollView.viewWithTag(pizzaSize) as! StyleableButton
-            buttonIsSelected(crustTypeButton)
-            buttonIsSelected(sizeButton)
-             */
         } else {
             Alert.showDefaultAlert(for: self, title: nil, message: "Please select a serving size and a crust type!")
         }
@@ -86,15 +80,36 @@ class FoodViewController: UIViewController {
         newItem.type = 0
         newItem.id = orderItemId
         newItem.product = allProducts.filter{$0.id == productId}.map{product in OrderProduct(id: product.id, name: product.name, price: product.price)}[0]
-        let product = allProducts.filter{$0.id == productId}[0]
-        newItem.ingredients = allIngredients.filter{product.ingredientIds.contains($0.id)}.map{ingredient in OrderIngredient(id: ingredient.id, name: ingredient.name, cost: ingredient.price, quantity: 1)}
+        newItem.ingredients = []
         newItem.productType = allProductTypes.filter{$0.id == crustType}[0]
         newItem.servingSize = servingSizesFood.filter{$0.id == pizzaSize}[0]
         newItem.cost = Double(getPizzaPrice(pizzaSize, crustType).components(separatedBy: "$")[1])!
         
         orderItemId += 1
         order.items.append(newItem)
+        
+        //testPostOrder()
     }
+    
+    
+    /*
+    func testPostOrder() {
+        order.address = CurrentUser.sharedInstance.address
+        order.date = "12-23-3214"
+        order.deliveryDetailsHadChanged = false
+        order.email = CurrentUser.sharedInstance.email
+        order.firstName = CurrentUser.sharedInstance.firstName
+        order.lastName = CurrentUser.sharedInstance.lastName
+        order.phone = CurrentUser.sharedInstance.phone
+        order.orderHasItems = true
+        order.totalCost = 23.12
+        
+        LocalRequest.postOrderToOrderHistory(order: order,{ (error) in
+            print(error!)
+        })
+        
+    }
+ */
     
     func removeView(sender: UIButton) {
         let viewId = sender.tag

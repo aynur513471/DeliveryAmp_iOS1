@@ -33,7 +33,7 @@ extension FoodViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         if indexPath.row == selectedRowIndex  {
-            return CGFloat(173 + selectedPizzaList[indexPath.row].count * 35) // + 3 from constraints
+            return CGFloat(174 + selectedPizzaList[indexPath.row].count * 35) // +4 from constraints
         }
         
         return 71 // +1 from constraints
@@ -52,7 +52,6 @@ extension FoodViewController: UITableViewDelegate, UITableViewDataSource {
             cell.selectedType.subviews.forEach({$0.removeFromSuperview()})
             for subView in selectedPizzaList[indexPath.row] {
                 subView.frame = CGRect(x: 0, y: yPosition, width: Int(cell.selectedType.frame.size.width), height: 35)
-                subView.removeButton.tag = yPosition / 35 //the tag represents the position of the view in vector
                 cell.selectedType.addSubview(subView)
                 cell.selectedType.frame.size.height += 35
                 yPosition += 35
@@ -169,7 +168,7 @@ extension FoodViewController: UITableViewDelegate, UITableViewDataSource {
     func getPizzaPrice(_ sizeId: Int, _ crustId: Int) -> String {
         let sizePrice = servingSizesFood.filter{$0.id == sizeId}[0].price
         let crustPrice = allProductTypes.filter{$0.id == crustId}[0].price
-        return "$" + String(allProducts[selectedRowIndex].price + sizePrice + crustPrice)
+        return Constants.currency + String(allProducts[selectedRowIndex].price + sizePrice + crustPrice)
     }
     
     

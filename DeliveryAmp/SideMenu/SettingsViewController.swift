@@ -99,12 +99,8 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         }
         
         if CurrentUser.sharedInstance.creditCard.isCompleted() {
-            var cardNumber = CurrentUser.sharedInstance.creditCard.cardNumber
-            cardNumber.insert("-", at: cardNumber.index(cardNumber.startIndex, offsetBy: 4))
-            cardNumber.insert("-", at: cardNumber.index(cardNumber.startIndex, offsetBy: 9))
-            cardNumber.insert("-", at: cardNumber.index(cardNumber.startIndex, offsetBy: 14))
             
-            self.cardNumberTextField.text = cardNumber
+            self.cardNumberTextField.text = CurrentUser.sharedInstance.creditCard.cardNumber
             self.expDateTextField.text = String(CurrentUser.sharedInstance.creditCard.expMonth) + "/" + String(CurrentUser.sharedInstance.creditCard.expYear)
             self.csvTextField.text = String(CurrentUser.sharedInstance.creditCard.csvCode)
             self.holderNameTextField.text = CurrentUser.sharedInstance.creditCard.cardHolder
@@ -126,14 +122,14 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func saveData(_ sender: StyleableButton) {
+        
+        let currentUser = CurrentUser.sharedInstance
         if checkFields() {
-            
             CurrentUser.sharedInstance.firstName = self.firstNameTextField.text!
             CurrentUser.sharedInstance.lastName = self.lastNameTextField.text!
             CurrentUser.sharedInstance.phone = self.phoneNumberTextField.text!
             CurrentUser.sharedInstance.email = self.emailTextField.text!
-            CurrentUser.sharedInstance.address = self.addressTextField.text!
-            
+            CurrentUser.sharedInstance.address = self.addressTextField.text!  
             if emptyCreditCardFields()  {
                 self.navigationController?.popViewController(animated: true)
             } else if checkCreditCardFields() {
@@ -142,10 +138,10 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
                 CurrentUser.sharedInstance.creditCard.csvCode = Int(self.csvTextField.text!)!
                 CurrentUser.sharedInstance.creditCard.expMonth = Int(self.expDateTextField.text!.components(separatedBy: "/")[0])!
                 CurrentUser.sharedInstance.creditCard.expYear = Int(self.expDateTextField.text!.components(separatedBy: "/")[1])!
-               
-             //   LocalRequest.updateUser(user: user, { (error) in
-              //      print(error!)
-             //   })
+          
+                LocalRequest.updateUser(user: currentUser, { (error) in
+                    print(error!)
+                })
                 self.navigationController?.popViewController(animated: true)
                 self.tabBarController?.tabBar.isHidden = false
             }

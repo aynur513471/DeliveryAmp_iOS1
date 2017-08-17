@@ -9,5 +9,6 @@ target ‘DeliveryAmp’ do
   pod 'SwiftyJSON'
   pod 'SDWebImage'
   pod 'PayPal-iOS-SDK'
+  pod 'Alamofire'
 
 end

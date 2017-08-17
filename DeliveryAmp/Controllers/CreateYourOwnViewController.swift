@@ -24,6 +24,7 @@ class CreateYourOwnViewController: UIViewController {
     @IBOutlet weak var pizzaSizeScrollView: UIScrollView!
     @IBOutlet weak var crustTypeScrollView: UIScrollView!
 
+    @IBOutlet weak var buttonsView: UIView!
     
     // MARK: - Variables
     
@@ -38,6 +39,7 @@ class CreateYourOwnViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
         self.view.addDiagonalGradient(self.view, [MyColors.darkBlue.cgColor, MyColors.lightBlue.cgColor], self.view.frame)
         self.view.layoutIfNeeded()
         
@@ -64,12 +66,16 @@ class CreateYourOwnViewController: UIViewController {
             crustTypeScrollView.isHidden = true
             ingredientsTable.isHidden = true
             pizzaTypesTable.isHidden = false
+            
+            buttonsView.isHidden = true
         } else {
             ingredientsTable.reloadData()
             pizzaSizeScrollView.isHidden = false
             crustTypeScrollView.isHidden = false
             ingredientsTable.isHidden = false
             pizzaTypesTable.isHidden = true
+            
+            buttonsView.isHidden = false
         }
     }
     
@@ -79,4 +85,27 @@ class CreateYourOwnViewController: UIViewController {
         setPizzaPrice()
     }
 
+    @IBAction func addToOrder(_ sender: Any) {
+        let crustId = getCrustType()
+        let sizeId = getPizzaSize()
+        let newItem = OrderItem()
+        newItem.type = 0
+        newItem.id = orderItemId
+        
+        newItem.product = allProducts.filter{$0.id == allProducts[selectedPizzaIndex].id}.map{product in OrderProduct(id: product.id, name: product.name, price: product.price)}[0]
+        newItem.ingredients = usedIngredients.filter{$0.1 > 0}.map{ingredient in OrderIngredient(id: ingredient.0.id, name: ingredient.0.name, cost: ingredient.0.price, quantity: Double(ingredient.1))}
+    
+        let size = servingSizesFood.filter{$0.id == sizeId}[0]
+        let crust = allProductTypes.filter{$0.id == crustId}[0]
+        newItem.productType = crust
+        newItem.servingSize = size
+        
+        let ingredientsPrice = usedIngredients.reduce(0.0){$0 + ($1.0.price * Double($1.1))}
+        newItem.cost = allProducts[selectedPizzaIndex].price + size.price + crust.price + ingredientsPrice
+        
+        orderItemId += 1
+        order.items.append(newItem)
+        
+    }
+    
 }

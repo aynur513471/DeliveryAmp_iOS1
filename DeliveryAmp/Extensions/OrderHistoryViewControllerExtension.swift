@@ -11,14 +11,35 @@ import UIKit
 
 extension OrderHistoryViewController: UITableViewDelegate, UITableViewDataSource {
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if selectedRowIndex == indexPath.row {
+            selectedRowIndex = -1
+        } else {
+            selectedRowIndex = indexPath.row
+        }
+        
+        tableView.reloadData()
+        
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "order", for: indexPath) as! OrderHistoryTableViewCell
         cell.selectionStyle = .none
         return cell
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if indexPath.row == selectedRowIndex  {
+            return CGFloat(240) //
+        }
+        
+        return 40 // 
     }
    
     /*

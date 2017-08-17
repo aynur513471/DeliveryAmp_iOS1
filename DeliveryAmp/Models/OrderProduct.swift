@@ -11,7 +11,6 @@ import SwiftyJSON
 
 struct OrderProductPropertyKey{
     static let idKey = "id"
-    
     static let nameKey = "name"
     static let priceKey = "price"
 }

@@ -9,19 +9,12 @@ import UIKit
 
 class PayPalViewController: UIViewController, PayPalPaymentDelegate {
 
+    //MARK: - Variables
     var payPalConfiguration: PayPalConfiguration?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        payPalConfiguration = PayPalConfiguration()
-        payPalConfiguration?.acceptCreditCards = true
-
-        payPalConfiguration?.payPalShippingAddressOption = .both
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,9 +24,10 @@ class PayPalViewController: UIViewController, PayPalPaymentDelegate {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
+    
+    //MARK: - Actions
     @IBAction func back_TouchUpInside(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -53,6 +47,17 @@ class PayPalViewController: UIViewController, PayPalPaymentDelegate {
         }
     }
     
+    
+    //MARK: - Configuration
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        payPalConfiguration = PayPalConfiguration()
+        payPalConfiguration?.acceptCreditCards = true
+        payPalConfiguration?.payPalShippingAddressOption = .both
+    }
+    
+    
+    //MARK: - PayPal Functions
     func payPalPaymentViewController(_ paymentViewController: PayPalPaymentViewController, didComplete completedPayment: PayPalPayment) {
         dismiss(animated: true, completion: nil)
     }

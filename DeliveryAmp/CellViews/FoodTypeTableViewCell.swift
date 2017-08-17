@@ -58,16 +58,6 @@ class FoodTypeTableViewCell: UITableViewCell {
         selectedTypeTopConstraint.constant = 0
         selectedTypeBottomConstraint.constant = 0
     }
-    
-
-    /*
-    func deselectButtons(inside view: UIView) {
-        for subview in view.subviews as [UIView] {
-            if let btn = subview as? StyleableButton {
-                btn.isSelected = false
-            }
-        }
-    }*/
 
     func getPizzaSize() -> Int {
         for subview in pizzaSizeScrollView.subviews as [UIView] {

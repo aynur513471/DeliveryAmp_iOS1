@@ -28,6 +28,7 @@ class ExtrasTypeTableViewCell: UITableViewCell {
     
     @IBOutlet weak var bottonsViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var viewWithShadow: ViewWithShadow!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

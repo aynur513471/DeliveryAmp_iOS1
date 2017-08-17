@@ -29,8 +29,14 @@ enum LocalRouter{
     var requestURL: URL?{
         switch self {
         case .getUser:
+            
+             guard let documentDirectoryUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
+             let fileUrl = documentDirectoryUrl.appendingPathComponent("user.json")
+             return fileUrl
+ /*
             guard let fileUrl = Bundle.main.url(forResource:"user", withExtension: "json") else { return nil }
             return fileUrl
+ */
         case .getProducts:
             guard let fileUrl = Bundle.main.url(forResource:"raw", withExtension: "json") else { return nil }
             return fileUrl
@@ -53,8 +59,14 @@ enum LocalRouter{
             guard let fileUrl = Bundle.main.url(forResource:"raw", withExtension: "json") else { return nil }
             return fileUrl
         case .getOrderHistory:
+/*
+            guard let documentDirectoryUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
+            let fileUrl = documentDirectoryUrl.appendingPathComponent("order_history.json")
+            return fileUrl
+*/
             guard let fileUrl = Bundle.main.url(forResource:"order_item v2", withExtension: "json") else { return nil }
             return fileUrl
+ 
         default:
             return nil
         }
@@ -85,14 +97,14 @@ class LocalRequest{
         self.generateJSON(for: LocalRouter.getUser.requestURL, callback: {
             (result: [String: JSON]?, failed: Bool) -> Void in
             if failed{
-                callback(nil, "Failed to load user.")
+                callback(User(), "Failed to load user.")
             }else if let json = result{
                 if let userDict = json["user"]?.dictionary{
                     if let user = User.decode(userDict){
                         callback(user, nil)
                     }
                 }else{
-                    callback(nil, "Failed to load user.")
+                    callback(User(), "Failed to load user.")
                 }
             }
         })
@@ -263,7 +275,7 @@ class LocalRequest{
         self.generateJSON(for: LocalRouter.getOrderHistory.requestURL, callback: {
             (result: [String: JSON]?, failed: Bool) -> Void in
             if failed{
-                callback(nil, "Failed to load extras.")
+                callback(nil, "Failed to load order history.")
             }else if let json = result{
                 var ordersArray: [Order] = []
                 if let resultArray = json["orders"]?.array{
@@ -276,7 +288,7 @@ class LocalRequest{
                     }
                     callback(ordersArray, nil)
                 }else{
-                    callback(nil, "Failed to load extras")
+                    callback(nil, "Failed to load order history")
                 }
             }
         })
@@ -298,11 +310,8 @@ class LocalRequest{
     }
     
     static func updateUser(user: User, _ callback: @escaping (_ error: String?) -> ()) {
-      //  var userToUpdate = APIRouter.updateUser.generateBodyParametersForUpdateUser(user: user)
-        let jsonFormat = [
-            "user": user
-        ]
-        print(jsonFormat)
+        let userToUpdate = APIRouter.postUpdateUser(user: user).generateBodyParametersForPostUpdateUser(user: user)
+        let jsonFormat = ["user": userToUpdate]
         LocalRequest.postJSON(json: jsonFormat, path: "user") { (result, error) in
             if error{
                 callback("Failed to post JSON when updating user")
@@ -311,13 +320,29 @@ class LocalRequest{
                 callback("postJSON successful when updating user")
             }
         }
-        
         callback("User data updated")
-  
-
     }
-
     
-    
+    static func postOrderToOrderHistory(order: Order, _ callback: @escaping(_ error: String?) -> ()) {
+        let orderToPost = APIRouter.postOrderToOrderHistory(order: order).generateBodyParametersForPostOrderToOrderHistory(order: order)
+        var orderHistoryToPost: [[String: Any]] = []
+        for oldOrder in orderHistory {
+            let oldOrderToPost = APIRouter.postOrderToOrderHistory(order: oldOrder).generateBodyParametersForPostOrderToOrderHistory(order: oldOrder)
+            orderHistoryToPost.append(oldOrderToPost)
+        }
+        orderHistoryToPost.append(orderToPost)
+        
+        let jsonFormat = ["orders": orderHistoryToPost]
+        
+        LocalRequest.postJSON(json: jsonFormat, path: "order_history") {
+            (result, error) in
+            if error{
+                callback("Failed to post order history")
+            }else{
+                orderHistory.append(order)
+                callback("Success")
+            }
+        }
+    }
     
 }

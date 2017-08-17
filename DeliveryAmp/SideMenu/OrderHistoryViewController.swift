@@ -10,7 +10,13 @@ import UIKit
 
 class OrderHistoryViewController: UIViewController {
 
+    //MARK: - Outlets 
+    
     @IBOutlet weak var orderHistoryTable: UITableView!
+    
+    //MARK: - Variables
+    
+    var selectedRowIndex: Int = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()

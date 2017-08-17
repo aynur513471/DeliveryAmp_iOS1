@@ -41,9 +41,11 @@ class LaunchViewController: UIViewController {
     }
     
     func getUser() {
+
         LocalRequest.getUser({
             (userOptional: User?, error: String?) -> Void in
             if let _ = error{
+                self.getProducts()
                 Alert.showDefaultAlert(for: self, title: nil, message: error)
             }else if let savedUser = userOptional {
                 CurrentUser.sharedInstance.copy(savedUser)
