@@ -56,6 +56,7 @@ extension BeveragesViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.selectedTypeView.frame.size.height += 35
                 yPosition += 35
                 
+                
             }
             cell.unhideViews()
         }

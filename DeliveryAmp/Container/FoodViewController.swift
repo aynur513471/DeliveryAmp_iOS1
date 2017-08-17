@@ -27,10 +27,32 @@ class FoodViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        selectedPizzaList = [[]]
         selectedPizzaList.reserveCapacity(allProducts.count)
         for _ in 0...allProducts.count {
             selectedPizzaList.append([])
         }
+
+        self.tabBarController?.tabBar.items![2].isEnabled = LocalRequest.checkOrder()
+      
+        for item in order.items {
+            if item.type == 0 {
+                var view: SelectedPizzaType = .fromNib()
+                view.descriptionLabel.text = item.productType.name + " + " + item.servingSize.name
+                view.priceLabel.text = "$" + String(item.cost)
+                view.removeButton.tag = item.id
+                view.removeButton.addTarget(self, action: #selector(removeView), for: .touchUpInside)
+                for (index, product) in allProducts.enumerated() {
+                    if product.id == item.product.id {
+                        selectedPizzaList[index].append(view)
+                    }
+                }
+            }
+            
+        }
+        
+        foodTable.reloadData()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -64,8 +86,9 @@ class FoodViewController: UIViewController {
             
             myView.descriptionLabel.text = getPizzaDescription(pizzaSize, crustType)
             myView.priceLabel.text = getPizzaPrice(pizzaSize, crustType)
-            
+
             selectedPizzaList[(indexPath.row)].append(myView)
+          
             foodTable.reloadData()
             
             addToOrder(allProducts[sender.tag].id, pizzaSize, crustType)
@@ -88,6 +111,7 @@ class FoodViewController: UIViewController {
         orderItemId += 1
         order.items.append(newItem)
         
+        self.tabBarController?.tabBar.items![2].isEnabled = LocalRequest.checkOrder()
         //testPostOrder()
     }
     
@@ -122,6 +146,7 @@ class FoodViewController: UIViewController {
     
     func removeItem(_ orderItemIdToRemove: Int) {
         order.items = order.items.filter{$0.id != orderItemIdToRemove}
+        self.tabBarController?.tabBar.items![2].isEnabled = LocalRequest.checkOrder()
     }
     
     @IBAction func goToCustomize(_ sender: StyleableButton) {

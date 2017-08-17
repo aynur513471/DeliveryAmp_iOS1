@@ -289,6 +289,24 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
             flag1 = 0
         }
     }
+    
+    //dismiss Order
+    @IBAction func dismissOrder_TouchUpInside(_ sender: Any) {
+        let alert = UIAlertController(title: "Dismiss Order?", message: "This action will remove all the selected products.", preferredStyle: .alert)
+        let agreeAction = UIAlertAction(title: "Agree", style: .default) { (alert: UIAlertAction!) -> Void in
+            order.items = []
+            self.configureOrder()
+        }
+        let disagreeAction = UIAlertAction(title: "Disagree", style: .cancel) { (alert: UIAlertAction!) -> Void in
+            //print("You pressed Cancel")
+        }
+        
+        alert.addAction(agreeAction)
+        alert.addAction(disagreeAction)
+        
+        present(alert, animated: true, completion:nil)
+        
+    }
     //Place Order Button
     @IBAction func placeOrder_TouchUpInside(_ sender: Any) {
         if checkFields() {
