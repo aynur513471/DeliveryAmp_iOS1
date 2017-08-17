@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -24,7 +24,7 @@
             <rect key="frame" x="0.0" y="0.0" width="366" height="35"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SCe-Do-KY5">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SCe-Do-KY5">
                     <rect key="frame" x="336" y="7.5" width="20" height="20"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="SCe-Do-KY5" secondAttribute="height" multiplier="1:1" id="hNX-ho-5Wq"/>
@@ -32,18 +32,19 @@
                     </constraints>
                     <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="20"/>
                     <color key="tintColor" red="0.30588235294117649" green="0.33725490196078434" blue="0.35686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" image="x_icon"/>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$23.324" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wje-Kv-DP3">
-                    <rect key="frame" x="271" y="10" width="60" height="14.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$23.324" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wje-Kv-DP3">
+                    <rect key="frame" x="291" y="10" width="40" height="14.5"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="60" id="4eY-eM-ud2"/>
+                        <constraint firstAttribute="width" constant="40" id="4eY-eM-ud2"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="10"/>
                     <color key="textColor" red="0.30588235294117649" green="0.33725490196078434" blue="0.35686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Large + Classic Crust extra thick" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GKk-hc-cMe">
-                    <rect key="frame" x="12" y="10" width="251" height="15"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Margherita Pizza Classic Crust + Small" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GKk-hc-cMe">
+                    <rect key="frame" x="10" y="10" width="271" height="15"/>
                     <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="11"/>
                     <color key="textColor" red="0.58823529411764708" green="0.68235294117647061" blue="0.73333333333333328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -70,10 +71,14 @@
                 <outlet property="descriptionLabel" destination="GKk-hc-cMe" id="U0I-Z1-FwR"/>
                 <outlet property="priceLabel" destination="Wje-Kv-DP3" id="fk5-GI-C8C"/>
                 <outlet property="removeButton" destination="SCe-Do-KY5" id="pbk-aa-JT8"/>
+                <outlet property="removeButtonWidthConstraint" destination="rpJ-kE-y83" id="46A-zu-Y0W"/>
             </connections>
-            <point key="canvasLocation" x="-679" y="-98"/>
+            <point key="canvasLocation" x="-676" y="-101.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="x_icon" width="10" height="10"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

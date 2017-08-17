@@ -22,7 +22,7 @@ class OrderIngredient: NSObject {
     
     var name: String
     var cost: Double
-    var quantity: Double
+    var quantity: Int
     
     override init() {
         self.id = -1
@@ -31,7 +31,7 @@ class OrderIngredient: NSObject {
         self.quantity = -1
     }
     
-    init(id: Int, name: String, cost: Double, quantity: Double) {
+    init(id: Int, name: String, cost: Double, quantity: Int) {
         self.id = id
         self.name = name
         self.cost = cost
@@ -45,7 +45,7 @@ extension OrderIngredient {
         guard let id = json[OrderIngredientPropertyKey.idKey].int,
             let name = json[OrderIngredientPropertyKey.nameKey].string,
             let cost = json[OrderIngredientPropertyKey.costKey].double,
-            let quantity = json[OrderIngredientPropertyKey.quantityKey].double
+            let quantity = json[OrderIngredientPropertyKey.quantityKey].int
             else {
                 return nil
         }

@@ -108,7 +108,7 @@ class FoodViewController: UIViewController {
         newItem.servingSize = servingSizesFood.filter{$0.id == pizzaSize}[0]
         newItem.cost = Double(getPizzaPrice(pizzaSize, crustType).components(separatedBy: "$")[1])!
         
-        orderItemId += 1
+        orderItemId = OrderHelper.getNextOrderId()
         order.items.append(newItem)
         
         self.tabBarController?.tabBar.items![2].isEnabled = LocalRequest.checkOrder()

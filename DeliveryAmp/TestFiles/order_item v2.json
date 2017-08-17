@@ -21,13 +21,13 @@
                                             "cost": 2.5,
                                             "id": 0,
                                             "name": "Mozzarella",
-                                            "quantity": 0
+                                            "quantity": 2
                                           },
                                           {
                                             "cost": 5.2,
                                             "id": 1,
                                             "name": "Pizzarella",
-                                            "quantity": 0
+                                            "quantity": 3
                                           }
                                           ],
                          "productType": {
@@ -91,6 +91,52 @@
                "orderHasItems": false,
                "phone": "68585858858868",
                "totalCost": 23.74
+               },
+               
+               
+               
+               {
+               "address": "ycyfyfy",
+               "date": "09-08-2017 04:24:15",
+               "deliveryDetailsHadChanged": false,
+               "email": "gcgcgcgc@vuhu.com",
+               "firstName": "ffyfyfyf",
+               "items": [
+                         {
+                         "type": 0,
+                         "id": 5,
+                         "cost": 23.74,
+                         "product": {
+                         "id": 0,
+                         "name": "Margherita Pizza",
+                         "price": 7.99
+                         },
+                         "mIngredients": [
+                                          {
+                                          "cost": 2.5,
+                                          "id": 0,
+                                          "name": "Mozzarella",
+                                          "quantity": 1
+                                          }
+                                          ],
+                         "productType": {
+                         "id": 0,
+                         "name": "Classic Crust",
+                         "price": 5
+                         },
+                         "servingSize": {
+                         "id": 0,
+                         "name": "Small",
+                         "price": 0.25,
+                         "quantity": 10
+                         }
+                         }
+                        ],
+               "lastName": "ygycyf",
+               "orderHasItems": false,
+               "phone": "68585858858868",
+               "totalCost": 23.74
                }
+               
                ]
 }
