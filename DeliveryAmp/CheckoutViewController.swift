@@ -19,7 +19,6 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
     @IBOutlet weak var paymentView: UIView!
     @IBOutlet weak var checkbox1: UIButton!
     @IBOutlet weak var checkbox2: UIButton!
-    @IBOutlet weak var orderHistoryBtn: StyleableButton!
     
     
     //order view
@@ -59,7 +58,6 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
     var flag2 = 0
     var total:Double = 0
     
-    let font = UIFont(name: "Roboto-Italic", size: 11.0)
     var foodView:[SelectedPizzaType?]  = []
     
     override func viewDidLoad() {
@@ -67,19 +65,13 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
         
         setDelegates()
         hideKeyboardWhenTappedAround()
-        setColors()
         
-        customizeSegmentedControl()
-       
-        
+        addTapToCheckboxes()
+ 
         let sortedViews = payControl.subviews.sorted( by: { $0.frame.origin.x < $1.frame.origin.x } )
         sortedViews[0].tintColor = MyColors.segmentedControl //seg
         
-        
         self.expDateTextField.inputView = self.datePicker
-        
-        addTapToCheckboxes()
-
     }
 
     
@@ -89,10 +81,18 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
         tabBarController?.tabBar.isHidden = false
         orderViewHeight.constant = 0
         
-        if CurrentUser.sharedInstance.creditCard.csvCode != -1 && CurrentUser.sharedInstance.address != "" {
+        payControl.customizeSegmentedControl()
+        payControl.changeTitleFont(newFontName: "Roboto-Medium", newFontSize: 9.0)
+        
+        if CurrentUser.sharedInstance.exists {
             setDeliverytextFields()
+            
+        }
+        if CurrentUser.sharedInstance.creditCard.isCompleted() {
             setPaymentFields()
         }
+        
+        
 
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -133,44 +133,13 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
         
     }
     func setPaymentFields(){
-        cardNumberTextField.text = CurrentUser.sharedInstance.creditCard.cardNumber
+        cardNumberTextField.text = formatCardNumber(cardNumber: CurrentUser.sharedInstance.creditCard.cardNumber)
         expDateTextField.text = "\(CurrentUser.sharedInstance.creditCard.expMonth)/\(CurrentUser.sharedInstance.creditCard.expYear)"
         csvTextField.text = "\(CurrentUser.sharedInstance.creditCard.csvCode)"
         holderNameTextField.text = CurrentUser.sharedInstance.creditCard.cardHolder
     }
     
-//    func formatCardNumber(cardNumber:String) -> String {
-//        var cardFormated = ""
-//        var k = 0
-//        
-//        for c in cardNumber.characters {
-//            
-//            if k == 4 || k == 8 || k == 12 {
-//                cardFormated.append("-\(c)")
-//            }else {
-//                cardFormated.append(String(c))
-//            }
-//            k = k + 1
-//        }
-//        return cardFormated
-//    }
     
-    func setColors(){
-        orderView.backgroundColor = MyColors.buttonDefaultBackgroundColor
-        dismissBtn.backgroundColor = MyColors.buttonDefaultBackgroundColor
-        placeOrderBtn.backgroundColor = MyColors.buttonDefaultBackgroundColor
-        payControl.backgroundColor = MyColors.buttonDefaultBackgroundColor
-        firstNameTextField.backgroundColor = MyColors.buttonDefaultBackgroundColor
-        lastNameTextField.backgroundColor = MyColors.buttonDefaultBackgroundColor
-        phoneNumberTextField.backgroundColor = MyColors.buttonDefaultBackgroundColor
-        emailTextField.backgroundColor = MyColors.buttonDefaultBackgroundColor
-        cardNumberTextField.backgroundColor = MyColors.buttonDefaultBackgroundColor
-        expDateTextField.backgroundColor = MyColors.buttonDefaultBackgroundColor
-        holderNameTextField.backgroundColor = MyColors.buttonDefaultBackgroundColor
-        orderHistoryBtn.backgroundColor = MyColors.buttonDefaultBackgroundColor
-        addressTextField.backgroundColor = MyColors.buttonDefaultBackgroundColor
-        csvTextField.backgroundColor = MyColors.buttonDefaultBackgroundColor
-    }
     //MARK : Delegates
     func setDelegates(){
         
@@ -193,25 +162,7 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
         
     }
 
-    //MARK: Segmented Control
-    
-    func customizeSegmentedControl(){
-        payControl.layer.cornerRadius = 15 // Don't let background bleed
-        payControl.layer.borderWidth = 1
-        payControl.layer.borderColor = MyColors.buttonBorderColor.cgColor
-        payControl.backgroundColor = UIColor.white
-        payControl.tintColor = MyColors.buttonTextColor
-        payControl.clipsToBounds = true
-        for segment in self.payControl.subviews{
-            for subview in segment.subviews {
-                if subview.isKind(of: UILabel.self), let label = subview as? UILabel {
-                    label.numberOfLines = 2
-                }
-            }
-            
-        }
-        
-    }
+
     
  
     
@@ -327,8 +278,6 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
             if emptyCreditCardFields()  {
                 self.navigationController?.popViewController(animated: true)
             } else if checkCreditCardFields() {
-                
-                
                 if flag2 == 1 {
                     
                     //save payment options
@@ -342,40 +291,33 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
                         print(error!)
                     })
                 }
-                
-               
                 self.navigationController?.popViewController(animated: true)
             }
+            
+            order.date = getCurrentDate()
+            order.firstName = firstNameTextField.text!
+            order.lastName = lastNameTextField.text!
+            order.phone = phoneNumberTextField.text!
+            order.email = emailTextField.text!
+            order.address = addressTextField.text!
+            order.totalCost = Double(totalLabel.text!.components(separatedBy: Constants.currency)[1])!
+            
             LocalRequest.postOrderToOrderHistory(order: order, { (error) in
                 print(error!)
             })
         }
     }
     
-    
-   
+
     //MARK: Order View Configuration
     func configureOrder(){
         removeSubviews()
         
         let nrItems = order.items.count
         foodView  = [SelectedPizzaType?](repeating: nil,count : nrItems)
-
-        
-        print("order.items : ")
-        for item in order.items{
-            
-            print(item.product.name)
-        }
-        
-        
-        
         total = 0
-        totalLabel.text = "\(total)"
-        
-        
-        
-        
+        totalLabel.text = Constants.currency + "\(total)"
+     
         var foodName : String
         var foodPrice : Double
         
@@ -390,35 +332,27 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
             let item = order.items[i]
             
             switch item.type{
-                
             case 0 :
                 //pizza
-                if item.ingredients.count <= 0{
-                self.orderViewHeight.constant += height
-                foodView[i] = .fromNib()
-                    
-                
-                
-                foodView[i]?.tag = item.id
-                foodView[i]?.removeButton.tag = item.id
-                
-                foodView[i]?.removeButton.addTarget(self, action: #selector(removeView), for: .touchUpInside)
-                foodName = "\(item.product.name) \(item.productType.name) + \(item.servingSize.name)"
-                foodPrice = item.cost
-                
-                foodView[i]?.descriptionLabel.text = foodName
-                foodView[i]?.priceLabel.text = "$\(foodPrice)"
-                total += foodPrice
-                
-                
-                
-                orderView.addSubview(foodView[i]!)
-                foodView[i]?.frame = CGRect(x: 0, y:y, width: orderView.frame.width, height: height)
-                
-                
-                y = y + height
-                }else {
+                if item.ingredients.count <= 0 {
                     self.orderViewHeight.constant += height
+                    foodView[i] = .fromNib()
+                    foodView[i]?.tag = item.id
+                    foodView[i]?.removeButton.tag = item.id
+                    foodView[i]?.removeButton.addTarget(self, action: #selector(removeView), for: .touchUpInside)
+               
+                    foodName = "\(item.product.name) \(item.productType.name) + \(item.servingSize.name)"
+                    foodPrice = item.cost
+                    foodView[i]?.descriptionLabel.text = foodName
+                    foodView[i]?.priceLabel.text = "$\(foodPrice)"
+                    total += foodPrice
+
+                    orderView.addSubview(foodView[i]!)
+                    foodView[i]?.frame = CGRect(x: 0, y:y, width: orderView.frame.width, height: height)
+                    
+                    y = y + height
+                } else {
+                    self.orderViewHeight.constant += height + 10
                     foodView[i] = .fromNib()
                     
                     foodView[i]?.tag = item.id
@@ -434,19 +368,19 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
                     
                     orderView.addSubview(foodView[i]!)
                     foodView[i]?.frame = CGRect(x: 0, y:y, width: orderView.frame.width, height: height)
-                    
-                   
+
                     var j :CGFloat = 35
                     for ingredient in item.ingredients {
                         
                         self.orderViewHeight.constant += height
-                        let ingredientView:SelectedPizzaType
-                        ingredientView = .fromNib()
+                        let ingredientView:SelectedPizzaType = .fromNib()
+                        ingredientView.isSubview = true
                         ingredientView.descriptionLabel.text = "\(Int(ingredient.quantity)) x \(ingredient.name)"
                         ingredientView.descriptionLabel.textColor = MyColors.myBlack
                         ingredientView.priceLabel.text = "$\(ingredient.cost)"
                         ingredientView.priceLabel.textColor = MyColors.myBlack
-                        ingredientView.removeButton.isHidden = true
+                        ingredientView.removeButtonWidthConstraint.constant = 0
+                        ingredientView.backgroundColor = UIColor(red: 237/255, green: 252/255, blue: 1, alpha: 1)
                         foodView[i]?.addSubview(ingredientView)
                         ingredientView.frame = CGRect(x: 10, y:j, width: orderView.frame.width, height: height)
                         
@@ -506,13 +440,12 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
             
         }
         }
-        totalLabel.text = "\(total)"
+        totalLabel.text = Constants.currency + "\(total)"
         
         
     }
     
-    func removeSubviews()
-    {
+    func removeSubviews() {
         orderViewHeight.constant = 0
         
         for subview in orderView.subviews{
@@ -524,10 +457,7 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
     }
     
     func removeView(sender: UIButton) {
-        //let viewId = sender.tag
-        
         if let index = sender.superview?.tag {
-            print("bays")
             removeItem(index)
             configureOrder()
         }

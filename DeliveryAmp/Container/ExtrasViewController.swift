@@ -39,7 +39,7 @@ class ExtrasViewController: UIViewController {
         
         for item in order.items {
             if item.type == 2 {
-                var view: SelectedExtrasType = .fromNib()
+                let view: SelectedExtrasType = .fromNib()
                 view.descriptionLabel.text = item.product.name
                 view.priceLabel.text = "$" + String(item.cost)
                 view.removeButton.tag = item.id

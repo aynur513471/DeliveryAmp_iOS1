@@ -37,7 +37,7 @@ class FoodViewController: UIViewController {
       
         for item in order.items {
             if item.type == 0 {
-                var view: SelectedPizzaType = .fromNib()
+                let view: SelectedPizzaType = .fromNib()
                 view.descriptionLabel.text = item.productType.name + " + " + item.servingSize.name
                 view.priceLabel.text = "$" + String(item.cost)
                 view.removeButton.tag = item.id

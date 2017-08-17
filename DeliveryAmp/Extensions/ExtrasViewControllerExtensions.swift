@@ -30,10 +30,10 @@ extension ExtrasViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         if indexPath.row == selectedRowIndex  {
-           return CGFloat(123 + selectedExtrasList[indexPath.row].count * 35) // +4 from constraints
+           return CGFloat(123 + selectedExtrasList[indexPath.row].count * 35) // +3 from constraints
         }
         
-        return 71.0// +1 from constraints
+        return 74.0// +3 from constraints + 1 to be equal with the other containers
     }
 
     

@@ -35,7 +35,7 @@ extension BeveragesViewController: UITableViewDelegate, UITableViewDataSource {
             return CGFloat(174 + selectedDrinkList[indexPath.row].count * 35) // +4 from constraints
         }
         
-        return 71 // +1 from constraints
+        return 74 // +1 from constraints
     }
 
     

@@ -41,7 +41,7 @@ class BeveragesViewController: UIViewController {
         
         for item in order.items {
             if item.type == 1 {
-                var view: SelectedDrinkType = .fromNib()
+                let view: SelectedDrinkType = .fromNib()
                 view.descriptionLabel.text = item.servingSize.name
                 view.priceLabel.text = "$" + String(item.cost)
                 view.removeButton.tag = item.id

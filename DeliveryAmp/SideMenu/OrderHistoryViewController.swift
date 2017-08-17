@@ -46,13 +46,37 @@ class OrderHistoryViewController: UIViewController {
     }
 
     
-    @IBAction func addItemToOrder(_ sender: StyleableButton) {
+    @IBAction func addAsNew(_ sender: StyleableButton) {
         order = orderHistory[sender.tag]
+        CurrentUser.sharedInstance.firstName = order.firstName
+        CurrentUser.sharedInstance.lastName = order.lastName
+        CurrentUser.sharedInstance.address = order.address
+        CurrentUser.sharedInstance.phone = order.phone
+        CurrentUser.sharedInstance.email = order.email
         let _ = self.navigationController?.popViewController(animated: true)
         self.tabBarController?.tabBar.isHidden = false
         self.tabBarController?.selectedIndex = 2
     }
     
+
+    @IBAction func deleteHistory(_ sender: Any) {
+        let deleteHistoryAlert = UIAlertController(title: "Delete All?", message: "This action will clear all your order history.", preferredStyle: UIAlertControllerStyle.alert)
+        
+        deleteHistoryAlert.addAction(UIAlertAction(title: "Delete", style: .default, handler: { (action: UIAlertAction!) in
+            orderHistory = []
+            LocalRequest.postJSON(json: ["orders": []], path: "order_history") {
+                (result, error) in
+                if error{
+                    print("Could not delete order history!")
+                }
+            }
+            self.orderHistoryTable.reloadData()
+        }))
+        
+        deleteHistoryAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        present(deleteHistoryAlert, animated: true, completion: nil)
+    }
     
     
     // MARK: - Navigation

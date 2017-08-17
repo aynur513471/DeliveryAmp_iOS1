@@ -12,8 +12,6 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
 
     //MARK: - Outlets
     
-    @IBOutlet weak var scrollView: UIScrollView!
-    
     //delivery
     @IBOutlet weak var firstNameTextField: StyleableTextField!
     @IBOutlet weak var lastNameTextField: StyleableTextField!
@@ -35,18 +33,14 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     //default y position of the view
     var yViewPosition: CGFloat!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
+    
         setDelegates()
         populateFields()
         hideKeyboardWhenTappedAround()
         
         self.expDateTextField.inputView = self.datePicker
-        self.cardNumberTextField.addTarget(self, action: #selector(formatCardNumber), for: .editingChanged)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -100,7 +94,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         
         if CurrentUser.sharedInstance.creditCard.isCompleted() {
             
-            self.cardNumberTextField.text = CurrentUser.sharedInstance.creditCard.cardNumber
+            self.cardNumberTextField.text = formatCardNumber(cardNumber: CurrentUser.sharedInstance.creditCard.cardNumber)
             self.expDateTextField.text = String(CurrentUser.sharedInstance.creditCard.expMonth) + "/" + String(CurrentUser.sharedInstance.creditCard.expYear)
             self.csvTextField.text = String(CurrentUser.sharedInstance.creditCard.csvCode)
             self.holderNameTextField.text = CurrentUser.sharedInstance.creditCard.cardHolder

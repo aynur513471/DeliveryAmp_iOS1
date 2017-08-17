@@ -109,6 +109,7 @@ class CreateYourOwnViewController: UIViewController {
             orderItemId += 1
             order.items.append(newItem)
             
+            self.tabBarController?.tabBar.items![2].isEnabled = true
             Alert.showDefaultAlert(for: self, title: nil, message: "Custom pizza was added to your order!")
         } else {
             Alert.showDefaultAlert(for: self, title: nil, message: "No custom pizza was created!")

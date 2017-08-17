@@ -218,29 +218,20 @@ extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource  
     
     
     //MARK: formatCardNumber
-    func formatCardNumber() {
+    func formatCardNumber(cardNumber:String) -> String {
+        var cardFormated = ""
+        var k = 0
         
-        let componentsCount =  cardNumberTextField.text?.components(separatedBy: "-").count
-        
-        switch (cardNumberTextField.text?.characters.count)! {
-        case 4:
-            if componentsCount == 1 {
-                cardNumberTextField.text?.append("-")
+        for c in cardNumber.characters {
+            
+            if k == 4 || k == 8 || k == 12 {
+                cardFormated.append("-\(c)")
+            }else {
+                cardFormated.append(String(c))
             }
-            break
-        case 9:
-            if componentsCount == 2 {
-                cardNumberTextField.text?.append("-")
-            }
-            break
-        case 14:
-            if componentsCount == 3 {
-                cardNumberTextField.text?.append("-")
-            }
-            break
-        default:
-            break
+            k = k + 1
         }
+        return cardFormated
     }
     
 

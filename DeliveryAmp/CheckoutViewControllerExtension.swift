@@ -301,6 +301,23 @@ extension CheckoutViewController: UIPickerViewDelegate, UIPickerViewDataSource{
     }
     
     
+        func formatCardNumber(cardNumber:String) -> String {
+            var cardFormated = ""
+            var k = 0
+    
+            for c in cardNumber.characters {
+    
+                if k == 4 || k == 8 || k == 12 {
+                    cardFormated.append("-\(c)")
+                }else {
+                    cardFormated.append(String(c))
+                }
+                k = k + 1
+            }
+            return cardFormated
+        }
+    
+    
     //MARK: Keyboard Observers
     func addKeyboardObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
@@ -362,5 +379,11 @@ extension CheckoutViewController: UIPickerViewDelegate, UIPickerViewDataSource{
         self.holderNameTextField.resignFirstResponder()
     }
     
+    func getCurrentDate() -> String {
+        let date : Date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        return dateFormatter.string(from: date)
+    }
     
 }
