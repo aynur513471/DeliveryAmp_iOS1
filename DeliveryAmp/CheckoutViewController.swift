@@ -117,8 +117,10 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
     //MARK: Configurations
     func addTapToCheckboxes() {
         let tap1:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(CheckoutViewController.checkbox_TouchUpInside(_:)))
+        tap1.cancelsTouchesInView = false
         saveDeliveryLabel.addGestureRecognizer(tap1)
         let tap2:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(CheckoutViewController.checkboxSavePay_touchUpInside(_:)))
+        tap2.cancelsTouchesInView  = false
         savePayLabel.addGestureRecognizer(tap2)
         self.view.translatesAutoresizingMaskIntoConstraints = true
 

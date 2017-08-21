@@ -88,6 +88,8 @@ class BeveragesViewController: UIViewController {
             myView.descriptionLabel.text = getDrinkDescription(drinkSize)
             myView.priceLabel.text = getDrinkPrice(drinkSize)
             
+            cell.drinkSizeScrollView.contentOffset = .zero
+            
             selectedDrinkList[(indexPath.row)].append(myView)
             drinkTable.reloadData()
             addToOrder(allBeverages[sender.tag].id, drinkSize)

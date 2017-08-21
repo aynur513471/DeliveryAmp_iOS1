@@ -112,28 +112,8 @@ class FoodViewController: UIViewController {
         order.items.append(newItem)
         
         self.tabBarController?.tabBar.items![2].isEnabled = LocalRequest.checkOrder()
-        //testPostOrder()
     }
-    
-    
-    /*
-    func testPostOrder() {
-        order.address = CurrentUser.sharedInstance.address
-        order.date = "12-23-3214"
-        order.deliveryDetailsHadChanged = false
-        order.email = CurrentUser.sharedInstance.email
-        order.firstName = CurrentUser.sharedInstance.firstName
-        order.lastName = CurrentUser.sharedInstance.lastName
-        order.phone = CurrentUser.sharedInstance.phone
-        order.orderHasItems = true
-        order.totalCost = 23.12
-        
-        LocalRequest.postOrderToOrderHistory(order: order,{ (error) in
-            print(error!)
-        })
-        
-    }
- */
+
     
     func removeView(sender: UIButton) {
         let viewId = sender.tag

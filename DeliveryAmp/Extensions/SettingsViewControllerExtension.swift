@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource  {
+extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource, UIGestureRecognizerDelegate  {
     
     
     // MARK - Check for empty fields
@@ -240,11 +240,6 @@ extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource  
         if let superview = textField.superview{
             activeFieldRect = CGRect(x: textField.frame.origin.x, y: superview.frame.origin.y + textField.frame.origin.y, width: textField.frame.size.width, height: textField.frame.size.height)
         }
-    
-        if let field = textField as? StyleableTextField{
-            field.bottomBorderColor = UIColor.black
-            field.layoutSubviews()
-        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -323,33 +318,39 @@ extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource  
     }
     
     func keyboardWillShow(_ notification: Notification) {
-        if let info = notification.userInfo,
-            let offsetRect = (info[UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue,
+        if let info = notification.userInfo, let keyboardRect = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue,
             activeFieldRect != nil{
-            let offset = offsetRect.size
-            self.view.frame.origin.y = yViewPosition
-            if (activeFieldRect.origin.y + activeFieldRect.size.height + 10.0) > self.view.frame.size.height - offset.height{
-                self.view.frame.origin.y -= activeFieldRect.origin.y - (self.view.frame.size.height - offset.height) + activeFieldRect.size.height + 40.0
+            let keyboardSize = keyboardRect.size
+            let contentInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize.height + 30, 0.0)
+            scrollView.contentInset = contentInsets
+            scrollView.scrollIndicatorInsets = contentInsets
+            var aRect : CGRect = self.view.frame
+            aRect.size.height = aRect.size.height - keyboardSize.height
+            if !aRect.contains(activeFieldRect.origin){
+                self.scrollView.scrollRectToVisible(self.activeFieldRect, animated: true)
             }
         }
+        
     }
-    
-    
+
     func keyboardWillHide(_ notification: Notification) {
         dismissKeyboard()
     }
+
     
     //MARK: Dismiss Keyboard
     
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tap.cancelsTouchesInView = false
+        tap.delegate = self
         view.addGestureRecognizer(tap)
     }
     
     func dismissKeyboard() {
+        scrollView.contentInset = UIEdgeInsets.zero
+        scrollView.scrollIndicatorInsets = UIEdgeInsets.zero
         dismissTextFields()
-        self.view.frame.origin.y = self.yViewPosition
     }
     
     func dismissTextFields(){
@@ -362,6 +363,12 @@ extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource  
         self.csvTextField.resignFirstResponder()
         self.expDateTextField.resignFirstResponder()
         self.holderNameTextField.resignFirstResponder()
+    }
+    
+    
+    //MARK: Tap gesture delegate
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        return !(touch.view is UIButton)
     }
 
 

@@ -12,6 +12,8 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
 
     //MARK: - Outlets
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     //delivery
     @IBOutlet weak var firstNameTextField: StyleableTextField!
     @IBOutlet weak var lastNameTextField: StyleableTextField!
@@ -30,8 +32,6 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     
     var activeFieldRect: CGRect!
     
-    //default y position of the view
-    var yViewPosition: CGFloat!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +48,6 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         self.tabBarController?.tabBar.isHidden = true
         
         addKeyboardObservers()
-        self.yViewPosition = self.view.frame.origin.y
         
         self.view.addDiagonalGradient(self.view, [MyColors.darkBlue.cgColor, MyColors.lightBlue.cgColor], self.view.frame)
         self.view.layoutIfNeeded()

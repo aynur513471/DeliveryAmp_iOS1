@@ -11,9 +11,9 @@ import UIKit
 import Foundation
 
 
-extension CheckoutViewController: UIPickerViewDelegate, UIPickerViewDataSource{
+extension CheckoutViewController: UIPickerViewDelegate, UIPickerViewDataSource, UIGestureRecognizerDelegate {
     
-    
+
     // MARK - Check for empty fields
     
     func checkFields() -> Bool{
@@ -226,14 +226,15 @@ extension CheckoutViewController: UIPickerViewDelegate, UIPickerViewDataSource{
     
     //MARK: TextField Functions
     
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        return true
+    }
+    
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool{
-        
-        
         activeFieldRect = textField.frame
         if let superview = textField.superview{
             activeFieldRect = CGRect(x: textField.frame.origin.x, y: superview.frame.origin.y + textField.frame.origin.y, width: textField.frame.size.width, height: textField.frame.size.height)
         }
-        
         return true
     }
     
@@ -242,15 +243,15 @@ extension CheckoutViewController: UIPickerViewDelegate, UIPickerViewDataSource{
         
         //        //move to next text field
         let nextTag: Int = textField.tag + 1
-        if let nextResponder = self.view.viewWithTag(nextTag){
+        if let nextResponder = self.view.viewWithTag(nextTag) {
             nextResponder.becomeFirstResponder()
-        }else{
-            
+        } else {
             textField.resignFirstResponder()
         }
         
         return true
     }
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
         //code to recognize if backspace was pressed
     {
@@ -348,7 +349,6 @@ extension CheckoutViewController: UIPickerViewDelegate, UIPickerViewDataSource{
     
     
     func keyboardWillHide(_ notification: Notification) {
-        
         dismissKeyboard()
     }
     
@@ -357,26 +357,20 @@ extension CheckoutViewController: UIPickerViewDelegate, UIPickerViewDataSource{
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
+        tap.delegate = self
+        viewWithShadow.addGestureRecognizer(tap)
     }
     
     func dismissKeyboard() {
         scrollView.contentInset = UIEdgeInsets.zero
         scrollView.scrollIndicatorInsets = UIEdgeInsets.zero
         self.view.endEditing(true)
-        //dismissTextFields()
     }
     
-    func dismissTextFields(){
-        self.firstNameTextField.resignFirstResponder()
-        self.lastNameTextField.resignFirstResponder()
-        self.phoneNumberTextField.resignFirstResponder()
-        self.emailTextField.resignFirstResponder()
-        self.addressTextField.resignFirstResponder()
-        self.cardNumberTextField.resignFirstResponder()
-        self.csvTextField.resignFirstResponder()
-        self.expDateTextField.resignFirstResponder()
-        self.holderNameTextField.resignFirstResponder()
+    
+    //MARK: Tap gesture delegate 
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        return !(touch.view is UIButton)
     }
     
     func getCurrentDate() -> String {
