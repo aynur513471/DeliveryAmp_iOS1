@@ -263,7 +263,7 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
     //Place Order Button
     @IBAction func placeOrder_TouchUpInside(_ sender: Any) {
         
-        if checkFields() {
+        if checkFields() && order.items.count > 0 {
             
             //load data in my object
             if flag1 == 1{
@@ -336,7 +336,7 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
         foodView  = [SelectedPizzaType?](repeating: nil,count : nrItems)
         total = 0
         totalLabel.text = Constants.currency + "\(total)"
-     
+        
         var foodName : String
         var foodPrice : Double
         
@@ -346,39 +346,101 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
         orderView.translatesAutoresizingMaskIntoConstraints = false
         
         if nrItems >= 0{
-        for i in 0..<order.items.count{
-            
-            let item = order.items[i]
-            
-            switch item.type{
-            case 0 :
-                //pizza
-                if item.ingredients.count <= 0 {
+            for i in 0..<order.items.count{
+                
+                let item = order.items[i]
+                
+                switch item.type{
+                case 0 :
+                    //pizza
+                    if item.ingredients.count <= 0 {
+                        self.orderViewHeight.constant += height
+                        foodView[i] = .fromNib()
+                        foodView[i]?.tag = item.id
+                        foodView[i]?.removeButton.tag = item.id
+                        foodView[i]?.removeButton.addTarget(self, action: #selector(removeView), for: .touchUpInside)
+                        
+                        foodName = "\(item.product.name) \(item.productType.name) + \(item.servingSize.name)"
+                        foodPrice = item.cost
+                        foodView[i]?.descriptionLabel.text = foodName
+                        foodView[i]?.priceLabel.text = "$\(foodPrice)"
+                        total += foodPrice
+                        
+                        orderView.addSubview(foodView[i]!)
+                        foodView[i]?.frame = CGRect(x: 0, y:y, width: orderView.frame.width, height: height)
+                        
+                        y = y + height
+                    } else {
+                        self.orderViewHeight.constant += height + 10
+                        foodView[i] = .fromNib()
+                        
+                        foodView[i]?.tag = item.id
+                        foodView[i]?.removeButton.tag = item.id
+                        
+                        foodView[i]?.removeButton.addTarget(self, action: #selector(removeView), for: .touchUpInside)
+                        foodName = "(C) \(item.product.name) \(item.productType.name) + \(item.servingSize.name)"
+                        foodPrice = item.cost
+                        
+                        foodView[i]?.descriptionLabel.text = foodName
+                        foodView[i]?.priceLabel.text = "$\(foodPrice)"
+                        total += foodPrice
+                        
+                        orderView.addSubview(foodView[i]!)
+                        foodView[i]?.frame = CGRect(x: 0, y:y, width: orderView.frame.width, height: height)
+                        
+                        var j :CGFloat = 35
+                        for ingredient in item.ingredients {
+                            
+                            self.orderViewHeight.constant += height
+                            let ingredientView:SelectedPizzaType = .fromNib()
+                            ingredientView.isSubview = true
+                            ingredientView.descriptionLabel.text = "\(Int(ingredient.quantity)) x \(ingredient.name)"
+                            ingredientView.descriptionLabel.textColor = MyColors.myBlack
+                            ingredientView.priceLabel.text = "$\(ingredient.cost)"
+                            ingredientView.priceLabel.textColor = MyColors.myBlack
+                            ingredientView.removeButtonWidthConstraint.constant = 0
+                            ingredientView.backgroundColor = MyColors.ingredientViewColor
+                            foodView[i]?.addSubview(ingredientView)
+                            ingredientView.frame = CGRect(x: 10, y:j, width: orderView.frame.width, height: height)
+                            
+                            j = j + height
+                        }
+                        y = y + j
+                    }
+                    
+                    
+                    
+                case 1:
+                    //beverages
                     self.orderViewHeight.constant += height
                     foodView[i] = .fromNib()
+                    
                     foodView[i]?.tag = item.id
                     foodView[i]?.removeButton.tag = item.id
+                    
                     foodView[i]?.removeButton.addTarget(self, action: #selector(removeView), for: .touchUpInside)
-               
-                    foodName = "\(item.product.name) \(item.productType.name) + \(item.servingSize.name)"
+                    foodName = "\(item.product.name) \(item.servingSize.quantity)L"
                     foodPrice = item.cost
+                    
                     foodView[i]?.descriptionLabel.text = foodName
                     foodView[i]?.priceLabel.text = "$\(foodPrice)"
                     total += foodPrice
-
+                    
                     orderView.addSubview(foodView[i]!)
-                    foodView[i]?.frame = CGRect(x: 0, y:y, width: orderView.frame.width, height: height)
+                    foodView[i]?.frame = CGRect(x: 0, y:CGFloat(y), width: orderView.frame.width, height: height)
                     
                     y = y + height
-                } else {
-                    self.orderViewHeight.constant += height + 10
+                    
+                case 2:
+                    //extras
+                    self.orderViewHeight.constant += height
                     foodView[i] = .fromNib()
                     
                     foodView[i]?.tag = item.id
                     foodView[i]?.removeButton.tag = item.id
                     
                     foodView[i]?.removeButton.addTarget(self, action: #selector(removeView), for: .touchUpInside)
-                    foodName = "(C) \(item.product.name) \(item.productType.name) + \(item.servingSize.name)"
+                    foodName = "\(item.product.name) "
                     foodPrice = item.cost
                     
                     foodView[i]?.descriptionLabel.text = foodName
@@ -386,78 +448,16 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
                     total += foodPrice
                     
                     orderView.addSubview(foodView[i]!)
-                    foodView[i]?.frame = CGRect(x: 0, y:y, width: orderView.frame.width, height: height)
-
-                    var j :CGFloat = 35
-                    for ingredient in item.ingredients {
-                        
-                        self.orderViewHeight.constant += height
-                        let ingredientView:SelectedPizzaType = .fromNib()
-                        ingredientView.isSubview = true
-                        ingredientView.descriptionLabel.text = "\(Int(ingredient.quantity)) x \(ingredient.name)"
-                        ingredientView.descriptionLabel.textColor = MyColors.myBlack
-                        ingredientView.priceLabel.text = "$\(ingredient.cost)"
-                        ingredientView.priceLabel.textColor = MyColors.myBlack
-                        ingredientView.removeButtonWidthConstraint.constant = 0
-                        ingredientView.backgroundColor = UIColor(red: 237/255, green: 252/255, blue: 1, alpha: 1)
-                        foodView[i]?.addSubview(ingredientView)
-                        ingredientView.frame = CGRect(x: 10, y:j, width: orderView.frame.width, height: height)
-                        
-                        j = j + height
-                    }
-                    y = y + j
+                    foodView[i]?.frame = CGRect(x: 0, y:CGFloat(y), width: orderView.frame.width, height: height)
+                    
+                    y = y + height
+                    
+                default:
+                    break
                 }
                 
                 
-                
-            case 1:
-                //beverages
-                self.orderViewHeight.constant += height
-                foodView[i] = .fromNib()
-                
-                foodView[i]?.tag = item.id
-                foodView[i]?.removeButton.tag = item.id
-                
-                foodView[i]?.removeButton.addTarget(self, action: #selector(removeView), for: .touchUpInside)
-                foodName = "\(item.product.name) \(item.servingSize.quantity)L"
-                foodPrice = item.cost
-                
-                foodView[i]?.descriptionLabel.text = foodName
-                foodView[i]?.priceLabel.text = "$\(foodPrice)"
-                total += foodPrice
-                
-                orderView.addSubview(foodView[i]!)
-                foodView[i]?.frame = CGRect(x: 0, y:CGFloat(y), width: orderView.frame.width, height: height)
-                
-                y = y + height
-                
-            case 2:
-                //extras
-                self.orderViewHeight.constant += height
-                foodView[i] = .fromNib()
-                
-                foodView[i]?.tag = item.id
-                foodView[i]?.removeButton.tag = item.id
-                
-                foodView[i]?.removeButton.addTarget(self, action: #selector(removeView), for: .touchUpInside)
-                foodName = "\(item.product.name) "
-                foodPrice = item.cost
-                
-                foodView[i]?.descriptionLabel.text = foodName
-                foodView[i]?.priceLabel.text = "$\(foodPrice)"
-                total += foodPrice
-                
-                orderView.addSubview(foodView[i]!)
-                foodView[i]?.frame = CGRect(x: 0, y:CGFloat(y), width: orderView.frame.width, height: height)
-                
-                y = y + height
-                
-            default:
-                break
             }
-            
-            
-        }
         }
         totalLabel.text = Constants.currency + "\(total)"
         

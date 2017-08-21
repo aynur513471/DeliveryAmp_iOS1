@@ -21,8 +21,6 @@ class MyColors {
     static let darkBlue = UIColor(red: 198/255, green: 225/255, blue: 243/255, alpha: 1.0)
     static let lightBlue = UIColor(red: 214/255, green: 236/255, blue: 240/255, alpha: 1.0)
     static let segmentedControl = UIColor(red: 61/255, green: 206/255, blue: 202/255, alpha: 1.0)
-    
-    
-    
+    static let ingredientViewColor = UIColor(red: 237/255, green: 252/255, blue: 1, alpha: 1)
     
 }

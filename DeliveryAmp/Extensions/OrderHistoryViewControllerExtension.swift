@@ -111,7 +111,7 @@ extension OrderHistoryViewController: UITableViewDelegate, UITableViewDataSource
         ingredientView.layoutIfNeeded()
         ingredientView.descriptionLabel.text = String(ingredient.quantity) + " x " +  ingredient.name
         ingredientView.priceLabel.text = Constants.currency +  String(ingredient.cost)
-        ingredientView.backgroundColor = UIColor(red: 237/255, green: 252/255, blue: 1, alpha: 1)
+        ingredientView.backgroundColor = MyColors.ingredientViewColor
     }
    
     

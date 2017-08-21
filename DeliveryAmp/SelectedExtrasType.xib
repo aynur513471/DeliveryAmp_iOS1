@@ -25,15 +25,15 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hot Sauce" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qb8-gO-hen">
-                    <rect key="frame" x="10" y="10" width="251" height="15"/>
+                    <rect key="frame" x="10" y="10" width="246" height="15"/>
                     <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="11"/>
                     <color key="textColor" red="0.62292844059999997" green="0.70697730780000001" blue="0.74967736009999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbF-0m-SjQ">
-                    <rect key="frame" x="336" y="7.5" width="20" height="20"/>
+                    <rect key="frame" x="331" y="2.5" width="30" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="20" id="JWu-Dd-VN3"/>
+                        <constraint firstAttribute="width" constant="30" id="JWu-Dd-VN3"/>
                         <constraint firstAttribute="width" secondItem="tbF-0m-SjQ" secondAttribute="height" multiplier="1:1" id="LU6-aq-s20"/>
                     </constraints>
                     <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="20"/>
@@ -41,7 +41,7 @@
                     <state key="normal" image="x_icon"/>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$4.99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgJ-n7-nUs">
-                    <rect key="frame" x="271" y="10" width="60" height="14.5"/>
+                    <rect key="frame" x="266" y="10" width="60" height="14.5"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="60" id="VSn-fH-P8j"/>
                     </constraints>
@@ -61,7 +61,7 @@
                 <constraint firstItem="Qb8-gO-hen" firstAttribute="centerY" secondItem="E1x-9X-unF" secondAttribute="centerY" id="d8w-6d-Q0C"/>
                 <constraint firstItem="bgJ-n7-nUs" firstAttribute="centerY" secondItem="E1x-9X-unF" secondAttribute="centerY" id="eJn-sH-vfL"/>
                 <constraint firstAttribute="bottom" secondItem="Qb8-gO-hen" secondAttribute="bottom" constant="10" id="iK0-od-s7n"/>
-                <constraint firstAttribute="trailing" secondItem="tbF-0m-SjQ" secondAttribute="trailing" constant="10" id="jdP-ED-6c8"/>
+                <constraint firstAttribute="trailing" secondItem="tbF-0m-SjQ" secondAttribute="trailing" constant="5" id="jdP-ED-6c8"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
