@@ -25,7 +25,7 @@ extension FoodViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             selectedRowIndex = indexPath.row
         }
-        
+        tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
         tableView.reloadData()
         
     }
