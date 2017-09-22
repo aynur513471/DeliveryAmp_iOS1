@@ -20,56 +20,78 @@ extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource, 
         //first name
         if !Regexes.nonEmptyRegex.testMatch(input: self.firstNameTextField.text!) {
             ok = false
-            self.firstNameTextField.bottomBorderColor = UIColor.red
+           // self.firstNameTextField.bottomBorderColor = UIColor.red
             self.firstNameTextField.layoutSubviews()
-            //self.firstNameTextField.setBottomBorder(UIColor.red)
+            self.firstNameTextField.setBottomBorder(UIColor.red)
             Alert.showDefaultAlert(for: self, title: nil, message: "Please enter your first name.")
+        }else {
+            self.firstNameTextField.setBottomBorder(MyColors.buttonBorderColor)
         }
         
         // last name
         if !Regexes.nonEmptyRegex.testMatch(input: self.lastNameTextField.text!) {
             ok = false
-            self.lastNameTextField.bottomBorderColor = UIColor.red
+            self.lastNameTextField.setBottomBorder(UIColor.red)
             self.lastNameTextField.layoutSubviews()
             Alert.showDefaultAlert(for: self, title: nil, message: "Please enter your last name.")
+        }else {
+            self.lastNameTextField.setBottomBorder(MyColors.buttonBorderColor)
         }
         
         //email
         if !Regexes.nonEmptyRegex.testMatch(input: self.emailTextField.text!) {
             ok = false
-            self.emailTextField.bottomBorderColor = UIColor.red
+            self.emailTextField.setBottomBorder(UIColor.red)
             self.emailTextField.layoutSubviews()
             Alert.showDefaultAlert(for: self, title: nil, message: "Please enter an email address.")
         }else if !Regexes.emailRegex.testMatch(input: self.emailTextField.text!) {
             ok = false
-            self.emailTextField.bottomBorderColor = UIColor.red
+            self.emailTextField.setBottomBorder(UIColor.red)
             self.emailTextField.layoutSubviews()
             Alert.showDefaultAlert(for: self, title: nil, message: "Please enter a valid email address.")
+        }else {
+            self.emailTextField.setBottomBorder(MyColors.buttonBorderColor)
         }
         
         
         //phone number
         if !Regexes.nonEmptyRegex.testMatch(input: self.phoneNumberTextField.text!) {
             ok = false
-            self.phoneNumberTextField.bottomBorderColor = UIColor.red
+            self.phoneNumberTextField.setBottomBorder(UIColor.red)
             self.phoneNumberTextField.layoutSubviews()
         } else if !Regexes.numericRegex.testMatch(input: self.phoneNumberTextField.text!) {
             ok = false
-            self.phoneNumberTextField.bottomBorderColor = UIColor.red
+            self.phoneNumberTextField.setBottomBorder(UIColor.red)
             self.phoneNumberTextField.layoutSubviews()
             Alert.showDefaultAlert(for: self, title: nil, message: "Please enter a correct phone number.")
+        }else {
+            self.phoneNumberTextField.setBottomBorder(MyColors.buttonBorderColor)
         }
         
         
         //street name
         if !Regexes.nonEmptyRegex.testMatch(input: self.addressTextField.text!) {
             ok = false
-            self.addressTextField.bottomBorderColor = UIColor.red
+            self.addressTextField.setBottomBorder(UIColor.red)
             self.addressTextField.layoutSubviews()
+            Alert.showDefaultAlert(for: self, title: nil, message: "Please enter your address.")
             
+        }else {
+            self.addressTextField.setBottomBorder(MyColors.buttonBorderColor)
         }
         
         return ok
+    }
+    
+    func checkForIfAllEmpty() -> Bool {
+        if Regexes.nonEmptyRegex.testMatch(input: self.firstNameTextField.text!) ||
+            Regexes.nonEmptyRegex.testMatch(input: self.lastNameTextField.text!) ||
+            Regexes.nonEmptyRegex.testMatch(input: self.emailTextField.text!) ||
+            Regexes.nonEmptyRegex.testMatch(input: self.phoneNumberTextField.text!) ||
+            Regexes.nonEmptyRegex.testMatch(input: self.addressTextField.text!) {
+            return false
+        }
+        return true
     }
     
     func emptyCreditCardFields() -> Bool {
@@ -86,24 +108,29 @@ extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource, 
         var ok = true
         
         /* user has at least 1 textField completed and wants to add cc details */
-        if !Regexes.nonEmptyRegex.testMatch(input: self.cardNumberTextField.text!) {
+        if !Regexes.nonEmptyRegex.testMatch(input: self.cardNumberTextField.text!){
+            
             ok = false
-            self.cardNumberTextField.bottomBorderColor = UIColor.red
+            self.cardNumberTextField.setBottomBorder(UIColor.red)
             self.cardNumberTextField.layoutSubviews()
             Alert.showDefaultAlert(for: self, title: nil, message: "Please enter your card number.")
-        }else if !Regexes.nonEmptyRegex.testMatch(input: self.csvTextField.text!) {
+            
+        }
+        if !Regexes.nonEmptyRegex.testMatch(input: self.expDateTextField.text!) {
             ok = false
-            self.csvTextField.bottomBorderColor = UIColor.red
-            self.csvTextField.layoutSubviews()
-            Alert.showDefaultAlert(for: self, title: nil, message: "Please enter the CSV code.")
-        }else if !Regexes.nonEmptyRegex.testMatch(input: self.expDateTextField.text!) {
-            ok = false
-            self.expDateTextField.bottomBorderColor = UIColor.red
+            self.expDateTextField.setBottomBorder(UIColor.red)
             self.expDateTextField.layoutSubviews()
             Alert.showDefaultAlert(for: self, title: nil, message: "Please enter the card expiration date.")
-        } else if !Regexes.nonEmptyRegex.testMatch(input: self.holderNameTextField.text!) {
+        }
+        if !Regexes.nonEmptyRegex.testMatch(input: self.csvTextField.text!) {
             ok = false
-            self.holderNameTextField.bottomBorderColor = UIColor.red
+            self.csvTextField.setBottomBorder(UIColor.red)
+            self.csvTextField.layoutSubviews()
+            Alert.showDefaultAlert(for: self, title: nil, message: "Please enter the CSV code.")
+        }
+        if !Regexes.nonEmptyRegex.testMatch(input: self.holderNameTextField.text!) {
+            ok = false
+            self.holderNameTextField.setBottomBorder(UIColor.red)
             self.holderNameTextField.layoutSubviews()
             Alert.showDefaultAlert(for: self, title: nil, message: "Please enter the card holder name.")
         }
@@ -114,24 +141,35 @@ extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource, 
         
         if !checkCardNumber(self.cardNumberTextField.text!) {
             ok = false
-            self.cardNumberTextField.bottomBorderColor = UIColor.red
+            self.cardNumberTextField.setBottomBorder(UIColor.red)
             self.cardNumberTextField.layoutSubviews()
             Alert.showDefaultAlert(for: self, title: nil, message: "Wrong card number.")
-        } else if !checkCSVCode(self.csvTextField.text!) {
+        }else {
+            self.cardNumberTextField.setBottomBorder(MyColors.buttonBorderColor)
+        }
+        if !checkCSVCode(self.csvTextField.text!) {
             ok = false
-            self.csvTextField.bottomBorderColor = UIColor.red
+            self.csvTextField.setBottomBorder(UIColor.red)
             self.csvTextField.layoutSubviews()
             Alert.showDefaultAlert(for: self, title: nil, message: "Wrong CSV code.")
-        } else if !checkExpDate(self.expDateTextField.text!) {
+        }else {
+            self.csvTextField.setBottomBorder(MyColors.buttonBorderColor)
+        }
+        if !checkExpDate(self.expDateTextField.text!) {
             ok = false
-            self.expDateTextField.bottomBorderColor = UIColor.red
+            self.expDateTextField.setBottomBorder(UIColor.red)
             self.expDateTextField.layoutSubviews()
             Alert.showDefaultAlert(for: self, title: nil, message: "Wrong expiration date.")
-        } else if !checkHolder(self.holderNameTextField.text!) {
+        }else {
+            self.expDateTextField.setBottomBorder(MyColors.buttonBorderColor)
+        }
+        if !checkHolder(self.holderNameTextField.text!) {
             ok = false
-            self.holderNameTextField.bottomBorderColor = UIColor.red
+            self.holderNameTextField.setBottomBorder(UIColor.red)
             self.holderNameTextField.layoutSubviews()
             Alert.showDefaultAlert(for: self, title: nil, message: "Wrong card holder name format.")
+        }else {
+            self.holderNameTextField.setBottomBorder(MyColors.buttonBorderColor)
         }
         
         
@@ -242,6 +280,14 @@ extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource, 
         }
     }
     
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if checkForIfAllEmpty() {
+            clearAllButton.isHidden = true
+        }else {
+            clearAllButton.isHidden = false
+        }
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         activeFieldRect = nil
         
@@ -297,6 +343,10 @@ extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource, 
             
             //don’t allow to write more than 3 characters
             if !(isBackSpace == -92), textField.text!.characters.count == 4 {
+                return false
+            }
+        }else {
+            if !(isBackSpace == -92), textField.text!.characters.count == 35 {
                 return false
             }
         }

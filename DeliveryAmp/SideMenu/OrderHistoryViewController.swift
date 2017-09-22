@@ -14,6 +14,9 @@ class OrderHistoryViewController: UIViewController {
     
     @IBOutlet weak var orderHistoryTable: UITableView!
     
+    @IBOutlet weak var orderHistoryLabel: UILabel!
+    
+    @IBOutlet weak var deleteHistoryBtn: UIButton!
     //MARK: - Variables
     
     var selectedRowIndex: Int = -1
@@ -38,6 +41,18 @@ class OrderHistoryViewController: UIViewController {
         
         self.view.addDiagonalGradient(self.view, [MyColors.darkBlue.cgColor, MyColors.lightBlue.cgColor], self.view.frame)
         self.view.layoutIfNeeded()
+       
+        checkOrder()
+    }
+    
+    func checkOrder(){
+        if orderHistory.count == 0{
+            orderHistoryLabel.isHidden = false
+            deleteHistoryBtn.isHidden = true
+        }else{
+            orderHistoryLabel.isHidden = true
+            deleteHistoryBtn.isHidden = false
+        }
     }
     
     func setDelegates() {
@@ -71,11 +86,13 @@ class OrderHistoryViewController: UIViewController {
                 }
             }
             self.orderHistoryTable.reloadData()
+            self.checkOrder()
         }))
         
         deleteHistoryAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
         present(deleteHistoryAlert, animated: true, completion: nil)
+        
     }
     
     

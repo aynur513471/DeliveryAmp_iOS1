@@ -130,6 +130,9 @@ class FoodViewController: UIViewController {
     }
     
     @IBAction func goToCustomize(_ sender: StyleableButton) {
+        
+        sender.tintColor = .red
+        
         if let destination = tabBarController?.viewControllers?[1] as? UINavigationController,
             let createYourOwn = destination.topViewController as? CreateYourOwnViewController {
                 _ = createYourOwn.view
@@ -154,6 +157,7 @@ class FoodViewController: UIViewController {
                 createYourOwn.ingredientsTable.reloadData()
                 tabBarController!.selectedIndex = 1
         }
+       //sender.backgroundColor = MyColors.buttonDefaultBackgroundColor
     }
     
     func setSameCrustType(in destination: CreateYourOwnViewController, for cell: FoodTypeTableViewCell) {

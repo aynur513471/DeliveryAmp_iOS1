@@ -197,6 +197,7 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
                     if checkFields()
                     {
                         performSegue(withIdentifier: "toPayPal", sender: sender)
+                       
                     }
                     else{
                         view.tintColor = MyColors.buttonTextColor
@@ -249,6 +250,9 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
         let agreeAction = UIAlertAction(title: "Agree", style: .default) { (alert: UIAlertAction!) -> Void in
             order.items = []
             self.configureOrder()
+            
+            self.tabBarController?.selectedIndex = 0
+            
         }
         let disagreeAction = UIAlertAction(title: "Disagree", style: .cancel) { (alert: UIAlertAction!) -> Void in
             //print("You pressed Cancel")
@@ -263,8 +267,8 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
     //Place Order Button
     @IBAction func placeOrder_TouchUpInside(_ sender: Any) {
         
-        if checkFields() && order.items.count > 0 {
-            
+        if  order.items.count > 0 {
+            if checkFields() {
             //load data in my object
             if flag1 == 1{
                 //save my delivery Options
@@ -307,6 +311,15 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
             order.address = addressTextField.text!
             order.totalCost = Double(totalLabel.text!.components(separatedBy: Constants.currency)[1])!
             
+            }
+        }else {
+            let alert = UIAlertController(title: nil , message: "No items selected.", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
+               
+                
+                self.tabBarController?.selectedIndex = 0
+            }))
+            present(alert,animated: true,completion: nil)
             
         }
     }
@@ -319,6 +332,8 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
             LocalRequest.postOrderToOrderHistory(order: order, { (error) in
                 print(error!)
             })
+            order.items = []
+            self.tabBarController?.selectedIndex = 0
         }))
         
         placeOrderAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))

@@ -43,7 +43,9 @@ class CreateYourOwnViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = false
         self.view.addDiagonalGradient(self.view, [MyColors.darkBlue.cgColor, MyColors.lightBlue.cgColor], self.view.frame)
         self.view.layoutIfNeeded()
+        
         self.tabBarController?.tabBar.items![2].isEnabled = LocalRequest.checkOrder()
+        
         
     }
     
@@ -84,9 +86,39 @@ class CreateYourOwnViewController: UIViewController {
     @IBAction func resetIngredients(_ sender: StyleableButton) {
         usedIngredients = usedIngredients.map{($0.0, 0)}
         ingredientsTable.reloadData()
+        
+        var sizeButtons = pizzaSizeScrollView.subviews.filter{$0.isKind(of: UIButton.self)} as! [UIButton]
+        var crustButtons = crustTypeScrollView.subviews.filter{$0.isKind(of: UIButton.self)} as! [UIButton]
+        
+        for size in sizeButtons {
+            size.isSelected = false
+        }
+        for crust in crustButtons {
+            crust.isSelected = false
+        }
+        sizeButtons[0].isSelected = true
+        crustButtons[0].isSelected = true
+        
         setPizzaPrice()
     }
+    
+    func setIngredients(forIndex index: Int) -> String{
+        var ingredients = "Ingredients: "
+        var first = true
+        for ingredient in allIngredients {
+            if allProducts[index].ingredientIds.contains(ingredient.id) {
+                if first {
+                    ingredients += "\(ingredient.name)"
+                    first = false
+                }else {
+                    ingredients += ", \(ingredient.name)"
+                }
+            }
+        }
+        return ingredients
+    }
 
+    
     @IBAction func addToOrder(_ sender: Any) {
         let crustId = getCrustType()
         let sizeId = getPizzaSize()

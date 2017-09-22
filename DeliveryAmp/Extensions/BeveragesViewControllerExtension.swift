@@ -104,6 +104,9 @@ extension BeveragesViewController: UITableViewDelegate, UITableViewDataSource {
                 placeholderImage: UIImage(named: "menu_icon.png"),
                 options: [.continueInBackground, .progressiveDownload]
             )
+            cell.drinkImage.contentMode = .scaleAspectFill
+            cell.drinkImage.layer.cornerRadius = cell.drinkImage.frame.height / 2
+            cell.drinkImage.clipsToBounds = true
         }else{
             
         }

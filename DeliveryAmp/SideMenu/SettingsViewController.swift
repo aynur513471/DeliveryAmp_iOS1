@@ -13,6 +13,8 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     //MARK: - Outlets
     
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var clearAllButton: StyleableButton!
+    
     
     //delivery
     @IBOutlet weak var firstNameTextField: StyleableTextField!
@@ -27,6 +29,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var csvTextField: StyleableTextField!
     @IBOutlet weak var holderNameTextField: StyleableTextField!
     
+
     //MARK: - Variables
     var datePicker: UIPickerView = UIPickerView()
     
@@ -51,6 +54,12 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         
         self.view.addDiagonalGradient(self.view, [MyColors.darkBlue.cgColor, MyColors.lightBlue.cgColor], self.view.frame)
         self.view.layoutIfNeeded()
+        
+        if checkForIfAllEmpty() {
+            clearAllButton.isHidden = true
+        }else {
+            clearAllButton.isHidden = false
+        }
     }
 
     
@@ -112,6 +121,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         self.csvTextField.text = nil
         self.holderNameTextField.text = nil
         
+        clearAllButton.isHidden = true
     }
 
     @IBAction func saveData(_ sender: StyleableButton) {

@@ -34,7 +34,7 @@ extension CreateYourOwnViewController: UITableViewDelegate, UITableViewDataSourc
             
             selectedPizzaPicture.image = cell.pizzaPicture.image
             selectedPizzaName.text = cell.pizzaName.text
-            selectedPizzaIngredients.text = cell.pizzaIngredients.text
+            selectedPizzaIngredients.text = setIngredients(forIndex: indexPath.row)
             selectedPizzaPrice.text = cell.pizzaPrice.text
             
             usedIngredients = allIngredients.filter{allProducts[indexPath.row].ingredientIds.contains($0.id)}.map{($0, 0)}
@@ -73,7 +73,7 @@ extension CreateYourOwnViewController: UITableViewDelegate, UITableViewDataSourc
         
         cell.pizzaName.text = allProducts[index].name
         cell.pizzaPrice.text = Constants.currency + String(allProducts[index].price + sizePrice + crustPrice)
-        cell.pizzaIngredients.text = allProducts[index].productDescription
+        cell.pizzaIngredients.text = setIngredients(forIndex: index)
         if let url = URL(string:  allProducts[index].imageUrl){
             cell.pizzaPicture.sd_setImage(
                 with: url,

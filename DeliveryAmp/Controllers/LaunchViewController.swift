@@ -157,7 +157,8 @@ class LaunchViewController: UIViewController {
         LocalRequest.getOrderHistory({
             (orderHistoryOptional: [Order]?, error: String?) -> Void in
             if let _ = error{
-                Alert.showDefaultAlert(for: self, title: nil, message: error)
+                //Alert.showDefaultAlert(for: self, title: nil, message: error)
+                self.goToMainScreen()
             }else if let orderHistoryTemp = orderHistoryOptional {
                 orderHistory = orderHistoryTemp
                 self.goToMainScreen()

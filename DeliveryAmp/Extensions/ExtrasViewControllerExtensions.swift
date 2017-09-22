@@ -76,6 +76,7 @@ extension ExtrasViewController: UITableViewDelegate, UITableViewDataSource {
                 placeholderImage: UIImage(named: "menu_icon.png"),
                 options: [.continueInBackground, .progressiveDownload]
             )
+            cell.extrasImage.contentMode = .scaleAspectFill
             cell.extrasImage.layer.cornerRadius = cell.extrasImage.frame.height / 2
             cell.extrasImage.clipsToBounds = true
         }else{

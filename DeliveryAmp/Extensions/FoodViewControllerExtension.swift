@@ -119,19 +119,23 @@ extension FoodViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.foodNameLabel.text = allProducts[index].name
         cell.foodPriceLabel.text = Constants.currency + String(allProducts[index].price + sizePrice + crustPrice)
-        cell.foodIngredientsLabel.text = allProducts[index].productDescription
+        cell.foodIngredientsLabel.text = setIngredients(forIndex: index)
         if let url = URL(string:  allProducts[index].imageUrl){
             cell.pizzaImage.sd_setImage(
                 with: url,
                 placeholderImage: UIImage(named: "menu_icon.png"),
                 options: [.continueInBackground, .progressiveDownload]
             )
+            cell.pizzaImage.contentMode = .scaleAspectFill
+            cell.pizzaImage.layer.cornerRadius = cell.pizzaImage.frame.height / 2
+            cell.pizzaImage.clipsToBounds = true
+            
         }else{
             //cell.pizzaImage.image =
         }
     }
     
-
+  
     
     // MARK: - buttons selected
     
@@ -171,7 +175,22 @@ extension FoodViewController: UITableViewDelegate, UITableViewDataSource {
         return Constants.currency + String(allProducts[selectedRowIndex].price + sizePrice + crustPrice)
     }
     
+    //Set Ingredients
     
-    
- 
+    func setIngredients(forIndex index: Int) -> String{
+        var ingredients = "Ingredients: "
+        var first = true
+        for ingredient in allIngredients { 
+            if allProducts[index].ingredientIds.contains(ingredient.id) {
+                if first {
+                    ingredients += "\(ingredient.name)"
+                    first = false
+                }else {
+                    ingredients += ", \(ingredient.name)"
+                }
+            }
+        }
+        return ingredients
+    }
+
 }
