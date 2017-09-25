@@ -37,9 +37,13 @@ class LaunchViewController: UIViewController {
         SideMenuManager.menuPresentMode = .menuSlideIn
         SideMenuManager.menuFadeStatusBar = false
         
+        
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: MyColors.myBlack], for: .selected)
         
+      
+        
     }
+    
     
     func getUser() {
 

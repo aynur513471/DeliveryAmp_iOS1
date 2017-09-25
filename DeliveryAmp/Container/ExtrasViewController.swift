@@ -35,8 +35,9 @@ class ExtrasViewController: UIViewController {
         for _ in 0...allExtras.count {
             selectedExtrasList.append([])
         }
-        self.tabBarController?.tabBar.items![2].isEnabled = LocalRequest.checkOrder()
-        
+        //self.tabBarController?.tabBar.items![2].isEnabled = LocalRequest.checkOrder()
+        tabBarController?.setTextAtributes()
+
         for item in order.items {
             if item.type == 2 {
                 let view: SelectedExtrasType = .fromNib()
@@ -95,7 +96,9 @@ class ExtrasViewController: UIViewController {
         
         orderItemId = OrderHelper.getNextOrderId()
         order.items.append(newItem)
-        self.tabBarController?.tabBar.items![2].isEnabled = LocalRequest.checkOrder()
+        //self.tabBarController?.tabBar.items![2].isEnabled = LocalRequest.checkOrder()
+        tabBarController?.setTextAtributes()
+
     }
 
     
@@ -110,7 +113,9 @@ class ExtrasViewController: UIViewController {
     
     func removeItem(_ orderItemIdToRemove: Int) {
         order.items = order.items.filter{$0.id != orderItemIdToRemove}
-        self.tabBarController?.tabBar.items![2].isEnabled = LocalRequest.checkOrder()
+        //self.tabBarController?.tabBar.items![2].isEnabled = LocalRequest.checkOrder()
+        tabBarController?.setTextAtributes()
+
     }
     
     

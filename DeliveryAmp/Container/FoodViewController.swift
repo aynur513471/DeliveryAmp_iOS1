@@ -33,7 +33,9 @@ class FoodViewController: UIViewController {
             selectedPizzaList.append([])
         }
 
-        self.tabBarController?.tabBar.items![2].isEnabled = LocalRequest.checkOrder()
+       // self.tabBarController?.tabBar.items![2].isEnabled = LocalRequest.checkOrder()
+        tabBarController?.setTextAtributes()
+
       
         for item in order.items {
             if item.type == 0 {
@@ -111,7 +113,8 @@ class FoodViewController: UIViewController {
         orderItemId = OrderHelper.getNextOrderId()
         order.items.append(newItem)
         
-        self.tabBarController?.tabBar.items![2].isEnabled = LocalRequest.checkOrder()
+        tabBarController?.setTextAtributes()
+
     }
 
     
@@ -126,7 +129,9 @@ class FoodViewController: UIViewController {
     
     func removeItem(_ orderItemIdToRemove: Int) {
         order.items = order.items.filter{$0.id != orderItemIdToRemove}
-        self.tabBarController?.tabBar.items![2].isEnabled = LocalRequest.checkOrder()
+        //self.tabBarController?.tabBar.items![2].isEnabled = LocalRequest.checkOrder()
+        tabBarController?.setTextAtributes()
+
     }
     
     @IBAction func goToCustomize(_ sender: StyleableButton) {

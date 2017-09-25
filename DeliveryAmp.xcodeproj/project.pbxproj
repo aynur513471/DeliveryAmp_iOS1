@@ -78,6 +78,7 @@
 		CE579B2D1F41BB6000BE1024 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE579B2C1F41BB6000BE1024 /* Reachability.swift */; };
 		CE5B7DDE1F39C5020060D69C /* StyleableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B7DDD1F39C5020060D69C /* StyleableImageView.swift */; };
 		CE5B7DE21F39DBA90060D69C /* raw.json in Resources */ = {isa = PBXBuildFile; fileRef = CE5B7DE11F39DBA90060D69C /* raw.json */; };
+		CE5EC2781F78FF5600F4703A /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5EC2771F78FF5600F4703A /* TabBarController.swift */; };
 		CE6C09B31F309B1A00D9C9EA /* FoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6C09B21F309B1A00D9C9EA /* FoodViewController.swift */; };
 		CE6C09B51F309B2800D9C9EA /* BeveragesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6C09B41F309B2800D9C9EA /* BeveragesViewController.swift */; };
 		CE6C09B71F309B3200D9C9EA /* ExtrasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6C09B61F309B3200D9C9EA /* ExtrasViewController.swift */; };
@@ -180,6 +181,7 @@
 		CE579B2C1F41BB6000BE1024 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = Helpers/Reachability.swift; sourceTree = "<group>"; };
 		CE5B7DDD1F39C5020060D69C /* StyleableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StyleableImageView.swift; path = Views/StyleableImageView.swift; sourceTree = "<group>"; };
 		CE5B7DE11F39DBA90060D69C /* raw.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = raw.json; sourceTree = "<group>"; };
+		CE5EC2771F78FF5600F4703A /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		CE6C09B21F309B1A00D9C9EA /* FoodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FoodViewController.swift; path = Container/FoodViewController.swift; sourceTree = "<group>"; };
 		CE6C09B41F309B2800D9C9EA /* BeveragesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeveragesViewController.swift; path = Container/BeveragesViewController.swift; sourceTree = "<group>"; };
 		CE6C09B61F309B3200D9C9EA /* ExtrasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtrasViewController.swift; path = Container/ExtrasViewController.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 				CE1022C31F34BA16008A28EA /* LaunchViewController.swift */,
 				CE0359E11F3460E300969B2F /* CheckoutViewController.swift */,
 				CEDB61F31F3B0611004DAE66 /* PayPalViewController.swift */,
+				CE5EC2771F78FF5600F4703A /* TabBarController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -674,6 +677,7 @@
 				CEF199841F336B2C005E74B4 /* Alert.swift in Sources */,
 				CE42C9F71F3D90430037FF31 /* User.swift in Sources */,
 				CE87A3591F2B537C00645A47 /* OrderHistoryTableViewCell.swift in Sources */,
+				CE5EC2781F78FF5600F4703A /* TabBarController.swift in Sources */,
 				CE1022C41F34BA16008A28EA /* LaunchViewController.swift in Sources */,
 				869376791F3B1C7C0051E7CE /* ExtrasTypeTableViewCell.swift in Sources */,
 				CE5522A41F4440BB00A540B5 /* CheckoutViewControllerExtension.swift in Sources */,

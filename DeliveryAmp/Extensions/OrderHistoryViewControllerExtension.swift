@@ -103,7 +103,7 @@ extension OrderHistoryViewController: UITableViewDelegate, UITableViewDataSource
             itemView.descriptionLabel.text = item.product.name
         }
         
-        itemView.priceLabel.text = Constants.currency + String(item.product.price)
+        itemView.priceLabel.text = Constants.currency + String(item.cost)
     }
     
     func customizeIngredientView(ingredientView: SelectedPizzaType, ingredient: OrderIngredient) {

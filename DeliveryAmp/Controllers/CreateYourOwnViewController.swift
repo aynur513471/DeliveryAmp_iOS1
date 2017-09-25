@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SideMenu
 
 class CreateYourOwnViewController: UIViewController {
 
@@ -35,8 +36,9 @@ class CreateYourOwnViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setDelegates()
+        
+        
     }
-
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(animated)
@@ -44,9 +46,11 @@ class CreateYourOwnViewController: UIViewController {
         self.view.addDiagonalGradient(self.view, [MyColors.darkBlue.cgColor, MyColors.lightBlue.cgColor], self.view.frame)
         self.view.layoutIfNeeded()
         
-        self.tabBarController?.tabBar.items![2].isEnabled = LocalRequest.checkOrder()
-        
-        
+        //self.tabBarController?.tabBar.items![2].isEnabled = LocalRequest.checkOrder()
+        //SideMenuManager.menuAddScreenEdgePanGesturesToPresent(toView: view)
+        tabBarController?.setTextAtributes()
+
+     
     }
     
     override func didReceiveMemoryWarning() {
@@ -141,7 +145,9 @@ class CreateYourOwnViewController: UIViewController {
             orderItemId += 1
             order.items.append(newItem)
             
-            self.tabBarController?.tabBar.items![2].isEnabled = true
+            tabBarController?.setTextAtributes()
+
+            
             Alert.showDefaultAlert(for: self, title: nil, message: "Custom pizza was added to your order!")
         } else {
             Alert.showDefaultAlert(for: self, title: nil, message: "No custom pizza was created!")

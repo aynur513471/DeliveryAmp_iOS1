@@ -7,9 +7,9 @@
 //
 
 import UIKit
+import SideMenu
 
-
-class MenuViewController: UIViewController {
+class MenuViewController: UIViewController{
 
     // MARK: - Outlets
     
@@ -24,6 +24,7 @@ class MenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         selectFood(foodButton)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,13 +32,27 @@ class MenuViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = false
         self.view.addDiagonalGradient(self.view, [MyColors.darkBlue.cgColor, MyColors.lightBlue.cgColor], self.view.frame)
         self.view.layoutIfNeeded()
-        self.tabBarController?.tabBar.items![2].isEnabled = LocalRequest.checkOrder()
         
+       // self.tabBarController?.tabBar.items![2].isEnabled = LocalRequest.checkOrder()
+        tabBarController?.setTextAtributes()
+
+        
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        
+        super.viewDidAppear(animated)
+        //SideMenuManager.menuAddScreenEdgePanGesturesToPresent(toView: view)
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    //MARK : TAB BAR
+    
+    
+    
     
     
     // MARK: - Navigation

@@ -7,6 +7,8 @@
 
 import UIKit
 import Foundation
+import SideMenu
+
 
 class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
     
@@ -72,6 +74,7 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
         sortedViews[0].tintColor = MyColors.segmentedControl //seg
         
         self.expDateTextField.inputView = self.datePicker
+       
     }
 
     
@@ -91,6 +94,8 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
         if CurrentUser.sharedInstance.creditCard.isCompleted() {
             setPaymentFields()
         }
+        //SideMenuManager.menuAddScreenEdgePanGesturesToPresent(toView: view)
+        
         
         
 
@@ -325,15 +330,23 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
     }
     
     func completeOrder() {
-        
+        order.totalCost = Double(totalLabel.text!.components(separatedBy: Constants.currency)[1])!
         let placeOrderAlert = UIAlertController(title: "Place Order?", message: "If you agree, your order will be sent.", preferredStyle: UIAlertControllerStyle.alert)
         
+        
+        let newOrder : Order = Order(date: order.date , address: order.address, deliveryDetailsHadChanged: order.deliveryDetailsHadChanged, email: order.email, firstName: order.firstName, lastName: order.lastName, phone: order.phone, totalCost: order.totalCost, orderHasItems: order.orderHasItems, items: order.items)
+        
         placeOrderAlert.addAction(UIAlertAction(title: "Agree", style: .default, handler: { (action: UIAlertAction!) in
-            LocalRequest.postOrderToOrderHistory(order: order, { (error) in
+            
+            LocalRequest.postOrderToOrderHistory(order: newOrder, { (error) in
                 print(error!)
             })
+           // orderHistory.append(newOrder)
             order.items = []
             self.tabBarController?.selectedIndex = 0
+            
+//            self.orderHistoryTable.reloadData()
+//            self.checkOrder()
         }))
         
         placeOrderAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))

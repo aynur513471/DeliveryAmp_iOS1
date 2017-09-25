@@ -23,4 +23,8 @@ class MyColors {
     static let segmentedControl = UIColor(red: 61/255, green: 206/255, blue: 202/255, alpha: 1.0)
     static let ingredientViewColor = UIColor(red: 237/255, green: 252/255, blue: 1, alpha: 1)
     
+    
+    static let disabledTabItem = UIColor(red: 215/255, green: 223/255, blue: 226/255, alpha: 1)
+    static let tabItem = UIColor(red: 160/255, green: 162/255, blue: 162/255, alpha: 1)
+
 }

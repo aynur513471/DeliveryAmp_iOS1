@@ -80,6 +80,10 @@ extension CreateYourOwnViewController: UITableViewDelegate, UITableViewDataSourc
                 placeholderImage: UIImage(named: "menu_icon.png"),
                 options: [.continueInBackground, .progressiveDownload]
             )
+            cell.pizzaPicture.contentMode = .scaleAspectFill
+            cell.pizzaPicture.layer.cornerRadius = cell.pizzaPicture.frame.height / 2
+            cell.pizzaPicture.clipsToBounds = true
+            
         }else{
             //cell.pizzaImage.image =
         }

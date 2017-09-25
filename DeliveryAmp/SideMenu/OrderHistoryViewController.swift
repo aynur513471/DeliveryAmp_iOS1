@@ -43,6 +43,7 @@ class OrderHistoryViewController: UIViewController {
         self.view.layoutIfNeeded()
        
         checkOrder()
+        //orderHistoryTable.reloadData()
     }
     
     func checkOrder(){
