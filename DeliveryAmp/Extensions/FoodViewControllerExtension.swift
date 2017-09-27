@@ -20,13 +20,23 @@ extension FoodViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+    
         if selectedRowIndex == indexPath.row {
             selectedRowIndex = -1
+            tableView.deselectRow(at: indexPath, animated: true)
+
+            //tableView.scrollToRow(at: indexPath, at: .top, animated: true)
         } else {
+            
+            tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
             selectedRowIndex = indexPath.row
+
         }
-        tableView.scrollToRow(at: indexPath, at: .middle, animated: true)
+       //tableView.scrollToRow(at: indexPath, at: .none, animated: true)
         tableView.reloadData()
+        tableView.scrollToRow(at: indexPath, at: .none, animated: true)
+
+        
         
     }
     

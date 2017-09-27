@@ -340,7 +340,7 @@ class LocalRequest{
                 callback("Failed to post order history")
             }else{
                 orderHistory.append(order)
-                callback("Success")
+                callback(nil)
             }
         }
     }

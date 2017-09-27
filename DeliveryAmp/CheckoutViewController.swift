@@ -274,6 +274,13 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
         
         if  order.items.count > 0 {
             if checkFields() {
+                order.date = getCurrentDate()
+                order.firstName = firstNameTextField.text!
+                order.lastName = lastNameTextField.text!
+                order.phone = phoneNumberTextField.text!
+                order.email = emailTextField.text!
+                order.address = addressTextField.text!
+                order.totalCost = Double(totalLabel.text!.components(separatedBy: Constants.currency)[1])!
             //load data in my object
             if flag1 == 1{
                 //save my delivery Options
@@ -292,7 +299,15 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
                     if flag2 == 1 {
                         //save payment options
                         var strings = expDateTextField.text?.components(separatedBy: "/")
-                        CurrentUser.sharedInstance.creditCard.cardNumber = cardNumberTextField.text!
+                        
+                        
+                        CurrentUser.sharedInstance.creditCard.cardNumber = ""
+                        for component in cardNumberTextField.text!.components(separatedBy: "-") {
+                            CurrentUser.sharedInstance.creditCard.cardNumber += component
+                        }
+                        
+                        
+                        
                         CurrentUser.sharedInstance.creditCard.expMonth = Int((strings?[0])!)!
                         CurrentUser.sharedInstance.creditCard.expYear = Int((strings?[1])!)!
                         CurrentUser.sharedInstance.creditCard.csvCode = Int(csvTextField.text!)!
@@ -308,13 +323,7 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
             }
             
             
-            order.date = getCurrentDate()
-            order.firstName = firstNameTextField.text!
-            order.lastName = lastNameTextField.text!
-            order.phone = phoneNumberTextField.text!
-            order.email = emailTextField.text!
-            order.address = addressTextField.text!
-            order.totalCost = Double(totalLabel.text!.components(separatedBy: Constants.currency)[1])!
+          
             
             }
         }else {
@@ -331,22 +340,24 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
     
     func completeOrder() {
         order.totalCost = Double(totalLabel.text!.components(separatedBy: Constants.currency)[1])!
+         let newOrder : Order = Order(date: order.date , address: order.address, deliveryDetailsHadChanged: order.deliveryDetailsHadChanged, email: order.email, firstName: order.firstName, lastName: order.lastName, phone: order.phone, totalCost: order.totalCost, orderHasItems: order.orderHasItems, items: order.items)
+        
         let placeOrderAlert = UIAlertController(title: "Place Order?", message: "If you agree, your order will be sent.", preferredStyle: UIAlertControllerStyle.alert)
-        
-        
-        let newOrder : Order = Order(date: order.date , address: order.address, deliveryDetailsHadChanged: order.deliveryDetailsHadChanged, email: order.email, firstName: order.firstName, lastName: order.lastName, phone: order.phone, totalCost: order.totalCost, orderHasItems: order.orderHasItems, items: order.items)
         
         placeOrderAlert.addAction(UIAlertAction(title: "Agree", style: .default, handler: { (action: UIAlertAction!) in
             
             LocalRequest.postOrderToOrderHistory(order: newOrder, { (error) in
-                print(error!)
+                if error != nil {
+                 Alert.showDefaultAlert(for: self, title: nil, message: "Order could not be placed!")
+                }else{
+                    Alert.showDefaultAlert(for: self, title: nil, message: "Order placed!")
+
+                }
             })
-           // orderHistory.append(newOrder)
+            
             order.items = []
             self.tabBarController?.selectedIndex = 0
-            
-//            self.orderHistoryTable.reloadData()
-//            self.checkOrder()
+
         }))
         
         placeOrderAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))

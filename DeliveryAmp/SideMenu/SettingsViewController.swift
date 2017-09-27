@@ -132,7 +132,15 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
             CurrentUser.sharedInstance.lastName = self.lastNameTextField.text!
             CurrentUser.sharedInstance.phone = self.phoneNumberTextField.text!
             CurrentUser.sharedInstance.email = self.emailTextField.text!
-            CurrentUser.sharedInstance.address = self.addressTextField.text!  
+            CurrentUser.sharedInstance.address = self.addressTextField.text!
+           
+            
+            LocalRequest.updateUser(user: currentUser, { (error) in
+                print(error!)
+            })
+//            self.navigationController?.popViewController(animated: true)
+//            self.tabBarController?.tabBar.isHidden = false
+//            
             if emptyCreditCardFields()  {
                 self.navigationController?.popViewController(animated: true)
             } else if checkCreditCardFields() {

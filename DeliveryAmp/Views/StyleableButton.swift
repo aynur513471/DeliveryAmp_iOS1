@@ -40,7 +40,7 @@ class StyleableButton : UIButton {
     override var isHighlighted: Bool {
         willSet(newValue) {
             super.isHighlighted = newValue;
-            switchBackgroundHighlited()
+            switchBackgroundHighlighted()
         }
     }
     
@@ -54,10 +54,10 @@ class StyleableButton : UIButton {
         self.titleLabel?.font = UIFont(name: "Roboto-Medium", size: CGFloat(11))
         self.setTitleColor(MyColors.buttonTextColor, for: .normal)
         self.setTitleColor(UIColor.white, for: .highlighted)
-         self.setTitleColor(UIColor.white, for: .selected)
+        self.setTitleColor(UIColor.white, for: .selected)
     }
     
-    func switchBackgroundHighlited() {
+    func switchBackgroundHighlighted() {
         if self.isHighlighted && !self.isSelected {
             self.backgroundColor = MyColors.buttonIsSelectedBackgroundColor
             self.layer.borderColor = MyColors.buttonIsSelectedBackgroundColor.cgColor

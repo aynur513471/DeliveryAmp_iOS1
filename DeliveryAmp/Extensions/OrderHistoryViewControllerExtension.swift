@@ -52,7 +52,7 @@ extension OrderHistoryViewController: UITableViewDelegate, UITableViewDataSource
         } else {
             cell.itemsView.subviews.forEach({$0.removeFromSuperview()})
             var yPosition = 0
-            for item in orderHistory[indexPath.row].items {
+            for item in orderHistory.reversed()[indexPath.row].items {
                 let itemView: SelectedPizzaType = .fromNib()
                 itemView.frame = CGRect(x: 0 , y: yPosition, width: Int(cell.itemsView.frame.size.width), height: 35)
                 customizeItemView(itemView: itemView, item: item)
@@ -73,7 +73,7 @@ extension OrderHistoryViewController: UITableViewDelegate, UITableViewDataSource
             cell.itemsView.frame.size.height += CGFloat(yPosition )
             cell.showDetailsView()
         }
-        populateCell(cell: cell, order: orderHistory[indexPath.row])
+        populateCell(cell: cell, order: orderHistory.reversed()[indexPath.item])
         return cell
     }
     

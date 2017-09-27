@@ -33,6 +33,10 @@ extension CreateYourOwnViewController: UITableViewDelegate, UITableViewDataSourc
             addButtonsForCrust()
             
             selectedPizzaPicture.image = cell.pizzaPicture.image
+            selectedPizzaPicture.contentMode = .scaleAspectFill
+            selectedPizzaPicture.layer.cornerRadius = selectedPizzaPicture.frame.height / 2
+            selectedPizzaPicture.clipsToBounds = true
+            
             selectedPizzaName.text = cell.pizzaName.text
             selectedPizzaIngredients.text = setIngredients(forIndex: indexPath.row)
             selectedPizzaPrice.text = cell.pizzaPrice.text
