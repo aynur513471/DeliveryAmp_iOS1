@@ -141,7 +141,7 @@ extension CheckoutViewController: UIPickerViewDelegate, UIPickerViewDataSource, 
     
     func checkCardNumber(_ cardNumber: String) -> Bool {
         if Regexes.creditCardNumberRegex.testMatch(input: cardNumber) {
-            if cardNumber.characters.count == 19 {
+            if cardNumber.count == 19 {
                 return true
             }
         }
@@ -150,7 +150,7 @@ extension CheckoutViewController: UIPickerViewDelegate, UIPickerViewDataSource, 
     
     func checkCSVCode(_ csvCode: String) -> Bool {
         if Regexes.numericRegex.testMatch(input: csvCode) {
-            if csvCode.characters.count == 3 || csvCode.characters.count == 4 {
+            if csvCode.count == 3 || csvCode.count == 4 {
                 return true
             }
         }
@@ -263,14 +263,14 @@ extension CheckoutViewController: UIPickerViewDelegate, UIPickerViewDataSource, 
             if (isBackSpace == -92) {
                 //if character to delete is “-”, delete “-” and the character before it
                 if let lasCharacter = textField.text?.characters.last,
-                    lasCharacter == "-", textField.text!.characters.count >= 2{
+                    lasCharacter == "-", textField.text!.count >= 2{
                     textField.text?.characters.removeLast()
                     textField.text?.characters.removeLast()
                     return false
                 }
             }else{
                 //add “-” after every 4 characters
-                switch textField.text!.characters.count {
+                switch textField.text!.count {
                 case 4, 9, 14:
                     textField.text?.append("-")
                 default:
@@ -278,7 +278,7 @@ extension CheckoutViewController: UIPickerViewDelegate, UIPickerViewDataSource, 
                 }
                 
                 //limit for card number is a set of 4 numbers with 4 characters
-                if textField.text!.characters.count == 19{
+                if textField.text!.count == 19{
                     return false
                 }
             }
@@ -287,12 +287,12 @@ extension CheckoutViewController: UIPickerViewDelegate, UIPickerViewDataSource, 
             let finalString = string + self.csvTextField.text!
             
             //don’t paste if the nr of characters are greater than 4
-            if finalString.characters.count > 4{
+            if finalString.count > 4{
                 return false
             }
             
             //don’t allow to write more than 3 characters
-            if !(isBackSpace == -92), textField.text!.characters.count == 4 {
+            if !(isBackSpace == -92), textField.text!.count == 4 {
                 return false
             }
         }
