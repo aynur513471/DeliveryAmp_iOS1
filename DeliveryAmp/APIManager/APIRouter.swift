@@ -45,7 +45,7 @@ enum APIRouter{
         return APIRouter.basePath + requestPath
     }
 
-    // NOT SURE IF OK
+    // REQUEST PATH
     var requestPath: String{
         switch self{
         case .getProducts:

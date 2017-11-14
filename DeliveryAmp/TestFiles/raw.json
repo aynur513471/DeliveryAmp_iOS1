@@ -398,7 +398,7 @@
     {
       "id": 9,
       "name": "Orange juice",
-      "description": "Don't drink this, it's a trap!",
+      "description": "Healthy beverage",
       "price": 2.0,
       "sizesId": [
         3,
@@ -410,7 +410,7 @@
     {
       "id": 13,
       "name": "Cola",
-      "description": "The basic Amerikansky drink.",
+                "description": "Coca Cola. Refreshing beverage",
       "price": 1.0,
       "sizesId": [
         3,
@@ -425,7 +425,7 @@
     {
       "id": 10,
       "name": "Hot sauce",
-      "description": "For your spicy needs.",
+      "description": "Just give it a try!",
       "price": 0.49,
       "imageUrl": "https://thumbs.dreamstime.com/t/nachos-plate-red-sauce-blue-background-shallow-dof-83542602.jpg"
     },
@@ -438,7 +438,7 @@
     },
     {
       "id": 12,
-      "name": "Chef's sauce",
+      "name": "Just give it a try!",
       "description": "You won't be able to live without it after you taste it!",
       "price": 0.49,
       "imageUrl": "https://s-media-cache-ak0.pinimg.com/originals/af/3d/cc/af3dcc4c0d8b04b079feeaba8c862756.jpg"
