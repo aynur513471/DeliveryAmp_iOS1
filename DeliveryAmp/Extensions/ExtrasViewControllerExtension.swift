@@ -1,9 +1,8 @@
 //
-//  ExtrasViewControllerExtensions.swift
+//  ExtrasViewControllerExtension.swift
 //  DeliveryAmp
 //
-//  Created by User on 8/1/17.
-//
+//  Copyright © 2017 ThemeDimension.com
 //
 
 import Foundation

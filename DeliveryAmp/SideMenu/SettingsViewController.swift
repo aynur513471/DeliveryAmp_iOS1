@@ -2,8 +2,7 @@
 //  SettingsViewController.swift
 //  DeliveryAmp
 //
-//  Created by User on 7/26/17.
-//
+//  Copyright © 2017 ThemeDimension.com
 //
 
 import UIKit

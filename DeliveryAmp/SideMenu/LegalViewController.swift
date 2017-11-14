@@ -2,8 +2,7 @@
 //  LegalViewController.swift
 //  DeliveryAmp
 //
-//  Created by User on 8/3/17.
-//
+//  Copyright © 2017 ThemeDimension.com
 //
 
 import UIKit

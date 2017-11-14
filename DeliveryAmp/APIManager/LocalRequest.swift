@@ -2,8 +2,7 @@
 //  LocalRequest.swift
 //  DeliveryAmp
 //
-//  Created by User on 8/4/17.
-//
+//  Copyright © 2017 ThemeDimension.com
 //
 
 import Foundation
@@ -22,9 +21,6 @@ enum LocalRouter{
     case getBeverages
     case getExtras
     case getOrderHistory
-
-    
-
     
     var requestURL: URL?{
         switch self {
@@ -33,10 +29,6 @@ enum LocalRouter{
              guard let documentDirectoryUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
              let fileUrl = documentDirectoryUrl.appendingPathComponent("user.json")
              return fileUrl
- /*
-            guard let fileUrl = Bundle.main.url(forResource:"user", withExtension: "json") else { return nil }
-            return fileUrl
- */
         case .getProducts:
             guard let fileUrl = Bundle.main.url(forResource:"raw", withExtension: "json") else { return nil }
             return fileUrl
@@ -63,12 +55,6 @@ enum LocalRouter{
             guard let documentDirectoryUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
             let fileUrl = documentDirectoryUrl.appendingPathComponent("order_history.json")
             return fileUrl
-
-         //   guard let fileUrl = Bundle.main.url(forResource:"order_item v2", withExtension: "json") else { return nil }
-        //    return fileUrl
- 
-        default:
-            return nil
         }
     }
 }

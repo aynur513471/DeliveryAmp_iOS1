@@ -2,8 +2,7 @@
 //  User.swift
 //  IvoryiOS
 //
-//  Created by Cristina Oana on 6/23/17.
-//  Copyright © 2017 Team Extension. All rights reserved.
+//  Copyright © 2017 ThemeDimension.com
 //
 
 import Foundation

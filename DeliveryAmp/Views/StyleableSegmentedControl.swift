@@ -2,7 +2,7 @@
 //  StyleableSegmentedControl.swift
 //  DeliveryAmp
 //
-//  Created by User on 8/7/17.
+//  Copyright © 2017 ThemeDimension.com
 //
 
 import UIKit

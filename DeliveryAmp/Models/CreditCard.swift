@@ -2,8 +2,7 @@
 //  CreditCard.swift
 //  IvoryiOS
 //
-//  Created by User on 7/17/17.
-//  Copyright © 2017 Team Extension. All rights reserved.
+//  Copyright © 2017 ThemeDimension.com
 //
 
 import Foundation

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		517F8D671FBB148B004E33DC /* EmptySegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517F8D661FBB148B004E33DC /* EmptySegue.swift */; };
 		7B2D8BB6060FD10586244121 /* Pods_DeliveryAmp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3F92601052C8669D8A0A86 /* Pods_DeliveryAmp.framework */; };
 		869376791F3B1C7C0051E7CE /* ExtrasTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869376781F3B1C7B0051E7CE /* ExtrasTypeTableViewCell.swift */; };
 		8693767B1F3B2B4B0051E7CE /* SelectedExtrasType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8693767A1F3B2B4A0051E7CE /* SelectedExtrasType.swift */; };
@@ -36,7 +37,6 @@
 		CE11AD2A1F3C6B21009573E6 /* order_item v2.json in Resources */ = {isa = PBXBuildFile; fileRef = CE11AD291F3C6B21009573E6 /* order_item v2.json */; };
 		CE168DAE1F30763B00721F5B /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168DAD1F30763B00721F5B /* MenuViewController.swift */; };
 		CE168DB01F308A6500721F5B /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168DAF1F308A6500721F5B /* ContainerViewController.swift */; };
-		CE168DB21F308DB500721F5B /* EmptySegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168DB11F308DB500721F5B /* EmptySegue.swift */; };
 		CE20316B1F3846000045B00D /* StyleableSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE20316A1F3846000045B00D /* StyleableSegmentedControl.swift */; };
 		CE2D044F1F345C660074ECBC /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D044E1F345C660074ECBC /* UIViewExtension.swift */; };
 		CE2D04511F346F260074ECBC /* MyColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D04501F346F260074ECBC /* MyColors.swift */; };
@@ -46,7 +46,6 @@
 		CE2D04591F3480F20074ECBC /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D04581F3480F20074ECBC /* Ingredient.swift */; };
 		CE2D045E1F3485750074ECBC /* LocalRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D045D1F3485750074ECBC /* LocalRequest.swift */; };
 		CE390D3E1F28B3B700014BE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE390D3D1F28B3B700014BE7 /* AppDelegate.swift */; };
-		CE390D401F28B3B700014BE7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE390D3F1F28B3B700014BE7 /* ViewController.swift */; };
 		CE390D431F28B3B700014BE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE390D411F28B3B700014BE7 /* Main.storyboard */; };
 		CE390D511F28BCBC00014BE7 /* StyleableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE390D501F28BCBC00014BE7 /* StyleableTextField.swift */; };
 		CE390D531F28BE9000014BE7 /* StyleableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE390D521F28BE9000014BE7 /* StyleableButton.swift */; };
@@ -84,7 +83,7 @@
 		CE6C09B71F309B3200D9C9EA /* ExtrasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6C09B61F309B3200D9C9EA /* ExtrasViewController.swift */; };
 		CE6C09B91F309B4600D9C9EA /* FoodViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6C09B81F309B4600D9C9EA /* FoodViewControllerExtension.swift */; };
 		CE6C09BB1F309B5900D9C9EA /* BeveragesViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6C09BA1F309B5900D9C9EA /* BeveragesViewControllerExtension.swift */; };
-		CE6C09BD1F309B6A00D9C9EA /* ExtrasViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6C09BC1F309B6A00D9C9EA /* ExtrasViewControllerExtensions.swift */; };
+		CE6C09BD1F309B6A00D9C9EA /* ExtrasViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6C09BC1F309B6A00D9C9EA /* ExtrasViewControllerExtension.swift */; };
 		CE6C09BF1F30A0F200D9C9EA /* FoodTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6C09BE1F30A0F200D9C9EA /* FoodTypeTableViewCell.swift */; };
 		CE6C09C71F30B99B00D9C9EA /* SelectedPizzaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6C09C61F30B99B00D9C9EA /* SelectedPizzaType.swift */; };
 		CE6C09C91F30B9B300D9C9EA /* SelectedPizzaType.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE6C09C81F30B9B300D9C9EA /* SelectedPizzaType.xib */; };
@@ -102,17 +101,17 @@
 		CEF305161F29CDDC009A740A /* CreateYourOwnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF305151F29CDDC009A740A /* CreateYourOwnViewController.swift */; };
 		CEF305181F2A02F7009A740A /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF305171F2A02F7009A740A /* IngredientTableViewCell.swift */; };
 		CEF3051B1F2A057D009A740A /* CreateYourOwnViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3051A1F2A057D009A740A /* CreateYourOwnViewControllerExtension.swift */; };
-		CEF3051D1F2A2413009A740A /* IngredientGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3051C1F2A2413009A740A /* IngredientGroupTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3E3F92601052C8669D8A0A86 /* Pods_DeliveryAmp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeliveryAmp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		869376781F3B1C7B0051E7CE /* ExtrasTypeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtrasTypeTableViewCell.swift; sourceTree = "<group>"; };
-		8693767A1F3B2B4A0051E7CE /* SelectedExtrasType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedExtrasType.swift; sourceTree = "<group>"; };
-		8693767C1F3B2BA80051E7CE /* SelectedExtrasType.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectedExtrasType.xib; sourceTree = "<group>"; };
-		86CBD45A1F34968C00806E67 /* SelectedDrinkType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedDrinkType.swift; sourceTree = "<group>"; };
-		86CBD45C1F349B9500806E67 /* SelectedDrinkType.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectedDrinkType.xib; sourceTree = "<group>"; };
-		86F232571F3483B900AF6451 /* BeveragesTypeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeveragesTypeTableViewCell.swift; sourceTree = "<group>"; };
+		517F8D661FBB148B004E33DC /* EmptySegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmptySegue.swift; path = Container/EmptySegue.swift; sourceTree = "<group>"; };
+		869376781F3B1C7B0051E7CE /* ExtrasTypeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtrasTypeTableViewCell.swift; path = CellViews/ExtrasTypeTableViewCell.swift; sourceTree = "<group>"; };
+		8693767A1F3B2B4A0051E7CE /* SelectedExtrasType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectedExtrasType.swift; path = Views/SelectedExtrasType.swift; sourceTree = "<group>"; };
+		8693767C1F3B2BA80051E7CE /* SelectedExtrasType.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SelectedExtrasType.xib; path = Views/SelectedExtrasType.xib; sourceTree = "<group>"; };
+		86CBD45A1F34968C00806E67 /* SelectedDrinkType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectedDrinkType.swift; path = Views/SelectedDrinkType.swift; sourceTree = "<group>"; };
+		86CBD45C1F349B9500806E67 /* SelectedDrinkType.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SelectedDrinkType.xib; path = Views/SelectedDrinkType.xib; sourceTree = "<group>"; };
+		86F232571F3483B900AF6451 /* BeveragesTypeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeveragesTypeTableViewCell.swift; path = CellViews/BeveragesTypeTableViewCell.swift; sourceTree = "<group>"; };
 		8F6CC2E9BCDF940870106FEC /* Pods-DeliveryAmp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliveryAmp.release.xcconfig"; path = "Pods/Target Support Files/Pods-DeliveryAmp/Pods-DeliveryAmp.release.xcconfig"; sourceTree = "<group>"; };
 		AF3E5A6405998788F99B2F0E /* Pods-DeliveryAmp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliveryAmp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DeliveryAmp/Pods-DeliveryAmp.debug.xcconfig"; sourceTree = "<group>"; };
 		B24091CD1F442B0400F8E373 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
@@ -124,7 +123,7 @@
 		B24091D31F442B0400F8E373 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		B24091D41F442B0400F8E373 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		B24091D51F442B0400F8E373 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		CE0359E11F3460E300969B2F /* CheckoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
+		CE0359E11F3460E300969B2F /* CheckoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CheckoutViewController.swift; path = Controllers/CheckoutViewController.swift; sourceTree = "<group>"; };
 		CE0C5E311F3AED9B00687B95 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE0C5E371F3B44F000687B95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE1022C11F34B203008A28EA /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Helpers/Constants.swift; sourceTree = "<group>"; };
@@ -137,8 +136,7 @@
 		CE11AD291F3C6B21009573E6 /* order_item v2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "order_item v2.json"; sourceTree = "<group>"; };
 		CE168DAD1F30763B00721F5B /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = Controllers/MenuViewController.swift; sourceTree = "<group>"; };
 		CE168DAF1F308A6500721F5B /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContainerViewController.swift; path = Container/ContainerViewController.swift; sourceTree = "<group>"; };
-		CE168DB11F308DB500721F5B /* EmptySegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmptySegue.swift; path = Container/EmptySegue.swift; sourceTree = "<group>"; };
-		CE20316A1F3846000045B00D /* StyleableSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleableSegmentedControl.swift; sourceTree = "<group>"; };
+		CE20316A1F3846000045B00D /* StyleableSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StyleableSegmentedControl.swift; path = Views/StyleableSegmentedControl.swift; sourceTree = "<group>"; };
 		CE20316C1F386EEB0045B00D /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		CE2D044E1F345C660074ECBC /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewExtension.swift; path = Extensions/UIViewExtension.swift; sourceTree = "<group>"; };
 		CE2D04501F346F260074ECBC /* MyColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyColors.swift; path = Colors/MyColors.swift; sourceTree = "<group>"; };
@@ -149,7 +147,6 @@
 		CE2D045D1F3485750074ECBC /* LocalRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocalRequest.swift; path = APIManager/LocalRequest.swift; sourceTree = "<group>"; };
 		CE390D3A1F28B3B700014BE7 /* DeliveryAmp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeliveryAmp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE390D3D1F28B3B700014BE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CE390D3F1F28B3B700014BE7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CE390D421F28B3B700014BE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE390D491F28B3B700014BE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE390D501F28BCBC00014BE7 /* StyleableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StyleableTextField.swift; path = Views/StyleableTextField.swift; sourceTree = "<group>"; };
@@ -175,27 +172,27 @@
 		CE4449E91F4484430033539F /* OrderHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderHelper.swift; path = Helpers/OrderHelper.swift; sourceTree = "<group>"; };
 		CE49CDD51F2F154400EC114F /* SettingsViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewControllerExtension.swift; path = Extensions/SettingsViewControllerExtension.swift; sourceTree = "<group>"; };
 		CE49CDD71F2F6F2600EC114F /* PizzaTypeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PizzaTypeTableViewCell.swift; path = CellViews/PizzaTypeTableViewCell.swift; sourceTree = "<group>"; };
-		CE5522A31F4440BB00A540B5 /* CheckoutViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutViewControllerExtension.swift; sourceTree = "<group>"; };
+		CE5522A31F4440BB00A540B5 /* CheckoutViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckoutViewControllerExtension.swift; path = Extensions/CheckoutViewControllerExtension.swift; sourceTree = "<group>"; };
 		CE579B281F41AABC00BE1024 /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIRequest.swift; path = APIManager/APIRequest.swift; sourceTree = "<group>"; };
 		CE579B2A1F41BAC100BE1024 /* ServerError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServerError.swift; path = Models/ServerError.swift; sourceTree = "<group>"; };
 		CE579B2C1F41BB6000BE1024 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = Helpers/Reachability.swift; sourceTree = "<group>"; };
 		CE5B7DDD1F39C5020060D69C /* StyleableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StyleableImageView.swift; path = Views/StyleableImageView.swift; sourceTree = "<group>"; };
 		CE5B7DE11F39DBA90060D69C /* raw.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = raw.json; sourceTree = "<group>"; };
-		CE5EC2771F78FF5600F4703A /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		CE5EC2771F78FF5600F4703A /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = Controllers/TabBarController.swift; sourceTree = "<group>"; };
 		CE6C09B21F309B1A00D9C9EA /* FoodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FoodViewController.swift; path = Container/FoodViewController.swift; sourceTree = "<group>"; };
 		CE6C09B41F309B2800D9C9EA /* BeveragesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeveragesViewController.swift; path = Container/BeveragesViewController.swift; sourceTree = "<group>"; };
 		CE6C09B61F309B3200D9C9EA /* ExtrasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtrasViewController.swift; path = Container/ExtrasViewController.swift; sourceTree = "<group>"; };
 		CE6C09B81F309B4600D9C9EA /* FoodViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FoodViewControllerExtension.swift; path = Extensions/FoodViewControllerExtension.swift; sourceTree = "<group>"; };
 		CE6C09BA1F309B5900D9C9EA /* BeveragesViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeveragesViewControllerExtension.swift; path = Extensions/BeveragesViewControllerExtension.swift; sourceTree = "<group>"; };
-		CE6C09BC1F309B6A00D9C9EA /* ExtrasViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtrasViewControllerExtensions.swift; path = Extensions/ExtrasViewControllerExtensions.swift; sourceTree = "<group>"; };
+		CE6C09BC1F309B6A00D9C9EA /* ExtrasViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtrasViewControllerExtension.swift; path = Extensions/ExtrasViewControllerExtension.swift; sourceTree = "<group>"; };
 		CE6C09BE1F30A0F200D9C9EA /* FoodTypeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FoodTypeTableViewCell.swift; path = CellViews/FoodTypeTableViewCell.swift; sourceTree = "<group>"; };
 		CE6C09C61F30B99B00D9C9EA /* SelectedPizzaType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectedPizzaType.swift; path = Views/SelectedPizzaType.swift; sourceTree = "<group>"; };
 		CE6C09C81F30B9B300D9C9EA /* SelectedPizzaType.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SelectedPizzaType.xib; path = Views/SelectedPizzaType.xib; sourceTree = "<group>"; };
 		CE87A3541F2B52E300645A47 /* OrderHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderHistoryViewController.swift; sourceTree = "<group>"; };
 		CE87A3561F2B531900645A47 /* OrderHistoryViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderHistoryViewControllerExtension.swift; path = Extensions/OrderHistoryViewControllerExtension.swift; sourceTree = "<group>"; };
 		CE87A3581F2B537C00645A47 /* OrderHistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderHistoryTableViewCell.swift; path = CellViews/OrderHistoryTableViewCell.swift; sourceTree = "<group>"; };
-		CEDB61F31F3B0611004DAE66 /* PayPalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayPalViewController.swift; sourceTree = "<group>"; };
-		CEDB61F51F3B2FEC004DAE66 /* StyleableTextFieldWithPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleableTextFieldWithPadding.swift; sourceTree = "<group>"; };
+		CEDB61F31F3B0611004DAE66 /* PayPalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PayPalViewController.swift; path = Controllers/PayPalViewController.swift; sourceTree = "<group>"; };
+		CEDB61F51F3B2FEC004DAE66 /* StyleableTextFieldWithPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StyleableTextFieldWithPadding.swift; path = Views/StyleableTextFieldWithPadding.swift; sourceTree = "<group>"; };
 		CEDC07401F45B20C00D51A3E /* UISegmentedControlExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UISegmentedControlExtension.swift; path = Extensions/UISegmentedControlExtension.swift; sourceTree = "<group>"; };
 		CEE477271F3C8A340000BE64 /* OrderProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderProduct.swift; path = Models/OrderProduct.swift; sourceTree = "<group>"; };
 		CEF1997D1F3327E1005E74B4 /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
@@ -205,7 +202,6 @@
 		CEF305151F29CDDC009A740A /* CreateYourOwnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateYourOwnViewController.swift; path = Controllers/CreateYourOwnViewController.swift; sourceTree = "<group>"; };
 		CEF305171F2A02F7009A740A /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IngredientTableViewCell.swift; path = CellViews/IngredientTableViewCell.swift; sourceTree = "<group>"; };
 		CEF3051A1F2A057D009A740A /* CreateYourOwnViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateYourOwnViewControllerExtension.swift; path = Extensions/CreateYourOwnViewControllerExtension.swift; sourceTree = "<group>"; };
-		CEF3051C1F2A2413009A740A /* IngredientGroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IngredientGroupTableViewCell.swift; path = CellViews/IngredientGroupTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,7 +254,7 @@
 		CE168DB31F308EDA00721F5B /* Container */ = {
 			isa = PBXGroup;
 			children = (
-				CE168DB11F308DB500721F5B /* EmptySegue.swift */,
+				517F8D661FBB148B004E33DC /* EmptySegue.swift */,
 				CE168DAF1F308A6500721F5B /* ContainerViewController.swift */,
 				CE6C09B21F309B1A00D9C9EA /* FoodViewController.swift */,
 				CE6C09B41F309B2800D9C9EA /* BeveragesViewController.swift */,
@@ -342,6 +338,9 @@
 		CE390D3C1F28B3B700014BE7 /* DeliveryAmp */ = {
 			isa = PBXGroup;
 			children = (
+				CE20316C1F386EEB0045B00D /* Bridging-Header.h */,
+				CE390D491F28B3B700014BE7 /* Info.plist */,
+				CE390D3D1F28B3B700014BE7 /* AppDelegate.swift */,
 				CE0C5E311F3AED9B00687B95 /* Assets.xcassets */,
 				CE2D045A1F3485120074ECBC /* API Manager */,
 				CE87A35A1F2B5D1200645A47 /* CellViews */,
@@ -356,10 +355,6 @@
 				CE7FBB541F29C16B0027CF85 /* Storyboards */,
 				CE2D04611F348A8E0074ECBC /* TestFiles */,
 				CE390D4F1F28B92100014BE7 /* Views */,
-				CE390D3D1F28B3B700014BE7 /* AppDelegate.swift */,
-				CE390D3F1F28B3B700014BE7 /* ViewController.swift */,
-				CE390D491F28B3B700014BE7 /* Info.plist */,
-				CE20316C1F386EEB0045B00D /* Bridging-Header.h */,
 			);
 			path = DeliveryAmp;
 			sourceTree = "<group>";
@@ -422,7 +417,6 @@
 			isa = PBXGroup;
 			children = (
 				CEF305171F2A02F7009A740A /* IngredientTableViewCell.swift */,
-				CEF3051C1F2A2413009A740A /* IngredientGroupTableViewCell.swift */,
 				CE87A3581F2B537C00645A47 /* OrderHistoryTableViewCell.swift */,
 				CE49CDD71F2F6F2600EC114F /* PizzaTypeTableViewCell.swift */,
 				CE6C09BE1F30A0F200D9C9EA /* FoodTypeTableViewCell.swift */,
@@ -463,7 +457,7 @@
 				CE49CDD51F2F154400EC114F /* SettingsViewControllerExtension.swift */,
 				CE6C09B81F309B4600D9C9EA /* FoodViewControllerExtension.swift */,
 				CE6C09BA1F309B5900D9C9EA /* BeveragesViewControllerExtension.swift */,
-				CE6C09BC1F309B6A00D9C9EA /* ExtrasViewControllerExtensions.swift */,
+				CE6C09BC1F309B6A00D9C9EA /* ExtrasViewControllerExtension.swift */,
 				CE2D044E1F345C660074ECBC /* UIViewExtension.swift */,
 				CE5522A31F4440BB00A540B5 /* CheckoutViewControllerExtension.swift */,
 				CEDC07401F45B20C00D51A3E /* UISegmentedControlExtension.swift */,
@@ -575,7 +569,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		8A652070DECAC6F2E48A76A1 /* [CP] Embed Pods Frameworks */ = {
@@ -630,9 +624,7 @@
 				CEDB61F61F3B2FEC004DAE66 /* StyleableTextFieldWithPadding.swift in Sources */,
 				CEF199861F3373DA005E74B4 /* Regex.swift in Sources */,
 				CE6C09BF1F30A0F200D9C9EA /* FoodTypeTableViewCell.swift in Sources */,
-				CEF3051D1F2A2413009A740A /* IngredientGroupTableViewCell.swift in Sources */,
 				CE42C9F61F3D90430037FF31 /* CreditCard.swift in Sources */,
-				CE390D401F28B3B700014BE7 /* ViewController.swift in Sources */,
 				86F232581F3483B900AF6451 /* BeveragesTypeTableViewCell.swift in Sources */,
 				CE1022C61F34BEBE008A28EA /* Beverage.swift in Sources */,
 				CE390D531F28BE9000014BE7 /* StyleableButton.swift in Sources */,
@@ -652,7 +644,7 @@
 				CE42C9FB1F3DA3D90037FF31 /* APIRouter.swift in Sources */,
 				CE390D6E1F28DEEB00014BE7 /* ViewWithShadow.swift in Sources */,
 				CE1022C21F34B203008A28EA /* Constants.swift in Sources */,
-				CE6C09BD1F309B6A00D9C9EA /* ExtrasViewControllerExtensions.swift in Sources */,
+				CE6C09BD1F309B6A00D9C9EA /* ExtrasViewControllerExtension.swift in Sources */,
 				8693767B1F3B2B4B0051E7CE /* SelectedExtrasType.swift in Sources */,
 				CE87A3551F2B52E300645A47 /* OrderHistoryViewController.swift in Sources */,
 				CE4449EA1F4484430033539F /* OrderHelper.swift in Sources */,
@@ -676,6 +668,7 @@
 				CE87A3571F2B531900645A47 /* OrderHistoryViewControllerExtension.swift in Sources */,
 				CEF199841F336B2C005E74B4 /* Alert.swift in Sources */,
 				CE42C9F71F3D90430037FF31 /* User.swift in Sources */,
+				517F8D671FBB148B004E33DC /* EmptySegue.swift in Sources */,
 				CE87A3591F2B537C00645A47 /* OrderHistoryTableViewCell.swift in Sources */,
 				CE5EC2781F78FF5600F4703A /* TabBarController.swift in Sources */,
 				CE1022C41F34BA16008A28EA /* LaunchViewController.swift in Sources */,
@@ -683,7 +676,6 @@
 				CE5522A41F4440BB00A540B5 /* CheckoutViewControllerExtension.swift in Sources */,
 				CE168DB01F308A6500721F5B /* ContainerViewController.swift in Sources */,
 				CE6C09B71F309B3200D9C9EA /* ExtrasViewController.swift in Sources */,
-				CE168DB21F308DB500721F5B /* EmptySegue.swift in Sources */,
 				CE2D04551F347B8B0074ECBC /* ServingSize.swift in Sources */,
 				CEE477281F3C8A340000BE64 /* OrderProduct.swift in Sources */,
 				CEF3051B1F2A057D009A740A /* CreateYourOwnViewControllerExtension.swift in Sources */,

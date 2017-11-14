@@ -2,8 +2,7 @@
 //  ApiParameters.swift
 //  DeliveryAmp
 //
-//  Created by User on 8/11/17.
-//
+//  Copyright © 2017 ThemeDimension.com
 //
 
 import Foundation
@@ -18,64 +17,13 @@ extension APIRouter{
     //MARK: GET
     
 
-    //get products
+    //get order history
     func generateHeaderParametersForGetOrderHistory(user: User) -> HeaderParameters{
         let parameters: HeaderParameters = ["user": user.email]
  
         return parameters
     }
     
-    /*
-    //get serving sizes for food
-    func generateHeaderParametersForGetServingSizesFood() -> HeaderParameters{
-        let parameters: HeaderParameters =
-        
-        return parameters
-    }
-    
-    //get serving sizes for beverages
-    func generateHeaderParametersForGetServingSizesBeverages() -> HeaderParameters{
-        let parameters: HeaderParameters =
-        
-        return parameters
-    }
-    
-    //get product types
-    func generateHeaderParametersForGetProductTypes() -> HeaderParameters{
-        let parameters: HeaderParameters =
-        
-        return parameters
-    }
-    
-    
-    //get ingredients
-    func generateHeaderParametersForGetIngredients() -> HeaderParameters{
-        let parameters: HeaderParameters =
-        
-        return parameters
-    }
-    
-    //get beverages
-    func generateHeaderParametersForGetBeverages() -> HeaderParameters{
-        let parameters: HeaderParameters =
-        
-        return parameters
-    }
-    
-    //get extras
-    func generateHeaderParametersForGetExtras() -> HeaderParameters{
-        let parameters: HeaderParameters =
-        
-        return parameters
-    }
-    
-    //get order history
-    func generateHeaderParametersForGetOrderHistory() -> HeaderParameters{
-        let parameters: HeaderParameters =
-        
-        return parameters
-    }
-*/
     
     //MARK: POST
 

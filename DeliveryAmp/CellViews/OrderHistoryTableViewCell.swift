@@ -2,8 +2,7 @@
 //  CheckoutTableViewCell.swift
 //  DeliveryAmp
 //
-//  Created by User on 7/28/17.
-//
+//  Copyright © 2017 ThemeDimension.com
 //
 
 import UIKit
@@ -40,8 +39,6 @@ class OrderHistoryTableViewCell: UITableViewCell {
     
     func showDetailsView() {
         orderDetailsView.frame.size.height = 160
-        //orderDetailsView.clipsToBounds = true
-        
     }
     
 }

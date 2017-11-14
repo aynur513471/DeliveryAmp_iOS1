@@ -2,8 +2,7 @@
 //  BeveragesTypeTableViewCell.swift
 //  DeliveryAmp
 //
-//  Created by UserAdmin on 8/4/17.
-//
+//  Copyright © 2017 ThemeDimension.com
 //
 
 import UIKit

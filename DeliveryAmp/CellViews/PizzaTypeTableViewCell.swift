@@ -2,8 +2,7 @@
 //  PizzaTypeTableViewCell.swift
 //  DeliveryAmp
 //
-//  Created by User on 7/31/17.
-//
+//  Copyright © 2017 ThemeDimension.com
 //
 
 import UIKit

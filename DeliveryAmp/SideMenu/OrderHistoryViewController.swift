@@ -2,8 +2,7 @@
 //  CheckoutViewController.swift
 //  DeliveryAmp
 //
-//  Created by User on 7/28/17.
-//
+//  Copyright © 2017 ThemeDimension.com
 //
 
 import UIKit

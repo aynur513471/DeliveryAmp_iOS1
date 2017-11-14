@@ -2,8 +2,7 @@
 //  SelectedExtrasType.swift
 //  DeliveryAmp
 //
-//  Created by UserAdmin on 8/9/17.
-//
+//  Copyright © 2017 ThemeDimension.com
 //
 
 import UIKit

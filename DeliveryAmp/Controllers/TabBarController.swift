@@ -2,8 +2,7 @@
 //  TabBarController.swift
 //  DeliveryAmp
 //
-//  Created by User on 9/25/17.
-//
+//  Copyright © 2017 ThemeDimension.com
 //
 
 import UIKit
