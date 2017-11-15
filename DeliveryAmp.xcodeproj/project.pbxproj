@@ -810,9 +810,9 @@
 				INFOPLIST_FILE = DeliveryAmp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = TeamExtension.DeliveryAmp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.deliveryamp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a3c47798-c0c5-4d54-bd3c-b5ce46644204";
+				PROVISIONING_PROFILE = "23b3dbb6-9390-4549-be36-a0aedc055f33";
 				PROVISIONING_PROFILE_SPECIFIER = TeamExtension_Dev;
 				SWIFT_OBJC_BRIDGING_HEADER = "DeliveryAmp/Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -830,7 +830,7 @@
 				INFOPLIST_FILE = DeliveryAmp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = TeamExtension.DeliveryAmp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.deliveryamp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "a3c47798-c0c5-4d54-bd3c-b5ce46644204";
 				PROVISIONING_PROFILE_SPECIFIER = TeamExtension_Dev;
