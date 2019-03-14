@@ -5,10 +5,13 @@ target ‘DeliveryAmp’ do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-  pod 'SideMenu'
+  pod 'SideMenu', '~> 4.0.0'
   pod 'SwiftyJSON'
   pod 'SDWebImage'
   pod 'PayPal-iOS-SDK'
   pod 'Alamofire'
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
+  pod 'Firebase/Auth'
 
 end

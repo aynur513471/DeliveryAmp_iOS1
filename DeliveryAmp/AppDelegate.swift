@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        FirebaseApp.configure()
+        
         PayPalMobile.initializeWithClientIds(forEnvironments: [PayPalEnvironmentProduction: PAYPAL_PROD_KEY, PayPalEnvironmentSandbox: PAYPAL_SANDBOX_KEY])
+        
         
         return true
     }
