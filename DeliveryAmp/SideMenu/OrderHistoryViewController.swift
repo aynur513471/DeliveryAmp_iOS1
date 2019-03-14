@@ -75,7 +75,7 @@ class OrderHistoryViewController: UIViewController {
     
 
     @IBAction func deleteHistory(_ sender: Any) {
-        let deleteHistoryAlert = UIAlertController(title: "Delete All?", message: "This action will clear all your order history.", preferredStyle: UIAlertControllerStyle.alert)
+        let deleteHistoryAlert = UIAlertController(title: "Delete All?", message: "This action will clear all your order history.", preferredStyle: UIAlertController.Style.alert)
         
         deleteHistoryAlert.addAction(UIAlertAction(title: "Delete", style: .default, handler: { (action: UIAlertAction!) in
             orderHistory = []

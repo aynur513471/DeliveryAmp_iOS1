@@ -117,7 +117,7 @@ class FoodViewController: UIViewController {
     }
 
     
-    func removeView(sender: UIButton) {
+    @objc func removeView(sender: UIButton) {
         let viewId = sender.tag
         if let cellIndex = sender.superview?.tag {
             selectedPizzaList[cellIndex] = selectedPizzaList[cellIndex].filter{$0.removeButton.tag != viewId}

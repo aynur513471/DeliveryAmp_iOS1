@@ -25,7 +25,6 @@
 		B24091DE1F442B0400F8E373 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B24091D51F442B0400F8E373 /* SystemConfiguration.framework */; };
 		C62D7C45EEAD4D53CE83B7FC /* Pods_DeliveryAmp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5AA29116BE21F23777729E6 /* Pods_DeliveryAmp.framework */; };
 		CE0359E21F3460E300969B2F /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0359E11F3460E300969B2F /* CheckoutViewController.swift */; };
-		CE0C5E351F3AF6B600687B95 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE390D491F28B3B700014BE7 /* Info.plist */; };
 		CE0C5E381F3B44F000687B95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0C5E361F3B44F000687B95 /* LaunchScreen.storyboard */; };
 		CE1022C21F34B203008A28EA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1022C11F34B203008A28EA /* Constants.swift */; };
 		CE1022C41F34BA16008A28EA /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1022C31F34BA16008A28EA /* LaunchViewController.swift */; };
@@ -100,8 +99,7 @@
 		CEF305161F29CDDC009A740A /* CreateYourOwnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF305151F29CDDC009A740A /* CreateYourOwnViewController.swift */; };
 		CEF305181F2A02F7009A740A /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF305171F2A02F7009A740A /* IngredientTableViewCell.swift */; };
 		CEF3051B1F2A057D009A740A /* CreateYourOwnViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3051A1F2A057D009A740A /* CreateYourOwnViewControllerExtension.swift */; };
-		F4A3E283223A7EE500277BF9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4A3E282223A7EE500277BF9 /* GoogleService-Info.plist */; };
-		F4A3E289223A84EB00277BF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4A3E288223A84EB00277BF9 /* Main.storyboard */; };
+		F414FBAE223AF8D300890C96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F414FBAC223AF8D300890C96 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -201,9 +199,8 @@
 		CEF305151F29CDDC009A740A /* CreateYourOwnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateYourOwnViewController.swift; path = Controllers/CreateYourOwnViewController.swift; sourceTree = "<group>"; };
 		CEF305171F2A02F7009A740A /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IngredientTableViewCell.swift; path = CellViews/IngredientTableViewCell.swift; sourceTree = "<group>"; };
 		CEF3051A1F2A057D009A740A /* CreateYourOwnViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateYourOwnViewControllerExtension.swift; path = Extensions/CreateYourOwnViewControllerExtension.swift; sourceTree = "<group>"; };
-		F4A3E282223A7EE500277BF9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F414FBAD223AF8D300890C96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../DeliveryAmp_iOS 2/DeliveryAmp/Base.lproj/Main.storyboard"; sourceTree = "<group>"; };
 		F4A3E284223A810E00277BF9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		F4A3E288223A84EB00277BF9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../../../var/folders/4q/_ktr23w11mj7xns856r2dzww0000gn/T/com.apple.iChat/Messages/Transfers/Main.storyboard; sourceTree = "<group>"; };
 		F5AA29116BE21F23777729E6 /* Pods_DeliveryAmp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeliveryAmp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -269,6 +266,7 @@
 		CE168DB41F308F1E00721F5B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CE6C09B81F309B4600D9C9EA /* FoodViewControllerExtension.swift */,
 				CEF305151F29CDDC009A740A /* CreateYourOwnViewController.swift */,
 				CE168DAD1F30763B00721F5B /* MenuViewController.swift */,
 				CE1022C31F34BA16008A28EA /* LaunchViewController.swift */,
@@ -345,7 +343,6 @@
 				CE390D491F28B3B700014BE7 /* Info.plist */,
 				CE390D3D1F28B3B700014BE7 /* AppDelegate.swift */,
 				CE0C5E311F3AED9B00687B95 /* Assets.xcassets */,
-				F4A3E282223A7EE500277BF9 /* GoogleService-Info.plist */,
 				CE2D045A1F3485120074ECBC /* API Manager */,
 				CE87A35A1F2B5D1200645A47 /* CellViews */,
 				CE87A3511F2B21F400645A47 /* Colors */,
@@ -404,7 +401,7 @@
 			isa = PBXGroup;
 			children = (
 				CE0C5E361F3B44F000687B95 /* LaunchScreen.storyboard */,
-				F4A3E288223A84EB00277BF9 /* Main.storyboard */,
+				F414FBAC223AF8D300890C96 /* Main.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -459,7 +456,6 @@
 				CEF3051A1F2A057D009A740A /* CreateYourOwnViewControllerExtension.swift */,
 				CE87A3561F2B531900645A47 /* OrderHistoryViewControllerExtension.swift */,
 				CE49CDD51F2F154400EC114F /* SettingsViewControllerExtension.swift */,
-				CE6C09B81F309B4600D9C9EA /* FoodViewControllerExtension.swift */,
 				CE6C09BA1F309B5900D9C9EA /* BeveragesViewControllerExtension.swift */,
 				CE6C09BC1F309B6A00D9C9EA /* ExtrasViewControllerExtension.swift */,
 				CE2D044E1F345C660074ECBC /* UIViewExtension.swift */,
@@ -498,11 +494,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 1010;
 				TargetAttributes = {
 					CE390D391F28B3B700014BE7 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = S5473HDEK5;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -530,11 +527,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE390D681F28C3A200014BE7 /* Roboto-Medium.ttf in Resources */,
-				CE0C5E351F3AF6B600687B95 /* Info.plist in Resources */,
 				CE390D621F28C3A200014BE7 /* fontawesome-webfont.ttf in Resources */,
 				CE390D641F28C3A200014BE7 /* Roboto-Bold.ttf in Resources */,
 				CE4449E81F4475120033539F /* Assets.xcassets in Resources */,
-				F4A3E289223A84EB00277BF9 /* Main.storyboard in Resources */,
 				CE42C9F91F3D998E0037FF31 /* user.json in Resources */,
 				CE390D631F28C3A200014BE7 /* Roboto-BlackItalic.ttf in Resources */,
 				CE390D6A1F28C3A200014BE7 /* Roboto-Regular.ttf in Resources */,
@@ -542,6 +537,7 @@
 				CE6C09C91F30B9B300D9C9EA /* SelectedPizzaType.xib in Resources */,
 				CE390D671F28C3A200014BE7 /* Roboto-LightItalic.ttf in Resources */,
 				CE0C5E381F3B44F000687B95 /* LaunchScreen.storyboard in Resources */,
+				F414FBAE223AF8D300890C96 /* Main.storyboard in Resources */,
 				86CBD45D1F349B9500806E67 /* SelectedDrinkType.xib in Resources */,
 				CE390D661F28C3A200014BE7 /* Roboto-Italic.ttf in Resources */,
 				8693767D1F3B2BA80051E7CE /* SelectedExtrasType.xib in Resources */,
@@ -549,7 +545,6 @@
 				CE390D651F28C3A200014BE7 /* Roboto-BoldItalic.ttf in Resources */,
 				CE390D6C1F28C3A200014BE7 /* Roboto-ThinItalic.ttf in Resources */,
 				CE390D691F28C3A200014BE7 /* Roboto-MediumItalic.ttf in Resources */,
-				F4A3E283223A7EE500277BF9 /* GoogleService-Info.plist in Resources */,
 				CE390D6B1F28C3A200014BE7 /* Roboto-Thin.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -700,6 +695,14 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		F414FBAC223AF8D300890C96 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F414FBAD223AF8D300890C96 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -714,15 +717,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -765,15 +776,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -814,7 +833,8 @@
 				PROVISIONING_PROFILE = "23b3dbb6-9390-4549-be36-a0aedc055f33";
 				PROVISIONING_PROFILE_SPECIFIER = TeamExtension_Dev;
 				SWIFT_OBJC_BRIDGING_HEADER = "DeliveryAmp/Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -834,7 +854,8 @@
 				PROVISIONING_PROFILE = "a3c47798-c0c5-4d54-bd3c-b5ce46644204";
 				PROVISIONING_PROFILE_SPECIFIER = TeamExtension_Dev;
 				SWIFT_OBJC_BRIDGING_HEADER = "DeliveryAmp/Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

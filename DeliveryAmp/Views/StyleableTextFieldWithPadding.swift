@@ -13,16 +13,13 @@ class StyleableTextFieldWithPadding:UITextField{
         super.init(coder: aDecoder)
     }
     override func editingRect(forBounds bounds: CGRect) -> CGRect {
-        return UIEdgeInsetsInsetRect(bounds,
-                                     UIEdgeInsetsMake(0, 10, 0, 10))
+        return bounds.inset(by: UIEdgeInsets.init(top: 0, left: 10, bottom: 0, right: 10))
     }
     override func textRect(forBounds bounds: CGRect) -> CGRect {
-        return UIEdgeInsetsInsetRect(bounds,
-                                     UIEdgeInsetsMake(0, 10, 0, 10))
+        return bounds.inset(by: UIEdgeInsets.init(top: 0, left: 10, bottom: 0, right: 10))
     }
     override func placeholderRect(forBounds bounds: CGRect) -> CGRect {
-        return UIEdgeInsetsInsetRect(bounds,
-                                     UIEdgeInsetsMake(0, 10, 0, 10))
+        return bounds.inset(by: UIEdgeInsets.init(top: 0, left: 10, bottom: 0, right: 10))
     }
     
     //designs

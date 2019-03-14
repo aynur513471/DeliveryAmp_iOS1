@@ -80,7 +80,7 @@ class MenuViewController: UIViewController{
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "container"{
-            container = segue.destination as! ContainerViewController
+            container = segue.destination as? ContainerViewController
 
         }
     }

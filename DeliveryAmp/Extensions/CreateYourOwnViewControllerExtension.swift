@@ -151,7 +151,7 @@ extension CreateYourOwnViewController: UITableViewDelegate, UITableViewDataSourc
     
     // MARK: - Button functions
     
-    func buttonIsSelected(_ sender: StyleableButton) {
+    @objc func buttonIsSelected(_ sender: StyleableButton) {
         deselectButtons(inside: sender.superview!)
         sender.isSelected = !sender.isSelected
         setPizzaPrice()
@@ -172,14 +172,14 @@ extension CreateYourOwnViewController: UITableViewDelegate, UITableViewDataSourc
         let crustId = getCrustType()
         let sizePrice = servingSizesFood.filter{$0.id == sizeId}[0].price
         let crustPrice = allProductTypes.filter{$0.id == crustId}[0].price    
-        var ingredientsPrice = usedIngredients.reduce(0.0){$0 + ($1.0.price * Double($1.1))}
+        let ingredientsPrice = usedIngredients.reduce(0.0){$0 + ($1.0.price * Double($1.1))}
         selectedPizzaPrice.text = Constants.currency + String(allProducts[selectedPizzaIndex].price + sizePrice + crustPrice + ingredientsPrice)
     }
 
     
 
     
-    func modifyAmount(_ sender: UIStepper) {
+    @objc func modifyAmount(_ sender: UIStepper) {
         let amountDifference = Int(sender.value) - usedIngredients[sender.tag].1
         let oldPrice = Double((selectedPizzaPrice.text?.components(separatedBy: "$")[1])!)!
         let priceDifference = Double(amountDifference) * usedIngredients[sender.tag].0.price
@@ -193,7 +193,7 @@ extension CreateYourOwnViewController: UITableViewDelegate, UITableViewDataSourc
     
     
     /* indicator for selected cell */
-    func toggleIndicator(_ timer : Timer) {
+    @objc func toggleIndicator(_ timer : Timer) {
         let selectedIndicator = timer.userInfo as! UIView
         selectedIndicator.backgroundColor = UIColor.white
     }

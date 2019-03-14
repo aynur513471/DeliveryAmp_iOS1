@@ -261,7 +261,7 @@ extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource, 
         var cardFormated = ""
         var k = 0
         
-        for c in cardNumber.characters {
+        for c in cardNumber {
             
             if k == 4 || k == 8 || k == 12 {
                 cardFormated.append("-\(c)")
@@ -313,10 +313,10 @@ extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource, 
             
             if (isBackSpace == -92) {
                 //if character to delete is “-”, delete “-” and the character before it
-                if let lasCharacter = textField.text?.characters.last,
+                if let lasCharacter = textField.text?.last,
                     lasCharacter == "-", textField.text!.count >= 2{
-                    textField.text?.characters.removeLast()
-                    textField.text?.characters.removeLast()
+                    textField.text?.removeLast()
+                    textField.text?.removeLast()
                     return false
                 }
             }else{
@@ -358,21 +358,21 @@ extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource, 
     
     //MARK: Keyboard Observers
     func addKeyboardObservers() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
     }
     
     func removeKeyboardObservers(){
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
-    func keyboardWillShow(_ notification: Notification) {
-        if let info = notification.userInfo, let keyboardRect = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue,
+    @objc func keyboardWillShow(_ notification: Notification) {
+        if let info = notification.userInfo, let keyboardRect = (info[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue,
             activeFieldRect != nil{
             let keyboardSize = keyboardRect.size
-            let contentInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize.height + 30, 0.0)
+            let contentInsets = UIEdgeInsets.init(top: 0.0, left: 0.0, bottom: keyboardSize.height + 30, right: 0.0)
             scrollView.contentInset = contentInsets
             scrollView.scrollIndicatorInsets = contentInsets
             var aRect : CGRect = self.view.frame
@@ -384,7 +384,7 @@ extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource, 
         
     }
 
-    func keyboardWillHide(_ notification: Notification) {
+    @objc func keyboardWillHide(_ notification: Notification) {
         dismissKeyboard()
     }
 
@@ -398,7 +398,7 @@ extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource, 
         view.addGestureRecognizer(tap)
     }
     
-    func dismissKeyboard() {
+    @objc func dismissKeyboard() {
         scrollView.contentInset = UIEdgeInsets.zero
         scrollView.scrollIndicatorInsets = UIEdgeInsets.zero
         dismissTextFields()

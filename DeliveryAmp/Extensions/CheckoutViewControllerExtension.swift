@@ -24,7 +24,7 @@ extension CheckoutViewController: UIPickerViewDelegate, UIPickerViewDataSource, 
             //self.firstNameTextField.bottomBorderColor = UIColor.red
             self.firstNameTextField.setBottomBorder(UIColor.red)
             self.firstNameTextField.layoutSubviews()
-            Alert.showDefaultAlert(for: self, title: nil, message: "Please enter your first name.")
+            Alert.showDefaultAlert(for: self, title: nil, message: "Пожалуйста, введите ваше имя.")
         }
         
         // last name
@@ -32,7 +32,7 @@ extension CheckoutViewController: UIPickerViewDelegate, UIPickerViewDataSource, 
             ok = false
             self.lastNameTextField.setBottomBorder(UIColor.red)
             self.lastNameTextField.layoutSubviews()
-            Alert.showDefaultAlert(for: self, title: nil, message: "Please enter your last name.")
+            Alert.showDefaultAlert(for: self, title: nil, message: "Пожалуйста, введите свою фамилию.")
         }
         
         //email
@@ -40,12 +40,12 @@ extension CheckoutViewController: UIPickerViewDelegate, UIPickerViewDataSource, 
             ok = false
             self.emailTextField.setBottomBorder(UIColor.red)
             self.emailTextField.layoutSubviews()
-            Alert.showDefaultAlert(for: self, title: nil, message: "Please enter an email address.")
+            Alert.showDefaultAlert(for: self, title: nil, message: "Пожалуйста, введите свой адрес электронной почты.")
         }else if !Regexes.emailRegex.testMatch(input: self.emailTextField.text!) {
             ok = false
             self.emailTextField.setBottomBorder(UIColor.red)
             self.emailTextField.layoutSubviews()
-            Alert.showDefaultAlert(for: self, title: nil, message: "Please enter a valid email address.")
+            Alert.showDefaultAlert(for: self, title: nil, message: "Пожалуйста, введите действительный адрес электронной почты.")
         }
         
         
@@ -58,7 +58,7 @@ extension CheckoutViewController: UIPickerViewDelegate, UIPickerViewDataSource, 
             ok = false
             self.phoneNumberTextField.setBottomBorder(UIColor.red)
             self.phoneNumberTextField.layoutSubviews()
-            Alert.showDefaultAlert(for: self, title: nil, message: "Please enter a correct phone number.")
+            Alert.showDefaultAlert(for: self, title: nil, message: "Пожалуйста, введите правильный номер телефона.")
         }
         
         
@@ -262,10 +262,10 @@ extension CheckoutViewController: UIPickerViewDelegate, UIPickerViewDataSource, 
             
             if (isBackSpace == -92) {
                 //if character to delete is “-”, delete “-” and the character before it
-                if let lasCharacter = textField.text?.characters.last,
+                if let lasCharacter = textField.text?.last,
                     lasCharacter == "-", textField.text!.count >= 2{
-                    textField.text?.characters.removeLast()
-                    textField.text?.characters.removeLast()
+                    textField.text?.removeLast()
+                    textField.text?.removeLast()
                     return false
                 }
             }else{
@@ -305,7 +305,7 @@ extension CheckoutViewController: UIPickerViewDelegate, UIPickerViewDataSource, 
             var cardFormated = ""
             var k = 0
     
-            for c in cardNumber.characters {
+            for c in cardNumber {
     
                 if k == 4 || k == 8 || k == 12 {
                     cardFormated.append("-\(c)")
@@ -320,21 +320,21 @@ extension CheckoutViewController: UIPickerViewDelegate, UIPickerViewDataSource, 
     
     //MARK: Keyboard Observers
     func addKeyboardObservers() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
     }
     
     func removeKeyboardObservers(){
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
-    func keyboardWillShow(_ notification: Notification) {
-        if let info = notification.userInfo, let keyboardRect = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue,
+    @objc func keyboardWillShow(_ notification: Notification) {
+        if let info = notification.userInfo, let keyboardRect = (info[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue,
             activeFieldRect != nil{
             let keyboardSize = keyboardRect.size
-            let contentInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize.height+20, 0.0)
+            let contentInsets = UIEdgeInsets.init(top: 0.0, left: 0.0, bottom: keyboardSize.height+20, right: 0.0)
             scrollView.contentInset = contentInsets
             scrollView.scrollIndicatorInsets = contentInsets
             var aRect : CGRect = self.view.frame
@@ -347,7 +347,7 @@ extension CheckoutViewController: UIPickerViewDelegate, UIPickerViewDataSource, 
     }
     
     
-    func keyboardWillHide(_ notification: Notification) {
+    @objc func keyboardWillHide(_ notification: Notification) {
         dismissKeyboard()
     }
     
@@ -360,7 +360,7 @@ extension CheckoutViewController: UIPickerViewDelegate, UIPickerViewDataSource, 
         viewWithShadow.addGestureRecognizer(tap)
     }
     
-    func dismissKeyboard() {
+    @objc func dismissKeyboard() {
         scrollView.contentInset = UIEdgeInsets.zero
         scrollView.scrollIndicatorInsets = UIEdgeInsets.zero
         self.view.endEditing(true)

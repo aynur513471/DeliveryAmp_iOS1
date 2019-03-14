@@ -36,7 +36,7 @@ class TabBarController: UITabBarController,UITabBarControllerDelegate {
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         if item == tabBar.items?[2] && !LocalRequest.checkOrder(){
-            Alert.showDefaultAlert(for: self, title: nil, message: "No products selected!")
+            Alert.showDefaultAlert(for: self, title: nil, message: "В корзине ничего нет!")
             
         }
     }
@@ -68,11 +68,22 @@ extension UITabBarController{
     
     func setTextAtributes() {
         if !LocalRequest.checkOrder(){
-            self.tabBar.items?.last?.setTitleTextAttributes([NSForegroundColorAttributeName: MyColors.disabledTabItem], for:.normal)
+            self.tabBar.items?.last?.setTitleTextAttributes(convertToOptionalNSAttributedStringKeyDictionary([convertFromNSAttributedStringKey(NSAttributedString.Key.foregroundColor): MyColors.disabledTabItem]), for:.normal)
         }else{
-            self.tabBar.items?.last?.setTitleTextAttributes([NSForegroundColorAttributeName: MyColors.tabItem], for:.normal)
+            self.tabBar.items?.last?.setTitleTextAttributes(convertToOptionalNSAttributedStringKeyDictionary([convertFromNSAttributedStringKey(NSAttributedString.Key.foregroundColor): MyColors.tabItem]), for:.normal)
         }
         
     }
 
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToOptionalNSAttributedStringKeyDictionary(_ input: [String: Any]?) -> [NSAttributedString.Key: Any]? {
+	guard let input = input else { return nil }
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromNSAttributedStringKey(_ input: NSAttributedString.Key) -> String {
+	return input.rawValue
 }

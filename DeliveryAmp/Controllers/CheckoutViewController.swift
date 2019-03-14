@@ -206,7 +206,7 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
                     }
                     else{
                         view.tintColor = MyColors.buttonTextColor
-                        payControl.selectedSegmentIndex = UISegmentedControlNoSegment
+                        payControl.selectedSegmentIndex = UISegmentedControl.noSegment
                     }
                 }
                 else if(payControl.selectedSegmentIndex == 2){
@@ -327,7 +327,7 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
             
             }
         }else {
-            let alert = UIAlertController(title: nil , message: "No items selected.", preferredStyle: UIAlertControllerStyle.alert)
+            let alert = UIAlertController(title: nil , message: "No items selected.", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
                
                 
@@ -342,7 +342,7 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
         order.totalCost = Double(totalLabel.text!.components(separatedBy: Constants.currency)[1])!
          let newOrder : Order = Order(date: order.date , address: order.address, deliveryDetailsHadChanged: order.deliveryDetailsHadChanged, email: order.email, firstName: order.firstName, lastName: order.lastName, phone: order.phone, totalCost: order.totalCost, orderHasItems: order.orderHasItems, items: order.items)
         
-        let placeOrderAlert = UIAlertController(title: "Place Order?", message: "If you agree, your order will be sent.", preferredStyle: UIAlertControllerStyle.alert)
+        let placeOrderAlert = UIAlertController(title: "Place Order?", message: "If you agree, your order will be sent.", preferredStyle: UIAlertController.Style.alert)
         
         placeOrderAlert.addAction(UIAlertAction(title: "Agree", style: .default, handler: { (action: UIAlertAction!) in
             
@@ -514,7 +514,7 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
         }
     }
     
-    func removeView(sender: UIButton) {
+    @objc func removeView(sender: UIButton) {
         if let index = sender.superview?.tag {
             removeItem(index)
             configureOrder()

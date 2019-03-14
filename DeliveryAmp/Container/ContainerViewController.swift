@@ -43,24 +43,24 @@ class ContainerViewController: UIViewController {
         emptyContainerView()
         
         if segue.identifier == "food" {
-            foodViewController = segue.destination as! FoodViewController
-            self.addChildViewController(foodViewController)
+            foodViewController = segue.destination as? FoodViewController
+            self.addChild(foodViewController)
             foodViewController.view.frame = CGRect(x: 0,y: 0, width: self.view.frame.width,height: self.view.frame.height)
             self.view.addSubview(foodViewController.view)
-            foodViewController.didMove(toParentViewController: self)
+            foodViewController.didMove(toParent: self)
             
         } else if segue.identifier == "beverages" {
-            beveragesViewController = segue.destination as! BeveragesViewController
-            self.addChildViewController(beveragesViewController)
+            beveragesViewController = segue.destination as? BeveragesViewController
+            self.addChild(beveragesViewController)
             beveragesViewController.view.frame = CGRect(x: 0,y: 0, width: self.view.frame.width,height: self.view.frame.height)
             self.view.addSubview(beveragesViewController.view)
-            beveragesViewController.didMove(toParentViewController: self)
+            beveragesViewController.didMove(toParent: self)
         } else if segue.identifier == "extras" {
-            extrasViewController = segue.destination as! ExtrasViewController
-            self.addChildViewController(extrasViewController)
+            extrasViewController = segue.destination as? ExtrasViewController
+            self.addChild(extrasViewController)
             extrasViewController.view.frame = CGRect(x: 0,y: 0, width: self.view.frame.width,height: self.view.frame.height)
             self.view.addSubview(extrasViewController.view)
-            extrasViewController.didMove(toParentViewController: self)
+            extrasViewController.didMove(toParent: self)
         }
     }
     

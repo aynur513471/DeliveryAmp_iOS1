@@ -101,7 +101,7 @@ class ExtrasViewController: UIViewController {
     }
 
     
-    func removeView(sender: UIButton) {
+    @objc func removeView(sender: UIButton) {
         let viewId = sender.tag
         if let cellIndex = sender.superview?.tag {
             selectedExtrasList[cellIndex] = selectedExtrasList[cellIndex].filter{$0.removeButton.tag != viewId}

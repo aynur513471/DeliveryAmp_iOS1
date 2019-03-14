@@ -18,7 +18,7 @@ class LegalViewController: UIViewController, UIWebViewDelegate, UIScrollViewDele
         legalView.delegate = self
         legalView.scrollView.delegate = self
         
-        let url = NSURL (string: "http://lipsum.com/");
+        let url = NSURL (string: "https://vk.com/sushilove16");
         let requestObj = NSURLRequest(url: url! as URL);
         legalView.loadRequest(requestObj as URLRequest);
         legalView.scrollView.contentInset = UIEdgeInsets(top: 0,left: 0,bottom: 0,right: 0)

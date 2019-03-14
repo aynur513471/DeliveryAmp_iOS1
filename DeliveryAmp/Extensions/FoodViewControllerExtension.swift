@@ -148,7 +148,7 @@ extension FoodViewController: UITableViewDelegate, UITableViewDataSource {
     
     // MARK: - buttons selected
     
-    func buttonIsSelected(_ sender: StyleableButton) {
+    @objc func buttonIsSelected(_ sender: StyleableButton) {
         deselectButtons(inside: sender.superview!)
         sender.isSelected = !sender.isSelected
         setPizzaPrice()
