@@ -94,7 +94,7 @@ class BeveragesViewController: UIViewController {
             drinkTable.reloadData()
             addToOrder(allBeverages[sender.tag].id, drinkSize)
         } else {
-            Alert.showDefaultAlert(for: self, title: nil, message: "Please select a serving size!")
+            Alert.showDefaultAlert(for: self, title: nil, message: "Пожалуйста, выберите размер порции!")
         }
         
     }

@@ -23,7 +23,7 @@ extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource, 
             //self.firstNameTextField.bottomBorderColor = UIColor.red
             //self.firstNameTextField.setBottomBorder(UIColor.red)
             //self.firstNameTextField.layoutSubviews()
-            Alert.showDefaultAlert(for: self, title: nil, message: "Please enter your first name.")
+            Alert.showDefaultAlert(for: self, title: nil, message: "Пожалуйста, введите ваше имя.")
         }else {
             //self.firstNameTextField.setBottomBorder(MyColors.buttonBorderColor)
         }
@@ -34,7 +34,7 @@ extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource, 
             
             lastNameTextField.setBottomBorder(UIColor.red)
             //self.lastNameTextField.layoutSubviews()
-            Alert.showDefaultAlert(for: self, title: nil, message: "Please enter your last name.")
+            Alert.showDefaultAlert(for: self, title: nil, message: "Пожалуйста, введите вашу фамилию.")
         }else {
            // self.lastNameTextField.setBottomBorder(MyColors.buttonBorderColor)
         }
@@ -44,12 +44,12 @@ extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource, 
             ok = false
             //emailTextField.setBottomBorder(UIColor.red)
             //self.emailTextField.layoutSubviews()
-            Alert.showDefaultAlert(for: self, title: nil, message: "Please enter an email address.")
+            Alert.showDefaultAlert(for: self, title: nil, message: "Пожалуйста, введите ваш email.")
         }else if !Regexes.emailRegex.testMatch(input: self.emailTextField.text!) {
             ok = false
             //self.emailTextField.setBottomBorder(UIColor.red)
             //self.emailTextField.layoutSubviews()
-            Alert.showDefaultAlert(for: self, title: nil, message: "Please enter a valid email address.")
+            Alert.showDefaultAlert(for: self, title: nil, message: "Пожалуйста, введите действительный адрес электронной почты.")
         }else {
            // self.emailTextField.setBottomBorder(MyColors.buttonBorderColor)
         }
@@ -64,7 +64,7 @@ extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource, 
             ok = false
             //self.phoneNumberTextField.setBottomBorder(UIColor.red)
             self.phoneNumberTextField.layoutSubviews()
-            Alert.showDefaultAlert(for: self, title: nil, message: "Please enter a correct phone number.")
+            Alert.showDefaultAlert(for: self, title: nil, message: "Пожалуйста, введите правильный номер телефона.")
         }else {
             //self.phoneNumberTextField.setBottomBorder(MyColors.buttonBorderColor)
         }
@@ -75,7 +75,7 @@ extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource, 
             ok = false
             //self.addressTextField.setBottomBorder(UIColor.red)
             self.addressTextField.layoutSubviews()
-            Alert.showDefaultAlert(for: self, title: nil, message: "Please enter your address.")
+            Alert.showDefaultAlert(for: self, title: nil, message: "Пожалуйста, введите ваш адрес.")
             
         }else {
             //self.addressTextField.setBottomBorder(MyColors.buttonBorderColor)

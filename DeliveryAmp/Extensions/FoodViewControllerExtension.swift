@@ -187,7 +187,7 @@ extension FoodViewController: UITableViewDelegate, UITableViewDataSource {
     //Set Ingredients
     
     func setIngredients(forIndex index: Int) -> String{
-        var ingredients = "Ingredients: "
+        var ingredients = "Ингредиенты: "
         var first = true
         for ingredient in allIngredients { 
             if allProducts[index].ingredientIds.contains(ingredient.id) {

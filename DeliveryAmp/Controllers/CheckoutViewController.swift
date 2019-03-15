@@ -251,15 +251,15 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
     
     //dismiss Order
     @IBAction func dismissOrder_TouchUpInside(_ sender: Any) {
-        let alert = UIAlertController(title: "Dismiss Order?", message: "This action will remove all the selected products.", preferredStyle: .alert)
-        let agreeAction = UIAlertAction(title: "Agree", style: .default) { (alert: UIAlertAction!) -> Void in
+        let alert = UIAlertController(title: "Отказаться от заказа?", message: "Это действие удалит все выбранные продукты.", preferredStyle: .alert)
+        let agreeAction = UIAlertAction(title: "Согласен", style: .default) { (alert: UIAlertAction!) -> Void in
             order.items = []
             self.configureOrder()
             
             self.tabBarController?.selectedIndex = 0
             
         }
-        let disagreeAction = UIAlertAction(title: "Disagree", style: .cancel) { (alert: UIAlertAction!) -> Void in
+        let disagreeAction = UIAlertAction(title: "Отказатся", style: .cancel) { (alert: UIAlertAction!) -> Void in
             //print("You pressed Cancel")
         }
         
@@ -327,7 +327,7 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
             
             }
         }else {
-            let alert = UIAlertController(title: nil , message: "No items selected.", preferredStyle: UIAlertController.Style.alert)
+            let alert = UIAlertController(title: nil , message: "Ничего не выбрано.", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
                
                 
@@ -342,15 +342,15 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
         order.totalCost = Double(totalLabel.text!.components(separatedBy: Constants.currency)[1])!
          let newOrder : Order = Order(date: order.date , address: order.address, deliveryDetailsHadChanged: order.deliveryDetailsHadChanged, email: order.email, firstName: order.firstName, lastName: order.lastName, phone: order.phone, totalCost: order.totalCost, orderHasItems: order.orderHasItems, items: order.items)
         
-        let placeOrderAlert = UIAlertController(title: "Place Order?", message: "If you agree, your order will be sent.", preferredStyle: UIAlertController.Style.alert)
+        let placeOrderAlert = UIAlertController(title: "Оформить заказ?", message: "Если вы согласны, ваш заказ будет отправлен.", preferredStyle: UIAlertController.Style.alert)
         
-        placeOrderAlert.addAction(UIAlertAction(title: "Agree", style: .default, handler: { (action: UIAlertAction!) in
+        placeOrderAlert.addAction(UIAlertAction(title: "Согласен", style: .default, handler: { (action: UIAlertAction!) in
             
             LocalRequest.postOrderToOrderHistory(order: newOrder, { (error) in
                 if error != nil {
-                 Alert.showDefaultAlert(for: self, title: nil, message: "Order could not be placed!")
+                 Alert.showDefaultAlert(for: self, title: nil, message: "Заказ не может быть отправлен!")
                 }else{
-                    Alert.showDefaultAlert(for: self, title: nil, message: "Order placed!")
+                    Alert.showDefaultAlert(for: self, title: nil, message: "Заказ отправлен")
 
                 }
             })
@@ -360,7 +360,7 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
 
         }))
         
-        placeOrderAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        placeOrderAlert.addAction(UIAlertAction(title: "отмена", style: .cancel, handler: nil))
         
         present(placeOrderAlert, animated: true, completion: nil)
         

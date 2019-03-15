@@ -95,7 +95,7 @@ class FoodViewController: UIViewController {
             addToOrder(allProducts[sender.tag].id, pizzaSize, crustType)
             
         } else {
-            Alert.showDefaultAlert(for: self, title: nil, message: "Please select a serving size and a crust type!")
+            Alert.showDefaultAlert(for: self, title: nil, message: "Пожалуйста, выберите размер порции и тип корочки!")
         }
     }
     

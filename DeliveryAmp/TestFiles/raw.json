@@ -2,25 +2,25 @@
   "serving_sizes_food": [
     {
       "id": 0,
-      "name": "Small",
+      "name": "Маленькая",
       "quantity": 10 ,
       "price": 0.25
     },
     {
       "id": 1,
-      "name": "Medium",
+      "name": "Средняя",
       "quantity": 14,
       "price" : 0.50
     },
     {
       "id": 2,
-      "name": "Large",
+      "name": "Большая",
       "quantity": 22,
       "price": 1
     },
     {
       "id":3,
-      "name":"ExtraLarge",
+      "name":"Очень большая",
       "quantity":4,
       "price":2
     }
@@ -60,147 +60,147 @@
   "product_types": [
     {
       "id": 0,
-      "name": "Classic Crust",
+      "name": "Классическая корка",
       "price": 5.0
     },
     {
       "id": 1,
-      "name": "Thin Crust",
+      "name": "Тонкая корочка",
       "price": 12.0
     },
     {
       "id": 2,
-      "name": "Thick Crust",
+      "name": "Толстая корка",
       "price": 15.0
     },
     {
       "id": 3,
-      "name": "Philadelphia crust",
+      "name": "Филадельфийская корка",
       "price": 8.0
     }
   ],
   "ingredients": [
     {
       "id": 0,
-      "name": "Mozzarella",
+      "name": "Моцарелла",
       "price": 2.5
     },
     {
       "id": 1,
-      "name": "Tomato sauce",
+      "name": "Томатный соус",
       "price": 2.5
     },
     {
       "id": 2,
-      "name": "Oregano",
+      "name": "Орегано",
       "price": 2.5
     },
     {
       "id": 3,
-      "name": "Bacon",
+      "name": "Бекон",
       "price": 5.0
     },
     {
       "id": 4,
-      "name": "Mushrooms",
+      "name": "Грибы",
       "price": 2.5
     },
     {
       "id": 5,
-      "name": "Olives",
+      "name": "Оливки",
       "price": 1.0
     },
     {
       "id": 6,
-      "name": "Pepperoni",
+      "name": "Пепперони",
       "price": 1.0
     },
     {
       "id": 7,
-      "name": "Sausage",
+      "name": "Сосиски",
       "price": 5.0
     },
     {
       "id": 8,
-      "name": "Corn",
+      "name": "Кукуруза",
       "price": 2.5
     },
     {
       "id": 9,
-      "name": "Beans",
+      "name": "Фасоль",
       "price": 1.0
     },
     {
       "id": 10,
-      "name": "Jalapenos",
+      "name": "Халапеньо",
       "price": 5.0
     },
     {
       "id": 11,
-      "name": "Tuna",
+      "name": "Тунец",
       "price": 5.0
     },
     {
       "id": 12,
-      "name": "Onion",
+      "name": "Лук",
       "price": 1.0
     },
     {
       "id": 13,
-      "name": "Bell pepper",
+      "name": "Болгарский перец",
       "price": 2.5
     },
     {
       "id": 14,
-      "name": "Tomatoes",
+      "name": "Помидоры",
       "price": 1.0
     },
     {
       "id": 15,
-      "name": "Chicken",
+      "name": "Курица",
       "price": 5.0
     },
     {
       "id": 16,
-      "name": "Cedar",
+      "name": "Кедр",
       "price": 2.5
     },
     {
       "id": 17,
-      "name": "Pineapple",
+      "name": "Ананас",
       "price": 5.0
     },
     {
       "id": 18,
-      "name": "Chilli peppers",
+      "name": "Перчики чили",
       "price": 1.0
     },
     {
       "id": 19,
-      "name": "Blue cheese",
+      "name": "Голубой сыр",
       "price": 7.0
     },
     {
       "id": 20,
-      "name": "Prosciutto",
+      "name": "Ветчина",
       "price": 4.0
     },
     {
       "id": 21,
-      "name": "Dried tomatoes",
+      "name": "Вяленые помидоры",
       "price": 4.0
     },
     {
       "id": 22,
-      "name": "Beef",
+      "name": "Говядина",
       "price": 7.0
     }
   ],
   "products": [
     {
       "id": 10,
-      "name": "Margherita Pizza",
-      "description": "This is the basic pizza.",
+      "name": "Пицца маргарита",
+      "description": "Это основная пицца.",
       "price": 7.99,
       "sizesId": [
         0,
@@ -220,8 +220,8 @@
     },
     {
       "id": 1,
-      "name": "Classic Pizza",
-      "description": "Well known pizza, but still a solid choice.",
+      "name": "Классическая пицца",
+      "description": "Хорошо известная пицца, но все же солидный выбор.",
       "price": 14.99,
       "sizesId": [
         0,
@@ -244,8 +244,8 @@
     },
     {
       "id": 2,
-      "name": "Provence Pizza",
-      "description": "Coming directly from France!",
+      "name": "Прованс пицца",
+      "description": "Прибытие прямо из Франции!",
       "price": 18.49,
       "sizesId": [
         0,
@@ -271,7 +271,7 @@
     {
       "id": 3,
       "name": "Country Pizza",
-      "description": "For the redneck inside you.",
+      "description": "Для быдла внутри тебя.",
       "price": 15.0,
       "sizesId": [
         0,
@@ -297,8 +297,8 @@
     },
     {
       "id": 4,
-      "name": "Hot Cheese Pizza",
-      "description": "Vegetarian pizza that everyone should try.",
+      "name": "Острая сырная пицца",
+      "description": "Вегетарианская пицца, которую должен попробовать каждый.",
       "price": 13.0,
       "sizesId": [
         0,
@@ -322,8 +322,8 @@
     },
     {
       "id": 5,
-      "name": "Aloha Pizza",
-      "description": "Worst pizza ever! Don't buy it!!",
+      "name": "Гавайская пицца",
+      "description": "Худшая пицца! Не покупай это !!",
       "price": 15.0,
       "sizesId": [
         0,
@@ -349,7 +349,7 @@
     {
       "id": 6,
       "name": "Carnivor Pizza",
-      "description": "This is what you are looking for Amerikansky!",
+      "description": "Это то, что вы ищете в Америке!",
       "price": 16.49,
       "sizesId": [
         0,
@@ -372,8 +372,8 @@
     },
     {
       "id": 7,
-      "name": "Ocean Pizza",
-      "description": "Unorthodox mixture, though you should give it a try.",
+      "name": "Морская пицца",
+      "description": "Неортодоксальная смесь, вы должны попробовать.",
       "price": 14.99,
       "sizesId": [
         0,
@@ -397,8 +397,8 @@
   "beverages": [
     {
       "id": 9,
-      "name": "Orange juice",
-      "description": "Healthy beverage",
+      "name": "Апельсиновый сок",
+      "description": "Здоровый напиток",
       "price": 2.0,
       "sizesId": [
         3,
@@ -410,7 +410,7 @@
     {
       "id": 13,
       "name": "Cola",
-                "description": "Coca Cola. Refreshing beverage",
+                "description": "Coca Cola. Освежающий напиток",
       "price": 1.0,
       "sizesId": [
         3,
@@ -424,22 +424,22 @@
   "extras": [
     {
       "id": 10,
-      "name": "Hot sauce",
-      "description": "Just give it a try!",
+      "name": "Острый соус",
+      "description": "Просто попробуйте!",
       "price": 0.49,
       "imageUrl": "https://thumbs.dreamstime.com/t/nachos-plate-red-sauce-blue-background-shallow-dof-83542602.jpg"
     },
     {
       "id": 11,
-      "name": "Sour sauce",
-      "description": "Just give it a try!",
+      "name": "Кислый соус",
+      "description": "Просто попробуйте!",
       "price": 0.49,
       "imageUrl": "http://cdn.cdkitchen.com/recipes/images/2016/05/27595-6192-mx.jpg"
     },
     {
       "id": 12,
       "name": "Chef's sauce",
-      "description": "Just give it a try!",
+      "description": "Просто попробуйте!",
       "price": 0.49,
       "imageUrl": "https://s-media-cache-ak0.pinimg.com/originals/af/3d/cc/af3dcc4c0d8b04b079feeaba8c862756.jpg"
     }

@@ -75,21 +75,21 @@ class OrderHistoryViewController: UIViewController {
     
 
     @IBAction func deleteHistory(_ sender: Any) {
-        let deleteHistoryAlert = UIAlertController(title: "Delete All?", message: "This action will clear all your order history.", preferredStyle: UIAlertController.Style.alert)
+        let deleteHistoryAlert = UIAlertController(title: "Удалить все?", message: "Это действие очистит всю вашу историю заказов.", preferredStyle: UIAlertController.Style.alert)
         
-        deleteHistoryAlert.addAction(UIAlertAction(title: "Delete", style: .default, handler: { (action: UIAlertAction!) in
+        deleteHistoryAlert.addAction(UIAlertAction(title: "Удалить", style: .default, handler: { (action: UIAlertAction!) in
             orderHistory = []
             LocalRequest.postJSON(json: ["orders": []], path: "order_history") {
                 (result, error) in
                 if error{
-                    print("Could not delete order history!")
+                    print("Не удалось удалить историю заказов!")
                 }
             }
             self.orderHistoryTable.reloadData()
             self.checkOrder()
         }))
         
-        deleteHistoryAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        deleteHistoryAlert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
         
         present(deleteHistoryAlert, animated: true, completion: nil)
         
