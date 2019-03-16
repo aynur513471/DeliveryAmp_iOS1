@@ -94,7 +94,7 @@ extension CreateYourOwnViewController: UITableViewDelegate, UITableViewDataSourc
     
     func populateIngredientCell(_ cell: IngredientTableViewCell, _ index: Int) {
         cell.amountLabel.text = "0"
-        cell.ingredientTotalPriceLabel.text = "$0"
+        cell.ingredientTotalPriceLabel.text = "₽0"
         
         cell.amountLabel.text = String(usedIngredients[index].1)
         cell.ingredientLabel.text = usedIngredients[index].0.name
@@ -181,7 +181,7 @@ extension CreateYourOwnViewController: UITableViewDelegate, UITableViewDataSourc
     
     @objc func modifyAmount(_ sender: UIStepper) {
         let amountDifference = Int(sender.value) - usedIngredients[sender.tag].1
-        let oldPrice = Double((selectedPizzaPrice.text?.components(separatedBy: "$")[1])!)!
+        let oldPrice = Double((selectedPizzaPrice.text?.components(separatedBy: "₽")[1])!)!
         let priceDifference = Double(amountDifference) * usedIngredients[sender.tag].0.price
         usedIngredients[sender.tag].1 = Int(sender.value)
         

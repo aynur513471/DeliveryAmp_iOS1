@@ -40,7 +40,7 @@ class FoodViewController: UIViewController {
             if item.type == 0 {
                 let view: SelectedPizzaType = .fromNib()
                 view.descriptionLabel.text = item.productType.name + " + " + item.servingSize.name
-                view.priceLabel.text = "$" + String(item.cost)
+                view.priceLabel.text = "₽" + String(item.cost)
                 view.removeButton.tag = item.id
                 view.removeButton.addTarget(self, action: #selector(removeView), for: .touchUpInside)
                 for (index, product) in allProducts.enumerated() {
@@ -107,7 +107,7 @@ class FoodViewController: UIViewController {
         newItem.ingredients = []
         newItem.productType = allProductTypes.filter{$0.id == crustType}[0]
         newItem.servingSize = servingSizesFood.filter{$0.id == pizzaSize}[0]
-        newItem.cost = Double(getPizzaPrice(pizzaSize, crustType).components(separatedBy: "$")[1])!
+        newItem.cost = Double(getPizzaPrice(pizzaSize, crustType).components(separatedBy: "₽")[1])!
         
         orderItemId = OrderHelper.getNextOrderId()
         order.items.append(newItem)

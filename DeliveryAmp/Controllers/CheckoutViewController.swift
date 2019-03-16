@@ -402,7 +402,7 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
                         foodName = "\(item.product.name) \(item.productType.name) + \(item.servingSize.name)"
                         foodPrice = item.cost
                         foodView[i]?.descriptionLabel.text = foodName
-                        foodView[i]?.priceLabel.text = "$\(foodPrice)"
+                        foodView[i]?.priceLabel.text = "₽\(foodPrice)"
                         total += foodPrice
                         
                         orderView.addSubview(foodView[i]!)
@@ -421,7 +421,7 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
                         foodPrice = item.cost
                         
                         foodView[i]?.descriptionLabel.text = foodName
-                        foodView[i]?.priceLabel.text = "$\(foodPrice)"
+                        foodView[i]?.priceLabel.text = "₽\(foodPrice)"
                         total += foodPrice
                         
                         orderView.addSubview(foodView[i]!)
@@ -435,7 +435,7 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
                             ingredientView.isSubview = true
                             ingredientView.descriptionLabel.text = "\(Int(ingredient.quantity)) x \(ingredient.name)"
                             ingredientView.descriptionLabel.textColor = MyColors.myBlack
-                            ingredientView.priceLabel.text = "$\(ingredient.cost)"
+                            ingredientView.priceLabel.text = "₽\(ingredient.cost)"
                             ingredientView.priceLabel.textColor = MyColors.myBlack
                             ingredientView.removeButtonWidthConstraint.constant = 0
                             ingredientView.backgroundColor = MyColors.ingredientViewColor
@@ -462,7 +462,7 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
                     foodPrice = item.cost
                     
                     foodView[i]?.descriptionLabel.text = foodName
-                    foodView[i]?.priceLabel.text = "$\(foodPrice)"
+                    foodView[i]?.priceLabel.text = "₽\(foodPrice)"
                     total += foodPrice
                     
                     orderView.addSubview(foodView[i]!)
@@ -483,7 +483,7 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
                     foodPrice = item.cost
                     
                     foodView[i]?.descriptionLabel.text = foodName
-                    foodView[i]?.priceLabel.text = "$\(foodPrice)"
+                    foodView[i]?.priceLabel.text = "₽\(foodPrice)"
                     total += foodPrice
                     
                     orderView.addSubview(foodView[i]!)

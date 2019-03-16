@@ -36,13 +36,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Оформлению заказа" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GOr-l6-aav">
-                                        <rect key="frame" x="81.5" y="35" width="157.5" height="19"/>
+                                        <rect key="frame" x="81.5" y="40" width="157.5" height="19"/>
                                         <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="16"/>
                                         <color key="textColor" red="0.30588235289999999" green="0.33725490200000002" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFg-cn-fqt">
-                                        <rect key="frame" x="10" y="24.5" width="40" height="40"/>
+                                        <rect key="frame" x="10" y="29.5" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="kFg-cn-fqt" secondAttribute="height" multiplier="1:1" id="JKm-In-XQA"/>
                                             <constraint firstAttribute="height" constant="40" id="tlV-Mb-pSN"/>
@@ -59,7 +59,7 @@
                                     <constraint firstAttribute="height" constant="64" id="B9j-A5-Lcp"/>
                                     <constraint firstItem="GOr-l6-aav" firstAttribute="centerX" secondItem="s6Q-8H-lDx" secondAttribute="centerX" id="UCk-0O-pbj"/>
                                     <constraint firstItem="kFg-cn-fqt" firstAttribute="leading" secondItem="s6Q-8H-lDx" secondAttribute="leading" constant="10" id="VVC-nl-x97"/>
-                                    <constraint firstAttribute="bottom" secondItem="GOr-l6-aav" secondAttribute="bottom" constant="10" id="h2N-nC-kxM"/>
+                                    <constraint firstAttribute="bottom" secondItem="GOr-l6-aav" secondAttribute="bottom" constant="5" id="h2N-nC-kxM"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="PCJ-0Y-BnA">
@@ -77,7 +77,7 @@
                                                 <color key="textColor" red="0.31672739979999998" green="0.34954071040000001" blue="0.36887252329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqq-E6-KaF">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0₽" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqq-E6-KaF">
                                                 <rect key="frame" x="240" y="158" width="50" height="13"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="AsS-zS-BeZ"/>
@@ -97,7 +97,6 @@
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Имя" textAlignment="natural" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ujQ-ls-A6f" customClass="StyleableTextFieldWithPadding" customModule="DeliveryAmp" customModuleProvider="target">
                                                 <rect key="frame" x="10" y="221" width="132.5" height="30"/>
-                                                <color key="backgroundColor" red="0.96590584516525269" green="0.98467439413070679" blue="0.99613493680953979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="uzb-7P-Tqg"/>
                                                 </constraints>
@@ -121,7 +120,6 @@
                                             </textField>
                                             <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Фамилия" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="st8-ma-2yh" customClass="StyleableTextFieldWithPadding" customModule="DeliveryAmp" customModuleProvider="target">
                                                 <rect key="frame" x="157.5" y="221" width="132.5" height="30"/>
-                                                <color key="backgroundColor" red="0.96982711553573608" green="0.98859626054763794" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="11"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
@@ -142,7 +140,6 @@
                                             </textField>
                                             <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Номер телефона" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="VfS-u2-6zQ" customClass="StyleableTextFieldWithPadding" customModule="DeliveryAmp" customModuleProvider="target">
                                                 <rect key="frame" x="10" y="266" width="132.5" height="30"/>
-                                                <color key="backgroundColor" red="0.96982711553573608" green="0.98859626054763794" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="11"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="next"/>
@@ -163,7 +160,6 @@
                                             </textField>
                                             <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Xiy-mu-OVV" customClass="StyleableTextFieldWithPadding" customModule="DeliveryAmp" customModuleProvider="target">
                                                 <rect key="frame" x="157.5" y="266" width="132.5" height="30"/>
-                                                <color key="backgroundColor" red="0.96982711553573608" green="0.98859626054763794" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="11"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
@@ -184,7 +180,6 @@
                                             </textField>
                                             <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Адрес доставки" textAlignment="natural" minimumFontSize="14" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="eRK-FW-GXW" customClass="StyleableTextFieldWithPadding" customModule="DeliveryAmp" customModuleProvider="target">
                                                 <rect key="frame" x="10" y="311" width="280" height="30"/>
-                                                <color key="backgroundColor" red="0.96982711553573608" green="0.98859626054763794" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="Dq2-U3-Ou8"/>
                                                 </constraints>
@@ -235,11 +230,11 @@
                                                     <constraint firstAttribute="height" constant="30" id="x0o-VD-onc"/>
                                                 </constraints>
                                                 <segments>
-                                                    <segment title="Карта"/>
-                                                    <segment title="Pay"/>
+                                                    <segment title="Карта" enabled="NO"/>
+                                                    <segment title="Pay" enabled="NO"/>
                                                     <segment title="Наличные"/>
                                                 </segments>
-                                                <color key="tintColor" red="0.23921568627450979" green="0.80000000000000004" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="tintColor" red="0.29329697240000002" green="0.58823762690000003" blue="0.24661682069999999" alpha="0.54000000000000004" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <connections>
                                                     <action selector="PayButton:" destination="FbQ-zI-cTY" eventType="valueChanged" id="SxB-wy-paB"/>
                                                 </connections>
@@ -266,7 +261,7 @@
                                                         <real key="value" value="1"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                        <color key="value" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="value" red="0.29329697240000002" green="0.58823762690000003" blue="0.24661682069999999" alpha="0.54000000000000004" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
@@ -296,7 +291,7 @@
                                                         <real key="value" value="1"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                        <color key="value" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="value" red="0.29329697240000002" green="0.58823762690000003" blue="0.24661682069999999" alpha="0.54000000000000004" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
@@ -387,6 +382,7 @@
                                                             <constraint firstAttribute="width" constant="25" id="YB2-H3-zrA"/>
                                                             <constraint firstAttribute="height" constant="25" id="dFl-AG-zp3"/>
                                                         </constraints>
+                                                        <color key="tintColor" red="0.29329697240000002" green="0.58823762690000003" blue="0.24661682069999999" alpha="0.54000000000000004" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <state key="normal" image="Unchecked Checkbox"/>
                                                         <state key="selected">
                                                             <color key="titleColor" red="0.1174587674" green="0.80000000000000004" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -463,7 +459,7 @@
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cuR-RN-0wh">
                                                 <rect key="frame" x="10" y="53" width="280" height="90"/>
-                                                <color key="backgroundColor" red="0.96862745098039216" green="0.9882352941176471" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.86456143856048584" green="0.99375897645950317" blue="0.89018219709396362" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="90" id="COT-rT-f6d"/>
                                                 </constraints>
@@ -573,7 +569,6 @@
                         <outlet property="scrollView" destination="PCJ-0Y-BnA" id="JXT-Vf-ylw"/>
                         <outlet property="totalLabel" destination="bqq-E6-KaF" id="Bfr-cR-dHp"/>
                         <outlet property="viewWithShadow" destination="HGo-8S-0iA" id="c9W-GG-GFh"/>
-                        <segue destination="KKB-9a-fDc" kind="presentation" identifier="toPayPal" id="QZf-oW-Clw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kHH-wb-Tke" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -604,83 +599,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nvl-sb-KeM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2375" y="46"/>
-        </scene>
-        <!--Pay Pal View Controller-->
-        <scene sceneID="16w-71-5wt">
-            <objects>
-                <viewController id="KKB-9a-fDc" customClass="PayPalViewController" customModule="DeliveryAmp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="S3K-Xn-Dn7"/>
-                        <viewControllerLayoutGuide type="bottom" id="hJc-eV-EXc"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="geI-iv-TEg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SgT-BP-USe" customClass="StyleableButton" customModule="DeliveryAmp" customModuleProvider="target">
-                                <rect key="frame" x="102.5" y="240" width="90" height="30"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="DHj-aY-YTx"/>
-                                    <constraint firstAttribute="height" constant="30" id="x62-L0-zI0"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="11"/>
-                                <state key="normal" title="Go to PayPal">
-                                    <color key="titleColor" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="15"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="goToPayPal:" destination="KKB-9a-fDc" eventType="touchUpInside" id="bmR-Xc-Ord"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOb-K4-cEW" customClass="StyleableButton" customModule="DeliveryAmp" customModuleProvider="target">
-                                <rect key="frame" x="194.5" y="240" width="90" height="30"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="2nu-gz-ZaN"/>
-                                    <constraint firstAttribute="width" constant="90" id="oQO-fk-vW7"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="11"/>
-                                <state key="normal" title="Back">
-                                    <color key="titleColor" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="15"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="back_TouchUpInside:" destination="KKB-9a-fDc" eventType="touchUpInside" id="ZFC-s7-9Z0"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.7843137255" green="0.89019607840000003" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="jOb-K4-cEW" firstAttribute="leading" secondItem="SgT-BP-USe" secondAttribute="trailing" constant="2" id="8A9-Eq-Uuk"/>
-                            <constraint firstItem="SgT-BP-USe" firstAttribute="centerX" secondItem="geI-iv-TEg" secondAttribute="centerX" constant="-40" id="Pdq-f2-Qux"/>
-                            <constraint firstItem="jOb-K4-cEW" firstAttribute="centerY" secondItem="SgT-BP-USe" secondAttribute="centerY" id="YdE-cn-MIN"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UAw-T6-3bN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2614" y="1529"/>
         </scene>
         <!--Side Menu View Controller-->
         <scene sceneID="v9g-j0-Sce">
@@ -1158,7 +1076,7 @@
                                                     <constraint firstAttribute="height" constant="30" id="tqF-Zi-Acq"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="11"/>
-                                                <state key="normal" title="Сохронить">
+                                                <state key="normal" title="Сохранить">
                                                     <color key="titleColor" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <state key="highlighted">
@@ -1169,7 +1087,7 @@
                                                         <real key="value" value="15"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                        <color key="value" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="value" red="0.29329697240000002" green="0.58823762690000003" blue="0.24661682069999999" alpha="0.54000000000000004" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                         <real key="value" value="1"/>
@@ -1198,7 +1116,7 @@
                                                         <real key="value" value="15"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                        <color key="value" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="value" red="0.29329697240000002" green="0.58823762690000003" blue="0.24661682069999999" alpha="0.54000000000000004" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                         <real key="value" value="1"/>
@@ -1392,7 +1310,7 @@
                                                                             <real key="value" value="15"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                            <color key="value" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <color key="value" red="0.29329697240000002" green="0.58823762690000003" blue="0.24661682069999999" alpha="0.54000000000000004" colorSpace="custom" customColorSpace="displayP3"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                             <real key="value" value="1"/>
@@ -1436,7 +1354,7 @@
                                                                     <color key="textColor" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$19.999" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCM-83-Vi4">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19.999₽" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCM-83-Vi4">
                                                                     <rect key="frame" x="250" y="5" width="60" height="20"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="60" id="SvF-4W-QOR"/>
@@ -1732,7 +1650,7 @@
                                                                     <color key="textColor" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$71.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M0h-WM-UWq">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="71.99₽" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M0h-WM-UWq">
                                                                     <rect key="frame" x="290" y="23" width="45" height="21"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="21" id="5Az-mm-mlx"/>
@@ -1815,11 +1733,11 @@
                                                     <action selector="changePizza:" destination="Tlw-ML-pbu" eventType="touchUpInside" id="kxf-Rl-Tvg"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$71.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Of-he-u5h">
-                                                <rect key="frame" x="262" y="24.5" width="45" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="71.99₽" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Of-he-u5h">
+                                                <rect key="frame" x="255" y="24.5" width="52" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="HTT-be-QTK"/>
-                                                    <constraint firstAttribute="width" constant="45" id="pGH-dL-YRJ"/>
+                                                    <constraint firstAttribute="width" constant="52" id="pGH-dL-YRJ"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="14"/>
                                                 <color key="textColor" red="0.30588235294117649" green="0.33725490196078434" blue="0.35686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1965,14 +1883,14 @@
                                                                 <action selector="modifyAmount:" destination="gwG-AQ-3OQ" eventType="valueChanged" id="liS-PF-Xol"/>
                                                             </connections>
                                                         </stepper>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$2.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWa-rP-W2J">
-                                                            <rect key="frame" x="87" y="14" width="22" height="13"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2.5₽" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWa-rP-W2J">
+                                                            <rect key="frame" x="87" y="14" width="23" height="13"/>
                                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="11"/>
                                                             <color key="textColor" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IZo-K3-vFO">
-                                                            <rect key="frame" x="20" y="34.5" width="28" height="13"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00₽" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IZo-K3-vFO">
+                                                            <rect key="frame" x="20" y="34.5" width="30" height="13"/>
                                                             <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="11"/>
                                                             <color key="textColor" red="0.30588235294117649" green="0.33725490196078434" blue="0.35686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -2229,6 +2147,8 @@
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a5e-wv-NAr">
                                 <rect key="frame" x="10" y="124" width="355" height="494"/>
+                                <color key="backgroundColor" red="0.90610024789999999" green="0.99491029980000001" blue="0.97128345360000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" red="0.50165890889999998" green="1" blue="0.41432660430000001" alpha="0.53595400530000004" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <segue destination="kjX-n2-s2b" kind="embed" identifier="container" id="WJH-bK-kfZ"/>
                                 </connections>
@@ -2314,7 +2234,7 @@
                     <view key="view" contentMode="scaleToFill" id="eYf-Nb-rW3">
                         <rect key="frame" x="0.0" y="0.0" width="355" height="494"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <connections>
                         <segue destination="jJa-48-shC" kind="custom" identifier="food" customClass="EmptySegue" customModule="DeliveryAmp" customModuleProvider="target" id="Z2Y-a6-2yq"/>
@@ -2345,7 +2265,7 @@
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DrinkCell" rowHeight="174" id="ine-6x-YKB" userLabel="BeveragesCell" customClass="BeveragesTypeTableViewCell" customModule="DeliveryAmp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DrinkCell" id="ine-6x-YKB" userLabel="BeveragesCell" customClass="BeveragesTypeTableViewCell" customModule="DeliveryAmp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="394" height="174"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ine-6x-YKB" id="p0u-y3-pcd">
@@ -2367,7 +2287,7 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Orange Juice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAU-cI-GOv" userLabel="Drink Name Label">
-                                                                    <rect key="frame" x="63" y="5" width="266" height="20"/>
+                                                                    <rect key="frame" x="63" y="5" width="256" height="20"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="20" id="yg3-nX-l6H"/>
                                                                     </constraints>
@@ -2376,15 +2296,15 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Made from organic, fresh oranges, only after we will receive your order" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdP-BS-emR" userLabel="Drink Ingredients Label">
-                                                                    <rect key="frame" x="63" y="30" width="266" height="35"/>
+                                                                    <rect key="frame" x="63" y="30" width="256" height="35"/>
                                                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="11"/>
                                                                     <color key="textColor" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$4.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9P-cu-ODV" userLabel="Drink Price Label">
-                                                                    <rect key="frame" x="339" y="27" width="45" height="16.5"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.99₽" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9P-cu-ODV" userLabel="Drink Price Label">
+                                                                    <rect key="frame" x="329" y="27" width="55" height="16.5"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="45" id="sCr-IW-3Yw"/>
+                                                                        <constraint firstAttribute="width" constant="55" id="sCr-IW-3Yw"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="14"/>
                                                                     <color key="textColor" red="0.30588235294117649" green="0.33725490196078434" blue="0.35686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2423,7 +2343,6 @@
                                                             <subviews>
                                                                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sMW-jP-rDz" customClass="StyleableButton" customModule="DeliveryAmp" customModuleProvider="target">
                                                                     <rect key="frame" x="324" y="10" width="60" height="30"/>
-                                                                    <color key="backgroundColor" red="0.96982711553573608" green="0.98859626054763794" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="30" id="G3d-Tz-Qlc"/>
                                                                         <constraint firstAttribute="width" constant="60" id="Yrd-j9-LJR"/>
@@ -2443,7 +2362,7 @@
                                                                             <real key="value" value="1"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                            <color key="value" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <color key="value" red="0.293296972381693" green="0.5882376269035533" blue="0.24661682069799767" alpha="0.54000000000000004" colorSpace="custom" customColorSpace="displayP3"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
                                                                     <connections>
@@ -2543,7 +2462,7 @@
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FoodCell" rowHeight="174" id="z3Z-R2-mx7" customClass="FoodTypeTableViewCell" customModule="DeliveryAmp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FoodCell" id="z3Z-R2-mx7" customClass="FoodTypeTableViewCell" customModule="DeliveryAmp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="394" height="174"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z3Z-R2-mx7" id="f6s-Uo-DF8">
@@ -2565,7 +2484,7 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Margherita Pizza" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uen-84-XdG">
-                                                                    <rect key="frame" x="63" y="5" width="266" height="20"/>
+                                                                    <rect key="frame" x="63" y="5" width="254" height="20"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="20" id="dR8-S6-0V4"/>
                                                                     </constraints>
@@ -2574,15 +2493,15 @@
                                                                     <color key="highlightedColor" red="0.30588235294117649" green="0.33725490196078434" blue="0.35686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ингридиенты: Ingredient 1, Tomato sauce, Oregano, Chicken, Onion, Blue Cheese, Dried Tomatoes" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3FP-t4-Cg6">
-                                                                    <rect key="frame" x="63" y="30" width="266" height="35"/>
+                                                                    <rect key="frame" x="63" y="30" width="254" height="35"/>
                                                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="11"/>
                                                                     <color key="textColor" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$71.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zit-vr-3YJ">
-                                                                    <rect key="frame" x="339" y="24.5" width="45" height="21"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="71.99₽" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zit-vr-3YJ">
+                                                                    <rect key="frame" x="327" y="24.5" width="57" height="21"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="45" id="T4l-HO-3nh"/>
+                                                                        <constraint firstAttribute="width" constant="57" id="T4l-HO-3nh"/>
                                                                         <constraint firstAttribute="height" constant="21" id="xI1-g3-65Q"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="14"/>
@@ -2650,7 +2569,7 @@
                                                                             <real key="value" value="15"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                            <color key="value" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <color key="value" red="0.29329697240000002" green="0.58823762690000003" blue="0.24661682069999999" alpha="0.54000000000000004" colorSpace="custom" customColorSpace="displayP3"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
                                                                     <connections>
@@ -2676,7 +2595,7 @@
                                                                     </state>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                            <color key="value" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <color key="value" red="0.29329697240000002" green="0.58823762690000003" blue="0.24661682069999999" alpha="0.54000000000000004" colorSpace="custom" customColorSpace="displayP3"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                             <real key="value" value="1"/>
@@ -2787,7 +2706,7 @@
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="0.76470588240000004" green="0.96078431369999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ExtrasCell" rowHeight="123" id="QBg-XH-axg" customClass="ExtrasTypeTableViewCell" customModule="DeliveryAmp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ExtrasCell" id="QBg-XH-axg" customClass="ExtrasTypeTableViewCell" customModule="DeliveryAmp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="394" height="123"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QBg-XH-axg" id="LLP-bs-47Z">
@@ -2823,7 +2742,7 @@
                                                                     <color key="textColor" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WT6-ly-hTg">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.99₽" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WT6-ly-hTg">
                                                                     <rect key="frame" x="339" y="26.5" width="45" height="17"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="45" id="mk6-f3-hgO"/>
@@ -2875,7 +2794,7 @@
                                                                             <real key="value" value="15"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                            <color key="value" red="0.58823529409999997" green="0.68235294120000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <color key="value" red="0.29329697240000002" green="0.58823762690000003" blue="0.24661682069999999" alpha="0.54000000000000004" colorSpace="custom" customColorSpace="displayP3"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                             <real key="value" value="1"/>
@@ -2981,12 +2900,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Unchecked Checkbox" width="48" height="48"/>
+        <image name="Unchecked Checkbox" width="150.2608642578125" height="150.2608642578125"/>
         <image name="back_arrow" width="8" height="14.5"/>
         <image name="delete" width="48" height="48"/>
         <image name="down_arrow" width="7" height="4"/>
         <image name="legal" width="12" height="16"/>
-        <image name="menu" width="2000" height="2000"/>
+        <image name="menu" width="39" height="39"/>
         <image name="order_history" width="48" height="48"/>
         <image name="pizza" width="650" height="650"/>
         <image name="settings" width="14.5" height="15"/>

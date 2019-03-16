@@ -43,7 +43,7 @@ class BeveragesViewController: UIViewController {
             if item.type == 1 {
                 let view: SelectedDrinkType = .fromNib()
                 view.descriptionLabel.text = item.servingSize.name
-                view.priceLabel.text = "$" + String(item.cost)
+                view.priceLabel.text = "₽" + String(item.cost)
                 view.removeButton.tag = item.id
                 view.removeButton.addTarget(self, action: #selector(removeView), for: .touchUpInside)
                 for (index, product) in allBeverages.enumerated() {
@@ -105,7 +105,7 @@ class BeveragesViewController: UIViewController {
         newItem.id = orderItemId
         newItem.product = allBeverages.filter{$0.id == productId}.map{product in OrderProduct(id: product.id, name: product.name, price: product.price)}[0]
         newItem.servingSize = servingSizesBeverages.filter{$0.id == drinkSize}[0]
-        newItem.cost = Double(getDrinkPrice(drinkSize).components(separatedBy: "$")[1])!
+        newItem.cost = Double(getDrinkPrice(drinkSize).components(separatedBy: "₽")[1])!
         
         orderItemId = OrderHelper.getNextOrderId()
         order.items.append(newItem)

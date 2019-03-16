@@ -35,7 +35,7 @@ class PayPalViewController: UIViewController, PayPalPaymentDelegate {
     @IBAction func goToPayPal(_ sender: Any) {
         let payment = PayPalPayment()
         payment.amount = NSDecimalNumber(string: "\(order.totalCost)")
-        payment.currencyCode = "USD"
+        payment.currencyCode = "RUB"
         payment.shortDescription = "Total";
         payment.intent = PayPalPaymentIntent.sale
         if (payment.processable) {

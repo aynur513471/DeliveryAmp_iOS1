@@ -11,7 +11,7 @@ import Foundation
 let DEMO_DATA = true
 
 struct Constants {
-    static let currency = "$"
+    static let currency = "₽"
 }
 
 let PAYPAL_PROD_KEY = "<<ENTER YOUR PAYPAL PRODUCTION KEY HEREY>>"
