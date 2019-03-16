@@ -23,7 +23,7 @@
 		B24091DC1F442B0400F8E373 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B24091D31F442B0400F8E373 /* MobileCoreServices.framework */; };
 		B24091DD1F442B0400F8E373 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B24091D41F442B0400F8E373 /* SafariServices.framework */; };
 		B24091DE1F442B0400F8E373 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B24091D51F442B0400F8E373 /* SystemConfiguration.framework */; };
-		C62D7C45EEAD4D53CE83B7FC /* Pods_DeliveryAmp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5AA29116BE21F23777729E6 /* Pods_DeliveryAmp.framework */; };
+		C78E1F43D9E26BEC8C0556DC /* Pods_DeliveryAmp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F90330A515E83B4E5B402B65 /* Pods_DeliveryAmp.framework */; };
 		CE0359E21F3460E300969B2F /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0359E11F3460E300969B2F /* CheckoutViewController.swift */; };
 		CE0C5E381F3B44F000687B95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0C5E361F3B44F000687B95 /* LaunchScreen.storyboard */; };
 		CE1022C21F34B203008A28EA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1022C11F34B203008A28EA /* Constants.swift */; };
@@ -100,6 +100,7 @@
 		CEF305181F2A02F7009A740A /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF305171F2A02F7009A740A /* IngredientTableViewCell.swift */; };
 		CEF3051B1F2A057D009A740A /* CreateYourOwnViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3051A1F2A057D009A740A /* CreateYourOwnViewControllerExtension.swift */; };
 		F4DB96C5223B84EE001FFA11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4DB96C4223B84EE001FFA11 /* Main.storyboard */; };
+		F4FA05E4223CDD200010FEF4 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4FA05E3223CDD200010FEF4 /* StoreKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -201,7 +202,9 @@
 		CEF3051A1F2A057D009A740A /* CreateYourOwnViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateYourOwnViewControllerExtension.swift; path = Extensions/CreateYourOwnViewControllerExtension.swift; sourceTree = "<group>"; };
 		F4A3E284223A810E00277BF9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		F4DB96C4223B84EE001FFA11 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		F5AA29116BE21F23777729E6 /* Pods_DeliveryAmp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeliveryAmp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4FA05E3223CDD200010FEF4 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		F4FA05E5223CDD2E0010FEF4 /* DeliveryAmp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DeliveryAmp.entitlements; sourceTree = "<group>"; };
+		F90330A515E83B4E5B402B65 /* Pods_DeliveryAmp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeliveryAmp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,9 +219,10 @@
 				B24091DA1F442B0400F8E373 /* CoreMedia.framework in Frameworks */,
 				B24091DB1F442B0400F8E373 /* MessageUI.framework in Frameworks */,
 				B24091DC1F442B0400F8E373 /* MobileCoreServices.framework in Frameworks */,
+				F4FA05E4223CDD200010FEF4 /* StoreKit.framework in Frameworks */,
 				B24091DD1F442B0400F8E373 /* SafariServices.framework in Frameworks */,
 				B24091DE1F442B0400F8E373 /* SystemConfiguration.framework in Frameworks */,
-				C62D7C45EEAD4D53CE83B7FC /* Pods_DeliveryAmp.framework in Frameworks */,
+				C78E1F43D9E26BEC8C0556DC /* Pods_DeliveryAmp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,6 +232,7 @@
 		243CFE2108BCCD15752079B1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F4FA05E3223CDD200010FEF4 /* StoreKit.framework */,
 				B24091CD1F442B0400F8E373 /* Accelerate.framework */,
 				B24091CE1F442B0400F8E373 /* AudioToolbox.framework */,
 				B24091CF1F442B0400F8E373 /* AVFoundation.framework */,
@@ -237,7 +242,7 @@
 				B24091D31F442B0400F8E373 /* MobileCoreServices.framework */,
 				B24091D41F442B0400F8E373 /* SafariServices.framework */,
 				B24091D51F442B0400F8E373 /* SystemConfiguration.framework */,
-				F5AA29116BE21F23777729E6 /* Pods_DeliveryAmp.framework */,
+				F90330A515E83B4E5B402B65 /* Pods_DeliveryAmp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -323,6 +328,7 @@
 			children = (
 				CE390D3C1F28B3B700014BE7 /* DeliveryAmp */,
 				CE390D3B1F28B3B700014BE7 /* Products */,
+				CE390D541F28C30B00014BE7 /* Fonts */,
 				243CFE2108BCCD15752079B1 /* Frameworks */,
 				89AD6D4B0E3F0E9868C1263C /* Pods */,
 			);
@@ -339,6 +345,7 @@
 		CE390D3C1F28B3B700014BE7 /* DeliveryAmp */ = {
 			isa = PBXGroup;
 			children = (
+				F4FA05E5223CDD2E0010FEF4 /* DeliveryAmp.entitlements */,
 				CE20316C1F386EEB0045B00D /* Bridging-Header.h */,
 				CE390D491F28B3B700014BE7 /* Info.plist */,
 				CE390D3D1F28B3B700014BE7 /* AppDelegate.swift */,
@@ -349,7 +356,6 @@
 				CE168DB31F308EDA00721F5B /* Container */,
 				CE168DB41F308F1E00721F5B /* Controllers */,
 				CEF305191F2A048C009A740A /* Extensions */,
-				CE390D541F28C30B00014BE7 /* Fonts */,
 				CEF199821F336AEC005E74B4 /* Helpers */,
 				CE2D044B1F345A8E0074ECBC /* Models */,
 				CEF1997F1F334122005E74B4 /* SideMenu */,
@@ -395,6 +401,7 @@
 				CE390D611F28C3A200014BE7 /* Roboto-ThinItalic.ttf */,
 			);
 			name = Fonts;
+			path = DeliveryAmp;
 			sourceTree = "<group>";
 		};
 		CE7FBB541F29C16B0027CF85 /* Storyboards */ = {
@@ -501,6 +508,14 @@
 						DevelopmentTeam = C3VJBAXEC2;
 						LastSwiftMigration = 1010;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -823,7 +838,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = marataynur.deliveryapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "23b3dbb6-9390-4549-be36-a0aedc055f33";
-				PROVISIONING_PROFILE_SPECIFIER = "Sert-delivery";
+				PROVISIONING_PROFILE_SPECIFIER = New;
 				SWIFT_OBJC_BRIDGING_HEADER = "DeliveryAmp/Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.2;
@@ -835,7 +850,7 @@
 			baseConfigurationReference = 9DBD235D58EF8E59E464094E /* Pods-DeliveryAmp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = C3VJBAXEC2;
@@ -846,7 +861,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = marataynur.deliveryapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "a3c47798-c0c5-4d54-bd3c-b5ce46644204";
-				PROVISIONING_PROFILE_SPECIFIER = "Sert-delivery";
+				PROVISIONING_PROFILE_SPECIFIER = New;
 				SWIFT_OBJC_BRIDGING_HEADER = "DeliveryAmp/Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.2;

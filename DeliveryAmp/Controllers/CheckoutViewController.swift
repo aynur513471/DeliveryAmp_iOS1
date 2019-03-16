@@ -360,7 +360,7 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate, UIScrollVie
 
         }))
         
-        placeOrderAlert.addAction(UIAlertAction(title: "отмена", style: .cancel, handler: nil))
+        placeOrderAlert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
         
         present(placeOrderAlert, animated: true, completion: nil)
         

@@ -10,7 +10,7 @@ import UIKit
 class FoodTypeTableViewCell: UITableViewCell {
 
     // MARK: - Outlets
-    
+
     @IBOutlet weak var pizzaImage: UIImageView!
     @IBOutlet weak var foodNameLabel: UILabel!
     @IBOutlet weak var foodIngredientsLabel: UILabel!
