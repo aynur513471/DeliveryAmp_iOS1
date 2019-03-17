@@ -28,31 +28,31 @@
   "serving_sizes_beverages": [
     {
       "id": 3,
-      "name": "0.25L",
+      "name": "0.25Л",
       "quantity": 0.25,
       "price": 60
     },
     {
       "id": 4,
-      "name": "0.33L",
+      "name": "0.33Л",
       "quantity": 0.33,
       "price": 75
     },
     {
       "id": 5,
-      "name": "0.5L",
+      "name": "0.5Л",
       "quantity": 0.5,
       "price": 90
     },
     {
       "id": 6,
-      "name": "1.0L",
+      "name": "1.0Л",
       "quantity": 1.0,
       "price": 125
     },
     {
       "id": 7,
-      "name": "2.0L",
+      "name": "2.0Л",
       "quantity": 2.0,
       "price": 150
     }

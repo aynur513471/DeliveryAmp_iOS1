@@ -770,7 +770,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nqo-7M-apS">
-                                        <rect key="frame" x="20" y="34" width="20" height="20"/>
+                                        <rect key="frame" x="20" y="39" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="9Dx-iD-fXg"/>
                                             <constraint firstAttribute="width" secondItem="nqo-7M-apS" secondAttribute="height" multiplier="1:1" id="yBS-rg-oaG"/>
@@ -781,7 +781,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Информация" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Epz-7m-1CJ">
-                                        <rect key="frame" x="112.5" y="34" width="150" height="20"/>
+                                        <rect key="frame" x="112.5" y="39" width="150" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="VM7-uZ-X95"/>
                                             <constraint firstAttribute="height" constant="20" id="aSI-9H-vcb"/>
@@ -797,7 +797,7 @@
                                     <constraint firstAttribute="height" constant="64" id="8DV-rb-tzv"/>
                                     <constraint firstItem="Epz-7m-1CJ" firstAttribute="centerX" secondItem="8D8-rP-No5" secondAttribute="centerX" id="FMt-c1-cgU"/>
                                     <constraint firstItem="nqo-7M-apS" firstAttribute="leading" secondItem="8D8-rP-No5" secondAttribute="leading" constant="20" id="JfS-fu-Cfl"/>
-                                    <constraint firstAttribute="bottom" secondItem="Epz-7m-1CJ" secondAttribute="bottom" constant="10" id="phw-F5-xEK"/>
+                                    <constraint firstAttribute="bottom" secondItem="Epz-7m-1CJ" secondAttribute="bottom" constant="5" id="phw-F5-xEK"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7us-a7-hMX" customClass="ViewWithShadow" customModule="DeliveryAmp" customModuleProvider="target">
@@ -855,7 +855,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qMg-Jk-8Hr">
-                                        <rect key="frame" x="20" y="34" width="20" height="20"/>
+                                        <rect key="frame" x="20" y="39" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="Gka-Dt-lbP"/>
                                             <constraint firstAttribute="width" secondItem="qMg-Jk-8Hr" secondAttribute="height" multiplier="1:1" id="hTP-8a-Mok"/>
@@ -866,7 +866,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Настройка" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CWb-zW-0pO">
-                                        <rect key="frame" x="137.5" y="34" width="100" height="20"/>
+                                        <rect key="frame" x="137.5" y="39" width="100" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="gbM-HY-4Bo"/>
                                             <constraint firstAttribute="height" constant="20" id="vII-AX-pFg"/>
@@ -878,7 +878,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="CWb-zW-0pO" secondAttribute="bottom" constant="10" id="8Al-gW-XyW"/>
+                                    <constraint firstAttribute="bottom" secondItem="CWb-zW-0pO" secondAttribute="bottom" constant="5" id="8Al-gW-XyW"/>
                                     <constraint firstAttribute="height" constant="64" id="Emn-Kh-Jy6"/>
                                     <constraint firstItem="qMg-Jk-8Hr" firstAttribute="centerY" secondItem="CWb-zW-0pO" secondAttribute="centerY" id="PAC-E1-pZr"/>
                                     <constraint firstItem="qMg-Jk-8Hr" firstAttribute="leading" secondItem="3Qw-ee-qVf" secondAttribute="leading" constant="20" id="X8Y-eP-x1x"/>
@@ -1228,7 +1228,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jan-Ev-Hns">
-                                        <rect key="frame" x="20" y="34" width="20" height="20"/>
+                                        <rect key="frame" x="20" y="39" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="NuK-xq-4Eq"/>
                                             <constraint firstAttribute="width" secondItem="Jan-Ev-Hns" secondAttribute="height" multiplier="1:1" id="QYU-ta-GIL"/>
@@ -1239,7 +1239,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="История заказов" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yw2-fQ-368">
-                                        <rect key="frame" x="122.5" y="34" width="130" height="20"/>
+                                        <rect key="frame" x="122.5" y="39" width="130" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="130" id="aRl-GK-gph"/>
                                             <constraint firstAttribute="height" constant="20" id="des-OI-enS"/>
@@ -1249,7 +1249,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cl-Bf-aly">
-                                        <rect key="frame" x="315" y="29" width="30" height="30"/>
+                                        <rect key="frame" x="315" y="34" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="8cl-Bf-aly" secondAttribute="height" multiplier="1:1" id="7ZR-4n-Qyb"/>
                                             <constraint firstAttribute="height" constant="30" id="rYY-6o-fhk"/>
@@ -1266,7 +1266,7 @@
                                     <constraint firstItem="Yw2-fQ-368" firstAttribute="centerX" secondItem="4hl-rK-rlj" secondAttribute="centerX" id="I6J-BX-tBV"/>
                                     <constraint firstItem="8cl-Bf-aly" firstAttribute="centerY" secondItem="Yw2-fQ-368" secondAttribute="centerY" id="Qko-J1-47U"/>
                                     <constraint firstAttribute="trailing" secondItem="8cl-Bf-aly" secondAttribute="trailing" constant="30" id="jTE-QL-jNm"/>
-                                    <constraint firstAttribute="bottom" secondItem="Yw2-fQ-368" secondAttribute="bottom" constant="10" id="tve-2i-1Bj"/>
+                                    <constraint firstAttribute="bottom" secondItem="Yw2-fQ-368" secondAttribute="bottom" constant="5" id="tve-2i-1Bj"/>
                                     <constraint firstAttribute="height" constant="64" id="vf0-Ac-CEp"/>
                                     <constraint firstItem="Jan-Ev-Hns" firstAttribute="centerY" secondItem="Yw2-fQ-368" secondAttribute="centerY" id="zLD-1d-3qC"/>
                                 </constraints>
@@ -2179,7 +2179,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N5x-Ib-HOi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1356.521739130435" y="-686.41304347826087"/>
+            <point key="canvasLocation" x="1356" y="-686.80659670164926"/>
         </scene>
         <!--Launch View Controller-->
         <scene sceneID="pMk-m6-Jbd">
@@ -2260,10 +2260,10 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="174" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Lsk-es-RmQ" userLabel="Beverages Table">
                                 <rect key="frame" x="0.0" y="20" width="394" height="553"/>
-                                <color key="backgroundColor" red="0.81176470590000005" green="0.90588235289999997" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.50165890889999998" green="1" blue="0.41432660430000001" alpha="0.53595400530000004" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="separatorColor" red="0.50165890889999998" green="1" blue="0.41432660430000001" alpha="0.53595400530000004" colorSpace="custom" customColorSpace="displayP3"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" red="0.50165890889999998" green="1" blue="0.41432660430000001" alpha="0.53595400530000004" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DrinkCell" id="ine-6x-YKB" userLabel="BeveragesCell" customClass="BeveragesTypeTableViewCell" customModule="DeliveryAmp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="394" height="174"/>
@@ -2421,7 +2421,7 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="separatorColor" red="0.50165890889999998" green="1" blue="0.41432660430000001" alpha="0.53595400530000004" colorSpace="custom" customColorSpace="displayP3"/>
                                 </variation>
                             </tableView>
                         </subviews>
@@ -2457,10 +2457,10 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="174" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EkK-fQ-D2G">
                                 <rect key="frame" x="0.0" y="20" width="394" height="553"/>
-                                <color key="backgroundColor" red="0.81400680540000003" green="0.91057044269999998" blue="0.94592458010000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.50165890889999998" green="1" blue="0.41432660430000001" alpha="0.53595400530000004" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="separatorColor" red="0.50165890889999998" green="1" blue="0.41432660430000001" alpha="0.53595400530000004" colorSpace="custom" customColorSpace="displayP3"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" red="0.50165890889999998" green="1" blue="0.41432660430000001" alpha="0.53595400530000004" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FoodCell" id="z3Z-R2-mx7" customClass="FoodTypeTableViewCell" customModule="DeliveryAmp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="394" height="174"/>
@@ -2667,7 +2667,7 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="separatorColor" red="0.50165890889999998" green="1" blue="0.41432660430000001" alpha="0.53595400530000004" colorSpace="custom" customColorSpace="displayP3"/>
                                 </variation>
                             </tableView>
                         </subviews>
@@ -2702,9 +2702,9 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="123" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PcK-sx-RId">
                                 <rect key="frame" x="0.0" y="0.0" width="394" height="573"/>
-                                <color key="backgroundColor" red="0.81176470588235294" green="0.90588235294117647" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <color key="sectionIndexBackgroundColor" red="0.76470588240000004" green="0.96078431369999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.50165890889999998" green="1" blue="0.41432660430000001" alpha="0.53595400530000004" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="separatorColor" red="0.50165890889999998" green="1" blue="0.41432660430000001" alpha="0.53595400530000004" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="sectionIndexBackgroundColor" red="0.50165890889999998" green="1" blue="0.41432660430000001" alpha="0.53595400530000004" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ExtrasCell" id="QBg-XH-axg" customClass="ExtrasTypeTableViewCell" customModule="DeliveryAmp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="394" height="123"/>
@@ -2854,7 +2854,7 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="separatorColor" red="0.50165890889999998" green="1" blue="0.41432660430000001" alpha="0.53595400530000004" colorSpace="custom" customColorSpace="displayP3"/>
                                 </variation>
                             </tableView>
                         </subviews>

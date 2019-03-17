@@ -16,7 +16,7 @@ class MyColors {
     static let buttonBorderColor = UIColor(red:0.40, green:0.74, blue:0.44, alpha:1.0)
     static let buttonTextColor = UIColor(red:0.59, green:0.68, blue:0.73, alpha:1.0)
     static let tabBarUnselectedTextColor = UIColor(red:0.20, green:0.76, blue:0.36, alpha:1.0)
-    static let darkBlue = UIColor(red: 198/255, green: 225/255, blue: 243/255, alpha: 1.0)
+    static let darkBlue = UIColor(red: 128/255, green: 217/255, blue: 149/255, alpha: 1.0)
     static let lightBlue = UIColor(red: 123/255, green: 221/255, blue: 136/255, alpha: 1.0)
     static let segmentedControl = UIColor(red: 74/255, green: 165/255, blue: 42/255, alpha: 1.0)
     static let ingredientViewColor = UIColor(red: 237/255, green: 252/255, blue: 1, alpha: 1)
